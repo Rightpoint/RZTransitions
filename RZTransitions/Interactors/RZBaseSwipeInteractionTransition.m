@@ -124,7 +124,6 @@
     return 0.0f;
 }
 
-
 #pragma mark - Overridden Properties
 
 - (UIGestureRecognizer*)gestureRecognizer
@@ -132,7 +131,7 @@
     if (!_gestureRecognizer)
     {
         _gestureRecognizer = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(handlePanGesture:)];
-        
+        [_gestureRecognizer setDelegate:self];
     }
     return _gestureRecognizer;
 }

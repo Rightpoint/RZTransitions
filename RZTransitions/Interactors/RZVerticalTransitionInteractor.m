@@ -32,4 +32,17 @@
     return [panGestureRecognizer translationInView:panGestureRecognizer.view].y;
 }
 
+#pragma mark - UIGestureRecognizerDelegate
+
+- (BOOL)gestureRecognizerShouldBegin:(UIGestureRecognizer *)gestureRecognizer
+{
+    if ([gestureRecognizer isKindOfClass:[UIPanGestureRecognizer class]]) {
+        UIPanGestureRecognizer *panGestureRecognizer = (UIPanGestureRecognizer*)gestureRecognizer;
+        CGFloat xTranslation = [panGestureRecognizer translationInView:panGestureRecognizer.view].x;
+        return xTranslation == 0;
+    }
+    
+    return YES;
+}
+
 @end

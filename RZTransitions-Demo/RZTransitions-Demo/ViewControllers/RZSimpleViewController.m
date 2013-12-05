@@ -41,9 +41,9 @@
     [self.pushPopInteractionController attachViewController:self withAction:RZTransitionAction_Push|RZTransitionAction_Pop];
 
     // TODO: Need a single interaction controller for up/down/left/right
-//    self.presentInteractionController = [[RZVerticalTransitionInteractor alloc] init];
-//    [self.presentInteractionController setDelegate:self];
-//    [self.presentInteractionController attachViewController:self withAction:RZTransitionAction_Present];
+    self.presentInteractionController = [[RZVerticalTransitionInteractor alloc] init];
+    [self.presentInteractionController setDelegate:self];
+    [self.presentInteractionController attachViewController:self withAction:RZTransitionAction_Present];
     
     self.dismissInteractionController = [[RZVerticalTransitionInteractor alloc] init];
     

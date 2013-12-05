@@ -10,7 +10,7 @@
 #import "RZTransitionInteractorProtocol.h"
 
 @interface RZBaseSwipeInteractionTransition : UIPercentDrivenInteractiveTransition
-    <RZTransitionInteractor>
+    <RZTransitionInteractor, UIGestureRecognizerDelegate>
 
 @property(nonatomic, assign) BOOL shouldCompleteTransition;
 @property(nonatomic, strong) UIViewController *fromViewController;
