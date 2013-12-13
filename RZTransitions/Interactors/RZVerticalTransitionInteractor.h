@@ -6,8 +6,8 @@
 //  Copyright (c) 2013 Raizlabs. All rights reserved.
 //
 
-#import "RZBaseSwipeInteractionTransition.h"
+#import "RZBaseSwipeInteractor.h"
 
-@interface RZVerticalTransitionInteractor : RZBaseSwipeInteractionTransition
+@interface RZVerticalTransitionInteractor : RZBaseSwipeInteractor
 
 @end

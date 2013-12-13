@@ -9,10 +9,9 @@
 #import <UIKit/UIKit.h>
 #import "RZTransitionInteractorProtocol.h"
 
-@interface RZBaseSwipeInteractionTransition : UIPercentDrivenInteractiveTransition
+@interface RZBaseSwipeInteractor : UIPercentDrivenInteractiveTransition
     <RZTransitionInteractor, UIGestureRecognizerDelegate>
 
-@property(nonatomic, assign) BOOL shouldCompleteTransition;
 @property(nonatomic, strong) UIViewController *fromViewController;
 @property(nonatomic, strong) UIPanGestureRecognizer *gestureRecognizer;
 

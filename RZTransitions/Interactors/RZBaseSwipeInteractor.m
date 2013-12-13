@@ -6,16 +6,17 @@
 //  Copyright (c) 2013 Raizlabs. All rights reserved.
 //
 
-#import "RZBaseSwipeInteractionTransition.h"
+#import "RZBaseSwipeInteractor.h"
 
 #define kRZBaseSwipeInteractionDefaultCompletionPercentage  0.3f
 
-@implementation RZBaseSwipeInteractionTransition
+@implementation RZBaseSwipeInteractor
 
 // TODO: can't autosynthesize from protocol :(
 @synthesize action = _action;
 @synthesize isInteractive = _isInteractive;
 @synthesize delegate = _delegate;
+@synthesize shouldCompleteTransition = _shouldCompleteTransition;
 
 - (void)attachViewController:(UIViewController *)viewController withAction:(RZTransitionAction)action
 {
@@ -38,7 +39,7 @@
     return 1 - self.percentComplete;
 }
 
-#pragma mark -
+#pragma mark - UIPanGestureRecognizer Delegate
 
 - (void)handlePanGesture:(UIPanGestureRecognizer *)panGestureRecognizer
 {
@@ -71,7 +72,8 @@
             break;
             
         case UIGestureRecognizerStateChanged:
-            if (self.isInteractive) {
+            if (self.isInteractive)
+            {
                 self.shouldCompleteTransition = (percentage > [self swipeCompletionPercent]);
                 [self updateInteractiveTransition:percentage];
             }
@@ -83,7 +85,8 @@
             break;
             
         case UIGestureRecognizerStateEnded:
-            if (self.isInteractive) {
+            if (self.isInteractive)
+            {
                 self.isInteractive = NO;
                 if (!self.shouldCompleteTransition || panGestureRecognizer.state == UIGestureRecognizerStateCancelled) {
                     [self cancelInteractiveTransition];

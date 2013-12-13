@@ -7,7 +7,7 @@
 #import <Foundation/Foundation.h>
 #import "RZTransitionInteractorProtocol.h"
 
-@interface RZZoomBlurAnimatedTransitioning : NSObject <UIViewControllerAnimatedTransitioning>
+@interface RZZoomBlurAnimationController : NSObject <UIViewControllerAnimatedTransitioning>
 
 @property (nonatomic, assign) BOOL isDismissal;
 

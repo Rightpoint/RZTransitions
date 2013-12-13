@@ -28,6 +28,7 @@ typedef NS_ENUM (NSInteger, RZTransitionAction) {
 @protocol RZTransitionInteractor <UIViewControllerInteractiveTransitioning>
 
 @property (nonatomic, assign, readwrite) BOOL isInteractive;
+@property (nonatomic, assign, readwrite) BOOL shouldCompleteTransition;
 @property (nonatomic, assign, readwrite) RZTransitionAction action;
 @property (nonatomic, weak) id<RZTransitionInteractorDelegate> delegate;
 

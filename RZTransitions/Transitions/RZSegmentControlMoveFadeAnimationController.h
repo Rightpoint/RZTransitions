@@ -6,7 +6,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface RZSegmentControlMoveFadeAnimatedTransitioning : NSObject <UIViewControllerAnimatedTransitioning>
+@interface RZSegmentControlMoveFadeAnimationController : NSObject <UIViewControllerAnimatedTransitioning>
 
 @property (nonatomic, assign) BOOL isLeft;
 

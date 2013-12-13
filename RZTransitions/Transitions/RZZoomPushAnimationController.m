@@ -1,66 +1,62 @@
 //
-//  RZCardSlideAnimatedTransitioning.m
+//  RZZoomPushAnimatedTransitioning.m
+//  VirginPulse
 //
-//  Created by Nick Donaldson on 11/19/13.
+//  Created by Nick Donaldson on 10/22/13.
 //
 
-#import "RZCardSlideAnimatedTransitioning.h"
+#import "RZZoomPushAnimationController.h"
+#import "RZHorizontalTransitionInteractor.h"
 
-#define kVISlideTransitionTime 0.35
-#define kVISlideScaleChangePct 0.33
+#define kRZPushTransitionTime 0.35
+#define kRZPushScaleChangePct 0.33
 
-@implementation RZCardSlideAnimatedTransitioning
+@implementation RZZoomPushAnimationController
 
 - (void)animateTransition:(id<UIViewControllerContextTransitioning>)transitionContext
-{
+{    
     UIViewController *fromViewController = [transitionContext viewControllerForKey:UITransitionContextFromViewControllerKey];
     UIViewController *toViewController = [transitionContext viewControllerForKey:UITransitionContextToViewControllerKey];
     UIView *container = [transitionContext containerView];
     
-    UIView *bgView = [[UIView alloc] initWithFrame:container.bounds];
-    bgView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
-    bgView.backgroundColor = [UIColor blackColor];
-    [container insertSubview:bgView atIndex:0];
-    
     if (self.isForward)
     {
         [container insertSubview:toViewController.view belowSubview:fromViewController.view];
-        toViewController.view.transform = CGAffineTransformMakeScale(1.0 - kVISlideScaleChangePct, 1.0 - kVISlideScaleChangePct);
-        toViewController.view.alpha = 0.1f;
+        toViewController.view.transform = CGAffineTransformMakeScale(1.0 - kRZPushScaleChangePct, 1.0 - kRZPushScaleChangePct);
         
-        [UIView animateWithDuration:kVISlideTransitionTime
+        [UIView animateWithDuration:kRZPushTransitionTime
                               delay:0
                             options:UIViewAnimationOptionCurveEaseOut
                          animations:^{
                              toViewController.view.transform = CGAffineTransformIdentity;
-                             toViewController.view.alpha = 1.0f;
-                             fromViewController.view.transform = CGAffineTransformMakeTranslation(-container.bounds.size.width, 0);
+                             fromViewController.view.transform = CGAffineTransformMakeScale(1.0 + kRZPushScaleChangePct, 1.0 + kRZPushScaleChangePct);
+                             fromViewController.view.alpha = 0.0f;
                          }
                          completion:^(BOOL finished) {
                              toViewController.view.transform = CGAffineTransformIdentity;
                              fromViewController.view.transform = CGAffineTransformIdentity;
-                             [bgView removeFromSuperview];
+                             fromViewController.view.alpha = 1.0f;
                              [transitionContext completeTransition:!transitionContext.transitionWasCancelled];
                          }];
     }
     else
     {
         [container addSubview:toViewController.view];
-        toViewController.view.transform = CGAffineTransformMakeTranslation(-container.bounds.size.width, 0);
-
-        [UIView animateWithDuration:kVISlideTransitionTime
+        toViewController.view.transform = CGAffineTransformMakeScale(1.0 + kRZPushScaleChangePct, 1.0 + kRZPushScaleChangePct);
+        toViewController.view.alpha = 0.0f;
+        
+        [UIView animateWithDuration:kRZPushTransitionTime
                               delay:0
                             options:UIViewAnimationOptionCurveEaseOut
                          animations:^{
                              toViewController.view.transform = CGAffineTransformIdentity;
-                             fromViewController.view.transform = CGAffineTransformMakeScale(1.0 - kVISlideScaleChangePct, 1.0 - kVISlideScaleChangePct);
-                             fromViewController.view.alpha = 0.1f;
+                             toViewController.view.alpha = 1.0f;
+                             fromViewController.view.transform = CGAffineTransformMakeScale(1.0 - kRZPushScaleChangePct, 1.0 - kRZPushScaleChangePct);
                          }
                          completion:^(BOOL finished) {
                              toViewController.view.transform = CGAffineTransformIdentity;
                              fromViewController.view.transform = CGAffineTransformIdentity;
-                             fromViewController.view.alpha = 1.0f;
-                             [bgView removeFromSuperview];
+                             toViewController.view.alpha = 1.0f;
                              [transitionContext completeTransition:!transitionContext.transitionWasCancelled];
                          }];
     }
@@ -68,8 +64,7 @@
 
 - (NSTimeInterval)transitionDuration:(id<UIViewControllerContextTransitioning>)transitionContext
 {
-    return kVISlideTransitionTime;
+    return kRZPushTransitionTime;
 }
-
 
 @end

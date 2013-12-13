@@ -7,18 +7,18 @@
 //
 
 #import "RZSimpleColorViewController.h"
-#import "RZCardSlideAnimatedTransitioning.h"
-#import "RZShrinkTransitioner.h"
-#import "RZZoomBlurAnimatedTransitioning.h"
-#import "RZZoomPushAnimatedTransitioning.h"
+#import "RZCardSlideAnimationController.h"
+#import "RZShrinkZoomAnimationController.h"
+#import "RZZoomBlurAnimationController.h"
+#import "RZZoomPushAnimationController.h"
 #import "RZHorizontalTransitionInteractor.h"
-#import "RZSegmentControlMoveFadeAnimatedTransitioning.h"
+#import "RZSegmentControlMoveFadeAnimationController.h"
 #import "RZTransitionInteractorProtocol.h"
 
 @interface RZSimpleColorViewController () //<UIViewControllerTransitioningDelegate, UINavigationControllerDelegate>
 
 @property (nonatomic, strong) id<RZTransitionInteractor> dismissInteractionController;
-@property (nonatomic, strong) RZSegmentControlMoveFadeAnimatedTransitioning *dismissAnimationController;
+@property (nonatomic, strong) RZSegmentControlMoveFadeAnimationController *dismissAnimationController;
 
 @end
 
@@ -32,18 +32,31 @@
     return [UIColor colorWithHue:hue saturation:saturation brightness:brightness alpha:1];
 }
 
+- (id)initWithColor:(UIColor *)color
+{
+    self = [super init];
+    if (self) {
+        self.backgroundColor = color;
+    }
+    return self;
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [self.view setBackgroundColor:[RZSimpleColorViewController randomColor]];
+    [self.view setBackgroundColor:self.backgroundColor];
     UITapGestureRecognizer *tapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(dismissSelfOnTap:)];
     [self.view addGestureRecognizer:tapGestureRecognizer];
-    
-//    self.dismissInteractionController = [[RZHorizontalTransitionInteractor alloc] init];
-//    [self.dismissInteractionController attachViewController:self withAction:RZTransitionAction_Dismiss];
-//    
-//    self.dismissAnimationController = [[RZSegmentControlMoveFadeAnimatedTransitioning alloc] init];
-//    self.dismissAnimationController.isLeft = YES;
+}
+
+#pragma mark - Overidden Properties
+
+- (UIColor *)backgroundColor
+{
+    if (!_backgroundColor) {
+        _backgroundColor = [RZSimpleColorViewController randomColor];
+    }
+    return _backgroundColor;
 }
 
 #pragma mark - Handle Tap Genture Reconizer
@@ -52,24 +65,5 @@
 {
     [self dismissViewControllerAnimated:YES completion:nil];
 }
-
-#pragma mark - Custom View Controller Animations
-
-//- (id <UIViewControllerAnimatedTransitioning>)animationControllerForPresentedController:(UIViewController *)presented presentingController:(UIViewController *)presenting sourceController:(UIViewController *)source
-//{
-//    RZZoomBlurAnimatedTransitioning* transition = [[RZZoomBlurAnimatedTransitioning alloc] init];
-//    return transition;
-//}
-
-//- (id <UIViewControllerAnimatedTransitioning>)animationControllerForDismissedController:(UIViewController *)dismissed
-//{
-//    return self.dismissAnimationController;
-//}
-//
-//- (id <UIViewControllerInteractiveTransitioning>)interactionControllerForDismissal:(id<UIViewControllerAnimatedTransitioning>)animator
-//{
-//    return self.dismissInteractionController;
-////    return nil;
-//}
 
 @end

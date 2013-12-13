@@ -8,23 +8,25 @@
 
 #import "RZSimpleViewController.h"
 #import "RZSimpleColorViewController.h"
-#import "RZCardSlideAnimatedTransitioning.h"
-#import "RZShrinkTransitioner.h"
-#import "RZZoomBlurAnimatedTransitioning.h"
-#import "RZZoomPushAnimatedTransitioning.h"
+#import "RZSimpleCollectionViewController.h"
+#import "RZCardSlideAnimationController.h"
+#import "RZShrinkZoomAnimationController.h"
+#import "RZZoomBlurAnimationController.h"
+#import "RZZoomPushAnimationController.h"
 #import "RZHorizontalTransitionInteractor.h"
 #import "RZVerticalTransitionInteractor.h"
 #import "RZTransitionInteractorProtocol.h"
-#import "RZSegmentControlMoveFadeAnimatedTransitioning.h"
+#import "RZSegmentControlMoveFadeAnimationController.h"
+#import "RZCirclePushAnimationController.h"
 
 @interface RZSimpleViewController () <UIViewControllerTransitioningDelegate, UINavigationControllerDelegate, RZTransitionInteractorDelegate>
 
 @property (nonatomic, strong) id<RZTransitionInteractor> pushPopInteractionController;
 @property (nonatomic, strong) id<RZTransitionInteractor> presentInteractionController;
 @property (nonatomic, strong) id<RZTransitionInteractor> dismissInteractionController;
-@property (nonatomic, strong) RZCardSlideAnimatedTransitioning *pushPopAnimationController;
-@property (nonatomic, strong) RZZoomPushAnimatedTransitioning *presentAnimationController;
-@property (nonatomic, strong) RZZoomPushAnimatedTransitioning *dismissAnimationController;
+@property (nonatomic, strong) RZCardSlideAnimationController *pushPopAnimationController;
+@property (nonatomic, strong) RZCirclePushAnimationController *presentAnimationController;
+@property (nonatomic, strong) RZCirclePushAnimationController *dismissAnimationController;
 
 @end
 
@@ -47,12 +49,12 @@
     
     self.dismissInteractionController = [[RZVerticalTransitionInteractor alloc] init];
     
-    self.pushPopAnimationController = [[RZCardSlideAnimatedTransitioning alloc] init];
+    self.pushPopAnimationController = [[RZCardSlideAnimationController alloc] init];
     
-    self.presentAnimationController = [[RZZoomPushAnimatedTransitioning alloc] init];
+    self.presentAnimationController = [[RZCirclePushAnimationController alloc] init];
     self.presentAnimationController.isForward = YES;
     
-    self.dismissAnimationController = [[RZZoomPushAnimatedTransitioning alloc] init];
+    self.dismissAnimationController = [[RZCirclePushAnimationController alloc] init];
     self.dismissAnimationController.isForward = NO;
     
     [self.navigationController setDelegate:self];
@@ -77,7 +79,7 @@
 
 - (IBAction)showCollectionView:(id)sender
 {
-    // TODO
+    [[self navigationController] pushViewController:[[RZSimpleCollectionViewController alloc] init] animated:YES];
 }
 
 #pragma mark - Next View Controller Logic
@@ -97,7 +99,7 @@
     return newColorVC;
 }
 
-#pragma mark - Custom View Controller Animations
+#pragma mark - Custom View Controller Animations - UIViewControllerTransitioningDelegate
 
 - (id <UIViewControllerAnimatedTransitioning>)animationControllerForPresentedController:(UIViewController *)presented presentingController:(UIViewController *)presenting sourceController:(UIViewController *)source
 {
@@ -119,7 +121,7 @@
     return (self.dismissInteractionController && [self.dismissInteractionController isInteractive]) ? self.dismissInteractionController : nil;
 }
 
-#pragma mark -
+#pragma mark - UINavigationControllerDelegate
 
 - (id <UIViewControllerInteractiveTransitioning>)navigationController:(UINavigationController *)navigationController
                           interactionControllerForAnimationController:(id <UIViewControllerAnimatedTransitioning>) animationController
@@ -141,7 +143,7 @@
 }
 
 
-#pragma mark -
+#pragma mark - RZTransitionInteractorDelegate
 
 - (UIViewController *)nextViewControllerForInteractor:(id<RZTransitionInteractor>)interactor
 {

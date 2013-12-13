@@ -7,8 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "RZBaseSwipeInteractionTransition.h"
+#import "RZBaseSwipeInteractor.h"
 
-@interface RZHorizontalTransitionInteractor :  RZBaseSwipeInteractionTransition
+@interface RZHorizontalTransitionInteractor :  RZBaseSwipeInteractor
 
 @end

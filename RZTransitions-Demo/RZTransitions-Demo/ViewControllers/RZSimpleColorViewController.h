@@ -10,4 +10,8 @@
 
 @interface RZSimpleColorViewController : UIViewController
 
+@property (nonatomic, strong) UIColor *backgroundColor;
+
+- (id)initWithColor:(UIColor *)color;
+
 @end

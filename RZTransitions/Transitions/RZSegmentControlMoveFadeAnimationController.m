@@ -4,7 +4,7 @@
 //  Created by Alex Rouse on 11/5/13.
 //
 
-#import "RZSegmentControlMoveFadeAnimatedTransitioning.h"
+#import "RZSegmentControlMoveFadeAnimationController.h"
 #import "UIImage+RZFastImageBlur.h"
 
 #define kVISegAnimationTransitionTime   0.4f
@@ -12,7 +12,7 @@
 #define kVISegXOffsetFactor             1.5f
 #define kVISegYOffsetFactor             0.25f
 
-@implementation RZSegmentControlMoveFadeAnimatedTransitioning
+@implementation RZSegmentControlMoveFadeAnimationController
 
 - (void)animateTransition:(id<UIViewControllerContextTransitioning>)transitionContext
 {

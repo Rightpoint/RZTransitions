@@ -4,7 +4,7 @@
 //  Created by Nick Donaldson on 10/17/13.
 //
 
-#import "RZZoomBlurAnimatedTransitioning.h"
+#import "RZZoomBlurAnimationController.h"
 #import "UIImage+RZFastImageBlur.h"
 #import <objc/runtime.h>
 
@@ -16,7 +16,7 @@
 #define kVIZBDefaultTintColor       [UIColor colorWithWhite:1.0f alpha:0.15f]
 static char kVIZoomBlurImageAssocKey;
 
-@implementation RZZoomBlurAnimatedTransitioning
+@implementation RZZoomBlurAnimationController
 
 - (CGFloat)blurRadius
 {
