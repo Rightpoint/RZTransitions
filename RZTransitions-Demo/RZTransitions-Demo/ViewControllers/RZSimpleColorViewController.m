@@ -36,7 +36,9 @@
 {
     self = [super init];
     if (self) {
-        self.backgroundColor = color;
+        if (color) {
+            _backgroundColor = color;
+        }
     }
     return self;
 }

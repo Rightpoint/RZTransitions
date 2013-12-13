@@ -62,7 +62,7 @@
         [circleMaskAnimation setFillMode:kCAFillModeForwards];
         
         // Animate from large to small
-        circleMaskAnimation.fromValue = [NSNumber numberWithFloat:kRZCircleMaxScale];
+        circleMaskAnimation.fromValue = [NSNumber numberWithFloat:1.0f];
         circleMaskAnimation.toValue   = [NSNumber numberWithFloat:kRZCircleMinScale];
 
         // Add to the view and start the animation

@@ -65,7 +65,8 @@
 {
     UIColor *cellBackgroundColor = [collectionView cellForItemAtIndexPath:indexPath].backgroundColor;
     UIViewController *colorVC = [self newColorVCWithColor:cellBackgroundColor];
-    [self presentViewController:colorVC animated:YES completion:nil];
+    //[self presentViewController:colorVC animated:YES completion:nil];
+    [self.navigationController pushViewController:colorVC animated:YES];
 }
 
 #pragma mark - UICollectionViewDataSource
@@ -101,7 +102,8 @@
 
 - (id<UIViewControllerInteractiveTransitioning>)interactionControllerForDismissal:(id<UIViewControllerAnimatedTransitioning>)animator
 {
-    return self.presentDismissInteractionController;
+//    return self.presentDismissInteractionController;
+    return nil;
 }
 
 #pragma mark - RZTransitionInteractorDelegate
