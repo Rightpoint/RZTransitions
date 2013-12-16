@@ -8,10 +8,10 @@
 #import "RZSegmentControlMoveFadeAnimationController.h"
 #import "UIImage+RZFastImageBlur.h"
 
-#define kVISegAnimationTransitionTime   0.4f
-#define kVISegScaleAmount               0.3f
-#define kVISegXOffsetFactor             1.5f
-#define kVISegYOffsetFactor             0.25f
+#define kRZSegAnimationTransitionTime   0.4f
+#define kRZSegScaleAmount               0.3f
+#define kRZSegXOffsetFactor             1.5f
+#define kRZSegYOffsetFactor             0.25f
 
 @implementation RZSegmentControlMoveFadeAnimationController
 
@@ -21,19 +21,19 @@
     UIViewController *toViewController = [transitionContext viewControllerForKey:UITransitionContextToViewControllerKey];
     UIView *container = [transitionContext containerView];
     
-    CGAffineTransform scaleTransform = CGAffineTransformMakeScale(kVISegScaleAmount, kVISegScaleAmount);
+    CGAffineTransform scaleTransform = CGAffineTransformMakeScale(kRZSegScaleAmount, kRZSegScaleAmount);
     CGAffineTransform oldTranslateTransform;
     CGAffineTransform newTranslateTransform;
 
     if (self.isLeft)
     {
-        oldTranslateTransform = CGAffineTransformMakeTranslation(container.bounds.size.width*kVISegXOffsetFactor, -container.bounds.size.height*kVISegYOffsetFactor);
-        newTranslateTransform = CGAffineTransformMakeTranslation(-container.bounds.size.width*kVISegXOffsetFactor, -container.bounds.size.height*kVISegYOffsetFactor);
+        oldTranslateTransform = CGAffineTransformMakeTranslation(container.bounds.size.width*kRZSegXOffsetFactor, -container.bounds.size.height*kRZSegYOffsetFactor);
+        newTranslateTransform = CGAffineTransformMakeTranslation(-container.bounds.size.width*kRZSegXOffsetFactor, -container.bounds.size.height*kRZSegYOffsetFactor);
     }
     else
     {
-        oldTranslateTransform = CGAffineTransformMakeTranslation(-container.bounds.size.width*kVISegXOffsetFactor, -container.bounds.size.height*kVISegYOffsetFactor);
-        newTranslateTransform = CGAffineTransformMakeTranslation(container.bounds.size.width*kVISegXOffsetFactor, -container.bounds.size.height*kVISegYOffsetFactor);
+        oldTranslateTransform = CGAffineTransformMakeTranslation(-container.bounds.size.width*kRZSegXOffsetFactor, -container.bounds.size.height*kRZSegYOffsetFactor);
+        newTranslateTransform = CGAffineTransformMakeTranslation(container.bounds.size.width*kRZSegXOffsetFactor, -container.bounds.size.height*kRZSegYOffsetFactor);
     }
     
     [container insertSubview:toViewController.view aboveSubview:fromViewController.view];
@@ -56,7 +56,7 @@
 
 - (NSTimeInterval)transitionDuration:(id<UIViewControllerContextTransitioning>)transitionContext
 {
-    return kVISegAnimationTransitionTime;
+    return kRZSegAnimationTransitionTime;
 }
 
 

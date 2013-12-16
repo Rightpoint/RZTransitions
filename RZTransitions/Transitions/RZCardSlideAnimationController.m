@@ -7,8 +7,8 @@
 
 #import "RZCardSlideAnimationController.h"
 
-#define kVISlideTransitionTime 0.35
-#define kVISlideScaleChangePct 0.33
+#define kRZSlideTransitionTime 0.35
+#define kRZSlideScaleChangePct 0.33
 
 @implementation RZCardSlideAnimationController
 
@@ -26,10 +26,10 @@
     if (self.isForward)
     {
         [container insertSubview:toViewController.view belowSubview:fromViewController.view];
-        toViewController.view.transform = CGAffineTransformMakeScale(1.0 - kVISlideScaleChangePct, 1.0 - kVISlideScaleChangePct);
+        toViewController.view.transform = CGAffineTransformMakeScale(1.0 - kRZSlideScaleChangePct, 1.0 - kRZSlideScaleChangePct);
         toViewController.view.alpha = 0.1f;
         
-        [UIView animateWithDuration:kVISlideTransitionTime
+        [UIView animateWithDuration:kRZSlideTransitionTime
                               delay:0
                             options:UIViewAnimationOptionCurveEaseOut
                          animations:^{
@@ -49,12 +49,12 @@
         [container addSubview:toViewController.view];
         toViewController.view.transform = CGAffineTransformMakeTranslation(-container.bounds.size.width, 0);
 
-        [UIView animateWithDuration:kVISlideTransitionTime
+        [UIView animateWithDuration:kRZSlideTransitionTime
                               delay:0
                             options:UIViewAnimationOptionCurveEaseOut
                          animations:^{
                              toViewController.view.transform = CGAffineTransformIdentity;
-                             fromViewController.view.transform = CGAffineTransformMakeScale(1.0 - kVISlideScaleChangePct, 1.0 - kVISlideScaleChangePct);
+                             fromViewController.view.transform = CGAffineTransformMakeScale(1.0 - kRZSlideScaleChangePct, 1.0 - kRZSlideScaleChangePct);
                              fromViewController.view.alpha = 0.1f;
                          }
                          completion:^(BOOL finished) {
@@ -69,7 +69,7 @@
 
 - (NSTimeInterval)transitionDuration:(id<UIViewControllerContextTransitioning>)transitionContext
 {
-    return kVISlideTransitionTime;
+    return kRZSlideTransitionTime;
 }
 
 
