@@ -6,9 +6,8 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "RZAnimationControllerProtocol.h"
 
-@interface RZCardSlideAnimationController : NSObject <UIViewControllerAnimatedTransitioning>
-
-@property (nonatomic, assign) BOOL isForward;
+@interface RZCardSlideAnimationController : NSObject <RZAnimationControllerProtocol>
 
 @end

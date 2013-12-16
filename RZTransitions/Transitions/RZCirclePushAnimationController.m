@@ -15,6 +15,8 @@
 
 @implementation RZCirclePushAnimationController
 
+@synthesize isPositiveAnimation = _isPositiveAnimation;
+
 - (void)animateTransition:(id<UIViewControllerContextTransitioning>)transitionContext
 {
     UIViewController *fromViewController = [transitionContext viewControllerForKey:UITransitionContextFromViewControllerKey];
@@ -46,7 +48,7 @@
     
     [circleMaskAnimation setTimingFunction:[CAMediaTimingFunction functionWithControlPoints:.34 :.01 :.69 :1.37]];
 
-    if (self.isForward)
+    if (self.isPositiveAnimation)
     {
         [circleMaskAnimation setFillMode:kCAFillModeForwards];
         
@@ -58,7 +60,9 @@
         [toViewController.view.layer setMask:circleMaskLayer];
         toViewController.view.layer.masksToBounds = YES;
         [circleMaskLayer addAnimation:circleMaskAnimation forKey:kRZCircleMaskAnimation];
-    } else {
+    }
+    else
+    {
         [circleMaskAnimation setFillMode:kCAFillModeForwards];
         
         // Animate from large to small

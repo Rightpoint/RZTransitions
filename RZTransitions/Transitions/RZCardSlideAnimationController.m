@@ -12,6 +12,8 @@
 
 @implementation RZCardSlideAnimationController
 
+@synthesize isPositiveAnimation = _isPositiveAnimation;
+
 - (void)animateTransition:(id<UIViewControllerContextTransitioning>)transitionContext
 {
     UIViewController *fromViewController = [transitionContext viewControllerForKey:UITransitionContextFromViewControllerKey];
@@ -23,7 +25,7 @@
     bgView.backgroundColor = [UIColor blackColor];
     [container insertSubview:bgView atIndex:0];
     
-    if (self.isForward)
+    if (self.isPositiveAnimation)
     {
         [container insertSubview:toViewController.view belowSubview:fromViewController.view];
         toViewController.view.transform = CGAffineTransformMakeScale(1.0 - kRZSlideScaleChangePct, 1.0 - kRZSlideScaleChangePct);

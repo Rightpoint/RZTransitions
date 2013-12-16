@@ -19,6 +19,8 @@ static char kRZZoomBlurImageAssocKey;
 
 @implementation RZZoomBlurAnimationController
 
+@synthesize isPositiveAnimation = _isPositiveAnimation;
+
 - (CGFloat)blurRadius
 {
     if (_blurRadius == 0)
@@ -56,7 +58,7 @@ static char kRZZoomBlurImageAssocKey;
     
     toViewController.view.userInteractionEnabled = YES;
     
-    if (self.isDismissal)
+    if (!self.isPositiveAnimation)
     {
         // This may not exist if we didn't present with this guy originally. If not, it will just do an alpha fade, no blur.
         UIImageView *blurImageView = objc_getAssociatedObject(fromViewController, &kRZZoomBlurImageAssocKey);

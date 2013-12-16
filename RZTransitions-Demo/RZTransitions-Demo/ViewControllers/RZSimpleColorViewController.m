@@ -13,12 +13,12 @@
 #import "RZZoomPushAnimationController.h"
 #import "RZHorizontalInteractionController.h"
 #import "RZSegmentControlMoveFadeAnimationController.h"
-#import "RZTransitionInteractorProtocol.h"
+#import "RZTransitionInteractionControllerProtocol.h"
 #import "UIColor+Random.h"
 
 @interface RZSimpleColorViewController () //<UIViewControllerTransitioningDelegate, UINavigationControllerDelegate>
 
-@property (nonatomic, strong) id<RZTransitionInteractor> dismissInteractionController;
+@property (nonatomic, strong) id<RZTransitionInteractionController> dismissInteractionController;
 @property (nonatomic, strong) RZSegmentControlMoveFadeAnimationController *dismissAnimationController;
 
 @end

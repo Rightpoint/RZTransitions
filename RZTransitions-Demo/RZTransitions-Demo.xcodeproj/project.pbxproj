@@ -91,7 +91,7 @@
 		833E3713184E7FB400A0326A /* RZZoomPushAnimationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RZZoomPushAnimationController.m; sourceTree = "<group>"; };
 		833E3719184E7FD800A0326A /* RZHorizontalInteractionController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RZHorizontalInteractionController.h; sourceTree = "<group>"; };
 		833E371A184E7FD800A0326A /* RZHorizontalInteractionController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RZHorizontalInteractionController.m; sourceTree = "<group>"; };
-		8365892A184F940900A64E7F /* RZTransitionInteractorProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RZTransitionInteractorProtocol.h; sourceTree = "<group>"; };
+		8365892A184F940900A64E7F /* RZTransitionInteractionControllerProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RZTransitionInteractionControllerProtocol.h; sourceTree = "<group>"; };
 		8365892B184FDA4C00A64E7F /* RZBaseSwipeInteractionController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RZBaseSwipeInteractionController.h; sourceTree = "<group>"; };
 		8365892C184FDA4C00A64E7F /* RZBaseSwipeInteractionController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RZBaseSwipeInteractionController.m; sourceTree = "<group>"; };
 		8365892E184FE02800A64E7F /* RZVerticalTransitionInteractionController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RZVerticalTransitionInteractionController.h; sourceTree = "<group>"; };
@@ -105,6 +105,7 @@
 		83855CF9185F565B004DB036 /* RZOverscrollInteractionController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RZOverscrollInteractionController.m; sourceTree = "<group>"; };
 		83855D08185F98E3004DB036 /* UIColor+Random.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Random.h"; sourceTree = "<group>"; };
 		83855D09185F98E3004DB036 /* UIColor+Random.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Random.m"; sourceTree = "<group>"; };
+		83855D0F185FA017004DB036 /* RZAnimationControllerProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RZAnimationControllerProtocol.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -251,7 +252,7 @@
 		833E3708184E7FB400A0326A /* Interactors */ = {
 			isa = PBXGroup;
 			children = (
-				8365892A184F940900A64E7F /* RZTransitionInteractorProtocol.h */,
+				8365892A184F940900A64E7F /* RZTransitionInteractionControllerProtocol.h */,
 				833E3719184E7FD800A0326A /* RZHorizontalInteractionController.h */,
 				833E371A184E7FD800A0326A /* RZHorizontalInteractionController.m */,
 				8365892B184FDA4C00A64E7F /* RZBaseSwipeInteractionController.h */,
@@ -281,6 +282,7 @@
 				833E3713184E7FB400A0326A /* RZZoomPushAnimationController.m */,
 				832ABF97185B8AE0003DF0AC /* RZCirclePushAnimationController.h */,
 				832ABF98185B8AE0003DF0AC /* RZCirclePushAnimationController.m */,
+				83855D0F185FA017004DB036 /* RZAnimationControllerProtocol.h */,
 			);
 			path = Transitions;
 			sourceTree = "<group>";

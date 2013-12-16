@@ -50,7 +50,7 @@
         case UIGestureRecognizerStateBegan:
             self.isInteractive = YES;
             
-            if (positiveDirection && self.delegate && [self.delegate conformsToProtocol:@protocol(RZTransitionInteractorDelegate)])
+            if (positiveDirection && self.delegate && [self.delegate conformsToProtocol:@protocol(RZTransitionInteractionControllerDelegate)])
             {
                 if (self.action & RZTransitionAction_Push) {
                     [self.fromViewController.navigationController pushViewController:[self.delegate nextViewControllerForInteractor:self] animated:YES];

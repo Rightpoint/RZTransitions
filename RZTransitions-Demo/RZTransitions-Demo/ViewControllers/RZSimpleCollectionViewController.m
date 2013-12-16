@@ -9,7 +9,7 @@
 #import "RZSimpleCollectionViewController.h"
 #import "RZSimpleColorViewController.h"
 
-#import "RZTransitionInteractorProtocol.h"
+#import "RZTransitionInteractionControllerProtocol.h"
 #import "RZOverscrollInteractionController.h"
 #import "RZPinchInteractionController.h"
 #import "RZShrinkZoomAnimationController.h"
@@ -23,7 +23,7 @@
 #define kRZCollectionViewNumCells     50;
 
 @interface RZSimpleCollectionViewController ()
-<UIViewControllerTransitioningDelegate, RZTransitionInteractorDelegate>
+<UIViewControllerTransitioningDelegate, RZTransitionInteractionControllerDelegate>
 
 @property (nonatomic, strong) RZOverscrollInteractionController *presentDismissInteractionController;
 @property (nonatomic, strong) RZZoomPushAnimationController *presentDismissAnimationController;
@@ -46,7 +46,7 @@
 
     
     self.presentDismissAnimationController = [[RZZoomPushAnimationController alloc] init];
-    self.presentDismissAnimationController.isForward = YES;
+    self.presentDismissAnimationController.isPositiveAnimation = YES;
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -119,7 +119,7 @@
 
 #pragma mark - RZTransitionInteractorDelegate
 
-- (UIViewController *)nextViewControllerForInteractor:(id<RZTransitionInteractor>)interactor
+- (UIViewController *)nextViewControllerForInteractor:(id<RZTransitionInteractionController>)interactor
 {
     // TODO: ability to set the animation dismissal via the interaction
     // TODO: ability to associate interactor with a cell or optional data such as color or ID

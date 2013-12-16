@@ -15,6 +15,8 @@
 
 @implementation RZSegmentControlMoveFadeAnimationController
 
+@synthesize isPositiveAnimation = _isPositiveAnimation;
+
 - (void)animateTransition:(id<UIViewControllerContextTransitioning>)transitionContext
 {
     UIViewController *fromViewController = [transitionContext viewControllerForKey:UITransitionContextFromViewControllerKey];
@@ -25,11 +27,13 @@
     CGAffineTransform oldTranslateTransform;
     CGAffineTransform newTranslateTransform;
 
-    if (self.isLeft)
+    // Animate to the right
+    if (self.isPositiveAnimation)
     {
         oldTranslateTransform = CGAffineTransformMakeTranslation(container.bounds.size.width*kRZSegXOffsetFactor, -container.bounds.size.height*kRZSegYOffsetFactor);
         newTranslateTransform = CGAffineTransformMakeTranslation(-container.bounds.size.width*kRZSegXOffsetFactor, -container.bounds.size.height*kRZSegYOffsetFactor);
     }
+    // Animate to the left
     else
     {
         oldTranslateTransform = CGAffineTransformMakeTranslation(-container.bounds.size.width*kRZSegXOffsetFactor, -container.bounds.size.height*kRZSegYOffsetFactor);

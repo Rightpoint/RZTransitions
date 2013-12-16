@@ -7,10 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "RZTransitionInteractorProtocol.h"
+#import "RZTransitionInteractionControllerProtocol.h"
 
 @interface RZOverscrollInteractionController : UIPercentDrivenInteractiveTransition
-<RZTransitionInteractor, UIScrollViewDelegate>
+<RZTransitionInteractionController, UIScrollViewDelegate>
 
 @property(nonatomic, strong) UIViewController *fromViewController;
 

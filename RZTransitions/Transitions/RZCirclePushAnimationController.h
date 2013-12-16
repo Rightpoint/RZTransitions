@@ -10,5 +10,6 @@
 #import "RZZoomPushAnimationController.h"
 
 @interface RZCirclePushAnimationController : RZZoomPushAnimationController
+<RZAnimationControllerProtocol>
 
 @end

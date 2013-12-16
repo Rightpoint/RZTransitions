@@ -1,5 +1,5 @@
 //
-//  RZBaseSwipeInteractionTransition.h
+//  RZBaseSwipeInteractionController.h
 //  RZTransitions
 //
 //  Created by Stephen Barnes on 12/4/13.
@@ -7,10 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "RZTransitionInteractorProtocol.h"
+#import "RZTransitionInteractionControllerProtocol.h"
 
 @interface RZBaseSwipeInteractionController : UIPercentDrivenInteractiveTransition
-    <RZTransitionInteractor, UIGestureRecognizerDelegate>
+    <RZTransitionInteractionController, UIGestureRecognizerDelegate>
 
 @property(nonatomic, strong) UIViewController *fromViewController;
 @property(nonatomic, strong) UIPanGestureRecognizer *gestureRecognizer;

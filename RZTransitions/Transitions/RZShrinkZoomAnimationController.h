@@ -6,9 +6,8 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "RZAnimationControllerProtocol.h"
 
-@interface RZShrinkZoomAnimationController : NSObject <UIViewControllerAnimatedTransitioning>
-
-@property (nonatomic, assign) BOOL isDismissal;
+@interface RZShrinkZoomAnimationController : NSObject <RZAnimationControllerProtocol>
 
 @end

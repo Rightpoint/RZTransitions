@@ -13,13 +13,15 @@
 
 @implementation RZZoomPushAnimationController
 
+@synthesize isPositiveAnimation = _isPositiveAnimation;
+
 - (void)animateTransition:(id<UIViewControllerContextTransitioning>)transitionContext
 {    
     UIViewController *fromViewController = [transitionContext viewControllerForKey:UITransitionContextFromViewControllerKey];
     UIViewController *toViewController = [transitionContext viewControllerForKey:UITransitionContextToViewControllerKey];
     UIView *container = [transitionContext containerView];
     
-    if (self.isForward)
+    if (self.isPositiveAnimation)
     {
         [container insertSubview:toViewController.view belowSubview:fromViewController.view];
         toViewController.view.transform = CGAffineTransformMakeScale(1.0 - kRZPushScaleChangePct, 1.0 - kRZPushScaleChangePct);

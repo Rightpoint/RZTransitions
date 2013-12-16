@@ -7,10 +7,10 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "RZTransitionInteractorProtocol.h"
+#import "RZTransitionInteractionControllerProtocol.h"
 
 @interface RZPinchInteractionController : UIPercentDrivenInteractiveTransition
-<RZTransitionInteractor, UIGestureRecognizerDelegate>
+<RZTransitionInteractionController, UIGestureRecognizerDelegate>
 
 @property(nonatomic, strong) UIViewController *fromViewController;
 @property(nonatomic, strong) UIPinchGestureRecognizer *gestureRecognizer;

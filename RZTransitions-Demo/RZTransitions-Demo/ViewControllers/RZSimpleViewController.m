@@ -15,15 +15,15 @@
 #import "RZZoomPushAnimationController.h"
 #import "RZHorizontalInteractionController.h"
 #import "RZVerticalTransitionInteractionController.h"
-#import "RZTransitionInteractorProtocol.h"
+#import "RZTransitionInteractionControllerProtocol.h"
 #import "RZSegmentControlMoveFadeAnimationController.h"
 #import "RZCirclePushAnimationController.h"
 
-@interface RZSimpleViewController () <UIViewControllerTransitioningDelegate, UINavigationControllerDelegate, RZTransitionInteractorDelegate>
+@interface RZSimpleViewController () <UIViewControllerTransitioningDelegate, UINavigationControllerDelegate, RZTransitionInteractionControllerDelegate>
 
-@property (nonatomic, strong) id<RZTransitionInteractor> pushPopInteractionController;
-@property (nonatomic, strong) id<RZTransitionInteractor> presentInteractionController;
-@property (nonatomic, strong) id<RZTransitionInteractor> dismissInteractionController;
+@property (nonatomic, strong) id<RZTransitionInteractionController> pushPopInteractionController;
+@property (nonatomic, strong) id<RZTransitionInteractionController> presentInteractionController;
+@property (nonatomic, strong) id<RZTransitionInteractionController> dismissInteractionController;
 @property (nonatomic, strong) RZCardSlideAnimationController *pushPopAnimationController;
 @property (nonatomic, strong) RZCirclePushAnimationController *presentAnimationController;
 @property (nonatomic, strong) RZCirclePushAnimationController *dismissAnimationController;
@@ -51,10 +51,10 @@
     self.pushPopAnimationController = [[RZCardSlideAnimationController alloc] init];
     
     self.presentAnimationController = [[RZCirclePushAnimationController alloc] init];
-    self.presentAnimationController.isForward = YES;
+    self.presentAnimationController.isPositiveAnimation = YES;
     
     self.dismissAnimationController = [[RZCirclePushAnimationController alloc] init];
-    self.dismissAnimationController.isForward = NO;
+    self.dismissAnimationController.isPositiveAnimation = NO;
     
     [self.navigationController setDelegate:self];
 }
@@ -134,9 +134,9 @@
                                                   toViewController:(UIViewController *)toVC
 {
     if (operation == UINavigationControllerOperationPush) {
-        self.pushPopAnimationController.isForward = YES;
+        self.pushPopAnimationController.isPositiveAnimation = YES;
     } else if (operation == UINavigationControllerOperationPop) {
-        self.pushPopAnimationController.isForward = NO;
+        self.pushPopAnimationController.isPositiveAnimation = NO;
     }
     return self.pushPopAnimationController;
 }
@@ -144,7 +144,7 @@
 
 #pragma mark - RZTransitionInteractorDelegate
 
-- (UIViewController *)nextViewControllerForInteractor:(id<RZTransitionInteractor>)interactor
+- (UIViewController *)nextViewControllerForInteractor:(id<RZTransitionInteractionController>)interactor
 {
     // TODO: Check if it is a vertical or a horizontal and return the appropriate VC for the interactor
     if ([interactor isKindOfClass:[RZVerticalTransitionInteractionController class]]) {

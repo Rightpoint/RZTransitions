@@ -6,9 +6,8 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "RZAnimationControllerProtocol.h"
 
-@interface RZZoomPushAnimationController : NSObject <UIViewControllerAnimatedTransitioning>
-
-@property (nonatomic, assign) BOOL isForward;
+@interface RZZoomPushAnimationController : NSObject <RZAnimationControllerProtocol>
 
 @end

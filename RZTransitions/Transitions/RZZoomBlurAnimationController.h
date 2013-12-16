@@ -6,18 +6,14 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "RZTransitionInteractorProtocol.h"
+#import "RZAnimationControllerProtocol.h"
 
-@interface RZZoomBlurAnimationController : NSObject <UIViewControllerAnimatedTransitioning>
-
-@property (nonatomic, assign) BOOL isDismissal;
+@interface RZZoomBlurAnimationController : NSObject <RZAnimationControllerProtocol>
 
 @property (nonatomic, assign) CGFloat blurRadius;
 
 @property (nonatomic, assign) CGFloat saturationDelta;
 
 @property (nonatomic, strong) UIColor* blurTintColor;
-
-@property (nonatomic, weak) id<RZTransitionInteractor> transitionInteractor;
 
 @end
