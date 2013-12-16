@@ -1,16 +1,16 @@
 //
 //  RZVerticalTransitionInteractor.m
-//  RZTransitions-Demo
+//  RZTransitions
 //
 //  Created by Stephen Barnes on 12/4/13.
 //  Copyright (c) 2013 Raizlabs. All rights reserved.
 //
 
-#import "RZVerticalTransitionInteractor.h"
+#import "RZVerticalTransitionInteractionController.h"
 
 #define kRZVerticalTransitionCompletionPercentage 0.3f
 
-@implementation RZVerticalTransitionInteractor
+@implementation RZVerticalTransitionInteractionController
 
 - (BOOL)isGesturePositive:(UIPanGestureRecognizer *)panGestureRecognizer
 {

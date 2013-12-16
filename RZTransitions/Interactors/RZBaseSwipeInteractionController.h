@@ -1,6 +1,6 @@
 //
 //  RZBaseSwipeInteractionTransition.h
-//  RZTransitions-Demo
+//  RZTransitions
 //
 //  Created by Stephen Barnes on 12/4/13.
 //  Copyright (c) 2013 Raizlabs. All rights reserved.
@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "RZTransitionInteractorProtocol.h"
 
-@interface RZBaseSwipeInteractor : UIPercentDrivenInteractiveTransition
+@interface RZBaseSwipeInteractionController : UIPercentDrivenInteractiveTransition
     <RZTransitionInteractor, UIGestureRecognizerDelegate>
 
 @property(nonatomic, strong) UIViewController *fromViewController;

@@ -10,6 +10,7 @@
 
 @interface RZSimpleCollectionViewController : UIViewController
     <UICollectionViewDataSource, UICollectionViewDelegate>
+
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
 
 @end

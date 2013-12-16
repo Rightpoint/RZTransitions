@@ -1,5 +1,6 @@
 //
 //  RZShrinkTransitioner.m
+//  RZTransitions
 //
 //  Created by Nick Donaldson on 10/11/13.
 //

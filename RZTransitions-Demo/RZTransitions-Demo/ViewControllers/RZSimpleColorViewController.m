@@ -11,9 +11,10 @@
 #import "RZShrinkZoomAnimationController.h"
 #import "RZZoomBlurAnimationController.h"
 #import "RZZoomPushAnimationController.h"
-#import "RZHorizontalTransitionInteractor.h"
+#import "RZHorizontalInteractionController.h"
 #import "RZSegmentControlMoveFadeAnimationController.h"
 #import "RZTransitionInteractorProtocol.h"
+#import "UIColor+Random.h"
 
 @interface RZSimpleColorViewController () //<UIViewControllerTransitioningDelegate, UINavigationControllerDelegate>
 
@@ -23,14 +24,6 @@
 @end
 
 @implementation RZSimpleColorViewController
-
-+ (UIColor*)randomColor
-{
-    CGFloat hue = ( arc4random() % 256 / 256.0 );  //  0.0 to 1.0
-    CGFloat saturation = ( arc4random() % 128 / 256.0 ) + 0.5;  //  0.5 to 1.0, away from white
-    CGFloat brightness = ( arc4random() % 128 / 256.0 ) + 0.5;  //  0.5 to 1.0, away from black
-    return [UIColor colorWithHue:hue saturation:saturation brightness:brightness alpha:1];
-}
 
 - (id)initWithColor:(UIColor *)color
 {
@@ -56,7 +49,7 @@
 - (UIColor *)backgroundColor
 {
     if (!_backgroundColor) {
-        _backgroundColor = [RZSimpleColorViewController randomColor];
+        _backgroundColor = [UIColor randomColor];
     }
     return _backgroundColor;
 }

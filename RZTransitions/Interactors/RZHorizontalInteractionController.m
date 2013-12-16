@@ -1,16 +1,16 @@
 //
 //  RZHorizontalTransitionInteractor.m
-//  RZTransitions-Demo
+//  RZTransitions
 //
 //  Created by Stephen Barnes on 12/3/13.
 //  Copyright (c) 2013 Raizlabs. All rights reserved.
 //
 
-#import "RZHorizontalTransitionInteractor.h"
+#import "RZHorizontalInteractionController.h"
 
 #define kRZHorizontalTransitionCompletionPercentage 0.3f
 
-@implementation RZHorizontalTransitionInteractor
+@implementation RZHorizontalInteractionController
 
 - (BOOL)isGesturePositive:(UIPanGestureRecognizer *)panGestureRecognizer
 {

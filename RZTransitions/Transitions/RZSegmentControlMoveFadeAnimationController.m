@@ -1,5 +1,6 @@
 //
 //  RZSegmentControlMoveFadeAnimatedTransitioning.m
+//  RZTransitions
 //
 //  Created by Alex Rouse on 11/5/13.
 //

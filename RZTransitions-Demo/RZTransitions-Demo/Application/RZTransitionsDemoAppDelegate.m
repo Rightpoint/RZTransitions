@@ -13,8 +13,6 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-
-    
     RZSimpleViewController *rootViewController = [[RZSimpleViewController alloc] init];
     UINavigationController* rootNavController = [[UINavigationController alloc] initWithRootViewController:rootViewController];
     

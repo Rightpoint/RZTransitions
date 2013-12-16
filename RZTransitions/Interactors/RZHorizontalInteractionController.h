@@ -1,14 +1,14 @@
 //
 //  RZHorizontalTransitionInteractor.h
-//  RZTransitions-Demo
+//  RZTransitions
 //
 //  Created by Stephen Barnes on 12/3/13.
 //  Copyright (c) 2013 Raizlabs. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
-#import "RZBaseSwipeInteractor.h"
+#import "RZBaseSwipeInteractionController.h"
 
-@interface RZHorizontalTransitionInteractor :  RZBaseSwipeInteractor
+@interface RZHorizontalInteractionController :  RZBaseSwipeInteractionController
 
 @end

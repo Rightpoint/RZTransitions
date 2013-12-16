@@ -1,6 +1,6 @@
 //
 //  RZCirclePushAnimationController.h
-//  RZTransitions-Demo
+//  RZTransitions
 //
 //  Created by Stephen Barnes on 12/13/13.
 //  Copyright (c) 2013 Raizlabs. All rights reserved.

@@ -13,8 +13,8 @@
 #import "RZShrinkZoomAnimationController.h"
 #import "RZZoomBlurAnimationController.h"
 #import "RZZoomPushAnimationController.h"
-#import "RZHorizontalTransitionInteractor.h"
-#import "RZVerticalTransitionInteractor.h"
+#import "RZHorizontalInteractionController.h"
+#import "RZVerticalTransitionInteractionController.h"
 #import "RZTransitionInteractorProtocol.h"
 #import "RZSegmentControlMoveFadeAnimationController.h"
 #import "RZCirclePushAnimationController.h"
@@ -38,16 +38,15 @@
 - (void)viewDidLoad
 {
     // TODO: Protocol for animators that specifies a global forward/backward for the actions
-    self.pushPopInteractionController = [[RZHorizontalTransitionInteractor alloc] init];
+    self.pushPopInteractionController = [[RZHorizontalInteractionController alloc] init];
     [self.pushPopInteractionController setDelegate:self];
     [self.pushPopInteractionController attachViewController:self withAction:RZTransitionAction_Push|RZTransitionAction_Pop];
 
-    // TODO: Need a single interaction controller for up/down/left/right
-    self.presentInteractionController = [[RZVerticalTransitionInteractor alloc] init];
+    self.presentInteractionController = [[RZVerticalTransitionInteractionController alloc] init];
     [self.presentInteractionController setDelegate:self];
     [self.presentInteractionController attachViewController:self withAction:RZTransitionAction_Present];
     
-    self.dismissInteractionController = [[RZVerticalTransitionInteractor alloc] init];
+    self.dismissInteractionController = [[RZVerticalTransitionInteractionController alloc] init];
     
     self.pushPopAnimationController = [[RZCardSlideAnimationController alloc] init];
     
@@ -148,7 +147,7 @@
 - (UIViewController *)nextViewControllerForInteractor:(id<RZTransitionInteractor>)interactor
 {
     // TODO: Check if it is a vertical or a horizontal and return the appropriate VC for the interactor
-    if ([interactor isKindOfClass:[RZVerticalTransitionInteractor class]]) {
+    if ([interactor isKindOfClass:[RZVerticalTransitionInteractionController class]]) {
         return [self nextSimpleColorViewController];
     } else {
         return [self nextSimpleViewController];

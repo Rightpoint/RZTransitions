@@ -1,16 +1,16 @@
 //
-//  RZBaseSwipeInteractionTransition.m
-//  RZTransitions-Demo
+//  RZPinchInteration.m
+//  RZTransitions
 //
-//  Created by Stephen Barnes on 12/4/13.
+//  Created by Stephen Barnes on 12/11/13.
 //  Copyright (c) 2013 Raizlabs. All rights reserved.
 //
 
-#import "RZBaseSwipeInteractor.h"
+#import "RZPinchInteractionController.h"
 
-#define kRZBaseSwipeInteractionDefaultCompletionPercentage  0.3f
+#define kRZPinchInteractionDefaultCompletionPercentage  0.5f
 
-@implementation RZBaseSwipeInteractor
+@implementation RZPinchInteractionController
 
 // TODO: can't autosynthesize from protocol :(
 @synthesize action = _action;
@@ -39,18 +39,28 @@
     return 1 - self.percentComplete;
 }
 
-#pragma mark - UIPanGestureRecognizer Delegate
-
-- (void)handlePanGesture:(UIPanGestureRecognizer *)panGestureRecognizer
+- (CGFloat)translationPercentageWithPinchGestureRecognizer:(UIPinchGestureRecognizer *)pinchGestureRecognizer
 {
-    CGFloat percentage = [self translationPercentageWithPanGestureRecongizer:panGestureRecognizer];
-    BOOL positiveDirection = [self isGesturePositive:panGestureRecognizer];
+    return pinchGestureRecognizer.scale / 2.0f;
+}
+
+- (BOOL)isPinchWithGesture:(UIPinchGestureRecognizer *)pinchGestureRecognizer
+{
+    return pinchGestureRecognizer.scale < 1.0f;
+}
+
+#pragma mark - UIPinchGestureRecognizer Delegate
+
+- (void)handlePinchGesture:(UIPinchGestureRecognizer *)pinchGestureRecognizer
+{
+    CGFloat percentage = [self translationPercentageWithPinchGestureRecognizer:pinchGestureRecognizer];
+    BOOL isPinch = [self isPinchWithGesture:pinchGestureRecognizer];
     
-    switch (panGestureRecognizer.state) {
+    switch (pinchGestureRecognizer.state) {
         case UIGestureRecognizerStateBegan:
             self.isInteractive = YES;
             
-            if (positiveDirection && self.delegate && [self.delegate conformsToProtocol:@protocol(RZTransitionInteractorDelegate)])
+            if (!isPinch && self.delegate && [self.delegate conformsToProtocol:@protocol(RZTransitionInteractorDelegate)])
             {
                 if (self.action & RZTransitionAction_Push) {
                     [self.fromViewController.navigationController pushViewController:[self.delegate nextViewControllerForInteractor:self] animated:YES];
@@ -72,9 +82,8 @@
             break;
             
         case UIGestureRecognizerStateChanged:
-            if (self.isInteractive)
-            {
-                self.shouldCompleteTransition = (percentage > [self swipeCompletionPercent]);
+            if (self.isInteractive) {
+                self.shouldCompleteTransition = (percentage > kRZPinchInteractionDefaultCompletionPercentage);
                 [self updateInteractiveTransition:percentage];
             }
             break;
@@ -85,10 +94,9 @@
             break;
             
         case UIGestureRecognizerStateEnded:
-            if (self.isInteractive)
-            {
+            if (self.isInteractive) {
                 self.isInteractive = NO;
-                if (!self.shouldCompleteTransition || panGestureRecognizer.state == UIGestureRecognizerStateCancelled) {
+                if (!self.shouldCompleteTransition || pinchGestureRecognizer.state == UIGestureRecognizerStateCancelled) {
                     [self cancelInteractiveTransition];
                 }
                 else {
@@ -101,43 +109,16 @@
     }
 }
 
-- (BOOL)isGesturePositive:(UIPanGestureRecognizer *)panGestureRecognizer
-{
-    [NSException raise:NSInternalInconsistencyException
-                format:@"You must override %@ in a subclass", NSStringFromSelector(_cmd)];
-    return NO;
-}
-
-- (CGFloat)swipeCompletionPercent
-{
-    return kRZBaseSwipeInteractionDefaultCompletionPercentage;
-}
-
-- (CGFloat)translationPercentageWithPanGestureRecongizer:(UIPanGestureRecognizer *)panGestureRecognizer
-{
-    [NSException raise:NSInternalInconsistencyException
-                format:@"You must override %@ in a subclass", NSStringFromSelector(_cmd)];
-    return 0.0f;
-}
-
-- (CGFloat)translationWithPanGestureRecongizer:(UIPanGestureRecognizer *)panGestureRecognizer
-{
-    [NSException raise:NSInternalInconsistencyException
-                format:@"You must override %@ in a subclass", NSStringFromSelector(_cmd)];
-    return 0.0f;
-}
-
 #pragma mark - Overridden Properties
 
 - (UIGestureRecognizer*)gestureRecognizer
 {
     if (!_gestureRecognizer)
     {
-        _gestureRecognizer = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(handlePanGesture:)];
+        _gestureRecognizer = [[UIPinchGestureRecognizer alloc] initWithTarget:self action:@selector(handlePinchGesture:)];
         [_gestureRecognizer setDelegate:self];
     }
     return _gestureRecognizer;
 }
-
 
 @end

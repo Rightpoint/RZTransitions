@@ -1,12 +1,12 @@
 //
 //  RZZoomPushAnimatedTransitioning.m
-//  VirginPulse
+//  RZTransitions
 //
 //  Created by Nick Donaldson on 10/22/13.
 //
 
 #import "RZZoomPushAnimationController.h"
-#import "RZHorizontalTransitionInteractor.h"
+#import "RZHorizontalInteractionController.h"
 
 #define kRZPushTransitionTime 0.35
 #define kRZPushScaleChangePct 0.33

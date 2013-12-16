@@ -1,5 +1,6 @@
 //
 //  RZCardSlideAnimatedTransitioning.m
+//  RZTransitions
 //
 //  Created by Nick Donaldson on 11/19/13.
 //
