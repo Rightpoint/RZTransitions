@@ -24,7 +24,7 @@
 		833E36EE184E5AFF00A0326A /* RZSimpleViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 833E36EC184E5AFF00A0326A /* RZSimpleViewController.xib */; };
 		833E3702184E5DB400A0326A /* RZSimpleColorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 833E3700184E5DB400A0326A /* RZSimpleColorViewController.m */; };
 		833E3703184E5DB400A0326A /* RZSimpleColorViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 833E3701184E5DB400A0326A /* RZSimpleColorViewController.xib */; };
-		833E3707184E5F4500A0326A /* UIImage+RZFastImageBlur.m in Sources */ = {isa = PBXBuildFile; fileRef = 833E3706184E5F4500A0326A /* UIImage+RZFastImageBlur.m */; };
+		833E3707184E5F4500A0326A /* UIImage+RZTransitionsFastImageBlur.m in Sources */ = {isa = PBXBuildFile; fileRef = 833E3706184E5F4500A0326A /* UIImage+RZTransitionsFastImageBlur.m */; };
 		833E3714184E7FB400A0326A /* RZCardSlideAnimationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 833E370B184E7FB400A0326A /* RZCardSlideAnimationController.m */; };
 		833E3715184E7FB400A0326A /* RZSegmentControlMoveFadeAnimationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 833E370D184E7FB400A0326A /* RZSegmentControlMoveFadeAnimationController.m */; };
 		833E3716184E7FB400A0326A /* RZShrinkZoomAnimationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 833E370F184E7FB400A0326A /* RZShrinkZoomAnimationController.m */; };
@@ -77,8 +77,8 @@
 		833E36FF184E5DB400A0326A /* RZSimpleColorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RZSimpleColorViewController.h; sourceTree = "<group>"; };
 		833E3700184E5DB400A0326A /* RZSimpleColorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RZSimpleColorViewController.m; sourceTree = "<group>"; };
 		833E3701184E5DB400A0326A /* RZSimpleColorViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RZSimpleColorViewController.xib; sourceTree = "<group>"; };
-		833E3705184E5F4500A0326A /* UIImage+RZFastImageBlur.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+RZFastImageBlur.h"; sourceTree = "<group>"; };
-		833E3706184E5F4500A0326A /* UIImage+RZFastImageBlur.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+RZFastImageBlur.m"; sourceTree = "<group>"; };
+		833E3705184E5F4500A0326A /* UIImage+RZTransitionsFastImageBlur.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+RZTransitionsFastImageBlur.h"; sourceTree = "<group>"; };
+		833E3706184E5F4500A0326A /* UIImage+RZTransitionsFastImageBlur.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+RZTransitionsFastImageBlur.m"; sourceTree = "<group>"; };
 		833E370A184E7FB400A0326A /* RZCardSlideAnimationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RZCardSlideAnimationController.h; sourceTree = "<group>"; };
 		833E370B184E7FB400A0326A /* RZCardSlideAnimationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RZCardSlideAnimationController.m; sourceTree = "<group>"; };
 		833E370C184E7FB400A0326A /* RZSegmentControlMoveFadeAnimationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RZSegmentControlMoveFadeAnimationController.h; sourceTree = "<group>"; };
@@ -243,8 +243,8 @@
 		833E3704184E5F4500A0326A /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
-				833E3705184E5F4500A0326A /* UIImage+RZFastImageBlur.h */,
-				833E3706184E5F4500A0326A /* UIImage+RZFastImageBlur.m */,
+				833E3705184E5F4500A0326A /* UIImage+RZTransitionsFastImageBlur.h */,
+				833E3706184E5F4500A0326A /* UIImage+RZTransitionsFastImageBlur.m */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -410,7 +410,7 @@
 				832ABF99185B8AE0003DF0AC /* RZCirclePushAnimationController.m in Sources */,
 				833E3714184E7FB400A0326A /* RZCardSlideAnimationController.m in Sources */,
 				83855D0A185F98E3004DB036 /* UIColor+Random.m in Sources */,
-				833E3707184E5F4500A0326A /* UIImage+RZFastImageBlur.m in Sources */,
+				833E3707184E5F4500A0326A /* UIImage+RZTransitionsFastImageBlur.m in Sources */,
 				833E3716184E7FB400A0326A /* RZShrinkZoomAnimationController.m in Sources */,
 				833E3715184E7FB400A0326A /* RZSegmentControlMoveFadeAnimationController.m in Sources */,
 				8365892D184FDA4C00A64E7F /* RZBaseSwipeInteractionController.m in Sources */,

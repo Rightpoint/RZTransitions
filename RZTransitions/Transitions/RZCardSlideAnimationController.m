@@ -14,6 +14,8 @@
 
 @synthesize isPositiveAnimation = _isPositiveAnimation;
 
+// TODO: Create a horizontal and vertical card slide animation along with a base class -SB
+
 - (void)animateTransition:(id<UIViewControllerContextTransitioning>)transitionContext
 {
     UIViewController *fromViewController = [transitionContext viewControllerForKey:UITransitionContextFromViewControllerKey];

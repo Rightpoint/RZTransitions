@@ -16,17 +16,20 @@
 #import "RZZoomBlurAnimationController.h"
 #import "RZZoomPushAnimationController.h"
 #import "RZCardSlideAnimationController.h"
+#import "RZCirclePushAnimationController.h"
 
 #import "UIColor+Random.h"
 
 #define kRZCollectionViewCellReuseId  @"kRZCollectionViewCellReuseId"
-#define kRZCollectionViewNumCells     50;
+#define kRZCollectionViewNumCells     50
+#define kRZCollectionViewCellSize     88
 
 @interface RZSimpleCollectionViewController ()
-<UIViewControllerTransitioningDelegate, RZTransitionInteractionControllerDelegate>
+<UIViewControllerTransitioningDelegate, RZTransitionInteractionControllerDelegate, RZCirclePushAnimationDelegate>
 
 @property (nonatomic, strong) RZOverscrollInteractionController *presentDismissInteractionController;
-@property (nonatomic, strong) RZZoomPushAnimationController *presentDismissAnimationController;
+@property (nonatomic, strong) RZCirclePushAnimationController   *presentDismissAnimationController;
+@property (nonatomic, assign) CGPoint   circleTransitionStartPoint;
 
 @end
 
@@ -35,18 +38,20 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
-    [self setEdgesForExtendedLayout:UIRectEdgeAll];
-    
     [self.collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:kRZCollectionViewCellReuseId];
     
-    self.presentDismissInteractionController = [[RZOverscrollInteractionController alloc] init];
-    [self.presentDismissInteractionController attachViewController:self withAction:RZTransitionAction_Present];
-    [self.presentDismissInteractionController setDelegate:self];
-
+    // TODO: Currently the RZOverscrollInteractor will take over the collection view's delegate, meaning that ```didSelectItemAtIndexPat:```
+    // will not be forwarded back.  RZOverscrollInteractor requires a bit of a rewrite to use KVO instead of delegation to address this.
     
-    self.presentDismissAnimationController = [[RZZoomPushAnimationController alloc] init];
+//    self.presentDismissInteractionController = [[RZOverscrollInteractionController alloc] init];
+//    [self.presentDismissInteractionController attachViewController:self withAction:RZTransitionAction_Present];
+//    [self.presentDismissInteractionController setDelegate:self];
+    
+    self.circleTransitionStartPoint = CGPointZero;
+
+    self.presentDismissAnimationController = [[RZCirclePushAnimationController alloc] init];
     self.presentDismissAnimationController.isPositiveAnimation = YES;
+    [self.presentDismissAnimationController setCircleDelegate:self];
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -74,10 +79,12 @@
 {
     UIColor *cellBackgroundColor = [collectionView cellForItemAtIndexPath:indexPath].backgroundColor;
     UIViewController *colorVC = [self newColorVCWithColor:cellBackgroundColor];
-
+    
+    self.circleTransitionStartPoint = [collectionView convertPoint:[collectionView cellForItemAtIndexPath:indexPath].center toView:self.view];;
+    
     // Present or Push
-    //[self presentViewController:colorVC animated:YES completion:nil];
-    [self.navigationController pushViewController:colorVC animated:YES];
+    [self presentViewController:colorVC animated:YES completion:nil];
+    //[self.navigationController pushViewController:colorVC animated:YES];
 }
 
 #pragma mark - UICollectionViewDataSource
@@ -98,17 +105,20 @@
 
 - (id <UIViewControllerAnimatedTransitioning>)animationControllerForPresentedController:(UIViewController *)presented presentingController:(UIViewController *)presenting sourceController:(UIViewController *)source
 {
+    self.presentDismissAnimationController.isPositiveAnimation = YES;
     return self.presentDismissAnimationController;
 }
 
 - (id <UIViewControllerAnimatedTransitioning>)animationControllerForDismissedController:(UIViewController *)dismissed
 {
+    self.presentDismissAnimationController.isPositiveAnimation = NO;
     return self.presentDismissAnimationController;
 }
 
 - (id<UIViewControllerInteractiveTransitioning>)interactionControllerForPresentation:(id<UIViewControllerAnimatedTransitioning>)animator
 {
-    return self.presentDismissInteractionController;
+//    return self.presentDismissInteractionController;
+    return nil;
 }
 
 - (id<UIViewControllerInteractiveTransitioning>)interactionControllerForDismissal:(id<UIViewControllerAnimatedTransitioning>)animator
@@ -123,9 +133,20 @@
 {
     // TODO: ability to set the animation dismissal via the interaction
     // TODO: ability to associate interactor with a cell or optional data such as color or ID
-    //self.presentDismissAnimationController.isDismissal = YES;
     
     return [self newColorVCWithColor:nil];
+}
+
+#pragma mark - RZCirclePushAnimationDelegate
+
+- (CGPoint)circleCenter
+{
+    return self.circleTransitionStartPoint;
+}
+
+- (CGFloat)circleStartingRadius
+{
+    return (kRZCollectionViewCellSize / 2.0f);
 }
 
 @end

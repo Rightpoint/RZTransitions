@@ -6,7 +6,7 @@
 //
 
 #import "RZZoomBlurAnimationController.h"
-#import "UIImage+RZFastImageBlur.h"
+#import "UIImage+RZTransitionsFastImageBlur.h"
 #import <objc/runtime.h>
 
 #define kRZZBAnimationTransitionTime 0.3

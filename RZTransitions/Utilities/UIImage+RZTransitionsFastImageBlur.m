@@ -90,7 +90,7 @@
  5/3/2013
  */
 
-#import "UIImage+RZFastImageBlur.h"
+#import "UIImage+RZTransitionsFastImageBlur.h"
 
 @import Accelerate;
 #import <float.h>

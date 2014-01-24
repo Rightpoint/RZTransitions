@@ -6,7 +6,7 @@
 //
 
 #import "RZSegmentControlMoveFadeAnimationController.h"
-#import "UIImage+RZFastImageBlur.h"
+#import "UIImage+RZTransitionsFastImageBlur.h"
 
 #define kRZSegAnimationTransitionTime   0.4f
 #define kRZSegScaleAmount               0.3f
