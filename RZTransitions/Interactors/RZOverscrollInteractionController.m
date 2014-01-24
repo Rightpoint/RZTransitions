@@ -9,7 +9,7 @@
 #import "RZOverscrollInteractionController.h"
 
 #define kRZOverscrollInteractionDefaultCompletionPercentage  0.35f
-#define kRZOverscrollInteractionDefaultTopStartDistance      75.0f
+#define kRZOverscrollInteractionDefaultTopStartDistance      25.0f
 #define kRZOverscrollInteractionDefaultBottomStartDistance   25.0f
 #define kRZOverscrollInteractionDefaultTranslationDistance   200.0f
 
@@ -99,22 +99,25 @@
 
 - (void)beginTransition
 {
-    self.isInteractive = YES;
-    if (self.action & RZTransitionAction_Push)
+    if (!self.isInteractive)
     {
-        [self.fromViewController.navigationController pushViewController:[self.delegate nextViewControllerForInteractor:self] animated:YES];
-    }
-    else if (self.action & RZTransitionAction_Present)
-    {
-        [self.fromViewController presentViewController:[self.delegate nextViewControllerForInteractor:self] animated:YES completion:nil];
-    }
-    else if (self.action & RZTransitionAction_Pop)
-    {
-        [self.fromViewController.navigationController popViewControllerAnimated:YES];
-    }
-    else if (self.action & RZTransitionAction_Dismiss)
-    {
-        [self.fromViewController dismissViewControllerAnimated:YES completion:nil];
+        self.isInteractive = YES;
+        if (self.action & RZTransitionAction_Push)
+        {
+            [self.fromViewController.navigationController pushViewController:[self.delegate nextViewControllerForInteractor:self] animated:YES];
+        }
+        else if (self.action & RZTransitionAction_Present)
+        {
+            [self.fromViewController presentViewController:[self.delegate nextViewControllerForInteractor:self] animated:YES completion:nil];
+        }
+        else if (self.action & RZTransitionAction_Pop)
+        {
+            [self.fromViewController.navigationController popViewControllerAnimated:YES];
+        }
+        else if (self.action & RZTransitionAction_Dismiss)
+        {
+            [self.fromViewController dismissViewControllerAnimated:YES completion:nil];
+        }
     }
 }
 

@@ -16,6 +16,16 @@
 
 // TODO: Create a horizontal and vertical card slide animation along with a base class -SB
 
+- (id)init
+{
+    self = [super init];
+    if (self)
+    {
+        _horizontalOrientation = TRUE;
+    }
+    return self;
+}
+
 - (void)animateTransition:(id<UIViewControllerContextTransitioning>)transitionContext
 {
     UIViewController *fromViewController = [transitionContext viewControllerForKey:UITransitionContextFromViewControllerKey];
@@ -39,7 +49,14 @@
                          animations:^{
                              toViewController.view.transform = CGAffineTransformIdentity;
                              toViewController.view.alpha = 1.0f;
-                             fromViewController.view.transform = CGAffineTransformMakeTranslation(-container.bounds.size.width, 0);
+                             if (self.horizontalOrientation)
+                             {
+                                 fromViewController.view.transform = CGAffineTransformMakeTranslation(-container.bounds.size.width, 0);
+                             }
+                             else
+                             {
+                                 fromViewController.view.transform = CGAffineTransformMakeTranslation(0, container.bounds.size.height);
+                             }
                          }
                          completion:^(BOOL finished) {
                              toViewController.view.transform = CGAffineTransformIdentity;
@@ -51,7 +68,14 @@
     else
     {
         [container addSubview:toViewController.view];
-        toViewController.view.transform = CGAffineTransformMakeTranslation(-container.bounds.size.width, 0);
+        if (self.horizontalOrientation)
+        {
+            toViewController.view.transform = CGAffineTransformMakeTranslation(-container.bounds.size.width, 0);
+        }
+        else
+        {
+            toViewController.view.transform = CGAffineTransformMakeTranslation(0, container.bounds.size.height);
+        }
 
         [UIView animateWithDuration:kRZSlideTransitionTime
                               delay:0
@@ -75,6 +99,5 @@
 {
     return kRZSlideTransitionTime;
 }
-
 
 @end

@@ -21,6 +21,7 @@ typedef NS_ENUM (NSInteger, RZTransitionAction) {
 
 @protocol RZTransitionInteractionControllerDelegate <NSObject>
 
+@optional
 - (UIViewController *)nextViewControllerForInteractor:(id<RZTransitionInteractionController>)interactor;
 
 @end

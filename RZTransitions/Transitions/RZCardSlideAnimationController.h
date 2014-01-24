@@ -10,4 +10,6 @@
 
 @interface RZCardSlideAnimationController : NSObject <RZAnimationControllerProtocol>
 
+@property (nonatomic, assign) BOOL horizontalOrientation;
+
 @end

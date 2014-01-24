@@ -12,8 +12,9 @@
 @interface RZBaseSwipeInteractionController : UIPercentDrivenInteractiveTransition
     <RZTransitionInteractionController, UIGestureRecognizerDelegate>
 
-@property(nonatomic, strong) UIViewController *fromViewController;
-@property(nonatomic, strong) UIPanGestureRecognizer *gestureRecognizer;
+@property (nonatomic, strong) UIViewController *fromViewController;
+@property (nonatomic, strong) UIPanGestureRecognizer *gestureRecognizer;
+@property (nonatomic, assign) BOOL reverseGestureDirection;
 
 - (BOOL)isGesturePositive:(UIPanGestureRecognizer *)panGestureRecognizer;
 - (CGFloat)swipeCompletionPercent;

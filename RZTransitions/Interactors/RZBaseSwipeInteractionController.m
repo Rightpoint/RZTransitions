@@ -18,6 +18,15 @@
 @synthesize delegate = _delegate;
 @synthesize shouldCompleteTransition = _shouldCompleteTransition;
 
+- (id)init
+{
+    self = [super init];
+    if (self) {
+        _reverseGestureDirection = NO;
+    }
+    return self;
+}
+
 - (void)attachViewController:(UIViewController *)viewController withAction:(RZTransitionAction)action
 {
     self.fromViewController = viewController;
@@ -44,7 +53,7 @@
 - (void)handlePanGesture:(UIPanGestureRecognizer *)panGestureRecognizer
 {
     CGFloat percentage = [self translationPercentageWithPanGestureRecongizer:panGestureRecognizer];
-    BOOL positiveDirection = [self isGesturePositive:panGestureRecognizer];
+    BOOL positiveDirection = self.reverseGestureDirection ? ![self isGesturePositive:panGestureRecognizer] : [self isGesturePositive:panGestureRecognizer];
     
     switch (panGestureRecognizer.state) {
         case UIGestureRecognizerStateBegan:

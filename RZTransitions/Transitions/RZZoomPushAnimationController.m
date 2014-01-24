@@ -26,6 +26,7 @@
         [container insertSubview:toViewController.view belowSubview:fromViewController.view];
         toViewController.view.transform = CGAffineTransformMakeScale(1.0 - kRZPushScaleChangePct, 1.0 - kRZPushScaleChangePct);
         
+        [toViewController viewWillAppear:YES];
         [UIView animateWithDuration:kRZPushTransitionTime
                               delay:0
                             options:UIViewAnimationOptionCurveEaseOut
@@ -47,6 +48,7 @@
         toViewController.view.transform = CGAffineTransformMakeScale(1.0 + kRZPushScaleChangePct, 1.0 + kRZPushScaleChangePct);
         toViewController.view.alpha = 0.0f;
         
+        [toViewController viewWillAppear:YES];
         [UIView animateWithDuration:kRZPushTransitionTime
                               delay:0
                             options:UIViewAnimationOptionCurveEaseOut
