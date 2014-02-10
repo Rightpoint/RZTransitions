@@ -24,35 +24,41 @@
 @property (nonatomic, strong) id<RZTransitionInteractionController> pushPopInteractionController;
 @property (nonatomic, strong) id<RZTransitionInteractionController> presentInteractionController;
 @property (nonatomic, strong) id<RZTransitionInteractionController> dismissInteractionController;
-@property (nonatomic, strong) RZCardSlideAnimationController *pushPopAnimationController;
+@property (nonatomic, strong) RZZoomPushAnimationController   *specialPushPopAnimationController;
+@property (nonatomic, strong) RZCardSlideAnimationController  *pushPopAnimationController;
 @property (nonatomic, strong) RZCirclePushAnimationController *presentAnimationController;
 @property (nonatomic, strong) RZCirclePushAnimationController *dismissAnimationController;
 
 @end
 
-// TODO: Protocol for Animations that has actions as well.  Can setup the interactor using the animation's action
-// TODO ALSO: Better yet, reuse the same one but the opposite action
-
 @implementation RZSimpleViewController
 
 - (void)viewDidLoad
 {
-    // TODO: Protocol for animators that specifies a global forward/backward for the actions
+	// Create the push and pop interaction controller that allows a custom gesture
+	// to control pushing and popping from the navigation controller
     self.pushPopInteractionController = [[RZHorizontalInteractionController alloc] init];
     [self.pushPopInteractionController setDelegate:self];
     [self.pushPopInteractionController attachViewController:self withAction:RZTransitionAction_Push|RZTransitionAction_Pop];
 
+	// Create the presentation interaction controller that allows a custom gesture
+	// to control presenting a new VC via a presentViewController
     self.presentInteractionController = [[RZVerticalTransitionInteractionController alloc] init];
     [self.presentInteractionController setDelegate:self];
     [self.presentInteractionController attachViewController:self withAction:RZTransitionAction_Present];
     
+	// Create a dismiss interaction controller that will be attached to the presented
+	// view controller to allow for a custom dismissal
     self.dismissInteractionController = [[RZVerticalTransitionInteractionController alloc] init];
     
+	// Setup the push & pop animations as well as a special animation for pushing a
+	// RZSimpleCollectionViewController
     self.pushPopAnimationController = [[RZCardSlideAnimationController alloc] init];
+	self.specialPushPopAnimationController = [[RZZoomPushAnimationController alloc] init];
     
+	// Setup the animations for presenting and dismissing a new VC
     self.presentAnimationController = [[RZCirclePushAnimationController alloc] init];
     self.presentAnimationController.isPositiveAnimation = YES;
-    
     self.dismissAnimationController = [[RZCirclePushAnimationController alloc] init];
     self.dismissAnimationController.isPositiveAnimation = NO;
     
@@ -133,12 +139,27 @@
                                                 fromViewController:(UIViewController *)fromVC
                                                   toViewController:(UIViewController *)toVC
 {
-    if (operation == UINavigationControllerOperationPush) {
-        self.pushPopAnimationController.isPositiveAnimation = YES;
-    } else if (operation == UINavigationControllerOperationPop) {
-        self.pushPopAnimationController.isPositiveAnimation = NO;
+	id<RZAnimationControllerProtocol> animationController = nil;
+	
+	if (([fromVC isKindOfClass:[RZSimpleViewController class]] && [toVC isKindOfClass:[RZSimpleCollectionViewController class]] ) ||
+		([fromVC isKindOfClass:[RZSimpleCollectionViewController class]] && [toVC isKindOfClass:[RZSimpleViewController class]] ) )
+	{
+		animationController = self.specialPushPopAnimationController;
+	}
+	else
+	{
+		animationController = self.pushPopAnimationController;
+	}
+	
+    if (operation == UINavigationControllerOperationPush)
+	{
+        animationController.isPositiveAnimation = YES;
     }
-    return self.pushPopAnimationController;
+	else if (operation == UINavigationControllerOperationPop)
+	{
+        animationController.isPositiveAnimation = NO;
+    }
+    return animationController;
 }
 
 
@@ -147,9 +168,12 @@
 - (UIViewController *)nextViewControllerForInteractor:(id<RZTransitionInteractionController>)interactor
 {
     // TODO: Check if it is a vertical or a horizontal and return the appropriate VC for the interactor
-    if ([interactor isKindOfClass:[RZVerticalTransitionInteractionController class]]) {
+    if ([interactor isKindOfClass:[RZVerticalTransitionInteractionController class]])
+	{
         return [self nextSimpleColorViewController];
-    } else {
+    }
+	else
+	{
         return [self nextSimpleViewController];
     }
 }
