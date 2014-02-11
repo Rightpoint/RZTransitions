@@ -89,11 +89,11 @@
     if (self.isInteractive)
     {
         self.isInteractive = NO;
-        self.shouldCompleteTransition ? [self finishInteractiveTransition] : [self cancelInteractiveTransition];
         if(self.shouldCompleteTransition)
         {
             [scrollView setDelegate:nil];
         }
+        self.shouldCompleteTransition ? [self finishInteractiveTransition] : [self cancelInteractiveTransition];
     }
 }
 
@@ -162,7 +162,7 @@
 
     if (overScrollDown && [RZOverscrollInteractionController actionIsPushOrPresentWithAction:self.action])
     {
-        if (!self.isInteractive && scrollingDirectionUp && scrollViewPastStartLocation)
+        if (!self.isInteractive && scrollingDirectionUp && scrollViewPastStartLocation && !scrollView.isDecelerating)
         {
             [self beginTransition];
         }
@@ -173,7 +173,7 @@
     }
     else if (overScrollUp && [RZOverscrollInteractionController actionIsDismissOrPopWithAction:self.action])
     {
-        if (!self.isInteractive && !scrollingDirectionUp && scrollViewPastStartLocation)
+        if (!self.isInteractive && !scrollingDirectionUp && scrollViewPastStartLocation && !scrollView.isDecelerating)
         {
             [self beginTransition];
         }
@@ -192,6 +192,11 @@
 }
 
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView
+{
+    [self completeInteractionWithScrollView:scrollView];
+}
+
+- (void)scrollViewDidEndScrollingAnimation:(UIScrollView *)scrollView
 {
     [self completeInteractionWithScrollView:scrollView];
 }
