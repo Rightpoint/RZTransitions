@@ -116,8 +116,7 @@ static char kRZZoomBlurImageAssocKey;
                          completion:^(BOOL finished) {
                              toViewController.view.backgroundColor = originalBGColor;
                              toViewController.view.opaque = YES;
-                             // TODO: only if successful
-//                             [toViewController.view insertSubview:blurImageView atIndex:0];
+                             [toViewController.view insertSubview:blurImageView atIndex:0];
                              [transitionContext completeTransition:!transitionContext.transitionWasCancelled];
                          }];
     }
