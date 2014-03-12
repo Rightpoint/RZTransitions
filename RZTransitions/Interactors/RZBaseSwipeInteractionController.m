@@ -148,5 +148,4 @@
     return _gestureRecognizer;
 }
 
-
 @end
