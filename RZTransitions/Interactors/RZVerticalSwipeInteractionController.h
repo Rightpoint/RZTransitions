@@ -8,6 +8,6 @@
 
 #import "RZBaseSwipeInteractionController.h"
 
-@interface RZVerticalTransitionInteractionController : RZBaseSwipeInteractionController
+@interface RZVerticalSwipeInteractionController : RZBaseSwipeInteractionController
 
 @end

@@ -2,7 +2,6 @@
 //  RZZoomAlphaAnimationController.m
 //
 //  Created by Stephen Barnes on 2/12/14.
-//  Copyright (c) 2014 Care. All rights reserved.
 //
 
 #import "RZZoomAlphaAnimationController.h"

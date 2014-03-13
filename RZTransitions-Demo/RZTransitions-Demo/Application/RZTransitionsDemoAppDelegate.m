@@ -8,6 +8,7 @@
 
 #import "RZTransitionsDemoAppDelegate.h"
 #import "RZSimpleViewController.h"
+#import "RZTransitionsManager.h"
 
 @implementation RZTransitionsDemoAppDelegate
 
@@ -15,6 +16,7 @@
 {
     RZSimpleViewController *rootViewController = [[RZSimpleViewController alloc] init];
     UINavigationController* rootNavController = [[UINavigationController alloc] initWithRootViewController:rootViewController];
+    [rootNavController setDelegate:[RZTransitionsManager shared]];
     
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     self.window.rootViewController = rootNavController  ;

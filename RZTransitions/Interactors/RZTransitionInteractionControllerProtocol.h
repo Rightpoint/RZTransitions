@@ -6,15 +6,10 @@
 //  Copyright (c) 2013 Raizlabs. All rights reserved.
 //
 
+#import "RZTransitionAction.h"
+
 #ifndef RZTransitions_RZTransitionInteractorProtocol_h
 #define RZTransitions_RZTransitionInteractorProtocol_h
-
-typedef NS_ENUM (NSInteger, RZTransitionAction) {
-    RZTransitionAction_Push     = (1 << 0),
-    RZTransitionAction_Pop      = (1 << 1),
-    RZTransitionAction_Present  = (1 << 2),
-    RZTransitionAction_Dismiss  = (1 << 3),
-};
 
 @protocol RZTransitionInteractionController;
 @protocol RZTransitionInteractionControllerDelegate;

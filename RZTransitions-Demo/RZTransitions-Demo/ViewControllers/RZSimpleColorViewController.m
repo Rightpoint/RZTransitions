@@ -7,12 +7,8 @@
 //
 
 #import "RZSimpleColorViewController.h"
-#import "RZCardSlideAnimationController.h"
-#import "RZShrinkZoomAnimationController.h"
-#import "RZZoomBlurAnimationController.h"
-#import "RZZoomPushAnimationController.h"
-#import "RZHorizontalInteractionController.h"
-#import "RZSegmentControlMoveFadeAnimationController.h"
+#import "RZTransitionsInteractionControllers.h"
+#import "RZTransitionsAnimationControllers.h"
 #import "RZTransitionInteractionControllerProtocol.h"
 #import "UIColor+Random.h"
 

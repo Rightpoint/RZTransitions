@@ -6,11 +6,11 @@
 //  Copyright (c) 2013 Raizlabs. All rights reserved.
 //
 
-#import "RZVerticalTransitionInteractionController.h"
+#import "RZVerticalSwipeInteractionController.h"
 
 #define kRZVerticalTransitionCompletionPercentage 0.3f
 
-@implementation RZVerticalTransitionInteractionController
+@implementation RZVerticalSwipeInteractionController
 
 - (BOOL)isGesturePositive:(UIPanGestureRecognizer *)panGestureRecognizer
 {

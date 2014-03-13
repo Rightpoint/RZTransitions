@@ -10,14 +10,9 @@
 #import "RZSimpleColorViewController.h"
 
 #import "RZTransitionInteractionControllerProtocol.h"
-#import "RZOverscrollInteractionController.h"
-#import "RZPinchInteractionController.h"
-#import "RZShrinkZoomAnimationController.h"
-#import "RZZoomBlurAnimationController.h"
-#import "RZZoomPushAnimationController.h"
-#import "RZCardSlideAnimationController.h"
-#import "RZCirclePushAnimationController.h"
-#import "RZVerticalTransitionInteractionController.h"
+#import "RZTransitionsInteractionControllers.h"
+#import "RZTransitionsAnimationControllers.h"
+#import "RZTransitionsManager.h"
 
 #import "UIColor+Random.h"
 
@@ -29,8 +24,7 @@
 <UIViewControllerTransitioningDelegate, RZTransitionInteractionControllerDelegate, RZCirclePushAnimationDelegate>
 
 @property (nonatomic, strong) RZOverscrollInteractionController			*presentInteractionController;
-@property (nonatomic, strong) RZVerticalTransitionInteractionController *dismissInteractionController;
-@property (nonatomic, strong) RZZoomBlurAnimationController				*presentDismissAnimationController;
+@property (nonatomic, strong) RZVerticalSwipeInteractionController *dismissInteractionController;
 @property (nonatomic, assign) CGPoint									circleTransitionStartPoint;
 
 @end
@@ -51,8 +45,10 @@
     
     self.circleTransitionStartPoint = CGPointZero;
 
-    self.presentDismissAnimationController = [[RZZoomBlurAnimationController alloc] init];
-    self.presentDismissAnimationController.isPositiveAnimation = YES;
+    [[RZTransitionsManager shared] setAnimationController:[[RZZoomBlurAnimationController alloc] init]
+                                       fromViewController:[self class]
+                                                forAction:RZTransitionAction_PresentDismiss];
+    
 //    [self.presentDismissAnimationController setCircleDelegate:self];
 }
 
@@ -69,7 +65,7 @@
     RZSimpleColorViewController *newColorVC = [[RZSimpleColorViewController alloc] initWithColor:color];
     
     // Hook up next VC's dismiss transition
-	[newColorVC setTransitioningDelegate:self];
+	[newColorVC setTransitioningDelegate:[RZTransitionsManager shared]];
 	[self.dismissInteractionController attachViewController:newColorVC withAction:RZTransitionAction_Dismiss];
 	
     return newColorVC;
@@ -104,28 +100,28 @@
 
 #pragma mark - Custom View Controller Animations - UIViewControllerTransitioningDelegate
 
-- (id <UIViewControllerAnimatedTransitioning>)animationControllerForPresentedController:(UIViewController *)presented presentingController:(UIViewController *)presenting sourceController:(UIViewController *)source
-{
-    self.presentDismissAnimationController.isPositiveAnimation = YES;
-    return self.presentDismissAnimationController;
-}
-
-- (id <UIViewControllerAnimatedTransitioning>)animationControllerForDismissedController:(UIViewController *)dismissed
-{
-    self.presentDismissAnimationController.isPositiveAnimation = NO;
-    return self.presentDismissAnimationController;
-}
-
-- (id<UIViewControllerInteractiveTransitioning>)interactionControllerForPresentation:(id<UIViewControllerAnimatedTransitioning>)animator
-{
-//    return (self.presentInteractionController && [self.presentInteractionController isInteractive]) ? self.presentInteractionController : nil;
-    return nil;
-}
-
-- (id<UIViewControllerInteractiveTransitioning>)interactionControllerForDismissal:(id<UIViewControllerAnimatedTransitioning>)animator
-{
-	return (self.dismissInteractionController && [self.dismissInteractionController isInteractive]) ? self.dismissInteractionController : nil;
-}
+//- (id <UIViewControllerAnimatedTransitioning>)animationControllerForPresentedController:(UIViewController *)presented presentingController:(UIViewController *)presenting sourceController:(UIViewController *)source
+//{
+//    self.presentDismissAnimationController.isPositiveAnimation = YES;
+//    return self.presentDismissAnimationController;
+//}
+//
+//- (id <UIViewControllerAnimatedTransitioning>)animationControllerForDismissedController:(UIViewController *)dismissed
+//{
+//    self.presentDismissAnimationController.isPositiveAnimation = NO;
+//    return self.presentDismissAnimationController;
+//}
+//
+//- (id<UIViewControllerInteractiveTransitioning>)interactionControllerForPresentation:(id<UIViewControllerAnimatedTransitioning>)animator
+//{
+////    return (self.presentInteractionController && [self.presentInteractionController isInteractive]) ? self.presentInteractionController : nil;
+//    return nil;
+//}
+//
+//- (id<UIViewControllerInteractiveTransitioning>)interactionControllerForDismissal:(id<UIViewControllerAnimatedTransitioning>)animator
+//{
+//	return (self.dismissInteractionController && [self.dismissInteractionController isInteractive]) ? self.dismissInteractionController : nil;
+//}
 
 #pragma mark - RZTransitionInteractorDelegate
 
