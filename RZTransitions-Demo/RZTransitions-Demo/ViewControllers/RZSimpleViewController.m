@@ -36,7 +36,7 @@
 	// to control pushing and popping from the navigation controller
     self.pushPopInteractionController = [[RZHorizontalInteractionController alloc] init];
     [self.pushPopInteractionController setDelegate:self];
-    [self.pushPopInteractionController attachViewController:self withAction:RZTransitionAction_Push|RZTransitionAction_Pop];
+    [self.pushPopInteractionController attachViewController:self withAction:RZTransitionAction_PushPop];
 
 	// Create the presentation interaction controller that allows a custom gesture
 	// to control presenting a new VC via a presentViewController
@@ -62,11 +62,6 @@
 	// Setup the animations for presenting and dismissing a new VC
     [[RZTransitionsManager shared] setAnimationController:[[RZCirclePushAnimationController alloc] init]
                                        fromViewController:[self class]
-                                                forAction:RZTransitionAction_PresentDismiss];
-    
-    [[RZTransitionsManager shared] setAnimationController:[[RZCirclePushAnimationController alloc] init]
-                                       fromViewController:[RZCirclePushAnimationController class]
-                                         toViewController:[self class]
                                                 forAction:RZTransitionAction_PresentDismiss];
 }
 
@@ -134,15 +129,12 @@
 - (UIViewController *)nextViewControllerForInteractor:(id<RZTransitionInteractionController>)interactor
 {
     // TODO: Check if it is a vertical or a horizontal and return the appropriate VC for the interactor
-    if ([interactor isKindOfClass:[RZVerticalSwipeInteractionController class]])
-	{
+    if ([interactor isKindOfClass:[RZVerticalSwipeInteractionController class]]) {
         return [self nextSimpleColorViewController];
     }
-	else
-	{
+	else {
         return [self nextSimpleViewController];
     }
 }
-
 
 @end

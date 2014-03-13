@@ -20,8 +20,9 @@
 #define kRZCollectionViewNumCells     50
 #define kRZCollectionViewCellSize     88
 
-@interface RZSimpleCollectionViewController ()
-<UIViewControllerTransitioningDelegate, RZTransitionInteractionControllerDelegate, RZCirclePushAnimationDelegate>
+@interface RZSimpleCollectionViewController () < UIViewControllerTransitioningDelegate,
+                                                 RZTransitionInteractionControllerDelegate,
+                                                 RZCirclePushAnimationDelegate >
 
 @property (nonatomic, strong) RZOverscrollInteractionController			*presentInteractionController;
 @property (nonatomic, strong) RZVerticalSwipeInteractionController *dismissInteractionController;

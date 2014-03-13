@@ -16,9 +16,6 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 
-@property (nonatomic, strong) id<RZTransitionInteractionController> dismissInteractionController;
-@property (nonatomic, strong) RZSegmentControlMoveFadeAnimationController *dismissAnimationController;
-
 @end
 
 @implementation RZSimpleColorViewController
