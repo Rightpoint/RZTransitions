@@ -15,7 +15,7 @@
 // TODO: can't autosynthesize from protocol :(
 @synthesize action = _action;
 @synthesize isInteractive = _isInteractive;
-@synthesize delegate = _delegate;
+@synthesize nextViewControllerDelegate = _delegate;
 @synthesize shouldCompleteTransition = _shouldCompleteTransition;
 
 - (void)attachViewController:(UIViewController *)viewController withAction:(RZTransitionAction)action
@@ -60,14 +60,14 @@
         case UIGestureRecognizerStateBegan:
             self.isInteractive = YES;
             
-            if (!isPinch && self.delegate && [self.delegate conformsToProtocol:@protocol(RZTransitionInteractionControllerDelegate)])
+            if (!isPinch && self.nextViewControllerDelegate && [self.nextViewControllerDelegate conformsToProtocol:@protocol(RZTransitionInteractionControllerDelegate)])
             {
                 if (self.action & RZTransitionAction_Push) {
-                    [self.fromViewController.navigationController pushViewController:[self.delegate nextViewControllerForInteractor:self] animated:YES];
+                    [self.fromViewController.navigationController pushViewController:[self.nextViewControllerDelegate nextViewControllerForInteractor:self] animated:YES];
                 }
                 else if (self.action & RZTransitionAction_Present) {
                     // TODO: set and store a completion
-                    [self.fromViewController presentViewController:[self.delegate nextViewControllerForInteractor:self] animated:YES completion:nil];
+                    [self.fromViewController presentViewController:[self.nextViewControllerDelegate nextViewControllerForInteractor:self] animated:YES completion:nil];
                 }
             }
             else

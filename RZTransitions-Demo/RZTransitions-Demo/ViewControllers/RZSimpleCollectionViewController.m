@@ -24,9 +24,8 @@
                                                  RZTransitionInteractionControllerDelegate,
                                                  RZCirclePushAnimationDelegate >
 
-@property (nonatomic, strong) RZOverscrollInteractionController			*presentInteractionController;
-@property (nonatomic, strong) RZVerticalSwipeInteractionController *dismissInteractionController;
-@property (nonatomic, assign) CGPoint									circleTransitionStartPoint;
+@property (nonatomic, assign) CGPoint			 circleTransitionStartPoint;
+@property (nonatomic, strong) RZOverscrollInteractionController *presentOverscrollInteractor;
 
 @end
 
@@ -39,16 +38,21 @@
     
     // TODO: Currently the RZOverscrollInteractor will take over the collection view's delegate, meaning that ```didSelectItemAtIndexPath:```
     // will not be forwarded back.  RZOverscrollInteractor requires a bit of a rewrite to use KVO instead of delegation to address this.
-    
-    self.presentInteractionController = [[RZOverscrollInteractionController alloc] init];
-    [self.presentInteractionController attachViewController:self withAction:RZTransitionAction_Present];
-    [self.presentInteractionController setDelegate:self];
+    self.presentOverscrollInteractor = [[RZOverscrollInteractionController alloc] init];
+    [self.presentOverscrollInteractor attachViewController:self withAction:RZTransitionAction_Present];
+    [self.presentOverscrollInteractor setNextViewControllerDelegate:self];
+    [[RZTransitionsManager shared] setInteractionController:self.presentOverscrollInteractor
+                                         fromViewController:[self class]
+                                           toViewController:nil
+                                                  forAction:RZTransitionAction_Present];
     
     self.circleTransitionStartPoint = CGPointZero;
 
-    [[RZTransitionsManager shared] setAnimationController:[[RZZoomBlurAnimationController alloc] init]
+    [[RZTransitionsManager shared] setAnimationController:[[RZZoomAlphaAnimationController alloc] init]
                                        fromViewController:[self class]
                                                 forAction:RZTransitionAction_PresentDismiss];
+    
+    [self setTransitioningDelegate:[RZTransitionsManager shared]];
     
 //    [self.presentDismissAnimationController setCircleDelegate:self];
 }
@@ -56,7 +60,7 @@
 - (void)viewDidAppear:(BOOL)animated
 {
     // TODO: ** Cannot set the scroll view delegate and the collection view delegate at the same time **
-//    [self.presentInteractionController watchScrollView:self.collectionView];
+//    [self.presentOverscrollInteractor watchScrollView:self.collectionView];
 }
 
 #pragma mark - New VC Helper Methods
@@ -64,11 +68,9 @@
 - (UIViewController *)newColorVCWithColor:(UIColor *)color
 {
     RZSimpleColorViewController *newColorVC = [[RZSimpleColorViewController alloc] initWithColor:color];
-    
-    // Hook up next VC's dismiss transition
 	[newColorVC setTransitioningDelegate:[RZTransitionsManager shared]];
-	[self.dismissInteractionController attachViewController:newColorVC withAction:RZTransitionAction_Dismiss];
-	
+    
+    // TODO: Hook up next VC's dismiss transition	
     return newColorVC;
 }
 
@@ -99,38 +101,10 @@
     return cell;
 }
 
-#pragma mark - Custom View Controller Animations - UIViewControllerTransitioningDelegate
-
-//- (id <UIViewControllerAnimatedTransitioning>)animationControllerForPresentedController:(UIViewController *)presented presentingController:(UIViewController *)presenting sourceController:(UIViewController *)source
-//{
-//    self.presentDismissAnimationController.isPositiveAnimation = YES;
-//    return self.presentDismissAnimationController;
-//}
-//
-//- (id <UIViewControllerAnimatedTransitioning>)animationControllerForDismissedController:(UIViewController *)dismissed
-//{
-//    self.presentDismissAnimationController.isPositiveAnimation = NO;
-//    return self.presentDismissAnimationController;
-//}
-//
-//- (id<UIViewControllerInteractiveTransitioning>)interactionControllerForPresentation:(id<UIViewControllerAnimatedTransitioning>)animator
-//{
-////    return (self.presentInteractionController && [self.presentInteractionController isInteractive]) ? self.presentInteractionController : nil;
-//    return nil;
-//}
-//
-//- (id<UIViewControllerInteractiveTransitioning>)interactionControllerForDismissal:(id<UIViewControllerAnimatedTransitioning>)animator
-//{
-//	return (self.dismissInteractionController && [self.dismissInteractionController isInteractive]) ? self.dismissInteractionController : nil;
-//}
-
 #pragma mark - RZTransitionInteractorDelegate
 
 - (UIViewController *)nextViewControllerForInteractor:(id<RZTransitionInteractionController>)interactor
 {
-    // TODO: ability to set the animation dismissal via the interaction
-    // TODO: ability to associate interactor with a cell or optional data such as color or ID
-    
     return [self newColorVCWithColor:nil];
 }
 

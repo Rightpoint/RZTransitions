@@ -8,11 +8,14 @@
 #import <Foundation/Foundation.h>
 #import "RZTransitionAction.h"
 
-@interface RZUniqueTransition : NSObject
+@interface RZUniqueTransition : NSObject <NSCopying>
 
 @property (assign, nonatomic) RZTransitionAction transitionAction;
 @property (assign, nonatomic) Class fromViewControllerClass;
 @property (assign, nonatomic) Class toViewControllerClass;
-@property (assign, nonatomic) BOOL toAnyViewController;
+
+- (instancetype)initWithAction:(RZTransitionAction)action
+   withFromViewControllerClass:(Class)fromViewController
+     withToViewControllerClass:(Class)toViewController;
 
 @end

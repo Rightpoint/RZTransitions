@@ -24,7 +24,6 @@
 
 @property (nonatomic, strong) id<RZTransitionInteractionController> pushPopInteractionController;
 @property (nonatomic, strong) id<RZTransitionInteractionController> presentInteractionController;
-@property (nonatomic, strong) id<RZTransitionInteractionController> dismissInteractionController;
 
 @end
 
@@ -35,19 +34,23 @@
 	// Create the push and pop interaction controller that allows a custom gesture
 	// to control pushing and popping from the navigation controller
     self.pushPopInteractionController = [[RZHorizontalInteractionController alloc] init];
-    [self.pushPopInteractionController setDelegate:self];
+    [self.pushPopInteractionController setNextViewControllerDelegate:self];
     [self.pushPopInteractionController attachViewController:self withAction:RZTransitionAction_PushPop];
+    [[RZTransitionsManager shared] setInteractionController:self.pushPopInteractionController
+                                         fromViewController:[self class]
+                                           toViewController:nil
+                                                  forAction:RZTransitionAction_PushPop];
+    
 
 	// Create the presentation interaction controller that allows a custom gesture
 	// to control presenting a new VC via a presentViewController
     self.presentInteractionController = [[RZVerticalSwipeInteractionController alloc] init];
-    [self.presentInteractionController setDelegate:self];
+    [self.presentInteractionController setNextViewControllerDelegate:self];
     [self.presentInteractionController attachViewController:self withAction:RZTransitionAction_Present];
-    
-	// Create a dismiss interaction controller that will be attached to the presented
-	// view controller to allow for a custom dismissal
-    self.dismissInteractionController = [[RZVerticalSwipeInteractionController alloc] init];
-    
+//    [[RZTransitionsManager shared] setInteractionController:self.presentInteractionController
+//                                         fromViewController:[self class]
+//                                           toViewController:nil
+//                                                  forAction:RZTransitionAction_Present];
     
 	// Setup the push & pop animations as well as a special animation for pushing a
 	// RZSimpleCollectionViewController
@@ -63,6 +66,14 @@
     [[RZTransitionsManager shared] setAnimationController:[[RZCirclePushAnimationController alloc] init]
                                        fromViewController:[self class]
                                                 forAction:RZTransitionAction_PresentDismiss];
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [[RZTransitionsManager shared] setInteractionController:self.presentInteractionController
+                                         fromViewController:[self class]
+                                           toViewController:nil
+                                                  forAction:RZTransitionAction_Present];
 }
 
 #pragma mark - Button Actions
@@ -100,29 +111,17 @@
 {
     RZSimpleColorViewController* newColorVC = [[RZSimpleColorViewController alloc] init];
     [newColorVC setTransitioningDelegate:[RZTransitionsManager shared]];
-    [self.dismissInteractionController attachViewController:newColorVC withAction:RZTransitionAction_Dismiss];
+    
+    // Create a dismiss interaction controller that will be attached to the presented
+	// view controller to allow for a custom dismissal
+    RZVerticalSwipeInteractionController *dismissInteractionController = [[RZVerticalSwipeInteractionController alloc] init];
+    [dismissInteractionController attachViewController:newColorVC withAction:RZTransitionAction_Dismiss];
+    [[RZTransitionsManager shared] setInteractionController:dismissInteractionController
+                                         fromViewController:[self class]
+                                           toViewController:nil
+                                                  forAction:RZTransitionAction_Dismiss];
     return newColorVC;
 }
-
-#pragma mark - Custom View Controller Animations - UIViewControllerTransitioningDelegate
-
-// - (id<UIViewControllerInteractiveTransitioning>)interactionControllerForPresentation:(id<UIViewControllerAnimatedTransitioning>)animator
-//{
-//    return (self.presentInteractionController && [self.presentInteractionController isInteractive]) ? self.presentInteractionController : nil;
-//}
-//
-// - (id<UIViewControllerInteractiveTransitioning>)interactionControllerForDismissal:(id<UIViewControllerAnimatedTransitioning>)animator
-//{
-//    return (self.dismissInteractionController && [self.dismissInteractionController isInteractive]) ? self.dismissInteractionController : nil;
-//}
-
-#pragma mark - UINavigationControllerDelegate
-
-//- (id <UIViewControllerInteractiveTransitioning>)navigationController:(UINavigationController *)navigationController
-//                          interactionControllerForAnimationController:(id <UIViewControllerAnimatedTransitioning>) animationController
-//{
-//    return (self.pushPopInteractionController && [self.pushPopInteractionController isInteractive]) ? self.pushPopInteractionController : nil;
-//}
 
 #pragma mark - RZTransitionInteractorDelegate
 

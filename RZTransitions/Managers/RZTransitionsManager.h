@@ -8,6 +8,7 @@
 #import "RZTransitionAction.h"
 
 @protocol RZAnimationControllerProtocol;
+@protocol RZTransitionInteractionController;
 
 @interface RZTransitionsManager : NSObject < UINavigationControllerDelegate,
                                              UIViewControllerTransitioningDelegate,
@@ -18,11 +19,8 @@
 @property (strong, nonatomic) id<RZAnimationControllerProtocol> defaultTabBarAnimationController;
 
 + (RZTransitionsManager *)shared;
-+ (NSString *)keyToAnyViewControllerFromViewController:(UIViewController *)fromViewController;
-+ (NSString *)keyToAnyViewControllerFromViewControllerClass:(Class)fromViewController;
-+ (NSString *)keyFromViewController:(UIViewController *)fromViewController toViewController:(UIViewController *)toViewController;
-+ (NSString *)keyFromViewControllerClass:(Class)fromViewController toViewControllerClass:(Class)toViewController;
-+ (NSString *)keyForDismissedViewController:(UIViewController *)dismissedViewController;
+
+#pragma mark - Public API Set Animations and Interactions
 
 - (void)setAnimationController:(id<RZAnimationControllerProtocol>)animationController
             fromViewController:(Class)fromViewController
@@ -32,5 +30,10 @@
             fromViewController:(Class)fromViewController
               toViewController:(Class)toViewController
                      forAction:(RZTransitionAction)action;
+
+- (void)setInteractionController:(id<RZTransitionInteractionController>)interactionController
+               fromViewController:(Class)fromViewController
+                toViewController:(Class)toViewController
+                       forAction:(RZTransitionAction)action;
 
 @end

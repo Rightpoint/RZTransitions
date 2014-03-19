@@ -24,7 +24,7 @@
 // TODO: can't autosynthesize from protocol :(
 @synthesize action = _action;
 @synthesize isInteractive = _isInteractive;
-@synthesize delegate = _delegate;
+@synthesize nextViewControllerDelegate = _delegate;
 @synthesize shouldCompleteTransition = _shouldCompleteTransition;
 
 #pragma mark - RZTransitionInteractor Protocol
@@ -104,11 +104,11 @@
         self.isInteractive = YES;
         if (self.action & RZTransitionAction_Push)
         {
-            [self.fromViewController.navigationController pushViewController:[self.delegate nextViewControllerForInteractor:self] animated:YES];
+            [self.fromViewController.navigationController pushViewController:[self.nextViewControllerDelegate nextViewControllerForInteractor:self] animated:YES];
         }
         else if (self.action & RZTransitionAction_Present)
         {
-            [self.fromViewController presentViewController:[self.delegate nextViewControllerForInteractor:self] animated:YES completion:nil];
+            [self.fromViewController presentViewController:[self.nextViewControllerDelegate nextViewControllerForInteractor:self] animated:YES completion:nil];
         }
         else if (self.action & RZTransitionAction_Pop)
         {

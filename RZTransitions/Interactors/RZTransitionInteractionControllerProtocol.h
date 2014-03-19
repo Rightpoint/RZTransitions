@@ -28,7 +28,7 @@
 @property (nonatomic, assign, readwrite) BOOL isInteractive;
 @property (nonatomic, assign, readwrite) BOOL shouldCompleteTransition;
 @property (nonatomic, assign, readwrite) RZTransitionAction action;
-@property (nonatomic, weak) id<RZTransitionInteractionControllerDelegate> delegate;
+@property (nonatomic, weak) id<RZTransitionInteractionControllerDelegate> nextViewControllerDelegate;
 
 - (void)attachViewController:(UIViewController *)viewController withAction:(RZTransitionAction)action;
 
