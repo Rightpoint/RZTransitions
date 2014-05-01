@@ -9,6 +9,7 @@
 
 @protocol RZAnimationControllerProtocol;
 @protocol RZTransitionInteractionController;
+@class RZUniqueTransition;
 
 @interface RZTransitionsManager : NSObject < UINavigationControllerDelegate,
                                              UIViewControllerTransitioningDelegate,
@@ -22,18 +23,20 @@
 
 #pragma mark - Public API Set Animations and Interactions
 
-- (void)setAnimationController:(id<RZAnimationControllerProtocol>)animationController
-            fromViewController:(Class)fromViewController
-                     forAction:(RZTransitionAction)action;
+- (RZUniqueTransition *)setAnimationController:(id<RZAnimationControllerProtocol>)animationController
+                            fromViewController:(Class)fromViewController
+                                     forAction:(RZTransitionAction)action;
 
-- (void)setAnimationController:(id<RZAnimationControllerProtocol>)animationController
-            fromViewController:(Class)fromViewController
-              toViewController:(Class)toViewController
-                     forAction:(RZTransitionAction)action;
+- (RZUniqueTransition *)setAnimationController:(id<RZAnimationControllerProtocol>)animationController
+                            fromViewController:(Class)fromViewController
+                              toViewController:(Class)toViewController
+                                     forAction:(RZTransitionAction)action;
 
-- (void)setInteractionController:(id<RZTransitionInteractionController>)interactionController
-               fromViewController:(Class)fromViewController
-                toViewController:(Class)toViewController
-                       forAction:(RZTransitionAction)action;
+- (RZUniqueTransition *)setInteractionController:(id<RZTransitionInteractionController>)interactionController
+                              fromViewController:(Class)fromViewController
+                                toViewController:(Class)toViewController
+                                       forAction:(RZTransitionAction)action;
+
+- (void)overrideAnimationDirection:(BOOL)override withTransition:(RZUniqueTransition *)transitionKey;
 
 @end

@@ -15,6 +15,7 @@ static NSString* const kRZTTransitionsKeySpacer = @"_";
 @interface RZTransitionsManager ()
 
 @property (strong, nonatomic) NSMutableDictionary *animationControllers;
+@property (strong, nonatomic) NSMutableDictionary *animationControllerDirectionOverrides;
 @property (strong, nonatomic) NSMutableDictionary *interactionControllers;
 
 @end
@@ -37,6 +38,7 @@ static NSString* const kRZTTransitionsKeySpacer = @"_";
     self = [super init];
     if (self) {
         self.animationControllers = [[NSMutableDictionary alloc] init];
+        self.animationControllerDirectionOverrides = [[NSMutableDictionary alloc] init];
         self.interactionControllers = [[NSMutableDictionary alloc] init];
     }
     return self;
@@ -44,23 +46,25 @@ static NSString* const kRZTTransitionsKeySpacer = @"_";
 
 #pragma mark - Public API Set Animations and Interactions
 
-- (void)setAnimationController:(id<RZAnimationControllerProtocol>)animationController
+- (RZUniqueTransition *)setAnimationController:(id<RZAnimationControllerProtocol>)animationController
             fromViewController:(Class)fromViewController
                      forAction:(RZTransitionAction)action
 {
-    [self setAnimationController:animationController fromViewController:fromViewController toViewController:nil forAction:action];
+    return [self setAnimationController:animationController fromViewController:fromViewController toViewController:nil forAction:action];
 }
 
-- (void)setAnimationController:(id<RZAnimationControllerProtocol>)animationController
+- (RZUniqueTransition *)setAnimationController:(id<RZAnimationControllerProtocol>)animationController
             fromViewController:(Class)fromViewController
               toViewController:(Class)toViewController
                      forAction:(RZTransitionAction)action
 {
+    RZUniqueTransition *keyValue = nil;
+    
     for (NSUInteger x = 1; (x < (1 << (kRZTransitionActionCount - 1))); )
     {
         if (action & x) {
-            RZUniqueTransition *keyValue = nil;
-            if (x & RZTransitionAction_Pop || x & RZTransitionAction_Dismiss) {
+            if ( ((x & RZTransitionAction_Pop) && !(x & RZTransitionAction_Push)) ||
+                 ((x & RZTransitionAction_Dismiss) && !(x &RZTransitionAction_Present)) ) {
                 keyValue = [[RZUniqueTransition alloc] initWithAction:x withFromViewControllerClass:toViewController withToViewControllerClass:fromViewController];
             }
             else {
@@ -70,18 +74,23 @@ static NSString* const kRZTTransitionsKeySpacer = @"_";
         }
         x = x << 1;
     }
+    
+    return keyValue;
 }
 
-- (void)setInteractionController:(id<RZTransitionInteractionController>)interactionController
+- (RZUniqueTransition *)setInteractionController:(id<RZTransitionInteractionController>)interactionController
               fromViewController:(Class)fromViewController
                 toViewController:(Class)toViewController
                        forAction:(RZTransitionAction)action
 {
+    RZUniqueTransition *keyValue = nil;
+    
     for (NSUInteger x = 1; (x < (1 << (kRZTransitionActionCount - 1))); )
     {
         if (action & x) {
             RZUniqueTransition *keyValue = nil;
-            if (x & RZTransitionAction_Pop || x & RZTransitionAction_Dismiss) {
+            if ( ((x & RZTransitionAction_Pop) && !(x & RZTransitionAction_Push)) ||
+                ((x & RZTransitionAction_Dismiss) && !(x &RZTransitionAction_Present)) ) {
                 keyValue = [[RZUniqueTransition alloc] initWithAction:x withFromViewControllerClass:toViewController withToViewControllerClass:fromViewController];
             }
             else {
@@ -92,6 +101,13 @@ static NSString* const kRZTTransitionsKeySpacer = @"_";
         }
         x = x << 1;
     }
+    
+    return keyValue;
+}
+
+- (void)overrideAnimationDirection:(BOOL)override withTransition:(RZUniqueTransition *)transitionKey
+{
+    [self.animationControllerDirectionOverrides setObject:[NSNumber numberWithBool:override] forKey:transitionKey];
 }
 
 #pragma mark - UIViewControllerTransitioningDelegate
@@ -100,15 +116,15 @@ static NSString* const kRZTTransitionsKeySpacer = @"_";
 {    
     RZUniqueTransition *keyValue = [[RZUniqueTransition alloc] initWithAction:RZTransitionAction_Present withFromViewControllerClass:[source class] withToViewControllerClass:[presented class]];
     id<RZAnimationControllerProtocol> animationController = (id<RZAnimationControllerProtocol>)[self.animationControllers objectForKey:keyValue];
-    if (animationController == nil) {
+    if ( animationController == nil ) {
         keyValue.toViewControllerClass = nil;
         animationController = (id<RZAnimationControllerProtocol>)[self.animationControllers objectForKey:keyValue];
     }
-    if (animationController == nil) {
+    if ( animationController == nil ) {
         animationController = self.defaultPresentDismissAnimationController;
     }
     
-    if (animationController) {
+    if ( (animationController != nil) && (![[self.animationControllerDirectionOverrides objectForKey:keyValue] boolValue]) ) {
         animationController.isPositiveAnimation = YES;
     }
 
@@ -122,32 +138,34 @@ static NSString* const kRZTTransitionsKeySpacer = @"_";
     
     // Find the dismissed view controller's view controller it is returning to
     UIViewController *presentingViewController = dismissed.presentingViewController;
-    if ([presentingViewController isKindOfClass:[UINavigationController class]]) {
+    if ( [presentingViewController isKindOfClass:[UINavigationController class]] ) {
         UIViewController *childVC = (UIViewController *)[[presentingViewController childViewControllers] lastObject];
-        if (childVC != nil) {
+        if ( childVC != nil ) {
             keyValue.toViewControllerClass = [childVC class];
             animationController = (id<RZAnimationControllerProtocol>)[self.animationControllers objectForKey:keyValue];
-            if (animationController == nil) {
+            if ( animationController == nil ) {
                 keyValue.toViewControllerClass = nil;
                 animationController = (id<RZAnimationControllerProtocol>)[self.animationControllers objectForKey:keyValue];
             }
-            if (animationController == nil) {
+            if ( animationController == nil ) {
                 keyValue.toViewControllerClass = [childVC class];
                 keyValue.fromViewControllerClass = nil;
                 animationController = (id<RZAnimationControllerProtocol>)[self.animationControllers objectForKey:keyValue];
             }
         }
     }
-    if (animationController == nil) {
+    if ( animationController == nil ) {
         keyValue.toViewControllerClass = nil;
         keyValue.fromViewControllerClass = [dismissed class];
         animationController = (id<RZAnimationControllerProtocol>)[self.animationControllers objectForKey:keyValue];
+        
+        // TODO: Check if from vc class is a navigation controller as well...
     }
-    if (animationController == nil) {
+    if ( animationController == nil ) {
         animationController = self.defaultPresentDismissAnimationController;
     }
     
-    if (animationController != nil) {
+    if ( (animationController != nil) && (![[self.animationControllerDirectionOverrides objectForKey:keyValue] boolValue]) ) {
         animationController.isPositiveAnimation = NO;
     }
     
@@ -240,10 +258,12 @@ static NSString* const kRZTTransitionsKeySpacer = @"_";
         animationController = self.defaultPushPopAnimationController;
     }
 		
-    if (operation == UINavigationControllerOperationPush) {
-        animationController.isPositiveAnimation = YES;
-    } else if (operation == UINavigationControllerOperationPop)	{
-        animationController.isPositiveAnimation = NO;
+    if ( ![[self.animationControllerDirectionOverrides objectForKey:keyValue] boolValue] ) {
+        if (operation == UINavigationControllerOperationPush) {
+            animationController.isPositiveAnimation = YES;
+        } else if (operation == UINavigationControllerOperationPop)	{
+            animationController.isPositiveAnimation = NO;
+        }
     }
     
     return animationController;
@@ -282,18 +302,18 @@ static NSString* const kRZTTransitionsKeySpacer = @"_";
 {
     RZUniqueTransition *keyValue = [[RZUniqueTransition alloc] initWithAction:RZTransitionAction_Tab withFromViewControllerClass:[fromVC class] withToViewControllerClass:[toVC class]];
     id<RZAnimationControllerProtocol> animationController = (id<RZAnimationControllerProtocol>)[self.animationControllers objectForKey:keyValue];
-    if (animationController == nil) {
+    if ( animationController == nil ) {
         keyValue.toViewControllerClass = nil;
         animationController = (id<RZAnimationControllerProtocol>)[self.animationControllers objectForKey:keyValue];
     }
-    if (animationController == nil) {
+    if ( animationController == nil ) {
         animationController = self.defaultTabBarAnimationController;
     }
     
     NSUInteger fromVCIndex = [tabBarController.viewControllers indexOfObject:fromVC];
     NSUInteger toVCIndex = [tabBarController.viewControllers indexOfObject:toVC];
     
-    if (animationController)
+    if ( animationController && (![[self.animationControllerDirectionOverrides objectForKey:keyValue] boolValue]) )
     {
         animationController.isPositiveAnimation = (fromVCIndex > toVCIndex);
     }

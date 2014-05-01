@@ -12,6 +12,7 @@
 #import "RZTransitionInteractionControllerProtocol.h"
 #import "RZTransitionsInteractionControllers.h"
 #import "RZTransitionsAnimationControllers.h"
+#import "RZRectZoomAnimationController.h"
 #import "RZTransitionsManager.h"
 
 #import "UIColor+Random.h"
@@ -22,10 +23,12 @@
 
 @interface RZSimpleCollectionViewController () < UIViewControllerTransitioningDelegate,
                                                  RZTransitionInteractionControllerDelegate,
-                                                 RZCirclePushAnimationDelegate >
+                                                 RZRectZoomAnimationDelegate >
 
-@property (nonatomic, assign) CGPoint			 circleTransitionStartPoint;
+@property (nonatomic, assign) CGPoint                           circleTransitionStartPoint;
+@property (nonatomic, assign) CGRect                            transitionCellRect;
 @property (nonatomic, strong) RZOverscrollInteractionController *presentOverscrollInteractor;
+@property (nonatomic, strong) RZRectZoomAnimationController     *presentDismissAnimationController;
 
 @end
 
@@ -38,23 +41,25 @@
     
     // TODO: Currently the RZOverscrollInteractor will take over the collection view's delegate, meaning that ```didSelectItemAtIndexPath:```
     // will not be forwarded back.  RZOverscrollInteractor requires a bit of a rewrite to use KVO instead of delegation to address this.
-    self.presentOverscrollInteractor = [[RZOverscrollInteractionController alloc] init];
-    [self.presentOverscrollInteractor attachViewController:self withAction:RZTransitionAction_Present];
-    [self.presentOverscrollInteractor setNextViewControllerDelegate:self];
-    [[RZTransitionsManager shared] setInteractionController:self.presentOverscrollInteractor
-                                         fromViewController:[self class]
-                                           toViewController:nil
-                                                  forAction:RZTransitionAction_Present];
+//    self.presentOverscrollInteractor = [[RZOverscrollInteractionController alloc] init];
+//    [self.presentOverscrollInteractor attachViewController:self withAction:RZTransitionAction_Present];
+//    [self.presentOverscrollInteractor setNextViewControllerDelegate:self];
+//    [[RZTransitionsManager shared] setInteractionController:self.presentOverscrollInteractor
+//                                         fromViewController:[self class]
+//                                           toViewController:nil
+//                                                  forAction:RZTransitionAction_Present];
+    
+    self.presentDismissAnimationController = [[RZRectZoomAnimationController alloc] init];
+    [self.presentDismissAnimationController setRectZoomDelegate:self];
     
     self.circleTransitionStartPoint = CGPointZero;
-
-    [[RZTransitionsManager shared] setAnimationController:[[RZZoomAlphaAnimationController alloc] init]
+    self.transitionCellRect = CGRectZero;
+    
+    [[RZTransitionsManager shared] setAnimationController:self.presentDismissAnimationController
                                        fromViewController:[self class]
                                                 forAction:RZTransitionAction_PresentDismiss];
     
     [self setTransitioningDelegate:[RZTransitionsManager shared]];
-    
-//    [self.presentDismissAnimationController setCircleDelegate:self];
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -82,6 +87,7 @@
     UIViewController *colorVC = [self newColorVCWithColor:cellBackgroundColor];
     
     self.circleTransitionStartPoint = [collectionView convertPoint:[collectionView cellForItemAtIndexPath:indexPath].center toView:self.view];;
+    self.transitionCellRect = [collectionView convertRect:[collectionView cellForItemAtIndexPath:indexPath].frame toView:self.view];
     
     // Present VC
     [self presentViewController:colorVC animated:YES completion:nil];
@@ -106,6 +112,13 @@
 - (UIViewController *)nextViewControllerForInteractor:(id<RZTransitionInteractionController>)interactor
 {
     return [self newColorVCWithColor:nil];
+}
+
+#pragma mark - RZRectZoomAnimationDelegate
+
+- (CGRect)rectZoomPosition
+{
+    return self.transitionCellRect;
 }
 
 #pragma mark - RZCirclePushAnimationDelegate

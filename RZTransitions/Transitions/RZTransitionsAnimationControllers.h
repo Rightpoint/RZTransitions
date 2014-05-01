@@ -16,5 +16,6 @@
 #import "RZZoomAlphaAnimationController.h"
 #import "RZZoomBlurAnimationController.h"
 #import "RZZoomPushAnimationController.h"
+#import "RZRectZoomAnimationController.h"
 
 #endif

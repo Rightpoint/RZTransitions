@@ -15,12 +15,9 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This is a Simple Presented View Controller" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="320" translatesAutoresizingMaskIntoConstraints="NO" id="Ayn-gM-vOi">
-                    <rect key="frame" x="0.0" y="246" width="320" height="75"/>
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This is a Simple Presented View Controller" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="320" translatesAutoresizingMaskIntoConstraints="NO" id="Ayn-gM-vOi">
+                    <rect key="frame" x="0.0" y="260" width="320" height="48"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="75" id="aYK-pN-xdi"/>
-                    </constraints>
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
@@ -29,8 +26,9 @@
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="Ayn-gM-vOi" secondAttribute="trailing" id="C4f-cB-UOJ"/>
+                <constraint firstAttribute="centerY" secondItem="Ayn-gM-vOi" secondAttribute="centerY" constant="0.5" id="Sl6-U9-Me1"/>
                 <constraint firstItem="Ayn-gM-vOi" firstAttribute="leading" secondItem="1" secondAttribute="leading" id="fMN-jg-xGe"/>
-                <constraint firstItem="Ayn-gM-vOi" firstAttribute="top" secondItem="1" secondAttribute="top" constant="246" id="g8i-J2-r3t"/>
+                <constraint firstAttribute="centerX" secondItem="Ayn-gM-vOi" secondAttribute="centerX" id="rAw-BI-gLE"/>
             </constraints>
             <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
