@@ -263,9 +263,9 @@
 			children = (
 				833E36AD184E29C300A0326A /* RZTransitions-Demo */,
 				833E36CC184E29C300A0326A /* RZTransitions-DemoTests */,
+				8331CE5F18D2375B0093F9D8 /* RZTransitions */,
 				833E36A6184E29C300A0326A /* Frameworks */,
 				833E36A5184E29C300A0326A /* Products */,
-				8331CE5F18D2375B0093F9D8 /* RZTransitions */,
 			);
 			sourceTree = "<group>";
 		};
