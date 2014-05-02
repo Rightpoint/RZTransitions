@@ -67,10 +67,6 @@
     self.presentInteractionController = [[RZVerticalSwipeInteractionController alloc] init];
     [self.presentInteractionController setNextViewControllerDelegate:self];
     [self.presentInteractionController attachViewController:self withAction:RZTransitionAction_Present];
-//    [[RZTransitionsManager shared] setInteractionController:self.presentInteractionController
-//                                         fromViewController:[self class]
-//                                           toViewController:nil
-//                                                  forAction:RZTransitionAction_Present];
     
 	// Setup the push & pop animations as well as a special animation for pushing a
 	// RZSimpleCollectionViewController
