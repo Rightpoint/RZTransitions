@@ -10,4 +10,6 @@
 
 @interface RZCardSlideAnimationController : NSObject <RZAnimationControllerProtocol>
 
+@property (nonatomic, strong) UIColor *containerBackgroundColor;
+
 @end

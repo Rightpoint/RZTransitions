@@ -24,7 +24,7 @@
     
     UIView *bgView = [[UIView alloc] initWithFrame:container.bounds];
     bgView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
-    bgView.backgroundColor = [UIColor blackColor];
+    bgView.backgroundColor = (self.containerBackgroundColor != nil) ? self.containerBackgroundColor : [UIColor blackColor];
     [container insertSubview:bgView atIndex:0];
     
     if (self.isPositiveAnimation)
