@@ -1,8 +1,8 @@
 //
-//  RZBaseSwipeInteractionController.h
+//  RZTransitionAction.h
 //  RZTransitions
 //
-//  Created by Stephen Barnes on 12/4/13.
+//  Created by Stephen Barnes on 3/13/14.
 //  Copyright 2014 Raizlabs and other contributors
 //  http://raizlabs.com/
 //
@@ -26,19 +26,20 @@
 //  WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 //
 
-#import <UIKit/UIKit.h>
-#import "RZTransitionInteractionControllerProtocol.h"
+#ifndef RZTransitions_Demo_RZTransitionAction_h
+#define RZTransitions_Demo_RZTransitionAction_h
 
-@interface RZBaseSwipeInteractionController : UIPercentDrivenInteractiveTransition
-    <RZTransitionInteractionController, UIGestureRecognizerDelegate>
+#define kRZTransitionActionCount        5
 
-@property (nonatomic, strong) UIViewController *fromViewController;
-@property (nonatomic, strong) UIPanGestureRecognizer *gestureRecognizer;
-@property (nonatomic, assign) BOOL reverseGestureDirection;
+typedef NS_ENUM (NSInteger, RZTransitionAction) {
+    RZTransitionAction_Push             = (1 << 0),
+    RZTransitionAction_Pop              = (1 << 1),
+    RZTransitionAction_Present          = (1 << 2),
+    RZTransitionAction_Dismiss          = (1 << 3),
+    RZTransitionAction_Tab              = (1 << 4),
+    RZTransitionAction_PushPop          = RZTransitionAction_Push|RZTransitionAction_Pop,
+    RZTransitionAction_PresentDismiss   = RZTransitionAction_Present|RZTransitionAction_Dismiss,
+    RZTransitionAction_Any              = RZTransitionAction_Present|RZTransitionAction_Dismiss|RZTransitionAction_Tab,
+};
 
-- (BOOL)isGesturePositive:(UIPanGestureRecognizer *)panGestureRecognizer;
-- (CGFloat)swipeCompletionPercent;
-- (CGFloat)translationPercentageWithPanGestureRecongizer:(UIPanGestureRecognizer *)panGestureRecognizer;
-- (CGFloat)translationWithPanGestureRecongizer:(UIPanGestureRecognizer *)panGestureRecognizer;
-
-@end
+#endif

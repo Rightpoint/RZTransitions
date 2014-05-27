@@ -1,8 +1,8 @@
 //
-//  RZBaseSwipeInteractionController.h
+//  RZTransitionsNavigationController.h
 //  RZTransitions
 //
-//  Created by Stephen Barnes on 12/4/13.
+//  Created by Stephen Barnes on 3/7/14.
 //  Copyright 2014 Raizlabs and other contributors
 //  http://raizlabs.com/
 //
@@ -27,18 +27,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "RZTransitionInteractionControllerProtocol.h"
 
-@interface RZBaseSwipeInteractionController : UIPercentDrivenInteractiveTransition
-    <RZTransitionInteractionController, UIGestureRecognizerDelegate>
-
-@property (nonatomic, strong) UIViewController *fromViewController;
-@property (nonatomic, strong) UIPanGestureRecognizer *gestureRecognizer;
-@property (nonatomic, assign) BOOL reverseGestureDirection;
-
-- (BOOL)isGesturePositive:(UIPanGestureRecognizer *)panGestureRecognizer;
-- (CGFloat)swipeCompletionPercent;
-- (CGFloat)translationPercentageWithPanGestureRecongizer:(UIPanGestureRecognizer *)panGestureRecognizer;
-- (CGFloat)translationWithPanGestureRecongizer:(UIPanGestureRecognizer *)panGestureRecognizer;
+@interface RZTransitionsNavigationController : UINavigationController
 
 @end

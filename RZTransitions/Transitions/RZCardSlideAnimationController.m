@@ -3,6 +3,27 @@
 //  RZTransitions
 //
 //  Created by Nick Donaldson on 11/19/13.
+//  Copyright 2014 Raizlabs and other contributors
+//  http://raizlabs.com/
+//
+//  Permission is hereby granted, free of charge, to any person obtaining
+//  a copy of this software and associated documentation files (the
+//  "Software"), to deal in the Software without restriction, including
+//  without limitation the rights to use, copy, modify, merge, publish,
+//  distribute, sublicense, and/or sell copies of the Software, and to
+//  permit persons to whom the Software is furnished to do so, subject to
+//  the following conditions:
+//
+//  The above copyright notice and this permission notice shall be
+//  included in all copies or substantial portions of the Software.
+//
+//  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+//  EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+//  MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+//  NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE
+//  LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION
+//  OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
+//  WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 //
 
 #import "RZCardSlideAnimationController.h"
@@ -14,7 +35,15 @@
 
 @synthesize isPositiveAnimation = _isPositiveAnimation;
 
-// TODO: Create a horizontal and vertical card slide animation along with a base class -SB
+- (id)init
+{
+    self = [super init];
+    if (self)
+    {
+        _horizontalOrientation = TRUE;
+    }
+    return self;
+}
 
 - (void)animateTransition:(id<UIViewControllerContextTransitioning>)transitionContext
 {
@@ -39,7 +68,14 @@
                          animations:^{
                              toViewController.view.transform = CGAffineTransformIdentity;
                              toViewController.view.alpha = 1.0f;
-                             fromViewController.view.transform = CGAffineTransformMakeTranslation(-container.bounds.size.width, 0);
+                             if (self.horizontalOrientation)
+                             {
+                                 fromViewController.view.transform = CGAffineTransformMakeTranslation(-container.bounds.size.width, 0);
+                             }
+                             else
+                             {
+                                 fromViewController.view.transform = CGAffineTransformMakeTranslation(0, container.bounds.size.height);
+                             }
                          }
                          completion:^(BOOL finished) {
                              toViewController.view.transform = CGAffineTransformIdentity;
@@ -51,7 +87,14 @@
     else
     {
         [container addSubview:toViewController.view];
-        toViewController.view.transform = CGAffineTransformMakeTranslation(-container.bounds.size.width, 0);
+        if (self.horizontalOrientation)
+        {
+            toViewController.view.transform = CGAffineTransformMakeTranslation(-container.bounds.size.width, 0);
+        }
+        else
+        {
+            toViewController.view.transform = CGAffineTransformMakeTranslation(0, container.bounds.size.height);
+        }
 
         [UIView animateWithDuration:kRZSlideTransitionTime
                               delay:0
@@ -75,6 +118,5 @@
 {
     return kRZSlideTransitionTime;
 }
-
 
 @end

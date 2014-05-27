@@ -1,8 +1,8 @@
 //
-//  RZBaseSwipeInteractionController.h
+//  RZTransitionsAnimationControllers.h
 //  RZTransitions
 //
-//  Created by Stephen Barnes on 12/4/13.
+//  Created by Stephen Barnes on 3/13/14.
 //  Copyright 2014 Raizlabs and other contributors
 //  http://raizlabs.com/
 //
@@ -26,19 +26,16 @@
 //  WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 //
 
-#import <UIKit/UIKit.h>
-#import "RZTransitionInteractionControllerProtocol.h"
+#ifndef RZTransitions_Demo_RZTransitionsAnimationControllers_h
+#define RZTransitions_Demo_RZTransitionsAnimationControllers_h
 
-@interface RZBaseSwipeInteractionController : UIPercentDrivenInteractiveTransition
-    <RZTransitionInteractionController, UIGestureRecognizerDelegate>
+#import "RZCardSlideAnimationController.h"
+#import "RZCirclePushAnimationController.h"
+#import "RZSegmentControlMoveFadeAnimationController.h"
+#import "RZShrinkZoomAnimationController.h"
+#import "RZZoomAlphaAnimationController.h"
+#import "RZZoomBlurAnimationController.h"
+#import "RZZoomPushAnimationController.h"
+#import "RZRectZoomAnimationController.h"
 
-@property (nonatomic, strong) UIViewController *fromViewController;
-@property (nonatomic, strong) UIPanGestureRecognizer *gestureRecognizer;
-@property (nonatomic, assign) BOOL reverseGestureDirection;
-
-- (BOOL)isGesturePositive:(UIPanGestureRecognizer *)panGestureRecognizer;
-- (CGFloat)swipeCompletionPercent;
-- (CGFloat)translationPercentageWithPanGestureRecongizer:(UIPanGestureRecognizer *)panGestureRecognizer;
-- (CGFloat)translationWithPanGestureRecongizer:(UIPanGestureRecognizer *)panGestureRecognizer;
-
-@end
+#endif

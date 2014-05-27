@@ -1,8 +1,8 @@
 //
-//  RZBaseSwipeInteractionController.h
+//  RZRectZoomAnimationController.h
 //  RZTransitions
 //
-//  Created by Stephen Barnes on 12/4/13.
+//  Created by Stephen Barnes on 12/13/13.
 //  Copyright 2014 Raizlabs and other contributors
 //  http://raizlabs.com/
 //
@@ -26,19 +26,21 @@
 //  WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 //
 
-#import <UIKit/UIKit.h>
-#import "RZTransitionInteractionControllerProtocol.h"
+#import <Foundation/Foundation.h>
+#import "RZAnimationControllerProtocol.h"
 
-@interface RZBaseSwipeInteractionController : UIPercentDrivenInteractiveTransition
-    <RZTransitionInteractionController, UIGestureRecognizerDelegate>
+@protocol RZRectZoomAnimationDelegate <NSObject>
 
-@property (nonatomic, strong) UIViewController *fromViewController;
-@property (nonatomic, strong) UIPanGestureRecognizer *gestureRecognizer;
-@property (nonatomic, assign) BOOL reverseGestureDirection;
+// Return the rect to insert the next view into.  This should be relative to the view controller's view.
+- (CGRect)rectZoomPosition;
 
-- (BOOL)isGesturePositive:(UIPanGestureRecognizer *)panGestureRecognizer;
-- (CGFloat)swipeCompletionPercent;
-- (CGFloat)translationPercentageWithPanGestureRecongizer:(UIPanGestureRecognizer *)panGestureRecognizer;
-- (CGFloat)translationWithPanGestureRecongizer:(UIPanGestureRecognizer *)panGestureRecognizer;
+@end
+
+@interface RZRectZoomAnimationController : NSObject <RZAnimationControllerProtocol>
+
+@property (nonatomic, weak)     id<RZRectZoomAnimationDelegate> rectZoomDelegate;
+@property (nonatomic, assign)   BOOL shouldFadeBackgroundViewController;
+@property (nonatomic, assign)   CGFloat animationSpringDampening;
+@property (nonatomic, assign)   CGFloat animationSpringVelocity;
 
 @end

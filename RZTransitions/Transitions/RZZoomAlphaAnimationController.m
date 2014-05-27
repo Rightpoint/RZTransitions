@@ -1,8 +1,8 @@
 //
-//  RZZoomPushAnimatedTransitioning.m
+//  RZZoomAlphaAnimationController.m
 //  RZTransitions
 //
-//  Created by Nick Donaldson on 10/22/13.
+//  Created by Stephen Barnes on 2/12/14.
 //  Copyright 2014 Raizlabs and other contributors
 //  http://raizlabs.com/
 //
@@ -26,62 +26,59 @@
 //  WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 //
 
-#import "RZZoomPushAnimationController.h"
-#import "RZHorizontalInteractionController.h"
+#import "RZZoomAlphaAnimationController.h"
 
-#define kRZPushTransitionTime 0.35
-#define kRZPushScaleChangePct 0.33
+#define kRZZoomAlphaTransitionTime 0.3
+#define kRZZoomAlphaMaxScale       1.333
 
-@implementation RZZoomPushAnimationController
+@implementation RZZoomAlphaAnimationController
 
 @synthesize isPositiveAnimation = _isPositiveAnimation;
 
+#pragma mark - Animated transitioning
+
 - (void)animateTransition:(id<UIViewControllerContextTransitioning>)transitionContext
-{    
+{
     UIViewController *fromViewController = [transitionContext viewControllerForKey:UITransitionContextFromViewControllerKey];
     UIViewController *toViewController = [transitionContext viewControllerForKey:UITransitionContextToViewControllerKey];
     UIView *container = [transitionContext containerView];
     
-    if (self.isPositiveAnimation)
+    toViewController.view.userInteractionEnabled = YES;
+    
+    if (!self.isPositiveAnimation)
     {
+        fromViewController.view.opaque = NO;
         [container insertSubview:toViewController.view belowSubview:fromViewController.view];
-        toViewController.view.transform = CGAffineTransformMakeScale(1.0 - kRZPushScaleChangePct, 1.0 - kRZPushScaleChangePct);
         
-        [toViewController viewWillAppear:YES];
-        [UIView animateWithDuration:kRZPushTransitionTime
+        [UIView animateWithDuration:kRZZoomAlphaTransitionTime
                               delay:0
                             options:UIViewAnimationOptionCurveEaseOut
                          animations:^{
-                             toViewController.view.transform = CGAffineTransformIdentity;
-                             fromViewController.view.transform = CGAffineTransformMakeScale(1.0 + kRZPushScaleChangePct, 1.0 + kRZPushScaleChangePct);
-                             fromViewController.view.alpha = 0.0f;
+                             fromViewController.view.alpha = 0.f;
+                             fromViewController.view.transform =  CGAffineTransformMakeScale(kRZZoomAlphaMaxScale, kRZZoomAlphaMaxScale);
                          }
                          completion:^(BOOL finished) {
-                             toViewController.view.transform = CGAffineTransformIdentity;
+                             fromViewController.view.alpha = 1.f;
                              fromViewController.view.transform = CGAffineTransformIdentity;
-                             fromViewController.view.alpha = 1.0f;
                              [transitionContext completeTransition:!transitionContext.transitionWasCancelled];
                          }];
     }
     else
     {
+        toViewController.view.opaque = NO;
+        toViewController.view.alpha = 0.f;
+        toViewController.view.transform = CGAffineTransformMakeScale(kRZZoomAlphaMaxScale, kRZZoomAlphaMaxScale);
         [container addSubview:toViewController.view];
-        toViewController.view.transform = CGAffineTransformMakeScale(1.0 + kRZPushScaleChangePct, 1.0 + kRZPushScaleChangePct);
-        toViewController.view.alpha = 0.0f;
         
-        [toViewController viewWillAppear:YES];
-        [UIView animateWithDuration:kRZPushTransitionTime
+        [UIView animateWithDuration:kRZZoomAlphaTransitionTime
                               delay:0
-                            options:UIViewAnimationOptionCurveEaseOut
+                            options:UIViewAnimationOptionCurveEaseIn
                          animations:^{
+                             toViewController.view.alpha = 1.f;
                              toViewController.view.transform = CGAffineTransformIdentity;
-                             toViewController.view.alpha = 1.0f;
-                             fromViewController.view.transform = CGAffineTransformMakeScale(1.0 - kRZPushScaleChangePct, 1.0 - kRZPushScaleChangePct);
                          }
                          completion:^(BOOL finished) {
-                             toViewController.view.transform = CGAffineTransformIdentity;
-                             fromViewController.view.transform = CGAffineTransformIdentity;
-                             toViewController.view.alpha = 1.0f;
+                             toViewController.view.opaque = YES;
                              [transitionContext completeTransition:!transitionContext.transitionWasCancelled];
                          }];
     }
@@ -89,7 +86,7 @@
 
 - (NSTimeInterval)transitionDuration:(id<UIViewControllerContextTransitioning>)transitionContext
 {
-    return kRZPushTransitionTime;
+    return kRZZoomAlphaTransitionTime;
 }
 
 @end

@@ -3,13 +3,33 @@
 //  RZTransitions
 //
 //  Created by Stephen Barnes on 12/16/13.
-//  Copyright (c) 2013 Raizlabs. All rights reserved.
+//  Copyright 2014 Raizlabs and other contributors
+//  http://raizlabs.com/
+//
+//  Permission is hereby granted, free of charge, to any person obtaining
+//  a copy of this software and associated documentation files (the
+//  "Software"), to deal in the Software without restriction, including
+//  without limitation the rights to use, copy, modify, merge, publish,
+//  distribute, sublicense, and/or sell copies of the Software, and to
+//  permit persons to whom the Software is furnished to do so, subject to
+//  the following conditions:
+//
+//  The above copyright notice and this permission notice shall be
+//  included in all copies or substantial portions of the Software.
+//
+//  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+//  EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+//  MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+//  NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE
+//  LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION
+//  OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
+//  WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 //
 
 #import "RZOverscrollInteractionController.h"
 
 #define kRZOverscrollInteractionDefaultCompletionPercentage  0.35f
-#define kRZOverscrollInteractionDefaultTopStartDistance      75.0f
+#define kRZOverscrollInteractionDefaultTopStartDistance      25.0f
 #define kRZOverscrollInteractionDefaultBottomStartDistance   25.0f
 #define kRZOverscrollInteractionDefaultTranslationDistance   200.0f
 
@@ -21,10 +41,9 @@
 
 @implementation RZOverscrollInteractionController
 
-// TODO: can't autosynthesize from protocol :(
 @synthesize action = _action;
 @synthesize isInteractive = _isInteractive;
-@synthesize delegate = _delegate;
+@synthesize nextViewControllerDelegate = _delegate;
 @synthesize shouldCompleteTransition = _shouldCompleteTransition;
 
 #pragma mark - RZTransitionInteractor Protocol
@@ -89,32 +108,35 @@
     if (self.isInteractive)
     {
         self.isInteractive = NO;
-        self.shouldCompleteTransition ? [self finishInteractiveTransition] : [self cancelInteractiveTransition];
         if(self.shouldCompleteTransition)
         {
             [scrollView setDelegate:nil];
         }
+        self.shouldCompleteTransition ? [self finishInteractiveTransition] : [self cancelInteractiveTransition];
     }
 }
 
 - (void)beginTransition
 {
-    self.isInteractive = YES;
-    if (self.action & RZTransitionAction_Push)
+    if (!self.isInteractive)
     {
-        [self.fromViewController.navigationController pushViewController:[self.delegate nextViewControllerForInteractor:self] animated:YES];
-    }
-    else if (self.action & RZTransitionAction_Present)
-    {
-        [self.fromViewController presentViewController:[self.delegate nextViewControllerForInteractor:self] animated:YES completion:nil];
-    }
-    else if (self.action & RZTransitionAction_Pop)
-    {
-        [self.fromViewController.navigationController popViewControllerAnimated:YES];
-    }
-    else if (self.action & RZTransitionAction_Dismiss)
-    {
-        [self.fromViewController dismissViewControllerAnimated:YES completion:nil];
+        self.isInteractive = YES;
+        if (self.action & RZTransitionAction_Push)
+        {
+            [self.fromViewController.navigationController pushViewController:[self.nextViewControllerDelegate nextViewControllerForInteractor:self] animated:YES];
+        }
+        else if (self.action & RZTransitionAction_Present)
+        {
+            [self.fromViewController presentViewController:[self.nextViewControllerDelegate nextViewControllerForInteractor:self] animated:YES completion:nil];
+        }
+        else if (self.action & RZTransitionAction_Pop)
+        {
+            [self.fromViewController.navigationController popViewControllerAnimated:YES];
+        }
+        else if (self.action & RZTransitionAction_Dismiss)
+        {
+            [self.fromViewController dismissViewControllerAnimated:YES completion:nil];
+        }
     }
 }
 
@@ -159,7 +181,7 @@
 
     if (overScrollDown && [RZOverscrollInteractionController actionIsPushOrPresentWithAction:self.action])
     {
-        if (!self.isInteractive && scrollingDirectionUp && scrollViewPastStartLocation)
+        if (!self.isInteractive && scrollingDirectionUp && scrollViewPastStartLocation && !scrollView.isDecelerating)
         {
             [self beginTransition];
         }
@@ -170,7 +192,7 @@
     }
     else if (overScrollUp && [RZOverscrollInteractionController actionIsDismissOrPopWithAction:self.action])
     {
-        if (!self.isInteractive && !scrollingDirectionUp && scrollViewPastStartLocation)
+        if (!self.isInteractive && !scrollingDirectionUp && scrollViewPastStartLocation && !scrollView.isDecelerating)
         {
             [self beginTransition];
         }
@@ -189,6 +211,11 @@
 }
 
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView
+{
+    [self completeInteractionWithScrollView:scrollView];
+}
+
+- (void)scrollViewDidEndScrollingAnimation:(UIScrollView *)scrollView
 {
     [self completeInteractionWithScrollView:scrollView];
 }

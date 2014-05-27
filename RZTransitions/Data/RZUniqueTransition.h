@@ -1,8 +1,8 @@
 //
-//  RZBaseSwipeInteractionController.h
+//  RZUniqueTransition.h
 //  RZTransitions
 //
-//  Created by Stephen Barnes on 12/4/13.
+//  Created by Stephen Barnes on 3/13/14.
 //  Copyright 2014 Raizlabs and other contributors
 //  http://raizlabs.com/
 //
@@ -26,19 +26,17 @@
 //  WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 //
 
-#import <UIKit/UIKit.h>
-#import "RZTransitionInteractionControllerProtocol.h"
+#import <Foundation/Foundation.h>
+#import "RZTransitionAction.h"
 
-@interface RZBaseSwipeInteractionController : UIPercentDrivenInteractiveTransition
-    <RZTransitionInteractionController, UIGestureRecognizerDelegate>
+@interface RZUniqueTransition : NSObject <NSCopying>
 
-@property (nonatomic, strong) UIViewController *fromViewController;
-@property (nonatomic, strong) UIPanGestureRecognizer *gestureRecognizer;
-@property (nonatomic, assign) BOOL reverseGestureDirection;
+@property (assign, nonatomic) RZTransitionAction transitionAction;
+@property (assign, nonatomic) Class fromViewControllerClass;
+@property (assign, nonatomic) Class toViewControllerClass;
 
-- (BOOL)isGesturePositive:(UIPanGestureRecognizer *)panGestureRecognizer;
-- (CGFloat)swipeCompletionPercent;
-- (CGFloat)translationPercentageWithPanGestureRecongizer:(UIPanGestureRecognizer *)panGestureRecognizer;
-- (CGFloat)translationWithPanGestureRecongizer:(UIPanGestureRecognizer *)panGestureRecognizer;
+- (instancetype)initWithAction:(RZTransitionAction)action
+   withFromViewControllerClass:(Class)fromViewController
+     withToViewControllerClass:(Class)toViewController;
 
 @end

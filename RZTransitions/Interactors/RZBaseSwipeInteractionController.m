@@ -3,7 +3,27 @@
 //  RZTransitions
 //
 //  Created by Stephen Barnes on 12/4/13.
-//  Copyright (c) 2013 Raizlabs. All rights reserved.
+//  Copyright 2014 Raizlabs and other contributors
+//  http://raizlabs.com/
+//
+//  Permission is hereby granted, free of charge, to any person obtaining
+//  a copy of this software and associated documentation files (the
+//  "Software"), to deal in the Software without restriction, including
+//  without limitation the rights to use, copy, modify, merge, publish,
+//  distribute, sublicense, and/or sell copies of the Software, and to
+//  permit persons to whom the Software is furnished to do so, subject to
+//  the following conditions:
+//
+//  The above copyright notice and this permission notice shall be
+//  included in all copies or substantial portions of the Software.
+//
+//  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+//  EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+//  MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+//  NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE
+//  LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION
+//  OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
+//  WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 //
 
 #import "RZBaseSwipeInteractionController.h"
@@ -12,11 +32,19 @@
 
 @implementation RZBaseSwipeInteractionController
 
-// TODO: can't autosynthesize from protocol :(
 @synthesize action = _action;
 @synthesize isInteractive = _isInteractive;
-@synthesize delegate = _delegate;
+@synthesize nextViewControllerDelegate = _delegate;
 @synthesize shouldCompleteTransition = _shouldCompleteTransition;
+
+- (id)init
+{
+    self = [super init];
+    if (self) {
+        _reverseGestureDirection = NO;
+    }
+    return self;
+}
 
 - (void)attachViewController:(UIViewController *)viewController withAction:(RZTransitionAction)action
 {
@@ -44,20 +72,20 @@
 - (void)handlePanGesture:(UIPanGestureRecognizer *)panGestureRecognizer
 {
     CGFloat percentage = [self translationPercentageWithPanGestureRecongizer:panGestureRecognizer];
-    BOOL positiveDirection = [self isGesturePositive:panGestureRecognizer];
+    BOOL positiveDirection = self.reverseGestureDirection ? ![self isGesturePositive:panGestureRecognizer] : [self isGesturePositive:panGestureRecognizer];
     
     switch (panGestureRecognizer.state) {
         case UIGestureRecognizerStateBegan:
             self.isInteractive = YES;
             
-            if (positiveDirection && self.delegate && [self.delegate conformsToProtocol:@protocol(RZTransitionInteractionControllerDelegate)])
+            if (positiveDirection && self.nextViewControllerDelegate && [self.nextViewControllerDelegate conformsToProtocol:@protocol(RZTransitionInteractionControllerDelegate)])
             {
                 if (self.action & RZTransitionAction_Push) {
-                    [self.fromViewController.navigationController pushViewController:[self.delegate nextViewControllerForInteractor:self] animated:YES];
+                    [self.fromViewController.navigationController pushViewController:[self.nextViewControllerDelegate nextViewControllerForInteractor:self] animated:YES];
                 }
                 else if (self.action & RZTransitionAction_Present) {
                     // TODO: set and store a completion
-                    [self.fromViewController presentViewController:[self.delegate nextViewControllerForInteractor:self] animated:YES completion:nil];
+                    [self.fromViewController presentViewController:[self.nextViewControllerDelegate nextViewControllerForInteractor:self] animated:YES completion:nil];
                 }
             }
             else
@@ -138,6 +166,5 @@
     }
     return _gestureRecognizer;
 }
-
 
 @end
