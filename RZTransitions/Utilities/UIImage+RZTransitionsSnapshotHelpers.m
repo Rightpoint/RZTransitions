@@ -51,17 +51,14 @@
 
 #import "UIImage+RZTransitionsSnapshotHelpers.h"
 
-@implementation UIImage (SnapshotHelpers)
+@implementation UIImage (RZTransitionsSnapshotHelpers)
 
 + (UIImage *)imageByCapturingView:(UIView*)view afterScreenUpdate:(BOOL)waitForUpdate
 {
     UIImage *outputImage = nil;
-    CGRect imageRect = { CGPointZero, view.bounds.size };
-    CGFloat scale = [[UIScreen mainScreen] scale];
-    UIGraphicsBeginImageContextWithOptions(imageRect.size, NO, scale);
+    CGRect imageRect = CGRectMake(0, 0, CGRectGetWidth(view.bounds), CGRectGetHeight(view.bounds));
+    UIGraphicsBeginImageContextWithOptions(imageRect.size, NO, 0.0);
     
-    // If afterScreenUpdates is set to YES, there is a super weird bug sometimes where all tap gestures (app-wide) will be delayed.
-    // This definitely needs to be filed in a radar at some point.
     BOOL success = [view drawViewHierarchyInRect:view.bounds afterScreenUpdates:waitForUpdate];
     if ( success ) {
         outputImage = UIGraphicsGetImageFromCurrentImageContext();
@@ -70,6 +67,7 @@
     UIGraphicsEndImageContext();
     
     return outputImage;
+
 }
 
 @end
