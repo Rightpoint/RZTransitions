@@ -342,15 +342,9 @@
 		833E36E5184E5A0C00A0326A /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				833E36EA184E5AFF00A0326A /* RZSimpleViewController.h */,
-				833E36EB184E5AFF00A0326A /* RZSimpleViewController.m */,
-				833E36EC184E5AFF00A0326A /* RZSimpleViewController.xib */,
-				833E36FF184E5DB400A0326A /* RZSimpleColorViewController.h */,
-				833E3700184E5DB400A0326A /* RZSimpleColorViewController.m */,
-				833E3701184E5DB400A0326A /* RZSimpleColorViewController.xib */,
-				837D08BF1859000F00E20B37 /* RZSimpleCollectionViewController.h */,
-				837D08C01859000F00E20B37 /* RZSimpleCollectionViewController.m */,
-				837D08C11859000F00E20B37 /* RZSimpleCollectionViewController.xib */,
+				E1A39664194F571C0034A158 /* Simple View Controller */,
+				E1A39665194F57270034A158 /* Simple Color View Controller */,
+				E1A39666194F572F0034A158 /* Simple Collection View Controller */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -364,6 +358,36 @@
 			name = Utilities;
 			path = "RZTransitions-Demo/Utilities";
 			sourceTree = SOURCE_ROOT;
+		};
+		E1A39664194F571C0034A158 /* Simple View Controller */ = {
+			isa = PBXGroup;
+			children = (
+				833E36EA184E5AFF00A0326A /* RZSimpleViewController.h */,
+				833E36EB184E5AFF00A0326A /* RZSimpleViewController.m */,
+				833E36EC184E5AFF00A0326A /* RZSimpleViewController.xib */,
+			);
+			name = "Simple View Controller";
+			sourceTree = "<group>";
+		};
+		E1A39665194F57270034A158 /* Simple Color View Controller */ = {
+			isa = PBXGroup;
+			children = (
+				833E36FF184E5DB400A0326A /* RZSimpleColorViewController.h */,
+				833E3700184E5DB400A0326A /* RZSimpleColorViewController.m */,
+				833E3701184E5DB400A0326A /* RZSimpleColorViewController.xib */,
+			);
+			name = "Simple Color View Controller";
+			sourceTree = "<group>";
+		};
+		E1A39666194F572F0034A158 /* Simple Collection View Controller */ = {
+			isa = PBXGroup;
+			children = (
+				837D08BF1859000F00E20B37 /* RZSimpleCollectionViewController.h */,
+				837D08C01859000F00E20B37 /* RZSimpleCollectionViewController.m */,
+				837D08C11859000F00E20B37 /* RZSimpleCollectionViewController.xib */,
+			);
+			name = "Simple Collection View Controller";
+			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
