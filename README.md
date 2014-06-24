@@ -11,6 +11,20 @@
 <br/>
 </p>
 
+## Installation
+
+### CocoaPods (Recommended)
+
+Add the following to your Podfile:
+
+`pod 'RZTransitions', '~> 1.0'`
+
+RZTransitions follows semantic versioning conventions. Check the [releases page](https://github.com/Raizlabs/RZTransitions/releases) for the latest updates and version history. 
+
+### Manual Installation
+
+Copy and add all of the files in the `RZTransitions` directory (and its subdirectories) into your project.
+
 ## Setting a New Default Transition
 
 ```objective-c
