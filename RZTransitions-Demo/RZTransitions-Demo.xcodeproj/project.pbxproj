@@ -1,1319 +1,720 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
-<plist version="1.0">
-<dict>
-	<key>archiveVersion</key>
-	<string>1</string>
-	<key>classes</key>
-	<dict/>
-	<key>objectVersion</key>
-	<string>46</string>
-	<key>objects</key>
-	<dict>
-		<key>1AFF28BF77D4456B8788B566</key>
-		<dict>
-			<key>explicitFileType</key>
-			<string>archive.ar</string>
-			<key>includeInIndex</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>path</key>
-			<string>libPods.a</string>
-			<key>sourceTree</key>
-			<string>BUILT_PRODUCTS_DIR</string>
-		</dict>
-		<key>31DAA37A0E034CA893E56294</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array/>
-			<key>inputPaths</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXShellScriptBuildPhase</string>
-			<key>name</key>
-			<string>Copy Pods Resources</string>
-			<key>outputPaths</key>
-			<array/>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-			<key>shellPath</key>
-			<string>/bin/sh</string>
-			<key>shellScript</key>
-			<string>"${SRCROOT}/Pods/Pods-resources.sh"
-</string>
-			<key>showEnvVarsInLog</key>
-			<string>0</string>
-		</dict>
-		<key>833E369B184E29C300A0326A</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>833E36AD184E29C300A0326A</string>
-				<string>833E36CC184E29C300A0326A</string>
-				<string>833E36A6184E29C300A0326A</string>
-				<string>833E36A5184E29C300A0326A</string>
-				<string>B9096A3F908245BC9668610A</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>833E369C184E29C300A0326A</key>
-		<dict>
-			<key>attributes</key>
-			<dict>
-				<key>CLASSPREFIX</key>
-				<string>RZ</string>
-				<key>LastUpgradeCheck</key>
-				<string>0510</string>
-				<key>ORGANIZATIONNAME</key>
-				<string>Raizlabs</string>
-				<key>TargetAttributes</key>
-				<dict>
-					<key>833E36C4184E29C300A0326A</key>
-					<dict>
-						<key>TestTargetID</key>
-						<string>833E36A3184E29C300A0326A</string>
-					</dict>
-				</dict>
-			</dict>
-			<key>buildConfigurationList</key>
-			<string>833E369F184E29C300A0326A</string>
-			<key>compatibilityVersion</key>
-			<string>Xcode 3.2</string>
-			<key>developmentRegion</key>
-			<string>English</string>
-			<key>hasScannedForEncodings</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>PBXProject</string>
-			<key>knownRegions</key>
-			<array>
-				<string>en</string>
-				<string>Base</string>
-			</array>
-			<key>mainGroup</key>
-			<string>833E369B184E29C300A0326A</string>
-			<key>productRefGroup</key>
-			<string>833E36A5184E29C300A0326A</string>
-			<key>projectDirPath</key>
-			<string></string>
-			<key>projectReferences</key>
-			<array/>
-			<key>projectRoot</key>
-			<string></string>
-			<key>targets</key>
-			<array>
-				<string>833E36A3184E29C300A0326A</string>
-				<string>833E36C4184E29C300A0326A</string>
-			</array>
-		</dict>
-		<key>833E369F184E29C300A0326A</key>
-		<dict>
-			<key>buildConfigurations</key>
-			<array>
-				<string>833E36D4184E29C300A0326A</string>
-				<string>833E36D5184E29C300A0326A</string>
-			</array>
-			<key>defaultConfigurationIsVisible</key>
-			<string>0</string>
-			<key>defaultConfigurationName</key>
-			<string>Release</string>
-			<key>isa</key>
-			<string>XCConfigurationList</string>
-		</dict>
-		<key>833E36A0184E29C300A0326A</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>833E36E9184E5A9A00A0326A</string>
-				<string>837D08C21859000F00E20B37</string>
-				<string>833E3702184E5DB400A0326A</string>
-				<string>833E36ED184E5AFF00A0326A</string>
-				<string>833E36B4184E29C300A0326A</string>
-				<string>83855D0A185F98E3004DB036</string>
-			</array>
-			<key>isa</key>
-			<string>PBXSourcesBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>833E36A1184E29C300A0326A</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>833E36AA184E29C300A0326A</string>
-				<string>833E36AC184E29C300A0326A</string>
-				<string>833E36A8184E29C300A0326A</string>
-				<string>88AE133B92FC466AB9F38D49</string>
-			</array>
-			<key>isa</key>
-			<string>PBXFrameworksBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>833E36A2184E29C300A0326A</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>833E3703184E5DB400A0326A</string>
-				<string>833E36EE184E5AFF00A0326A</string>
-				<string>833E36C0184E29C300A0326A</string>
-				<string>837D08C31859000F00E20B37</string>
-				<string>833E36B2184E29C300A0326A</string>
-			</array>
-			<key>isa</key>
-			<string>PBXResourcesBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>833E36A3184E29C300A0326A</key>
-		<dict>
-			<key>buildConfigurationList</key>
-			<string>833E36D6184E29C300A0326A</string>
-			<key>buildPhases</key>
-			<array>
-				<string>95E9CA6CE89040409D1859FE</string>
-				<string>833E36A0184E29C300A0326A</string>
-				<string>833E36A1184E29C300A0326A</string>
-				<string>833E36A2184E29C300A0326A</string>
-				<string>31DAA37A0E034CA893E56294</string>
-			</array>
-			<key>buildRules</key>
-			<array/>
-			<key>dependencies</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXNativeTarget</string>
-			<key>name</key>
-			<string>RZTransitions-Demo</string>
-			<key>productName</key>
-			<string>RZTransitions-Demo</string>
-			<key>productReference</key>
-			<string>833E36A4184E29C300A0326A</string>
-			<key>productType</key>
-			<string>com.apple.product-type.application</string>
-		</dict>
-		<key>833E36A4184E29C300A0326A</key>
-		<dict>
-			<key>explicitFileType</key>
-			<string>wrapper.application</string>
-			<key>includeInIndex</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>path</key>
-			<string>RZTransitions-Demo.app</string>
-			<key>sourceTree</key>
-			<string>BUILT_PRODUCTS_DIR</string>
-		</dict>
-		<key>833E36A5184E29C300A0326A</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>833E36A4184E29C300A0326A</string>
-				<string>833E36C5184E29C300A0326A</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Products</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>833E36A6184E29C300A0326A</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>833E36A7184E29C300A0326A</string>
-				<string>833E36A9184E29C300A0326A</string>
-				<string>833E36AB184E29C300A0326A</string>
-				<string>833E36C6184E29C300A0326A</string>
-				<string>1AFF28BF77D4456B8788B566</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Frameworks</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>833E36A7184E29C300A0326A</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>wrapper.framework</string>
-			<key>name</key>
-			<string>Foundation.framework</string>
-			<key>path</key>
-			<string>System/Library/Frameworks/Foundation.framework</string>
-			<key>sourceTree</key>
-			<string>SDKROOT</string>
-		</dict>
-		<key>833E36A8184E29C300A0326A</key>
-		<dict>
-			<key>fileRef</key>
-			<string>833E36A7184E29C300A0326A</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>833E36A9184E29C300A0326A</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>wrapper.framework</string>
-			<key>name</key>
-			<string>CoreGraphics.framework</string>
-			<key>path</key>
-			<string>System/Library/Frameworks/CoreGraphics.framework</string>
-			<key>sourceTree</key>
-			<string>SDKROOT</string>
-		</dict>
-		<key>833E36AA184E29C300A0326A</key>
-		<dict>
-			<key>fileRef</key>
-			<string>833E36A9184E29C300A0326A</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>833E36AB184E29C300A0326A</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>wrapper.framework</string>
-			<key>name</key>
-			<string>UIKit.framework</string>
-			<key>path</key>
-			<string>System/Library/Frameworks/UIKit.framework</string>
-			<key>sourceTree</key>
-			<string>SDKROOT</string>
-		</dict>
-		<key>833E36AC184E29C300A0326A</key>
-		<dict>
-			<key>fileRef</key>
-			<string>833E36AB184E29C300A0326A</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>833E36AD184E29C300A0326A</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>833E36E2184E5A0C00A0326A</string>
-				<string>833E36E5184E5A0C00A0326A</string>
-				<string>833E36BF184E29C300A0326A</string>
-				<string>83855D07185F98C4004DB036</string>
-				<string>833E36AE184E29C300A0326A</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>path</key>
-			<string>RZTransitions-Demo</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>833E36AE184E29C300A0326A</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>833E36AF184E29C300A0326A</string>
-				<string>833E36B0184E29C300A0326A</string>
-				<string>833E36B3184E29C300A0326A</string>
-				<string>833E36B5184E29C300A0326A</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Supporting Files</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>833E36AF184E29C300A0326A</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.plist.xml</string>
-			<key>path</key>
-			<string>RZTransitions-Demo-Info.plist</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>833E36B0184E29C300A0326A</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>833E36B1184E29C300A0326A</string>
-			</array>
-			<key>isa</key>
-			<string>PBXVariantGroup</string>
-			<key>name</key>
-			<string>InfoPlist.strings</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>833E36B1184E29C300A0326A</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.plist.strings</string>
-			<key>name</key>
-			<string>en</string>
-			<key>path</key>
-			<string>en.lproj/InfoPlist.strings</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>833E36B2184E29C300A0326A</key>
-		<dict>
-			<key>fileRef</key>
-			<string>833E36B0184E29C300A0326A</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>833E36B3184E29C300A0326A</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>main.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>833E36B4184E29C300A0326A</key>
-		<dict>
-			<key>fileRef</key>
-			<string>833E36B3184E29C300A0326A</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>833E36B5184E29C300A0326A</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>RZTransitions-Demo-Prefix.pch</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>833E36BF184E29C300A0326A</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>folder.assetcatalog</string>
-			<key>path</key>
-			<string>Images.xcassets</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>833E36C0184E29C300A0326A</key>
-		<dict>
-			<key>fileRef</key>
-			<string>833E36BF184E29C300A0326A</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>833E36C1184E29C300A0326A</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>83855D0B185F98E3004DB036</string>
-				<string>833E36D3184E29C300A0326A</string>
-			</array>
-			<key>isa</key>
-			<string>PBXSourcesBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>833E36C2184E29C300A0326A</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>833E36C7184E29C300A0326A</string>
-				<string>833E36C9184E29C300A0326A</string>
-				<string>833E36C8184E29C300A0326A</string>
-			</array>
-			<key>isa</key>
-			<string>PBXFrameworksBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>833E36C3184E29C300A0326A</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>833E36D1184E29C300A0326A</string>
-			</array>
-			<key>isa</key>
-			<string>PBXResourcesBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>833E36C4184E29C300A0326A</key>
-		<dict>
-			<key>buildConfigurationList</key>
-			<string>833E36D9184E29C300A0326A</string>
-			<key>buildPhases</key>
-			<array>
-				<string>833E36C1184E29C300A0326A</string>
-				<string>833E36C2184E29C300A0326A</string>
-				<string>833E36C3184E29C300A0326A</string>
-			</array>
-			<key>buildRules</key>
-			<array/>
-			<key>dependencies</key>
-			<array>
-				<string>833E36CB184E29C300A0326A</string>
-			</array>
-			<key>isa</key>
-			<string>PBXNativeTarget</string>
-			<key>name</key>
-			<string>RZTransitions-DemoTests</string>
-			<key>productName</key>
-			<string>RZTransitions-DemoTests</string>
-			<key>productReference</key>
-			<string>833E36C5184E29C300A0326A</string>
-			<key>productType</key>
-			<string>com.apple.product-type.bundle.unit-test</string>
-		</dict>
-		<key>833E36C5184E29C300A0326A</key>
-		<dict>
-			<key>explicitFileType</key>
-			<string>wrapper.cfbundle</string>
-			<key>includeInIndex</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>path</key>
-			<string>RZTransitions-DemoTests.xctest</string>
-			<key>sourceTree</key>
-			<string>BUILT_PRODUCTS_DIR</string>
-		</dict>
-		<key>833E36C6184E29C300A0326A</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>wrapper.framework</string>
-			<key>name</key>
-			<string>XCTest.framework</string>
-			<key>path</key>
-			<string>Library/Frameworks/XCTest.framework</string>
-			<key>sourceTree</key>
-			<string>DEVELOPER_DIR</string>
-		</dict>
-		<key>833E36C7184E29C300A0326A</key>
-		<dict>
-			<key>fileRef</key>
-			<string>833E36C6184E29C300A0326A</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>833E36C8184E29C300A0326A</key>
-		<dict>
-			<key>fileRef</key>
-			<string>833E36A7184E29C300A0326A</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>833E36C9184E29C300A0326A</key>
-		<dict>
-			<key>fileRef</key>
-			<string>833E36AB184E29C300A0326A</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>833E36CA184E29C300A0326A</key>
-		<dict>
-			<key>containerPortal</key>
-			<string>833E369C184E29C300A0326A</string>
-			<key>isa</key>
-			<string>PBXContainerItemProxy</string>
-			<key>proxyType</key>
-			<string>1</string>
-			<key>remoteGlobalIDString</key>
-			<string>833E36A3184E29C300A0326A</string>
-			<key>remoteInfo</key>
-			<string>RZTransitions-Demo</string>
-		</dict>
-		<key>833E36CB184E29C300A0326A</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXTargetDependency</string>
-			<key>target</key>
-			<string>833E36A3184E29C300A0326A</string>
-			<key>targetProxy</key>
-			<string>833E36CA184E29C300A0326A</string>
-		</dict>
-		<key>833E36CC184E29C300A0326A</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>833E36D2184E29C300A0326A</string>
-				<string>833E36CD184E29C300A0326A</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>path</key>
-			<string>RZTransitions-DemoTests</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>833E36CD184E29C300A0326A</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>833E36CE184E29C300A0326A</string>
-				<string>833E36CF184E29C300A0326A</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Supporting Files</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>833E36CE184E29C300A0326A</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.plist.xml</string>
-			<key>path</key>
-			<string>RZTransitions-DemoTests-Info.plist</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>833E36CF184E29C300A0326A</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>833E36D0184E29C300A0326A</string>
-			</array>
-			<key>isa</key>
-			<string>PBXVariantGroup</string>
-			<key>name</key>
-			<string>InfoPlist.strings</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>833E36D0184E29C300A0326A</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.plist.strings</string>
-			<key>name</key>
-			<string>en</string>
-			<key>path</key>
-			<string>en.lproj/InfoPlist.strings</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>833E36D1184E29C300A0326A</key>
-		<dict>
-			<key>fileRef</key>
-			<string>833E36CF184E29C300A0326A</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>833E36D2184E29C300A0326A</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>RZTransitions_DemoTests.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>833E36D3184E29C300A0326A</key>
-		<dict>
-			<key>fileRef</key>
-			<string>833E36D2184E29C300A0326A</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>833E36D4184E29C300A0326A</key>
-		<dict>
-			<key>buildSettings</key>
-			<dict>
-				<key>ALWAYS_SEARCH_USER_PATHS</key>
-				<string>NO</string>
-				<key>CLANG_CXX_LANGUAGE_STANDARD</key>
-				<string>gnu++0x</string>
-				<key>CLANG_CXX_LIBRARY</key>
-				<string>libc++</string>
-				<key>CLANG_ENABLE_MODULES</key>
-				<string>YES</string>
-				<key>CLANG_ENABLE_OBJC_ARC</key>
-				<string>YES</string>
-				<key>CLANG_WARN_BOOL_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_CONSTANT_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_DIRECT_OBJC_ISA_USAGE</key>
-				<string>YES_ERROR</string>
-				<key>CLANG_WARN_EMPTY_BODY</key>
-				<string>YES</string>
-				<key>CLANG_WARN_ENUM_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_INT_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_OBJC_ROOT_CLASS</key>
-				<string>YES_ERROR</string>
-				<key>CLANG_WARN__DUPLICATE_METHOD_MATCH</key>
-				<string>YES</string>
-				<key>CODE_SIGN_IDENTITY[sdk=iphoneos*]</key>
-				<string>iPhone Developer</string>
-				<key>COPY_PHASE_STRIP</key>
-				<string>NO</string>
-				<key>GCC_C_LANGUAGE_STANDARD</key>
-				<string>gnu99</string>
-				<key>GCC_DYNAMIC_NO_PIC</key>
-				<string>NO</string>
-				<key>GCC_OPTIMIZATION_LEVEL</key>
-				<string>0</string>
-				<key>GCC_PREPROCESSOR_DEFINITIONS</key>
-				<array>
-					<string>DEBUG=1</string>
-					<string>$(inherited)</string>
-				</array>
-				<key>GCC_SYMBOLS_PRIVATE_EXTERN</key>
-				<string>NO</string>
-				<key>GCC_WARN_64_TO_32_BIT_CONVERSION</key>
-				<string>YES</string>
-				<key>GCC_WARN_ABOUT_RETURN_TYPE</key>
-				<string>YES_ERROR</string>
-				<key>GCC_WARN_UNDECLARED_SELECTOR</key>
-				<string>YES</string>
-				<key>GCC_WARN_UNINITIALIZED_AUTOS</key>
-				<string>YES</string>
-				<key>GCC_WARN_UNUSED_FUNCTION</key>
-				<string>YES</string>
-				<key>GCC_WARN_UNUSED_VARIABLE</key>
-				<string>YES</string>
-				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
-				<string>7.0</string>
-				<key>ONLY_ACTIVE_ARCH</key>
-				<string>YES</string>
-				<key>SDKROOT</key>
-				<string>iphoneos</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Debug</string>
-		</dict>
-		<key>833E36D5184E29C300A0326A</key>
-		<dict>
-			<key>buildSettings</key>
-			<dict>
-				<key>ALWAYS_SEARCH_USER_PATHS</key>
-				<string>NO</string>
-				<key>CLANG_CXX_LANGUAGE_STANDARD</key>
-				<string>gnu++0x</string>
-				<key>CLANG_CXX_LIBRARY</key>
-				<string>libc++</string>
-				<key>CLANG_ENABLE_MODULES</key>
-				<string>YES</string>
-				<key>CLANG_ENABLE_OBJC_ARC</key>
-				<string>YES</string>
-				<key>CLANG_WARN_BOOL_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_CONSTANT_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_DIRECT_OBJC_ISA_USAGE</key>
-				<string>YES_ERROR</string>
-				<key>CLANG_WARN_EMPTY_BODY</key>
-				<string>YES</string>
-				<key>CLANG_WARN_ENUM_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_INT_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_OBJC_ROOT_CLASS</key>
-				<string>YES_ERROR</string>
-				<key>CLANG_WARN__DUPLICATE_METHOD_MATCH</key>
-				<string>YES</string>
-				<key>CODE_SIGN_IDENTITY[sdk=iphoneos*]</key>
-				<string>iPhone Developer</string>
-				<key>COPY_PHASE_STRIP</key>
-				<string>YES</string>
-				<key>ENABLE_NS_ASSERTIONS</key>
-				<string>NO</string>
-				<key>GCC_C_LANGUAGE_STANDARD</key>
-				<string>gnu99</string>
-				<key>GCC_WARN_64_TO_32_BIT_CONVERSION</key>
-				<string>YES</string>
-				<key>GCC_WARN_ABOUT_RETURN_TYPE</key>
-				<string>YES_ERROR</string>
-				<key>GCC_WARN_UNDECLARED_SELECTOR</key>
-				<string>YES</string>
-				<key>GCC_WARN_UNINITIALIZED_AUTOS</key>
-				<string>YES</string>
-				<key>GCC_WARN_UNUSED_FUNCTION</key>
-				<string>YES</string>
-				<key>GCC_WARN_UNUSED_VARIABLE</key>
-				<string>YES</string>
-				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
-				<string>7.0</string>
-				<key>SDKROOT</key>
-				<string>iphoneos</string>
-				<key>VALIDATE_PRODUCT</key>
-				<string>YES</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Release</string>
-		</dict>
-		<key>833E36D6184E29C300A0326A</key>
-		<dict>
-			<key>buildConfigurations</key>
-			<array>
-				<string>833E36D7184E29C300A0326A</string>
-				<string>833E36D8184E29C300A0326A</string>
-			</array>
-			<key>defaultConfigurationIsVisible</key>
-			<string>0</string>
-			<key>defaultConfigurationName</key>
-			<string>Release</string>
-			<key>isa</key>
-			<string>XCConfigurationList</string>
-		</dict>
-		<key>833E36D7184E29C300A0326A</key>
-		<dict>
-			<key>baseConfigurationReference</key>
-			<string>B9096A3F908245BC9668610A</string>
-			<key>buildSettings</key>
-			<dict>
-				<key>ASSETCATALOG_COMPILER_APPICON_NAME</key>
-				<string>AppIcon</string>
-				<key>ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME</key>
-				<string>LaunchImage</string>
-				<key>GCC_PRECOMPILE_PREFIX_HEADER</key>
-				<string>YES</string>
-				<key>GCC_PREFIX_HEADER</key>
-				<string>RZTransitions-Demo/RZTransitions-Demo-Prefix.pch</string>
-				<key>INFOPLIST_FILE</key>
-				<string>RZTransitions-Demo/RZTransitions-Demo-Info.plist</string>
-				<key>PRODUCT_NAME</key>
-				<string>$(TARGET_NAME)</string>
-				<key>WRAPPER_EXTENSION</key>
-				<string>app</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Debug</string>
-		</dict>
-		<key>833E36D8184E29C300A0326A</key>
-		<dict>
-			<key>baseConfigurationReference</key>
-			<string>B9096A3F908245BC9668610A</string>
-			<key>buildSettings</key>
-			<dict>
-				<key>ASSETCATALOG_COMPILER_APPICON_NAME</key>
-				<string>AppIcon</string>
-				<key>ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME</key>
-				<string>LaunchImage</string>
-				<key>GCC_PRECOMPILE_PREFIX_HEADER</key>
-				<string>YES</string>
-				<key>GCC_PREFIX_HEADER</key>
-				<string>RZTransitions-Demo/RZTransitions-Demo-Prefix.pch</string>
-				<key>INFOPLIST_FILE</key>
-				<string>RZTransitions-Demo/RZTransitions-Demo-Info.plist</string>
-				<key>PRODUCT_NAME</key>
-				<string>$(TARGET_NAME)</string>
-				<key>WRAPPER_EXTENSION</key>
-				<string>app</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Release</string>
-		</dict>
-		<key>833E36D9184E29C300A0326A</key>
-		<dict>
-			<key>buildConfigurations</key>
-			<array>
-				<string>833E36DA184E29C300A0326A</string>
-				<string>833E36DB184E29C300A0326A</string>
-			</array>
-			<key>defaultConfigurationIsVisible</key>
-			<string>0</string>
-			<key>defaultConfigurationName</key>
-			<string>Release</string>
-			<key>isa</key>
-			<string>XCConfigurationList</string>
-		</dict>
-		<key>833E36DA184E29C300A0326A</key>
-		<dict>
-			<key>buildSettings</key>
-			<dict>
-				<key>BUNDLE_LOADER</key>
-				<string>$(BUILT_PRODUCTS_DIR)/RZTransitions-Demo.app/RZTransitions-Demo</string>
-				<key>FRAMEWORK_SEARCH_PATHS</key>
-				<array>
-					<string>$(SDKROOT)/Developer/Library/Frameworks</string>
-					<string>$(inherited)</string>
-					<string>$(DEVELOPER_FRAMEWORKS_DIR)</string>
-				</array>
-				<key>GCC_PRECOMPILE_PREFIX_HEADER</key>
-				<string>YES</string>
-				<key>GCC_PREFIX_HEADER</key>
-				<string>RZTransitions-Demo/RZTransitions-Demo-Prefix.pch</string>
-				<key>GCC_PREPROCESSOR_DEFINITIONS</key>
-				<array>
-					<string>DEBUG=1</string>
-					<string>$(inherited)</string>
-				</array>
-				<key>INFOPLIST_FILE</key>
-				<string>RZTransitions-DemoTests/RZTransitions-DemoTests-Info.plist</string>
-				<key>PRODUCT_NAME</key>
-				<string>$(TARGET_NAME)</string>
-				<key>TEST_HOST</key>
-				<string>$(BUNDLE_LOADER)</string>
-				<key>WRAPPER_EXTENSION</key>
-				<string>xctest</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Debug</string>
-		</dict>
-		<key>833E36DB184E29C300A0326A</key>
-		<dict>
-			<key>buildSettings</key>
-			<dict>
-				<key>BUNDLE_LOADER</key>
-				<string>$(BUILT_PRODUCTS_DIR)/RZTransitions-Demo.app/RZTransitions-Demo</string>
-				<key>FRAMEWORK_SEARCH_PATHS</key>
-				<array>
-					<string>$(SDKROOT)/Developer/Library/Frameworks</string>
-					<string>$(inherited)</string>
-					<string>$(DEVELOPER_FRAMEWORKS_DIR)</string>
-				</array>
-				<key>GCC_PRECOMPILE_PREFIX_HEADER</key>
-				<string>YES</string>
-				<key>GCC_PREFIX_HEADER</key>
-				<string>RZTransitions-Demo/RZTransitions-Demo-Prefix.pch</string>
-				<key>INFOPLIST_FILE</key>
-				<string>RZTransitions-DemoTests/RZTransitions-DemoTests-Info.plist</string>
-				<key>PRODUCT_NAME</key>
-				<string>$(TARGET_NAME)</string>
-				<key>TEST_HOST</key>
-				<string>$(BUNDLE_LOADER)</string>
-				<key>WRAPPER_EXTENSION</key>
-				<string>xctest</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Release</string>
-		</dict>
-		<key>833E36E2184E5A0C00A0326A</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>833E36E7184E5A9A00A0326A</string>
-				<string>833E36E8184E5A9A00A0326A</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>path</key>
-			<string>Application</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>833E36E5184E5A0C00A0326A</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>E1A39664194F571C0034A158</string>
-				<string>E1A39665194F57270034A158</string>
-				<string>E1A39666194F572F0034A158</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>path</key>
-			<string>ViewControllers</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>833E36E7184E5A9A00A0326A</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>RZTransitionsDemoAppDelegate.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>833E36E8184E5A9A00A0326A</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>RZTransitionsDemoAppDelegate.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>833E36E9184E5A9A00A0326A</key>
-		<dict>
-			<key>fileRef</key>
-			<string>833E36E8184E5A9A00A0326A</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>833E36EA184E5AFF00A0326A</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>RZSimpleViewController.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>833E36EB184E5AFF00A0326A</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>RZSimpleViewController.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>833E36EC184E5AFF00A0326A</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>file.xib</string>
-			<key>path</key>
-			<string>RZSimpleViewController.xib</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>833E36ED184E5AFF00A0326A</key>
-		<dict>
-			<key>fileRef</key>
-			<string>833E36EB184E5AFF00A0326A</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>833E36EE184E5AFF00A0326A</key>
-		<dict>
-			<key>fileRef</key>
-			<string>833E36EC184E5AFF00A0326A</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>833E36FF184E5DB400A0326A</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>RZSimpleColorViewController.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>833E3700184E5DB400A0326A</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>RZSimpleColorViewController.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>833E3701184E5DB400A0326A</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>file.xib</string>
-			<key>path</key>
-			<string>RZSimpleColorViewController.xib</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>833E3702184E5DB400A0326A</key>
-		<dict>
-			<key>fileRef</key>
-			<string>833E3700184E5DB400A0326A</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>833E3703184E5DB400A0326A</key>
-		<dict>
-			<key>fileRef</key>
-			<string>833E3701184E5DB400A0326A</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>837D08BF1859000F00E20B37</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>RZSimpleCollectionViewController.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>837D08C01859000F00E20B37</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>RZSimpleCollectionViewController.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>837D08C11859000F00E20B37</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>file.xib</string>
-			<key>path</key>
-			<string>RZSimpleCollectionViewController.xib</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>837D08C21859000F00E20B37</key>
-		<dict>
-			<key>fileRef</key>
-			<string>837D08C01859000F00E20B37</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>837D08C31859000F00E20B37</key>
-		<dict>
-			<key>fileRef</key>
-			<string>837D08C11859000F00E20B37</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>83855D07185F98C4004DB036</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>83855D08185F98E3004DB036</string>
-				<string>83855D09185F98E3004DB036</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Utilities</string>
-			<key>path</key>
-			<string>RZTransitions-Demo/Utilities</string>
-			<key>sourceTree</key>
-			<string>SOURCE_ROOT</string>
-		</dict>
-		<key>83855D08185F98E3004DB036</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>UIColor+Random.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>83855D09185F98E3004DB036</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>UIColor+Random.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>83855D0A185F98E3004DB036</key>
-		<dict>
-			<key>fileRef</key>
-			<string>83855D09185F98E3004DB036</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>83855D0B185F98E3004DB036</key>
-		<dict>
-			<key>fileRef</key>
-			<string>83855D09185F98E3004DB036</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>88AE133B92FC466AB9F38D49</key>
-		<dict>
-			<key>fileRef</key>
-			<string>1AFF28BF77D4456B8788B566</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>95E9CA6CE89040409D1859FE</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array/>
-			<key>inputPaths</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXShellScriptBuildPhase</string>
-			<key>name</key>
-			<string>Check Pods Manifest.lock</string>
-			<key>outputPaths</key>
-			<array/>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-			<key>shellPath</key>
-			<string>/bin/sh</string>
-			<key>shellScript</key>
-			<string>diff "${PODS_ROOT}/../Podfile.lock" "${PODS_ROOT}/Manifest.lock" &gt; /dev/null
-if [[ $? != 0 ]] ; then
-    cat &lt;&lt; EOM
-error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.
-EOM
-    exit 1
-fi
-</string>
-			<key>showEnvVarsInLog</key>
-			<string>0</string>
-		</dict>
-		<key>B9096A3F908245BC9668610A</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.xcconfig</string>
-			<key>name</key>
-			<string>Pods.xcconfig</string>
-			<key>path</key>
-			<string>Pods/Pods.xcconfig</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>E1A39664194F571C0034A158</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>833E36EA184E5AFF00A0326A</string>
-				<string>833E36EB184E5AFF00A0326A</string>
-				<string>833E36EC184E5AFF00A0326A</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Simple View Controller</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>E1A39665194F57270034A158</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>833E36FF184E5DB400A0326A</string>
-				<string>833E3700184E5DB400A0326A</string>
-				<string>833E3701184E5DB400A0326A</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Simple Color View Controller</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>E1A39666194F572F0034A158</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>837D08BF1859000F00E20B37</string>
-				<string>837D08C01859000F00E20B37</string>
-				<string>837D08C11859000F00E20B37</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Simple Collection View Controller</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-	</dict>
-	<key>rootObject</key>
-	<string>833E369C184E29C300A0326A</string>
-</dict>
-</plist>
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		833E36A8184E29C300A0326A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 833E36A7184E29C300A0326A /* Foundation.framework */; };
+		833E36AA184E29C300A0326A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 833E36A9184E29C300A0326A /* CoreGraphics.framework */; };
+		833E36AC184E29C300A0326A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 833E36AB184E29C300A0326A /* UIKit.framework */; };
+		833E36B2184E29C300A0326A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 833E36B0184E29C300A0326A /* InfoPlist.strings */; };
+		833E36B4184E29C300A0326A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 833E36B3184E29C300A0326A /* main.m */; };
+		833E36C0184E29C300A0326A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 833E36BF184E29C300A0326A /* Images.xcassets */; };
+		833E36C7184E29C300A0326A /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 833E36C6184E29C300A0326A /* XCTest.framework */; };
+		833E36C8184E29C300A0326A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 833E36A7184E29C300A0326A /* Foundation.framework */; };
+		833E36C9184E29C300A0326A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 833E36AB184E29C300A0326A /* UIKit.framework */; };
+		833E36D1184E29C300A0326A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 833E36CF184E29C300A0326A /* InfoPlist.strings */; };
+		833E36D3184E29C300A0326A /* RZTransitions_DemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 833E36D2184E29C300A0326A /* RZTransitions_DemoTests.m */; };
+		833E36E9184E5A9A00A0326A /* RZTransitionsDemoAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 833E36E8184E5A9A00A0326A /* RZTransitionsDemoAppDelegate.m */; };
+		833E36ED184E5AFF00A0326A /* RZSimpleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 833E36EB184E5AFF00A0326A /* RZSimpleViewController.m */; };
+		833E36EE184E5AFF00A0326A /* RZSimpleViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 833E36EC184E5AFF00A0326A /* RZSimpleViewController.xib */; };
+		833E3702184E5DB400A0326A /* RZSimpleColorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 833E3700184E5DB400A0326A /* RZSimpleColorViewController.m */; };
+		833E3703184E5DB400A0326A /* RZSimpleColorViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 833E3701184E5DB400A0326A /* RZSimpleColorViewController.xib */; };
+		837D08C21859000F00E20B37 /* RZSimpleCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 837D08C01859000F00E20B37 /* RZSimpleCollectionViewController.m */; };
+		837D08C31859000F00E20B37 /* RZSimpleCollectionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 837D08C11859000F00E20B37 /* RZSimpleCollectionViewController.xib */; };
+		83855D0A185F98E3004DB036 /* UIColor+Random.m in Sources */ = {isa = PBXBuildFile; fileRef = 83855D09185F98E3004DB036 /* UIColor+Random.m */; };
+		83855D0B185F98E3004DB036 /* UIColor+Random.m in Sources */ = {isa = PBXBuildFile; fileRef = 83855D09185F98E3004DB036 /* UIColor+Random.m */; };
+		9A0F7C96195A0B9500271D1D /* RZTransitionsNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A0F7C69195A0B9500271D1D /* RZTransitionsNavigationController.m */; };
+		9A0F7C97195A0B9500271D1D /* RZUniqueTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A0F7C6D195A0B9500271D1D /* RZUniqueTransition.m */; };
+		9A0F7C98195A0B9500271D1D /* RZBaseSwipeInteractionController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A0F7C70195A0B9500271D1D /* RZBaseSwipeInteractionController.m */; };
+		9A0F7C99195A0B9500271D1D /* RZHorizontalInteractionController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A0F7C72195A0B9500271D1D /* RZHorizontalInteractionController.m */; };
+		9A0F7C9A195A0B9500271D1D /* RZOverscrollInteractionController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A0F7C74195A0B9500271D1D /* RZOverscrollInteractionController.m */; };
+		9A0F7C9B195A0B9500271D1D /* RZPinchInteractionController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A0F7C76195A0B9500271D1D /* RZPinchInteractionController.m */; };
+		9A0F7C9C195A0B9500271D1D /* RZVerticalSwipeInteractionController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A0F7C7A195A0B9500271D1D /* RZVerticalSwipeInteractionController.m */; };
+		9A0F7C9D195A0B9500271D1D /* RZTransitionsManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A0F7C7D195A0B9500271D1D /* RZTransitionsManager.m */; };
+		9A0F7C9E195A0B9500271D1D /* RZCardSlideAnimationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A0F7C81195A0B9500271D1D /* RZCardSlideAnimationController.m */; };
+		9A0F7C9F195A0B9500271D1D /* RZCirclePushAnimationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A0F7C83195A0B9500271D1D /* RZCirclePushAnimationController.m */; };
+		9A0F7CA0195A0B9500271D1D /* RZRectZoomAnimationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A0F7C85195A0B9500271D1D /* RZRectZoomAnimationController.m */; };
+		9A0F7CA1195A0B9500271D1D /* RZSegmentControlMoveFadeAnimationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A0F7C87195A0B9500271D1D /* RZSegmentControlMoveFadeAnimationController.m */; };
+		9A0F7CA2195A0B9500271D1D /* RZShrinkZoomAnimationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A0F7C89195A0B9500271D1D /* RZShrinkZoomAnimationController.m */; };
+		9A0F7CA3195A0B9500271D1D /* RZZoomAlphaAnimationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A0F7C8C195A0B9500271D1D /* RZZoomAlphaAnimationController.m */; };
+		9A0F7CA4195A0B9500271D1D /* RZZoomBlurAnimationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A0F7C8E195A0B9500271D1D /* RZZoomBlurAnimationController.m */; };
+		9A0F7CA5195A0B9500271D1D /* RZZoomPushAnimationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A0F7C90195A0B9500271D1D /* RZZoomPushAnimationController.m */; };
+		9A0F7CA6195A0B9500271D1D /* UIImage+RZTransitionsFastImageBlur.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A0F7C93195A0B9500271D1D /* UIImage+RZTransitionsFastImageBlur.m */; };
+		9A0F7CA7195A0B9500271D1D /* UIImage+RZTransitionsSnapshotHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A0F7C95195A0B9500271D1D /* UIImage+RZTransitionsSnapshotHelpers.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		833E36CA184E29C300A0326A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 833E369C184E29C300A0326A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 833E36A3184E29C300A0326A;
+			remoteInfo = "RZTransitions-Demo";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		1AFF28BF77D4456B8788B566 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		833E36A4184E29C300A0326A /* RZTransitions-Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "RZTransitions-Demo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		833E36A7184E29C300A0326A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		833E36A9184E29C300A0326A /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		833E36AB184E29C300A0326A /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		833E36AF184E29C300A0326A /* RZTransitions-Demo-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "RZTransitions-Demo-Info.plist"; sourceTree = "<group>"; };
+		833E36B1184E29C300A0326A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		833E36B3184E29C300A0326A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		833E36B5184E29C300A0326A /* RZTransitions-Demo-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RZTransitions-Demo-Prefix.pch"; sourceTree = "<group>"; };
+		833E36BF184E29C300A0326A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		833E36C5184E29C300A0326A /* RZTransitions-DemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "RZTransitions-DemoTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		833E36C6184E29C300A0326A /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		833E36CE184E29C300A0326A /* RZTransitions-DemoTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "RZTransitions-DemoTests-Info.plist"; sourceTree = "<group>"; };
+		833E36D0184E29C300A0326A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		833E36D2184E29C300A0326A /* RZTransitions_DemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RZTransitions_DemoTests.m; sourceTree = "<group>"; };
+		833E36E7184E5A9A00A0326A /* RZTransitionsDemoAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RZTransitionsDemoAppDelegate.h; sourceTree = "<group>"; };
+		833E36E8184E5A9A00A0326A /* RZTransitionsDemoAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RZTransitionsDemoAppDelegate.m; sourceTree = "<group>"; };
+		833E36EA184E5AFF00A0326A /* RZSimpleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RZSimpleViewController.h; sourceTree = "<group>"; };
+		833E36EB184E5AFF00A0326A /* RZSimpleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RZSimpleViewController.m; sourceTree = "<group>"; };
+		833E36EC184E5AFF00A0326A /* RZSimpleViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RZSimpleViewController.xib; sourceTree = "<group>"; };
+		833E36FF184E5DB400A0326A /* RZSimpleColorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RZSimpleColorViewController.h; sourceTree = "<group>"; };
+		833E3700184E5DB400A0326A /* RZSimpleColorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RZSimpleColorViewController.m; sourceTree = "<group>"; };
+		833E3701184E5DB400A0326A /* RZSimpleColorViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RZSimpleColorViewController.xib; sourceTree = "<group>"; };
+		837D08BF1859000F00E20B37 /* RZSimpleCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RZSimpleCollectionViewController.h; sourceTree = "<group>"; };
+		837D08C01859000F00E20B37 /* RZSimpleCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RZSimpleCollectionViewController.m; sourceTree = "<group>"; };
+		837D08C11859000F00E20B37 /* RZSimpleCollectionViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RZSimpleCollectionViewController.xib; sourceTree = "<group>"; };
+		83855D08185F98E3004DB036 /* UIColor+Random.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Random.h"; sourceTree = "<group>"; };
+		83855D09185F98E3004DB036 /* UIColor+Random.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Random.m"; sourceTree = "<group>"; };
+		9A0F7C68195A0B9500271D1D /* RZTransitionsNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RZTransitionsNavigationController.h; sourceTree = "<group>"; };
+		9A0F7C69195A0B9500271D1D /* RZTransitionsNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RZTransitionsNavigationController.m; sourceTree = "<group>"; };
+		9A0F7C6B195A0B9500271D1D /* RZTransitionAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RZTransitionAction.h; sourceTree = "<group>"; };
+		9A0F7C6C195A0B9500271D1D /* RZUniqueTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RZUniqueTransition.h; sourceTree = "<group>"; };
+		9A0F7C6D195A0B9500271D1D /* RZUniqueTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RZUniqueTransition.m; sourceTree = "<group>"; };
+		9A0F7C6F195A0B9500271D1D /* RZBaseSwipeInteractionController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RZBaseSwipeInteractionController.h; sourceTree = "<group>"; };
+		9A0F7C70195A0B9500271D1D /* RZBaseSwipeInteractionController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RZBaseSwipeInteractionController.m; sourceTree = "<group>"; };
+		9A0F7C71195A0B9500271D1D /* RZHorizontalInteractionController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RZHorizontalInteractionController.h; sourceTree = "<group>"; };
+		9A0F7C72195A0B9500271D1D /* RZHorizontalInteractionController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RZHorizontalInteractionController.m; sourceTree = "<group>"; };
+		9A0F7C73195A0B9500271D1D /* RZOverscrollInteractionController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RZOverscrollInteractionController.h; sourceTree = "<group>"; };
+		9A0F7C74195A0B9500271D1D /* RZOverscrollInteractionController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RZOverscrollInteractionController.m; sourceTree = "<group>"; };
+		9A0F7C75195A0B9500271D1D /* RZPinchInteractionController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RZPinchInteractionController.h; sourceTree = "<group>"; };
+		9A0F7C76195A0B9500271D1D /* RZPinchInteractionController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RZPinchInteractionController.m; sourceTree = "<group>"; };
+		9A0F7C77195A0B9500271D1D /* RZTransitionInteractionControllerProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RZTransitionInteractionControllerProtocol.h; sourceTree = "<group>"; };
+		9A0F7C78195A0B9500271D1D /* RZTransitionsInteractionControllers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RZTransitionsInteractionControllers.h; sourceTree = "<group>"; };
+		9A0F7C79195A0B9500271D1D /* RZVerticalSwipeInteractionController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RZVerticalSwipeInteractionController.h; sourceTree = "<group>"; };
+		9A0F7C7A195A0B9500271D1D /* RZVerticalSwipeInteractionController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RZVerticalSwipeInteractionController.m; sourceTree = "<group>"; };
+		9A0F7C7C195A0B9500271D1D /* RZTransitionsManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RZTransitionsManager.h; sourceTree = "<group>"; };
+		9A0F7C7D195A0B9500271D1D /* RZTransitionsManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RZTransitionsManager.m; sourceTree = "<group>"; };
+		9A0F7C7F195A0B9500271D1D /* RZAnimationControllerProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RZAnimationControllerProtocol.h; sourceTree = "<group>"; };
+		9A0F7C80195A0B9500271D1D /* RZCardSlideAnimationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RZCardSlideAnimationController.h; sourceTree = "<group>"; };
+		9A0F7C81195A0B9500271D1D /* RZCardSlideAnimationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RZCardSlideAnimationController.m; sourceTree = "<group>"; };
+		9A0F7C82195A0B9500271D1D /* RZCirclePushAnimationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RZCirclePushAnimationController.h; sourceTree = "<group>"; };
+		9A0F7C83195A0B9500271D1D /* RZCirclePushAnimationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RZCirclePushAnimationController.m; sourceTree = "<group>"; };
+		9A0F7C84195A0B9500271D1D /* RZRectZoomAnimationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RZRectZoomAnimationController.h; sourceTree = "<group>"; };
+		9A0F7C85195A0B9500271D1D /* RZRectZoomAnimationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RZRectZoomAnimationController.m; sourceTree = "<group>"; };
+		9A0F7C86195A0B9500271D1D /* RZSegmentControlMoveFadeAnimationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RZSegmentControlMoveFadeAnimationController.h; sourceTree = "<group>"; };
+		9A0F7C87195A0B9500271D1D /* RZSegmentControlMoveFadeAnimationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RZSegmentControlMoveFadeAnimationController.m; sourceTree = "<group>"; };
+		9A0F7C88195A0B9500271D1D /* RZShrinkZoomAnimationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RZShrinkZoomAnimationController.h; sourceTree = "<group>"; };
+		9A0F7C89195A0B9500271D1D /* RZShrinkZoomAnimationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RZShrinkZoomAnimationController.m; sourceTree = "<group>"; };
+		9A0F7C8A195A0B9500271D1D /* RZTransitionsAnimationControllers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RZTransitionsAnimationControllers.h; sourceTree = "<group>"; };
+		9A0F7C8B195A0B9500271D1D /* RZZoomAlphaAnimationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RZZoomAlphaAnimationController.h; sourceTree = "<group>"; };
+		9A0F7C8C195A0B9500271D1D /* RZZoomAlphaAnimationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RZZoomAlphaAnimationController.m; sourceTree = "<group>"; };
+		9A0F7C8D195A0B9500271D1D /* RZZoomBlurAnimationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RZZoomBlurAnimationController.h; sourceTree = "<group>"; };
+		9A0F7C8E195A0B9500271D1D /* RZZoomBlurAnimationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RZZoomBlurAnimationController.m; sourceTree = "<group>"; };
+		9A0F7C8F195A0B9500271D1D /* RZZoomPushAnimationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RZZoomPushAnimationController.h; sourceTree = "<group>"; };
+		9A0F7C90195A0B9500271D1D /* RZZoomPushAnimationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RZZoomPushAnimationController.m; sourceTree = "<group>"; };
+		9A0F7C92195A0B9500271D1D /* UIImage+RZTransitionsFastImageBlur.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+RZTransitionsFastImageBlur.h"; sourceTree = "<group>"; };
+		9A0F7C93195A0B9500271D1D /* UIImage+RZTransitionsFastImageBlur.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+RZTransitionsFastImageBlur.m"; sourceTree = "<group>"; };
+		9A0F7C94195A0B9500271D1D /* UIImage+RZTransitionsSnapshotHelpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+RZTransitionsSnapshotHelpers.h"; sourceTree = "<group>"; };
+		9A0F7C95195A0B9500271D1D /* UIImage+RZTransitionsSnapshotHelpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+RZTransitionsSnapshotHelpers.m"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		833E36A1184E29C300A0326A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				833E36AA184E29C300A0326A /* CoreGraphics.framework in Frameworks */,
+				833E36AC184E29C300A0326A /* UIKit.framework in Frameworks */,
+				833E36A8184E29C300A0326A /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		833E36C2184E29C300A0326A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				833E36C7184E29C300A0326A /* XCTest.framework in Frameworks */,
+				833E36C9184E29C300A0326A /* UIKit.framework in Frameworks */,
+				833E36C8184E29C300A0326A /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		833E369B184E29C300A0326A = {
+			isa = PBXGroup;
+			children = (
+				9A0F7C66195A0B9500271D1D /* RZTransitions */,
+				833E36AD184E29C300A0326A /* RZTransitions-Demo */,
+				833E36CC184E29C300A0326A /* RZTransitions-DemoTests */,
+				833E36A6184E29C300A0326A /* Frameworks */,
+				833E36A5184E29C300A0326A /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		833E36A5184E29C300A0326A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				833E36A4184E29C300A0326A /* RZTransitions-Demo.app */,
+				833E36C5184E29C300A0326A /* RZTransitions-DemoTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		833E36A6184E29C300A0326A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				833E36A7184E29C300A0326A /* Foundation.framework */,
+				833E36A9184E29C300A0326A /* CoreGraphics.framework */,
+				833E36AB184E29C300A0326A /* UIKit.framework */,
+				833E36C6184E29C300A0326A /* XCTest.framework */,
+				1AFF28BF77D4456B8788B566 /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		833E36AD184E29C300A0326A /* RZTransitions-Demo */ = {
+			isa = PBXGroup;
+			children = (
+				833E36E2184E5A0C00A0326A /* Application */,
+				833E36E5184E5A0C00A0326A /* ViewControllers */,
+				833E36BF184E29C300A0326A /* Images.xcassets */,
+				83855D07185F98C4004DB036 /* Utilities */,
+				833E36AE184E29C300A0326A /* Supporting Files */,
+			);
+			path = "RZTransitions-Demo";
+			sourceTree = "<group>";
+		};
+		833E36AE184E29C300A0326A /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				833E36AF184E29C300A0326A /* RZTransitions-Demo-Info.plist */,
+				833E36B0184E29C300A0326A /* InfoPlist.strings */,
+				833E36B3184E29C300A0326A /* main.m */,
+				833E36B5184E29C300A0326A /* RZTransitions-Demo-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		833E36CC184E29C300A0326A /* RZTransitions-DemoTests */ = {
+			isa = PBXGroup;
+			children = (
+				833E36D2184E29C300A0326A /* RZTransitions_DemoTests.m */,
+				833E36CD184E29C300A0326A /* Supporting Files */,
+			);
+			path = "RZTransitions-DemoTests";
+			sourceTree = "<group>";
+		};
+		833E36CD184E29C300A0326A /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				833E36CE184E29C300A0326A /* RZTransitions-DemoTests-Info.plist */,
+				833E36CF184E29C300A0326A /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		833E36E2184E5A0C00A0326A /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				833E36E7184E5A9A00A0326A /* RZTransitionsDemoAppDelegate.h */,
+				833E36E8184E5A9A00A0326A /* RZTransitionsDemoAppDelegate.m */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		833E36E5184E5A0C00A0326A /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				E1A39664194F571C0034A158 /* Simple View Controller */,
+				E1A39665194F57270034A158 /* Simple Color View Controller */,
+				E1A39666194F572F0034A158 /* Simple Collection View Controller */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		83855D07185F98C4004DB036 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				83855D08185F98E3004DB036 /* UIColor+Random.h */,
+				83855D09185F98E3004DB036 /* UIColor+Random.m */,
+			);
+			name = Utilities;
+			path = "RZTransitions-Demo/Utilities";
+			sourceTree = SOURCE_ROOT;
+		};
+		9A0F7C66195A0B9500271D1D /* RZTransitions */ = {
+			isa = PBXGroup;
+			children = (
+				9A0F7C67195A0B9500271D1D /* Components */,
+				9A0F7C6A195A0B9500271D1D /* Data */,
+				9A0F7C6E195A0B9500271D1D /* Interactors */,
+				9A0F7C7B195A0B9500271D1D /* Managers */,
+				9A0F7C7E195A0B9500271D1D /* Transitions */,
+				9A0F7C91195A0B9500271D1D /* Utilities */,
+			);
+			name = RZTransitions;
+			path = ../RZTransitions;
+			sourceTree = "<group>";
+		};
+		9A0F7C67195A0B9500271D1D /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				9A0F7C68195A0B9500271D1D /* RZTransitionsNavigationController.h */,
+				9A0F7C69195A0B9500271D1D /* RZTransitionsNavigationController.m */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		9A0F7C6A195A0B9500271D1D /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				9A0F7C6B195A0B9500271D1D /* RZTransitionAction.h */,
+				9A0F7C6C195A0B9500271D1D /* RZUniqueTransition.h */,
+				9A0F7C6D195A0B9500271D1D /* RZUniqueTransition.m */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		9A0F7C6E195A0B9500271D1D /* Interactors */ = {
+			isa = PBXGroup;
+			children = (
+				9A0F7C6F195A0B9500271D1D /* RZBaseSwipeInteractionController.h */,
+				9A0F7C70195A0B9500271D1D /* RZBaseSwipeInteractionController.m */,
+				9A0F7C71195A0B9500271D1D /* RZHorizontalInteractionController.h */,
+				9A0F7C72195A0B9500271D1D /* RZHorizontalInteractionController.m */,
+				9A0F7C73195A0B9500271D1D /* RZOverscrollInteractionController.h */,
+				9A0F7C74195A0B9500271D1D /* RZOverscrollInteractionController.m */,
+				9A0F7C75195A0B9500271D1D /* RZPinchInteractionController.h */,
+				9A0F7C76195A0B9500271D1D /* RZPinchInteractionController.m */,
+				9A0F7C77195A0B9500271D1D /* RZTransitionInteractionControllerProtocol.h */,
+				9A0F7C78195A0B9500271D1D /* RZTransitionsInteractionControllers.h */,
+				9A0F7C79195A0B9500271D1D /* RZVerticalSwipeInteractionController.h */,
+				9A0F7C7A195A0B9500271D1D /* RZVerticalSwipeInteractionController.m */,
+			);
+			path = Interactors;
+			sourceTree = "<group>";
+		};
+		9A0F7C7B195A0B9500271D1D /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				9A0F7C7C195A0B9500271D1D /* RZTransitionsManager.h */,
+				9A0F7C7D195A0B9500271D1D /* RZTransitionsManager.m */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		9A0F7C7E195A0B9500271D1D /* Transitions */ = {
+			isa = PBXGroup;
+			children = (
+				9A0F7C7F195A0B9500271D1D /* RZAnimationControllerProtocol.h */,
+				9A0F7C80195A0B9500271D1D /* RZCardSlideAnimationController.h */,
+				9A0F7C81195A0B9500271D1D /* RZCardSlideAnimationController.m */,
+				9A0F7C82195A0B9500271D1D /* RZCirclePushAnimationController.h */,
+				9A0F7C83195A0B9500271D1D /* RZCirclePushAnimationController.m */,
+				9A0F7C84195A0B9500271D1D /* RZRectZoomAnimationController.h */,
+				9A0F7C85195A0B9500271D1D /* RZRectZoomAnimationController.m */,
+				9A0F7C86195A0B9500271D1D /* RZSegmentControlMoveFadeAnimationController.h */,
+				9A0F7C87195A0B9500271D1D /* RZSegmentControlMoveFadeAnimationController.m */,
+				9A0F7C88195A0B9500271D1D /* RZShrinkZoomAnimationController.h */,
+				9A0F7C89195A0B9500271D1D /* RZShrinkZoomAnimationController.m */,
+				9A0F7C8A195A0B9500271D1D /* RZTransitionsAnimationControllers.h */,
+				9A0F7C8B195A0B9500271D1D /* RZZoomAlphaAnimationController.h */,
+				9A0F7C8C195A0B9500271D1D /* RZZoomAlphaAnimationController.m */,
+				9A0F7C8D195A0B9500271D1D /* RZZoomBlurAnimationController.h */,
+				9A0F7C8E195A0B9500271D1D /* RZZoomBlurAnimationController.m */,
+				9A0F7C8F195A0B9500271D1D /* RZZoomPushAnimationController.h */,
+				9A0F7C90195A0B9500271D1D /* RZZoomPushAnimationController.m */,
+			);
+			path = Transitions;
+			sourceTree = "<group>";
+		};
+		9A0F7C91195A0B9500271D1D /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				9A0F7C92195A0B9500271D1D /* UIImage+RZTransitionsFastImageBlur.h */,
+				9A0F7C93195A0B9500271D1D /* UIImage+RZTransitionsFastImageBlur.m */,
+				9A0F7C94195A0B9500271D1D /* UIImage+RZTransitionsSnapshotHelpers.h */,
+				9A0F7C95195A0B9500271D1D /* UIImage+RZTransitionsSnapshotHelpers.m */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		E1A39664194F571C0034A158 /* Simple View Controller */ = {
+			isa = PBXGroup;
+			children = (
+				833E36EA184E5AFF00A0326A /* RZSimpleViewController.h */,
+				833E36EB184E5AFF00A0326A /* RZSimpleViewController.m */,
+				833E36EC184E5AFF00A0326A /* RZSimpleViewController.xib */,
+			);
+			name = "Simple View Controller";
+			sourceTree = "<group>";
+		};
+		E1A39665194F57270034A158 /* Simple Color View Controller */ = {
+			isa = PBXGroup;
+			children = (
+				833E36FF184E5DB400A0326A /* RZSimpleColorViewController.h */,
+				833E3700184E5DB400A0326A /* RZSimpleColorViewController.m */,
+				833E3701184E5DB400A0326A /* RZSimpleColorViewController.xib */,
+			);
+			name = "Simple Color View Controller";
+			sourceTree = "<group>";
+		};
+		E1A39666194F572F0034A158 /* Simple Collection View Controller */ = {
+			isa = PBXGroup;
+			children = (
+				837D08BF1859000F00E20B37 /* RZSimpleCollectionViewController.h */,
+				837D08C01859000F00E20B37 /* RZSimpleCollectionViewController.m */,
+				837D08C11859000F00E20B37 /* RZSimpleCollectionViewController.xib */,
+			);
+			name = "Simple Collection View Controller";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		833E36A3184E29C300A0326A /* RZTransitions-Demo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 833E36D6184E29C300A0326A /* Build configuration list for PBXNativeTarget "RZTransitions-Demo" */;
+			buildPhases = (
+				833E36A0184E29C300A0326A /* Sources */,
+				833E36A1184E29C300A0326A /* Frameworks */,
+				833E36A2184E29C300A0326A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "RZTransitions-Demo";
+			productName = "RZTransitions-Demo";
+			productReference = 833E36A4184E29C300A0326A /* RZTransitions-Demo.app */;
+			productType = "com.apple.product-type.application";
+		};
+		833E36C4184E29C300A0326A /* RZTransitions-DemoTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 833E36D9184E29C300A0326A /* Build configuration list for PBXNativeTarget "RZTransitions-DemoTests" */;
+			buildPhases = (
+				833E36C1184E29C300A0326A /* Sources */,
+				833E36C2184E29C300A0326A /* Frameworks */,
+				833E36C3184E29C300A0326A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				833E36CB184E29C300A0326A /* PBXTargetDependency */,
+			);
+			name = "RZTransitions-DemoTests";
+			productName = "RZTransitions-DemoTests";
+			productReference = 833E36C5184E29C300A0326A /* RZTransitions-DemoTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		833E369C184E29C300A0326A /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = RZ;
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = Raizlabs;
+				TargetAttributes = {
+					833E36C4184E29C300A0326A = {
+						TestTargetID = 833E36A3184E29C300A0326A;
+					};
+				};
+			};
+			buildConfigurationList = 833E369F184E29C300A0326A /* Build configuration list for PBXProject "RZTransitions-Demo" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 833E369B184E29C300A0326A;
+			productRefGroup = 833E36A5184E29C300A0326A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				833E36A3184E29C300A0326A /* RZTransitions-Demo */,
+				833E36C4184E29C300A0326A /* RZTransitions-DemoTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		833E36A2184E29C300A0326A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				833E3703184E5DB400A0326A /* RZSimpleColorViewController.xib in Resources */,
+				833E36EE184E5AFF00A0326A /* RZSimpleViewController.xib in Resources */,
+				833E36C0184E29C300A0326A /* Images.xcassets in Resources */,
+				837D08C31859000F00E20B37 /* RZSimpleCollectionViewController.xib in Resources */,
+				833E36B2184E29C300A0326A /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		833E36C3184E29C300A0326A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				833E36D1184E29C300A0326A /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		833E36A0184E29C300A0326A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9A0F7CA6195A0B9500271D1D /* UIImage+RZTransitionsFastImageBlur.m in Sources */,
+				9A0F7CA0195A0B9500271D1D /* RZRectZoomAnimationController.m in Sources */,
+				9A0F7CA7195A0B9500271D1D /* UIImage+RZTransitionsSnapshotHelpers.m in Sources */,
+				9A0F7C99195A0B9500271D1D /* RZHorizontalInteractionController.m in Sources */,
+				9A0F7C9C195A0B9500271D1D /* RZVerticalSwipeInteractionController.m in Sources */,
+				833E36E9184E5A9A00A0326A /* RZTransitionsDemoAppDelegate.m in Sources */,
+				9A0F7C9E195A0B9500271D1D /* RZCardSlideAnimationController.m in Sources */,
+				9A0F7C9A195A0B9500271D1D /* RZOverscrollInteractionController.m in Sources */,
+				9A0F7C9B195A0B9500271D1D /* RZPinchInteractionController.m in Sources */,
+				9A0F7C98195A0B9500271D1D /* RZBaseSwipeInteractionController.m in Sources */,
+				837D08C21859000F00E20B37 /* RZSimpleCollectionViewController.m in Sources */,
+				833E3702184E5DB400A0326A /* RZSimpleColorViewController.m in Sources */,
+				9A0F7C9D195A0B9500271D1D /* RZTransitionsManager.m in Sources */,
+				9A0F7CA4195A0B9500271D1D /* RZZoomBlurAnimationController.m in Sources */,
+				9A0F7C9F195A0B9500271D1D /* RZCirclePushAnimationController.m in Sources */,
+				833E36ED184E5AFF00A0326A /* RZSimpleViewController.m in Sources */,
+				9A0F7CA2195A0B9500271D1D /* RZShrinkZoomAnimationController.m in Sources */,
+				833E36B4184E29C300A0326A /* main.m in Sources */,
+				9A0F7C97195A0B9500271D1D /* RZUniqueTransition.m in Sources */,
+				9A0F7CA3195A0B9500271D1D /* RZZoomAlphaAnimationController.m in Sources */,
+				83855D0A185F98E3004DB036 /* UIColor+Random.m in Sources */,
+				9A0F7C96195A0B9500271D1D /* RZTransitionsNavigationController.m in Sources */,
+				9A0F7CA1195A0B9500271D1D /* RZSegmentControlMoveFadeAnimationController.m in Sources */,
+				9A0F7CA5195A0B9500271D1D /* RZZoomPushAnimationController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		833E36C1184E29C300A0326A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				83855D0B185F98E3004DB036 /* UIColor+Random.m in Sources */,
+				833E36D3184E29C300A0326A /* RZTransitions_DemoTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		833E36CB184E29C300A0326A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 833E36A3184E29C300A0326A /* RZTransitions-Demo */;
+			targetProxy = 833E36CA184E29C300A0326A /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		833E36B0184E29C300A0326A /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				833E36B1184E29C300A0326A /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		833E36CF184E29C300A0326A /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				833E36D0184E29C300A0326A /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		833E36D4184E29C300A0326A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		833E36D5184E29C300A0326A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		833E36D7184E29C300A0326A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "RZTransitions-Demo/RZTransitions-Demo-Prefix.pch";
+				INFOPLIST_FILE = "RZTransitions-Demo/RZTransitions-Demo-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		833E36D8184E29C300A0326A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "RZTransitions-Demo/RZTransitions-Demo-Prefix.pch";
+				INFOPLIST_FILE = "RZTransitions-Demo/RZTransitions-Demo-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		833E36DA184E29C300A0326A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/RZTransitions-Demo.app/RZTransitions-Demo";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "RZTransitions-Demo/RZTransitions-Demo-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "RZTransitions-DemoTests/RZTransitions-DemoTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		833E36DB184E29C300A0326A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/RZTransitions-Demo.app/RZTransitions-Demo";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "RZTransitions-Demo/RZTransitions-Demo-Prefix.pch";
+				INFOPLIST_FILE = "RZTransitions-DemoTests/RZTransitions-DemoTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		833E369F184E29C300A0326A /* Build configuration list for PBXProject "RZTransitions-Demo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				833E36D4184E29C300A0326A /* Debug */,
+				833E36D5184E29C300A0326A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		833E36D6184E29C300A0326A /* Build configuration list for PBXNativeTarget "RZTransitions-Demo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				833E36D7184E29C300A0326A /* Debug */,
+				833E36D8184E29C300A0326A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		833E36D9184E29C300A0326A /* Build configuration list for PBXNativeTarget "RZTransitions-DemoTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				833E36DA184E29C300A0326A /* Debug */,
+				833E36DB184E29C300A0326A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 833E369C184E29C300A0326A /* Project object */;
+}
