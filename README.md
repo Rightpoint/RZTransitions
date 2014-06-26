@@ -97,11 +97,6 @@ UINavigationController *navigationController = [[UINavigationController alloc] i
  
 You can use any of the animation controllers or interaction controllers without the RZTransitionsManager and simply use them with the iOS7 custom View Controller transition APIs.
 
-
-## Documentation
-
-See the [CocoaDocs](http://cocoadocs.org/docsets/RZTransitions/1.0) page for complete documentation.
-
 ## License
 RZTransitions is distributed under an [MIT License](http://opensource.org/licenses/MIT). See the LICENSE file for more details.
 
