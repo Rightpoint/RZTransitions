@@ -1,8 +1,10 @@
 <p align="center">
 <img src="https://raw.github.com/Raizlabs/RZTransitions/master/Web/RZTransitions.png" alt="RZTransitions" width="763" height="200" />
 </p>
-============
 
+[![Build Status](https://travis-ci.org/Raizlabs/RZTransitions.svg)](https://travis-ci.org/Raizlabs/RZTransitions)
+
+============
 
 <h3 align="center">RZTransitions is a library to help make iOS7 custom View Controller transitions slick and simple.</h3>
 <p align="center" >
@@ -94,6 +96,11 @@ UINavigationController *navigationController = [[UINavigationController alloc] i
  - A shared instance manager that helps wrap the iOS7 custom transition protocol to expose a friendlier API
  
 You can use any of the animation controllers or interaction controllers without the RZTransitionsManager and simply use them with the iOS7 custom View Controller transition APIs.
+
+
+## Documentation
+
+See the [CocoaDocs](http://cocoadocs.org/docsets/RZTransitions/1.0) page for complete documentation.
 
 ## License
 RZTransitions is distributed under an [MIT License](http://opensource.org/licenses/MIT). See the LICENSE file for more details.
