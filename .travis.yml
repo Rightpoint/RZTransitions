@@ -1,0 +1,7 @@
+language: objective-c
+before_install: 
+    - rake install
+script: 
+    - rake clean
+    - rake build
+    - rake analyze

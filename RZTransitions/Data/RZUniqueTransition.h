@@ -31,8 +31,19 @@
 
 @interface RZUniqueTransition : NSObject <NSCopying>
 
+/**
+ *  The bitmask of possible actions allowed for this transition (push/pop/etc).
+ */
 @property (assign, nonatomic) RZTransitionAction transitionAction;
+
+/**
+ *  The class of the @c UIViewController being transitioned from.
+ */
 @property (assign, nonatomic) Class fromViewControllerClass;
+
+/**
+ *  The class of the @c UIViewController being transitioned to.
+ */
 @property (assign, nonatomic) Class toViewControllerClass;
 
 - (instancetype)initWithAction:(RZTransitionAction)action

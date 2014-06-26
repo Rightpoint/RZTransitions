@@ -1,8 +1,10 @@
 <p align="center">
 <img src="https://raw.github.com/Raizlabs/RZTransitions/master/Web/RZTransitions.png" alt="RZTransitions" width="763" height="200" />
 </p>
-============
 
+[![Build Status](https://travis-ci.org/Raizlabs/RZTransitions.svg)](https://travis-ci.org/Raizlabs/RZTransitions)
+
+============
 
 <h3 align="center">RZTransitions is a library to help make iOS7 custom View Controller transitions slick and simple.</h3>
 <p align="center" >
@@ -10,6 +12,20 @@
 <img src="http://raw.github.com/Raizlabs/RZTransitions/master/Web/RZTransitionsDemo.gif" alt="Overview" />
 <br/>
 </p>
+
+## Installation
+
+### CocoaPods (Recommended)
+
+Add the following to your Podfile:
+
+`pod 'RZTransitions', '~> 1.0'`
+
+RZTransitions follows semantic versioning conventions. Check the [releases page](https://github.com/Raizlabs/RZTransitions/releases) for the latest updates and version history. 
+
+### Manual Installation
+
+Copy and add all of the files in the `RZTransitions` directory (and its subdirectories) into your project.
 
 ## Setting a New Default Transition
 

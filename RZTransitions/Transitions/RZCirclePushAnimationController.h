@@ -32,13 +32,19 @@
 @protocol RZCirclePushAnimationDelegate <NSObject>
 
 @optional
-// Return the center point, in the from view controller's coordinate space, where the circle
-// transition should be centered.  If not used, the center defaults to the center of the
-// from view controller.
+
+/**
+ *  Calculate the center point, in the from view controller's coordinate space, where the circle transition should be centered.  If not used, the center defaults to the center of the from view controller.
+ *
+ *  @return the circle transition's center point.
+ */
 - (CGPoint)circleCenter;
 
-// Return the radius that the circle transition should start from.  If not used, the radius
-// defaults to the minimum of the from view controller's bounds width or height.
+/**
+ *  Calculate the radius that the circle transition should start from.  If not used, the radius defaults to the minimum of the from view controller's bounds width or height.
+ *
+ *  @return the circle transition's starting radius.
+ */
 - (CGFloat)circleStartingRadius;
 
 @end

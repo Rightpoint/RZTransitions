@@ -143,7 +143,6 @@
 
 - (UIViewController *)nextViewControllerForInteractor:(id<RZTransitionInteractionController>)interactor
 {
-    // TODO: Check if it is a vertical or a horizontal and return the appropriate VC for the interactor
     if ([interactor isKindOfClass:[RZVerticalSwipeInteractionController class]]) {
         return [self nextSimpleColorViewController];
     }
