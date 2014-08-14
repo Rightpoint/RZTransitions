@@ -31,6 +31,7 @@
 
 @interface RZCardSlideAnimationController : NSObject <RZAnimationControllerProtocol>
 
+@property (nonatomic, assign) CGFloat transitionTime;
 @property (nonatomic, assign) BOOL horizontalOrientation;
-
+@property (nonatomic, strong) UIColor *containerBackgroundColor;
 @end

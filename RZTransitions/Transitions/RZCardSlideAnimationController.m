@@ -42,7 +42,9 @@
     self = [super init];
     if (self)
     {
+        _transitionTime = kRZSlideTransitionTime;
         _horizontalOrientation = TRUE;
+        _containerBackgroundColor = [UIColor blackColor];
     }
     return self;
 }
@@ -55,7 +57,7 @@
     
     UIView *bgView = [[UIView alloc] initWithFrame:container.bounds];
     bgView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
-    bgView.backgroundColor = [UIColor blackColor];
+    bgView.backgroundColor = self.containerBackgroundColor;
     [container insertSubview:bgView atIndex:0];
     
     if (self.isPositiveAnimation)
@@ -64,7 +66,7 @@
         toViewController.view.transform = CGAffineTransformMakeScale(1.0 - kRZSlideScaleChangePct, 1.0 - kRZSlideScaleChangePct);
         toViewController.view.alpha = 0.1f;
         
-        [UIView animateWithDuration:kRZSlideTransitionTime
+        [UIView animateWithDuration:[self transitionDuration:transitionContext]
                               delay:0
                             options:UIViewAnimationOptionCurveEaseOut
                          animations:^{
@@ -98,7 +100,7 @@
             toViewController.view.transform = CGAffineTransformMakeTranslation(0, container.bounds.size.height);
         }
 
-        [UIView animateWithDuration:kRZSlideTransitionTime
+        [UIView animateWithDuration:[self transitionDuration:transitionContext]
                               delay:0
                             options:UIViewAnimationOptionCurveEaseOut
                          animations:^{
@@ -118,7 +120,7 @@
 
 - (NSTimeInterval)transitionDuration:(id<UIViewControllerContextTransitioning>)transitionContext
 {
-    return kRZSlideTransitionTime;
+    return self.transitionTime;
 }
 
 @end
