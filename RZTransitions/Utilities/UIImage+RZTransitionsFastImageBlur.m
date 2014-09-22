@@ -100,12 +100,17 @@
 
 + (UIImage *)blurredImageByCapturingView:(UIView *)view withRadius:(CGFloat)blurRadius tintColor:(UIColor *)tintColor saturationDeltaFactor:(CGFloat)saturationDeltaFactor
 {
+    return [self blurredImageByCapturingView:view withRadius:blurRadius tintColor:tintColor saturationDeltaFactor:saturationDeltaFactor afterScreenUpdates:YES];
+}
+
++ (UIImage *)blurredImageByCapturingView:(UIView *)view withRadius:(CGFloat)blurRadius tintColor:(UIColor *)tintColor saturationDeltaFactor:(CGFloat)saturationDeltaFactor afterScreenUpdates:(BOOL)screenUpdates
+{
     UIImage *outputImage = nil;
     CGRect imageRect = { CGPointZero, view.bounds.size };
     
     UIGraphicsBeginImageContextWithOptions(imageRect.size, NO, [UIScreen mainScreen].scale);
     
-    [view drawViewHierarchyInRect:view.bounds afterScreenUpdates:YES];
+    [view drawViewHierarchyInRect:view.bounds afterScreenUpdates:screenUpdates];
     
     BOOL hasBlur = blurRadius > __FLT_EPSILON__;
     BOOL hasSaturationChange = fabs(saturationDeltaFactor - 1.) > __FLT_EPSILON__;
