@@ -37,6 +37,7 @@
 
 - (void)viewDidLoad
 {
+    [super viewDidLoad];
     __weak RZTransitionsNavigationController *weakSelf = self;
     if ([self respondsToSelector:@selector(interactivePopGestureRecognizer)]) {
         [self.interactivePopGestureRecognizer setEnabled:YES];
