@@ -27,6 +27,8 @@
 //
 
 #import "RZSegmentControlMoveFadeAnimationController.h"
+#import <UIKit/UIKit.h>
+
 #import "UIImage+RZTransitionsFastImageBlur.h"
 
 #define kRZSegAnimationTransitionTime   0.4f
@@ -49,14 +51,11 @@
     CGAffineTransform newTranslateTransform;
 
     // Animate to the right
-    if (self.isPositiveAnimation)
-    {
+    if ( self.isPositiveAnimation ) {
         oldTranslateTransform = CGAffineTransformMakeTranslation(container.bounds.size.width*kRZSegXOffsetFactor, -container.bounds.size.height*kRZSegYOffsetFactor);
         newTranslateTransform = CGAffineTransformMakeTranslation(-container.bounds.size.width*kRZSegXOffsetFactor, -container.bounds.size.height*kRZSegYOffsetFactor);
     }
-    // Animate to the left
-    else
-    {
+    else {     // Animate to the left
         oldTranslateTransform = CGAffineTransformMakeTranslation(-container.bounds.size.width*kRZSegXOffsetFactor, -container.bounds.size.height*kRZSegYOffsetFactor);
         newTranslateTransform = CGAffineTransformMakeTranslation(container.bounds.size.width*kRZSegXOffsetFactor, -container.bounds.size.height*kRZSegYOffsetFactor);
     }
@@ -83,6 +82,5 @@
 {
     return kRZSegAnimationTransitionTime;
 }
-
 
 @end

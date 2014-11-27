@@ -35,8 +35,9 @@
 
 /**
  * If the animation should be positive or negative.
- * Positive: push / present / fromTop / toRight
- * Negative: pop / dismiss / fromBottom / toLeft
+ * 
+ * @note Positive: push / present / fromTop / toRight
+ * @note Negative: pop / dismiss / fromBottom / toLeft
  */
 @property (nonatomic, assign) BOOL isPositiveAnimation;
 

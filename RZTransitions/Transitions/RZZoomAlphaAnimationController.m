@@ -27,6 +27,7 @@
 //
 
 #import "RZZoomAlphaAnimationController.h"
+#import <UIKit/UIKit.h>
 
 #define kRZZoomAlphaTransitionTime 0.3
 #define kRZZoomAlphaMaxScale       1.333
@@ -45,8 +46,7 @@
     
     toViewController.view.userInteractionEnabled = YES;
     
-    if (!self.isPositiveAnimation)
-    {
+    if ( !self.isPositiveAnimation ) {
         fromViewController.view.opaque = NO;
         [container insertSubview:toViewController.view belowSubview:fromViewController.view];
         
@@ -54,19 +54,18 @@
                               delay:0
                             options:UIViewAnimationOptionCurveEaseOut
                          animations:^{
-                             fromViewController.view.alpha = 0.f;
+                             fromViewController.view.alpha = 0.0f;
                              fromViewController.view.transform =  CGAffineTransformMakeScale(kRZZoomAlphaMaxScale, kRZZoomAlphaMaxScale);
                          }
                          completion:^(BOOL finished) {
-                             fromViewController.view.alpha = 1.f;
+                             fromViewController.view.alpha = 1.0f;
                              fromViewController.view.transform = CGAffineTransformIdentity;
                              [transitionContext completeTransition:!transitionContext.transitionWasCancelled];
                          }];
     }
-    else
-    {
+    else {
         toViewController.view.opaque = NO;
-        toViewController.view.alpha = 0.f;
+        toViewController.view.alpha = 0.0f;
         toViewController.view.transform = CGAffineTransformMakeScale(kRZZoomAlphaMaxScale, kRZZoomAlphaMaxScale);
         [container addSubview:toViewController.view];
         
@@ -74,7 +73,7 @@
                               delay:0
                             options:UIViewAnimationOptionCurveEaseIn
                          animations:^{
-                             toViewController.view.alpha = 1.f;
+                             toViewController.view.alpha = 1.0f;
                              toViewController.view.transform = CGAffineTransformIdentity;
                          }
                          completion:^(BOOL finished) {

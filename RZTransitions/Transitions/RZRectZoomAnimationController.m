@@ -27,15 +27,13 @@
 //
 
 #import "RZRectZoomAnimationController.h"
+#import <UIKit/UIKit.h>
 
 static const CGFloat kRZRectZoomAnimationTime             = 0.7f;
 static const CGFloat kRZRectZoomDefaultFadeAnimationTime  = 0.2f;
 static const CGFloat kRZRectZoomDefaultSpringDampening    = 0.6f;
 static const CGFloat kRZRectZoomDefaultSpringVelocity     = 15.0f;
 
-@interface RZRectZoomAnimationController ()
-
-@end
 
 @implementation RZRectZoomAnimationController
 
@@ -43,10 +41,10 @@ static const CGFloat kRZRectZoomDefaultSpringVelocity     = 15.0f;
 
 #pragma mark - Animation Transition
 
-- (id)init
+- (instancetype)init
 {
     self = [super init];
-    if (self) {
+    if ( self ) {
         _shouldFadeBackgroundViewController = YES;
         _animationSpringDampening = kRZRectZoomDefaultSpringDampening;
         _animationSpringVelocity = kRZRectZoomDefaultSpringVelocity;
@@ -60,9 +58,10 @@ static const CGFloat kRZRectZoomDefaultSpringVelocity     = 15.0f;
     UIViewController *toViewController = [transitionContext viewControllerForKey:UITransitionContextToViewControllerKey];
     UIView *container = [transitionContext containerView];
 
-    __block CGRect originalFrame = toViewController.view.frame;
-    __block CGRect cellFrame = CGRectZero;
-    if ( (self.rectZoomDelegate != nil) && [self.rectZoomDelegate respondsToSelector:@selector(rectZoomPosition)] ) {
+    CGRect originalFrame = toViewController.view.frame;
+    CGRect cellFrame = CGRectZero;
+
+    if ( [self.rectZoomDelegate respondsToSelector:@selector(rectZoomPosition)] ) {
         cellFrame = [self.rectZoomDelegate rectZoomPosition];
     }
     
@@ -72,7 +71,7 @@ static const CGFloat kRZRectZoomDefaultSpringVelocity     = 15.0f;
         [container addSubview:resizableSnapshotView];
         
         [UIView animateWithDuration:kRZRectZoomDefaultFadeAnimationTime animations:^{
-            if (self.shouldFadeBackgroundViewController) {
+            if ( self.shouldFadeBackgroundViewController ) {
                 fromViewController.view.alpha = 0.0f;
             }
         }];
@@ -87,10 +86,10 @@ static const CGFloat kRZRectZoomDefaultSpringVelocity     = 15.0f;
                          } completion:^(BOOL finished) {
                              [container addSubview:toViewController.view];
                              [resizableSnapshotView removeFromSuperview];
-                            if (self.shouldFadeBackgroundViewController) {
-                                fromViewController.view.alpha = 1.0f;
-                            }
-                            [transitionContext completeTransition:!transitionContext.transitionWasCancelled];
+                             if ( self.shouldFadeBackgroundViewController ) {
+                                 fromViewController.view.alpha = 1.0f;
+                             }
+                             [transitionContext completeTransition:!transitionContext.transitionWasCancelled];
         }];
     }
     else {
@@ -101,6 +100,8 @@ static const CGFloat kRZRectZoomDefaultSpringVelocity     = 15.0f;
         [container insertSubview:toViewController.view belowSubview:resizableSnapshotView];
 
         toViewController.view.alpha = 0.0f;
+
+        //! TODO:  no...  We need to fix this.  Figure out who needed this line, do it right, then test.
         [toViewController viewWillAppear:YES];
         
         [UIView animateWithDuration:kRZRectZoomDefaultFadeAnimationTime animations:^{

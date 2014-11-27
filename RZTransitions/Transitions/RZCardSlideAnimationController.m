@@ -35,13 +35,12 @@
 
 @synthesize isPositiveAnimation = _isPositiveAnimation;
 
-- (id)init
+- (instancetype)init
 {
     self = [super init];
-    if (self)
-    {
+    if ( self ) {
         _transitionTime = kRZSlideTransitionTime;
-        _horizontalOrientation = TRUE;
+        _horizontalOrientation = YES;
         _containerBackgroundColor = [UIColor blackColor];
     }
     return self;
@@ -58,8 +57,7 @@
     bgView.backgroundColor = self.containerBackgroundColor;
     [container insertSubview:bgView atIndex:0];
     
-    if (self.isPositiveAnimation)
-    {
+    if ( self.isPositiveAnimation ) {
         [container insertSubview:toViewController.view belowSubview:fromViewController.view];
         toViewController.view.transform = CGAffineTransformMakeScale(1.0 - kRZSlideScaleChangePct, 1.0 - kRZSlideScaleChangePct);
         toViewController.view.alpha = 0.1f;
@@ -70,12 +68,10 @@
                          animations:^{
                              toViewController.view.transform = CGAffineTransformIdentity;
                              toViewController.view.alpha = 1.0f;
-                             if (self.horizontalOrientation)
-                             {
+                             if ( self.horizontalOrientation ) {
                                  fromViewController.view.transform = CGAffineTransformMakeTranslation(-container.bounds.size.width, 0);
                              }
-                             else
-                             {
+                             else {
                                  fromViewController.view.transform = CGAffineTransformMakeTranslation(0, container.bounds.size.height);
                              }
                          }
@@ -86,15 +82,13 @@
                              [transitionContext completeTransition:!transitionContext.transitionWasCancelled];
                          }];
     }
-    else
-    {
+    else {
         [container addSubview:toViewController.view];
-        if (self.horizontalOrientation)
-        {
+        
+        if ( self.horizontalOrientation ) {
             toViewController.view.transform = CGAffineTransformMakeTranslation(-container.bounds.size.width, 0);
         }
-        else
-        {
+        else {
             toViewController.view.transform = CGAffineTransformMakeTranslation(0, container.bounds.size.height);
         }
 

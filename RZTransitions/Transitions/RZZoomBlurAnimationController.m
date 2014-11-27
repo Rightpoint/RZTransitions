@@ -36,37 +36,21 @@
 #define kRZZBDefaultBlurRadius      12.0f
 #define kRZZBDefaultSaturationDelta 1.0f
 #define kRZZBDefaultTintColor       [UIColor colorWithWhite:1.0f alpha:0.15f]
+
 static char kRZZoomBlurImageAssocKey;
 
 @implementation RZZoomBlurAnimationController
 
 @synthesize isPositiveAnimation = _isPositiveAnimation;
 
-- (CGFloat)blurRadius
-{
-    if (_blurRadius == 0)
-    {
+- (instancetype)init {
+    self = [super init];
+    if ( self ) {
         _blurRadius = kRZZBDefaultBlurRadius;
-    }
-    return _blurRadius;
-}
-
-- (CGFloat)saturationDelta
-{
-    if (_saturationDelta == 0)
-    {
         _saturationDelta = kRZZBDefaultSaturationDelta;
-    }
-    return _saturationDelta;
-}
-
-- (UIColor *)blurTintColor
-{
-    if (!_blurTintColor)
-    {
         _blurTintColor = kRZZBDefaultTintColor;
     }
-    return _blurTintColor;
+    return self;
 }
 
 #pragma mark - Animated transitioning
