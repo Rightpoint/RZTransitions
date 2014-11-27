@@ -27,7 +27,7 @@
 //
 
 #import "RZZoomPushAnimationController.h"
-#import "RZHorizontalInteractionController.h"
+#import <UIKit/UIKit.h>
 
 #define kRZPushTransitionTime 0.35
 #define kRZPushScaleChangePct 0.33
@@ -42,11 +42,11 @@
     UIViewController *toViewController = [transitionContext viewControllerForKey:UITransitionContextToViewControllerKey];
     UIView *container = [transitionContext containerView];
     
-    if (self.isPositiveAnimation)
-    {
+    if ( self.isPositiveAnimation ) {
         [container insertSubview:toViewController.view belowSubview:fromViewController.view];
         toViewController.view.transform = CGAffineTransformMakeScale(1.0 - kRZPushScaleChangePct, 1.0 - kRZPushScaleChangePct);
-        
+
+        //! TODO: We shouldn't really call viewWillAppear here..
         [toViewController viewWillAppear:YES];
         [UIView animateWithDuration:kRZPushTransitionTime
                               delay:0
@@ -63,8 +63,7 @@
                              [transitionContext completeTransition:!transitionContext.transitionWasCancelled];
                          }];
     }
-    else
-    {
+    else {
         [container addSubview:toViewController.view];
         toViewController.view.transform = CGAffineTransformMakeScale(1.0 + kRZPushScaleChangePct, 1.0 + kRZPushScaleChangePct);
         toViewController.view.alpha = 0.0f;

@@ -29,6 +29,8 @@
 #ifndef RZTransitions_RZAnimationControllerProtocol_h
 #define RZTransitions_RZAnimationControllerProtocol_h
 
+#import <UIKit/UIKit.h>
+
 @protocol RZAnimationControllerProtocol <UIViewControllerAnimatedTransitioning>
 
 @required

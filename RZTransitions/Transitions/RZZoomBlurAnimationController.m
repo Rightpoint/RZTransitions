@@ -63,8 +63,7 @@ static char kRZZoomBlurImageAssocKey;
     
     toViewController.view.userInteractionEnabled = YES;
     
-    if (!self.isPositiveAnimation)
-    {
+    if ( !self.isPositiveAnimation ) {
         // This may not exist if we didn't present with this guy originally. If not, it will just do an alpha fade, no blur.
         UIImageView *blurImageView = objc_getAssociatedObject(fromViewController, &kRZZoomBlurImageAssocKey);
         
@@ -72,8 +71,7 @@ static char kRZZoomBlurImageAssocKey;
         fromViewController.view.opaque = NO;
         [container insertSubview:toViewController.view belowSubview:fromViewController.view];
         
-        if (blurImageView)
-        {
+        if ( blurImageView ) {
             [container insertSubview:blurImageView aboveSubview:toViewController.view];
         }
 
@@ -93,8 +91,7 @@ static char kRZZoomBlurImageAssocKey;
                              [transitionContext completeTransition:!transitionContext.transitionWasCancelled];
                          }];
     }
-    else
-    {
+    else {
         UIImage *blurImage = [UIImage blurredImageByCapturingView:fromViewController.view withRadius:self.blurRadius tintColor:self.blurTintColor saturationDeltaFactor:self.saturationDelta];
         UIImageView *blurImageView = [[UIImageView alloc] initWithImage:blurImage];
         objc_setAssociatedObject(toViewController, &kRZZoomBlurImageAssocKey, blurImageView, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
