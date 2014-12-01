@@ -43,7 +43,8 @@ static char kRZZoomBlurImageAssocKey;
 
 @synthesize isPositiveAnimation = _isPositiveAnimation;
 
-- (instancetype)init {
+- (instancetype)init
+{
     self = [super init];
     if ( self ) {
         _blurRadius = kRZZBDefaultBlurRadius;

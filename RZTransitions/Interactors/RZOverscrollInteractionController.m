@@ -28,10 +28,10 @@
 
 #import "RZOverscrollInteractionController.h"
 
-static CGFloat const kRZOverscrollInteractionDefaultCompletionPercentage    = 0.35f;
-static CGFloat const kRZOverscrollInteractionDefaultTopStartDistance        = 25.0f;
-static CGFloat const kRZOverscrollInteractionDefaultBottomStartDistance     = 25.0f;
-static CGFloat const kRZOverscrollInteractionDefaultTranslationDistance     = 200.0f;
+static const CGFloat kRZOverscrollInteractionDefaultCompletionPercentage    = 0.35f;
+static const CGFloat kRZOverscrollInteractionDefaultTopStartDistance        = 25.0f;
+static const CGFloat kRZOverscrollInteractionDefaultBottomStartDistance     = 25.0f;
+static const CGFloat kRZOverscrollInteractionDefaultTranslationDistance     = 200.0f;
 
 @interface RZOverscrollInteractionController ()
 
@@ -54,7 +54,7 @@ static CGFloat const kRZOverscrollInteractionDefaultTranslationDistance     = 20
     self.action = action;
 }
 
-- (void)watchScrollView:(UIScrollView*)scrollView
+- (void)watchScrollView:(UIScrollView *)scrollView
 {
     [scrollView setDelegate:self];
 }

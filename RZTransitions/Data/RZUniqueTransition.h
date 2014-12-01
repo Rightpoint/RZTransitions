@@ -49,7 +49,7 @@
 /**
  *  Creates a new @c RZUniqueTransition for use with the RZTransition Manager
  *
- *  @param action             The action that is to be used in the presentation/dismisall of the View controller
+ *  @param action             The action that is to be used in the presentation/dismissal of the View controller
  *  @param fromViewController The ViewController class that will be going away.
  *  @param toViewController   The ViewController class that will be presented.
  *

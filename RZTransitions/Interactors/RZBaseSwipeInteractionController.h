@@ -68,7 +68,7 @@
 
 /**
  *  Subclass must overide this.
- *  The translation percentage that the passed in gesture recognizer is at
+ *  The translation percentage of the passed gesture recognizer
  *
  *  @param panGestureRecognizer The Gesture recognizer being tested
  *
@@ -77,7 +77,7 @@
 - (CGFloat)translationPercentageWithPanGestureRecongizer:(UIPanGestureRecognizer *)panGestureRecognizer;
 
 /**
- *  Subclass must overide this.
+ *  Subclasses must override this.
  *  The physical translation that is on the the view due to the panGestureRecognizer
  *
  *  @param panGestureRecognizer the gesture recognizer being tested

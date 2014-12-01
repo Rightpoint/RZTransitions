@@ -38,32 +38,32 @@
 /**
  *  The delegate for information about the positioning of the views.
  */
-@property (weak, nonatomic)     id<RZRectZoomAnimationDelegate> rectZoomDelegate;
+@property (weak, nonatomic) id<RZRectZoomAnimationDelegate> rectZoomDelegate;
 
 /**
- *  Flag to allow the From View controller to fade it's alpha.
+ *  Flag to allow the From View controller to fade its alpha.
  *  Default to YES;
  */
-@property (assign, nonatomic)   BOOL shouldFadeBackgroundViewController;
+@property (assign, nonatomic) BOOL shouldFadeBackgroundViewController;
 
 /**
  *  Physics animation spring dampening.
  *  Default is 0.6f.
  */
-@property (assign, nonatomic)   CGFloat animationSpringDampening;
+@property (assign, nonatomic) CGFloat animationSpringDampening;
 
 /**
  *  Physics animation spring velocity.
  *  Default is 15.0f.
  */
-@property (assign, nonatomic)   CGFloat animationSpringVelocity;
+@property (assign, nonatomic) CGFloat animationSpringVelocity;
 
 @end
 
 @protocol RZRectZoomAnimationDelegate <NSObject>
 
 /**
- *  The rect that the ToView will go to.  This should be relative to the view controller.
+ *  The rect that the ToView will go to. This should be relative to the view controller.
  *
  *  @return The rect to insert the ToView into.
  */

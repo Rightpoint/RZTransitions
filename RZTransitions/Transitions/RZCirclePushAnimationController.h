@@ -38,19 +38,19 @@
 /**
  *  Animation delegate for controlling information about the circle transition.
  */
-@property (weak, nonatomic)     id<RZCirclePushAnimationDelegate> circleDelegate;
+@property (weak, nonatomic) id<RZCirclePushAnimationDelegate> circleDelegate;
 
 /**
- *  The maximum scale that a circle will get to during the transition.  Used in as a transform.scale.
+ *  The maximum scale that a circle will get to during the transition. Used in as a transform.scale.
  *  Default is 2.5.
  */
-@property (assign, nonatomic)   CGFloat maximumCircleScale;
+@property (assign, nonatomic) CGFloat maximumCircleScale;
 
 /**
- *  The minimum scale that a circle will get to during the transition.  Used in as a transform.scale.
+ *  The minimum scale that a circle will get to during the transition. Used in as a transform.scale.
  *  Default is 0.25.
  */
-@property (assign, nonatomic)   CGFloat minimumCircleScale;
+@property (assign, nonatomic) CGFloat minimumCircleScale;
 
 @end
 

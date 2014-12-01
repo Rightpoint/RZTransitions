@@ -30,11 +30,11 @@
 
 @implementation UIImage (RZTransitionsSnapshotHelpers)
 
-+ (UIImage *)imageByCapturingView:(UIView*)view afterScreenUpdate:(BOOL)waitForUpdate
++ (UIImage *)imageByCapturingView:(UIView *)view afterScreenUpdate:(BOOL)waitForUpdate
 {
     UIImage *outputImage = nil;
     CGRect imageRect = CGRectMake(0, 0, CGRectGetWidth(view.bounds), CGRectGetHeight(view.bounds));
-    UIGraphicsBeginImageContextWithOptions(imageRect.size, NO, 0.0);
+    UIGraphicsBeginImageContextWithOptions(imageRect.size, NO, 0.0f);
     
     BOOL success = [view drawViewHierarchyInRect:view.bounds afterScreenUpdates:waitForUpdate];
     if ( success ) {
@@ -44,7 +44,6 @@
     UIGraphicsEndImageContext();
     
     return outputImage;
-
 }
 
 @end

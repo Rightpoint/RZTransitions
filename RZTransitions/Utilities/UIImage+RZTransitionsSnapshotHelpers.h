@@ -37,8 +37,8 @@
  *  @param view          The view to be captured
  *  @param waitForUpdate Flag to see if the screen should update before capturing the view
  *
- *  @return The Image from the view.
+ *  @return The image from the view.
  */
-+ (UIImage *)imageByCapturingView:(UIView*)view afterScreenUpdate:(BOOL)waitForUpdate;
++ (UIImage *)imageByCapturingView:(UIView *)view afterScreenUpdate:(BOOL)waitForUpdate;
 
 @end

@@ -112,11 +112,11 @@
  *
  *  @param view                  The view to be blured
  *  @param blurRadius            The radius of the blur
- *  @param tintColor             A color to tint the blur.  Only applies if the blur radius is not zero.
+ *  @param tintColor             A color to tint the blur. Only applies if the blur radius is not zero.
  *  @param saturationDeltaFactor The saturation delta that should be applied to the blur.
  *
  *  @return A UIImage used for the view pass
  */
-+ (UIImage *)blurredImageByCapturingView:(UIView*)view withRadius:(CGFloat)blurRadius tintColor:(UIColor*)tintColor saturationDeltaFactor:(CGFloat)saturationDeltaFactor;
++ (UIImage *)blurredImageByCapturingView:(UIView *)view withRadius:(CGFloat)blurRadius tintColor:(UIColor *)tintColor saturationDeltaFactor:(CGFloat)saturationDeltaFactor;
 
 @end

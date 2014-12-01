@@ -38,12 +38,12 @@
 /**
  *  The View Controller that is being transitioned from.
  */
-@property(strong, nonatomic) UIViewController *fromViewController;
+@property (strong, nonatomic) UIViewController *fromViewController;
 
 /**
  *  The Pinch Gesture recognizer that is used to control the interaction
  */
-@property(strong, nonatomic) UIPinchGestureRecognizer *gestureRecognizer;
+@property (strong, nonatomic) UIPinchGestureRecognizer *gestureRecognizer;
 
 /**
  *  The percent of the translation percentage

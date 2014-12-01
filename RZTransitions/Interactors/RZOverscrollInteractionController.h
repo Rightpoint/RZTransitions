@@ -37,14 +37,14 @@
 /**
  *  The View Controller that is being transitioned from.
  */
-@property(strong, nonatomic) UIViewController *fromViewController;
+@property (strong, nonatomic) UIViewController *fromViewController;
 
 /**
  *  The scrollview that is being watched to see if the overscroll is happening.
  *
  *  @param scrollView the scrollview
  */
-- (void)watchScrollView:(UIScrollView*)scrollView;
+- (void)watchScrollView:(UIScrollView *)scrollView;
 
 /**
  *  The percentage of the transition that is needed to complete

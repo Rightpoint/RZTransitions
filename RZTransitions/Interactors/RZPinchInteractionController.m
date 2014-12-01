@@ -28,7 +28,7 @@
 
 #import "RZPinchInteractionController.h"
 
-static CGFloat const kRZPinchInteractionDefaultCompletionPercentage     = 0.5f;
+static const CGFloat kRZPinchInteractionDefaultCompletionPercentage     = 0.5f;
 
 @implementation RZPinchInteractionController
 
@@ -44,7 +44,8 @@ static CGFloat const kRZPinchInteractionDefaultCompletionPercentage     = 0.5f;
     [self attachGestureRecognizerToView:self.fromViewController.view];
 }
 
-- (void)attachGestureRecognizerToView:(UIView*)view {
+- (void)attachGestureRecognizerToView:(UIView *)view
+{
     [view addGestureRecognizer:self.gestureRecognizer];
 }
 
@@ -128,7 +129,7 @@ static CGFloat const kRZPinchInteractionDefaultCompletionPercentage     = 0.5f;
 
 #pragma mark - Overridden Properties
 
-- (UIGestureRecognizer*)gestureRecognizer
+- (UIGestureRecognizer *)gestureRecognizer
 {
     if ( !_gestureRecognizer ) {
         _gestureRecognizer = [[UIPinchGestureRecognizer alloc] initWithTarget:self action:@selector(handlePinchGesture:)];

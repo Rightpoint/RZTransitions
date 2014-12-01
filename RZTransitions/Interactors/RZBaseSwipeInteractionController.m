@@ -53,7 +53,8 @@
     [self attachGestureRecognizerToView:self.fromViewController.view];
 }
 
-- (void)attachGestureRecognizerToView:(UIView*)view {
+- (void)attachGestureRecognizerToView:(UIView *)view 
+{
     [view addGestureRecognizer:self.gestureRecognizer];
 }
 
@@ -154,7 +155,7 @@
 
 #pragma mark - Overridden Properties
 
-- (UIGestureRecognizer*)gestureRecognizer
+- (UIGestureRecognizer *)gestureRecognizer
 {
     if ( !_gestureRecognizer ) {
         _gestureRecognizer = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(handlePanGesture:)];

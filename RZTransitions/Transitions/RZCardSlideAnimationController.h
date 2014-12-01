@@ -48,7 +48,7 @@
 @property (assign, nonatomic) BOOL horizontalOrientation;
 
 /**
- *  The background color for the transitions container.
+ *  The background color for the transition's container.
  *
  *  Default is [UIColor blackColor]
  */

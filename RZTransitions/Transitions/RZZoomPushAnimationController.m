@@ -46,7 +46,7 @@
         [container insertSubview:toViewController.view belowSubview:fromViewController.view];
         toViewController.view.transform = CGAffineTransformMakeScale(1.0 - kRZPushScaleChangePct, 1.0 - kRZPushScaleChangePct);
 
-        //! TODO: We shouldn't really call viewWillAppear here..
+        //! TODO: We shouldn't really call viewWillAppear here.
         [toViewController viewWillAppear:YES];
         [UIView animateWithDuration:kRZPushTransitionTime
                               delay:0

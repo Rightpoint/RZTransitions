@@ -56,6 +56,6 @@
  *
  *  Default is [UIColor colorWithWhite:1.0f alpha:0.15f]
  */
-@property (strong, nonatomic) UIColor* blurTintColor;
+@property (strong, nonatomic) UIColor *blurTintColor;
 
 @end
