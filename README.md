@@ -71,6 +71,7 @@ UINavigationController *navigationController = [[UINavigationController alloc] i
 
 - (void)viewDidLoad
 {
+   [super viewDidLoad];
 	// Create the presentation interaction controller that allows a custom gesture
 	// to control presenting a new VC via a presentViewController
    self.presentInteractionController = [[RZVerticalSwipeInteractionController alloc] init];
@@ -80,6 +81,7 @@ UINavigationController *navigationController = [[UINavigationController alloc] i
 
 - (void)viewWillAppear:(BOOL)animated
 {
+   [super viewWillAppear:animated];
 	//  Use the present interaction controller for presenting any view controller from this view controller
    [[RZTransitionsManager shared] setInteractionController:self.presentInteractionController
                                         fromViewController:[self class]
