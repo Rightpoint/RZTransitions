@@ -28,7 +28,7 @@
 
 #import "RZPinchInteractionController.h"
 
-#define kRZPinchInteractionDefaultCompletionPercentage  0.5f
+static CGFloat const kRZPinchInteractionDefaultCompletionPercentage     = 0.5f;
 
 @implementation RZPinchInteractionController
 
@@ -75,33 +75,31 @@
     CGFloat percentage = [self translationPercentageWithPinchGestureRecognizer:pinchGestureRecognizer];
     BOOL isPinch = [self isPinchWithGesture:pinchGestureRecognizer];
     
-    switch (pinchGestureRecognizer.state) {
+    switch ( pinchGestureRecognizer.state ) {
         case UIGestureRecognizerStateBegan:
             self.isInteractive = YES;
             
-            if (!isPinch && self.nextViewControllerDelegate && [self.nextViewControllerDelegate conformsToProtocol:@protocol(RZTransitionInteractionControllerDelegate)])
-            {
-                if (self.action & RZTransitionAction_Push) {
+            if ( !isPinch && self.nextViewControllerDelegate && [self.nextViewControllerDelegate conformsToProtocol:@protocol(RZTransitionInteractionControllerDelegate)] ) {
+                if ( self.action & RZTransitionAction_Push ) {
                     [self.fromViewController.navigationController pushViewController:[self.nextViewControllerDelegate nextViewControllerForInteractor:self] animated:YES];
                 }
-                else if (self.action & RZTransitionAction_Present) {
+                else if ( self.action & RZTransitionAction_Present ) {
                     // TODO: set and store a completion
                     [self.fromViewController presentViewController:[self.nextViewControllerDelegate nextViewControllerForInteractor:self] animated:YES completion:nil];
                 }
             }
-            else
-            {
-                if (self.action & RZTransitionAction_Pop) {
+            else {
+                if ( self.action & RZTransitionAction_Pop ) {
                     [self.fromViewController.navigationController popViewControllerAnimated:YES];
                 }
-                else if (self.action & RZTransitionAction_Dismiss) {
+                else if ( self.action & RZTransitionAction_Dismiss ) {
                     [self.fromViewController dismissViewControllerAnimated:YES completion:nil];
                 }
             }
             break;
             
         case UIGestureRecognizerStateChanged:
-            if (self.isInteractive) {
+            if ( self.isInteractive ) {
                 self.shouldCompleteTransition = (percentage > kRZPinchInteractionDefaultCompletionPercentage);
                 [self updateInteractiveTransition:percentage];
             }
@@ -113,9 +111,9 @@
             break;
             
         case UIGestureRecognizerStateEnded:
-            if (self.isInteractive) {
+            if ( self.isInteractive ) {
                 self.isInteractive = NO;
-                if (!self.shouldCompleteTransition || pinchGestureRecognizer.state == UIGestureRecognizerStateCancelled) {
+                if ( !self.shouldCompleteTransition || pinchGestureRecognizer.state == UIGestureRecognizerStateCancelled ) {
                     [self cancelInteractiveTransition];
                 }
                 else {
@@ -132,8 +130,7 @@
 
 - (UIGestureRecognizer*)gestureRecognizer
 {
-    if (!_gestureRecognizer)
-    {
+    if ( !_gestureRecognizer ) {
         _gestureRecognizer = [[UIPinchGestureRecognizer alloc] initWithTarget:self action:@selector(handlePinchGesture:)];
         [_gestureRecognizer setDelegate:self];
     }

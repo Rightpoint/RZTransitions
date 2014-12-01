@@ -27,14 +27,31 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
+#import <CoreGraphics/CGGeometry.h>
+
 #import "RZTransitionInteractionControllerProtocol.h"
 
 @interface RZPinchInteractionController : UIPercentDrivenInteractiveTransition
 <RZTransitionInteractionController, UIGestureRecognizerDelegate>
 
-@property(nonatomic, strong) UIViewController *fromViewController;
-@property(nonatomic, strong) UIPinchGestureRecognizer *gestureRecognizer;
+/**
+ *  The View Controller that is being transitioned from.
+ */
+@property(strong, nonatomic) UIViewController *fromViewController;
 
+/**
+ *  The Pinch Gesture recognizer that is used to control the interaction
+ */
+@property(strong, nonatomic) UIPinchGestureRecognizer *gestureRecognizer;
+
+/**
+ *  The percent of the translation percentage
+ *
+ *  @param pinchGestureRecognizer The pinch gesture that is being measured
+ *
+ *  @return percentage from 0 to 1
+ */
 - (CGFloat)translationPercentageWithPinchGestureRecognizer:(UIPinchGestureRecognizer *)pinchGestureRecognizer;
 
 @end

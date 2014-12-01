@@ -27,18 +27,63 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <CoreGraphics/CGGeometry.h>
+
 #import "RZTransitionInteractionControllerProtocol.h"
 
 @interface RZBaseSwipeInteractionController : UIPercentDrivenInteractiveTransition
     <RZTransitionInteractionController, UIGestureRecognizerDelegate>
 
-@property (nonatomic, strong) UIViewController *fromViewController;
-@property (nonatomic, strong) UIPanGestureRecognizer *gestureRecognizer;
-@property (nonatomic, assign) BOOL reverseGestureDirection;
+/**
+ *  The ViewController that is doing the presenting.
+ */
+@property (strong, nonatomic) UIViewController *fromViewController;
 
+/**
+ *  The GestureRecognizer to get information about the swipe.
+ */
+@property (strong, nonatomic) UIPanGestureRecognizer *gestureRecognizer;
+
+/**
+ *  flag to know if the gesture is happening in the reverse direction.
+ */
+@property (assign, nonatomic) BOOL reverseGestureDirection;
+
+/**
+ *  Subclasses must overide this.
+ *
+ *  @param panGestureRecognizer Pan gesture to check if the movement is positive.
+ *
+ *  @return Flag if the gesture is in the positive or negative direction.
+ */
 - (BOOL)isGesturePositive:(UIPanGestureRecognizer *)panGestureRecognizer;
+
+/**
+ *  Subclass should overide this.
+ *  The value that needs to be hit by the gesture recognizer to consider the transition happening.
+ *
+ *  @return The percentage of the full amount that needs to be reached to complete the transition.
+ */
 - (CGFloat)swipeCompletionPercent;
+
+/**
+ *  Subclass must overide this.
+ *  The translation percentage that the passed in gesture recognizer is at
+ *
+ *  @param panGestureRecognizer The Gesture recognizer being tested
+ *
+ *  @return The percentage of the translation that is complete
+ */
 - (CGFloat)translationPercentageWithPanGestureRecongizer:(UIPanGestureRecognizer *)panGestureRecognizer;
+
+/**
+ *  Subclass must overide this.
+ *  The physical translation that is on the the view due to the panGestureRecognizer
+ *
+ *  @param panGestureRecognizer the gesture recognizer being tested
+ *
+ *  @return the translation that is currently on the view.
+ */
 - (CGFloat)translationWithPanGestureRecongizer:(UIPanGestureRecognizer *)panGestureRecognizer;
 
 @end
