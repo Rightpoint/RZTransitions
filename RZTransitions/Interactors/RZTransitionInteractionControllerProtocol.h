@@ -27,6 +27,7 @@
 //
 
 #import "RZTransitionAction.h"
+#import <UIKit/UIKit.h>
 
 #ifndef RZTransitions_RZTransitionInteractorProtocol_h
 #define RZTransitions_RZTransitionInteractorProtocol_h
@@ -56,22 +57,22 @@
 /**
  *  Is the transition interaction controller currently in a user interaction state.
  */
-@property (nonatomic, assign, readwrite) BOOL isInteractive;
+@property (assign, nonatomic, readwrite) BOOL isInteractive;
 
 /**
  *  Should the transition interaction controller complete the transaction if it is released in its current state.  Ex: a swipe interactor should not complete until it has passed a threshold percentage.
  */
-@property (nonatomic, assign, readwrite) BOOL shouldCompleteTransition;
+@property (assign ,nonatomic, readwrite) BOOL shouldCompleteTransition;
 
 /**
  *  The bitmap of actions that a transition interaction controller will complete for.
  */
-@property (nonatomic, assign, readwrite) RZTransitionAction action;
+@property (assign, nonatomic, readwrite) RZTransitionAction action;
 
 /**
  *  The delegate that allows the interaction controller to receive a @UIViewController to display for positive actions such as push and present.
  */
-@property (nonatomic, weak) id<RZTransitionInteractionControllerDelegate> nextViewControllerDelegate;
+@property (weak, nonatomic) id<RZTransitionInteractionControllerDelegate> nextViewControllerDelegate;
 
 /**
  *  Initialize the Interaction Controller in the supplied @c UIViewController.  Typically adds a gesture recognizer to the @c UIViewController's view.

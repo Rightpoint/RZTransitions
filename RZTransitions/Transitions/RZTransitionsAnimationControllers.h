@@ -29,6 +29,11 @@
 #ifndef RZTransitions_Demo_RZTransitionsAnimationControllers_h
 #define RZTransitions_Demo_RZTransitionsAnimationControllers_h
 
+/**
+ *  This is general import helper. Saves importing multiple transitions.
+ *  TODO: Why?/ Delete for next larger release.
+ */
+
 #import "RZCardSlideAnimationController.h"
 #import "RZCirclePushAnimationController.h"
 #import "RZSegmentControlMoveFadeAnimationController.h"

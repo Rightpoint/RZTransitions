@@ -36,37 +36,22 @@
 #define kRZZBDefaultBlurRadius      12.0f
 #define kRZZBDefaultSaturationDelta 1.0f
 #define kRZZBDefaultTintColor       [UIColor colorWithWhite:1.0f alpha:0.15f]
+
 static char kRZZoomBlurImageAssocKey;
 
 @implementation RZZoomBlurAnimationController
 
 @synthesize isPositiveAnimation = _isPositiveAnimation;
 
-- (CGFloat)blurRadius
+- (instancetype)init
 {
-    if (_blurRadius == 0)
-    {
+    self = [super init];
+    if ( self ) {
         _blurRadius = kRZZBDefaultBlurRadius;
-    }
-    return _blurRadius;
-}
-
-- (CGFloat)saturationDelta
-{
-    if (_saturationDelta == 0)
-    {
         _saturationDelta = kRZZBDefaultSaturationDelta;
-    }
-    return _saturationDelta;
-}
-
-- (UIColor *)blurTintColor
-{
-    if (!_blurTintColor)
-    {
         _blurTintColor = kRZZBDefaultTintColor;
     }
-    return _blurTintColor;
+    return self;
 }
 
 #pragma mark - Animated transitioning
@@ -79,8 +64,7 @@ static char kRZZoomBlurImageAssocKey;
     
     toViewController.view.userInteractionEnabled = YES;
     
-    if (!self.isPositiveAnimation)
-    {
+    if ( !self.isPositiveAnimation ) {
         // This may not exist if we didn't present with this guy originally. If not, it will just do an alpha fade, no blur.
         UIImageView *blurImageView = objc_getAssociatedObject(fromViewController, &kRZZoomBlurImageAssocKey);
         
@@ -88,8 +72,7 @@ static char kRZZoomBlurImageAssocKey;
         fromViewController.view.opaque = NO;
         [container insertSubview:toViewController.view belowSubview:fromViewController.view];
         
-        if (blurImageView)
-        {
+        if ( blurImageView ) {
             [container insertSubview:blurImageView aboveSubview:toViewController.view];
         }
 
@@ -109,8 +92,7 @@ static char kRZZoomBlurImageAssocKey;
                              [transitionContext completeTransition:!transitionContext.transitionWasCancelled];
                          }];
     }
-    else
-    {
+    else {
         UIImage *blurImage = [UIImage blurredImageByCapturingView:fromViewController.view withRadius:self.blurRadius tintColor:self.blurTintColor saturationDeltaFactor:self.saturationDelta];
         UIImageView *blurImageView = [[UIImageView alloc] initWithImage:blurImage];
         objc_setAssociatedObject(toViewController, &kRZZoomBlurImageAssocKey, blurImageView, OBJC_ASSOCIATION_RETAIN_NONATOMIC);

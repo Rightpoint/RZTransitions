@@ -29,14 +29,17 @@
 #ifndef RZTransitions_RZAnimationControllerProtocol_h
 #define RZTransitions_RZAnimationControllerProtocol_h
 
+#import <UIKit/UIKit.h>
+
 @protocol RZAnimationControllerProtocol <UIViewControllerAnimatedTransitioning>
 
 @required
 
 /**
  * If the animation should be positive or negative.
- * Positive: push / present / fromTop / toRight
- * Negative: pop / dismiss / fromBottom / toLeft
+ * 
+ * @note Positive: push / present / fromTop / toRight
+ * @note Negative: pop / dismiss / fromBottom / toLeft
  */
 @property (nonatomic, assign) BOOL isPositiveAnimation;
 

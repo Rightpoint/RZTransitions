@@ -56,8 +56,8 @@
 
 - (BOOL)gestureRecognizerShouldBegin:(UIGestureRecognizer *)gestureRecognizer
 {
-    if ([gestureRecognizer isKindOfClass:[UIPanGestureRecognizer class]]) {
-        UIPanGestureRecognizer *panGestureRecognizer = (UIPanGestureRecognizer*)gestureRecognizer;
+    if ( [gestureRecognizer isKindOfClass:[UIPanGestureRecognizer class]] ) {
+        UIPanGestureRecognizer *panGestureRecognizer = (UIPanGestureRecognizer *)gestureRecognizer;
         CGFloat xTranslation = [panGestureRecognizer translationInView:panGestureRecognizer.view].x;
         return xTranslation == 0;
     }

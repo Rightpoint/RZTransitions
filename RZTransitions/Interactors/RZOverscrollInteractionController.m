@@ -28,14 +28,14 @@
 
 #import "RZOverscrollInteractionController.h"
 
-#define kRZOverscrollInteractionDefaultCompletionPercentage  0.35f
-#define kRZOverscrollInteractionDefaultTopStartDistance      25.0f
-#define kRZOverscrollInteractionDefaultBottomStartDistance   25.0f
-#define kRZOverscrollInteractionDefaultTranslationDistance   200.0f
+static const CGFloat kRZOverscrollInteractionDefaultCompletionPercentage    = 0.35f;
+static const CGFloat kRZOverscrollInteractionDefaultTopStartDistance        = 25.0f;
+static const CGFloat kRZOverscrollInteractionDefaultBottomStartDistance     = 25.0f;
+static const CGFloat kRZOverscrollInteractionDefaultTranslationDistance     = 200.0f;
 
 @interface RZOverscrollInteractionController ()
 
-@property (nonatomic, assign) CGFloat lastYOffset;
+@property (assign, nonatomic) CGFloat lastYOffset;
 
 @end
 
@@ -54,7 +54,7 @@
     self.action = action;
 }
 
-- (void)watchScrollView:(UIScrollView*)scrollView
+- (void)watchScrollView:(UIScrollView *)scrollView
 {
     [scrollView setDelegate:self];
 }
@@ -75,24 +75,20 @@
 
 - (CGFloat)translationPercentageWithScrollView:(UIScrollView *)scrollView isScrollingDown:(BOOL)isScrollingDown
 {
-    if (isScrollingDown)
-    {
+    if ( isScrollingDown ) {
         return ((scrollView.contentOffset.y + kRZOverscrollInteractionDefaultTopStartDistance) / kRZOverscrollInteractionDefaultTranslationDistance) * -1;
     }
-    else
-    {
+    else {
         return ((scrollView.contentOffset.y + scrollView.frame.size.height - scrollView.contentSize.height - kRZOverscrollInteractionDefaultBottomStartDistance) / kRZOverscrollInteractionDefaultTranslationDistance);
     }
 }
 
 - (BOOL)scrollViewPastStartLocationWithScrollView:(UIScrollView *)scrollview isScrollingDown:(BOOL)isScrollingDown
 {
-    if (isScrollingDown)
-    {
+    if ( isScrollingDown ) {
         return (scrollview.contentOffset.y < kRZOverscrollInteractionDefaultTopStartDistance);
     }
-    else
-    {
+    else {
         return ((scrollview.contentOffset.y + scrollview.frame.size.height - scrollview.contentSize.height) > kRZOverscrollInteractionDefaultBottomStartDistance);
     }
 }
@@ -105,11 +101,9 @@
 
 - (void)completeInteractionWithScrollView:(UIScrollView *)scrollView
 {
-    if (self.isInteractive)
-    {
+    if ( self.isInteractive ) {
         self.isInteractive = NO;
-        if(self.shouldCompleteTransition)
-        {
+        if( self.shouldCompleteTransition ) {
             [scrollView setDelegate:nil];
         }
         self.shouldCompleteTransition ? [self finishInteractiveTransition] : [self cancelInteractiveTransition];
@@ -118,23 +112,18 @@
 
 - (void)beginTransition
 {
-    if (!self.isInteractive)
-    {
+    if ( !self.isInteractive ) {
         self.isInteractive = YES;
-        if (self.action & RZTransitionAction_Push)
-        {
+        if ( self.action & RZTransitionAction_Push ) {
             [self.fromViewController.navigationController pushViewController:[self.nextViewControllerDelegate nextViewControllerForInteractor:self] animated:YES];
         }
-        else if (self.action & RZTransitionAction_Present)
-        {
+        else if ( self.action & RZTransitionAction_Present ) {
             [self.fromViewController presentViewController:[self.nextViewControllerDelegate nextViewControllerForInteractor:self] animated:YES completion:nil];
         }
-        else if (self.action & RZTransitionAction_Pop)
-        {
+        else if ( self.action & RZTransitionAction_Pop ) {
             [self.fromViewController.navigationController popViewControllerAnimated:YES];
         }
-        else if (self.action & RZTransitionAction_Dismiss)
-        {
+        else if ( self.action & RZTransitionAction_Dismiss ) {
             [self.fromViewController dismissViewControllerAnimated:YES completion:nil];
         }
     }
@@ -172,32 +161,25 @@
     BOOL scrollViewPastStartLocation = [self scrollViewPastStartLocationWithScrollView:scrollView isScrollingDown:overScrollDown];
     BOOL scrollingDirectionUp = scrollView.contentOffset.y - self.lastYOffset < 0;
     
-    if (!scrollViewPastStartLocation)
-    {
+    if ( !scrollViewPastStartLocation ) {
         return;
     }
     
     CGFloat percentage = [self translationPercentageWithScrollView:scrollView isScrollingDown:overScrollDown];
 
-    if (overScrollDown && [RZOverscrollInteractionController actionIsPushOrPresentWithAction:self.action])
-    {
-        if (!self.isInteractive && scrollingDirectionUp && scrollViewPastStartLocation && !scrollView.isDecelerating)
-        {
+    if ( overScrollDown && [RZOverscrollInteractionController actionIsPushOrPresentWithAction:self.action] ) {
+        if ( !self.isInteractive && scrollingDirectionUp && scrollViewPastStartLocation && !scrollView.isDecelerating ) {
             [self beginTransition];
         }
-        else if (scrollViewPastStartLocation)
-        {
+        else if ( scrollViewPastStartLocation ) {
             [self updateInteractionWithPercentage:percentage];
         }
     }
-    else if (overScrollUp && [RZOverscrollInteractionController actionIsDismissOrPopWithAction:self.action])
-    {
-        if (!self.isInteractive && !scrollingDirectionUp && scrollViewPastStartLocation && !scrollView.isDecelerating)
-        {
+    else if ( overScrollUp && [RZOverscrollInteractionController actionIsDismissOrPopWithAction:self.action] ) {
+        if ( !self.isInteractive && !scrollingDirectionUp && scrollViewPastStartLocation && !scrollView.isDecelerating ) {
             [self beginTransition];
         }
-        else if (scrollViewPastStartLocation)
-        {
+        else if ( scrollViewPastStartLocation ) {
             [self updateInteractionWithPercentage:percentage];
         }
     }

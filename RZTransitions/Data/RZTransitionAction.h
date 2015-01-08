@@ -31,6 +31,9 @@
 
 #define kRZTransitionActionCount        5
 
+/**
+ *  All the recognized transition action types.
+ */
 typedef NS_ENUM (NSInteger, RZTransitionAction) {
     RZTransitionAction_Push             = (1 << 0),
     RZTransitionAction_Pop              = (1 << 1),

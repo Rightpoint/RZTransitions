@@ -27,12 +27,31 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIColor.h>
+
 #import "RZAnimationControllerProtocol.h"
 
 @interface RZCardSlideAnimationController : NSObject <RZAnimationControllerProtocol>
 
-@property (nonatomic, assign) CGFloat transitionTime;
-@property (nonatomic, assign) BOOL horizontalOrientation;
-@property (nonatomic, strong) UIColor *containerBackgroundColor;
+/**
+ *  The duration of the transition.
+ *
+ *  Default transition time is 0.35 seconds
+ */
+@property (assign, nonatomic) NSTimeInterval transitionTime;
+
+/**
+ *  flag to set if it is going in the horiztonal orientation as opposed to vertical.
+ *
+ *  Defaults to YES
+ */
+@property (assign, nonatomic) BOOL horizontalOrientation;
+
+/**
+ *  The background color for the transition's container.
+ *
+ *  Default is [UIColor blackColor]
+ */
+@property (strong, nonatomic) UIColor *containerBackgroundColor;
 
 @end
