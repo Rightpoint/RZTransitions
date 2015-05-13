@@ -99,26 +99,22 @@ UINavigationController *navigationController = [[UINavigationController alloc] i
  
 You can use any of the animation controllers or interaction controllers without the RZTransitionsManager and simply use them with the iOS7 custom View Controller transition APIs.
 
+## Maintainers
+
+[arrouse](https://github.com/arrouse) ([@arrouse88](http://twitter.com/arrouse88))
+
+[nbonatsakis](https://github.com/nbonatsakis) ([@nickbona](http://twitter.com/nickbona))
+
+[dostrander](https://github.com/dostrander) ([@_Derko](http://twitter.com/_Derko))
+
+[markpragma](https://github.com/markpragma) ([@markpragma ](http://twitter.com/markpragma))
+
+[rztakashi](https://github.com/rztakashi)
+
+## Contributors
+
+[smbarne](https://github.com/smbarne) ([@smbarne](http://twitter.com/smbarne)) 
+
 ## License
-RZTransitions is distributed under an [MIT License](http://opensource.org/licenses/MIT). See the LICENSE file for more details.
 
-```
-Copyright (c) 2014 Raizlabs and other contributors
-
-Permission is hereby granted, free of charge, to any person obtaining a copy of
-this software and associated documentation files (the "Software"), to deal in
-the Software without restriction, including without limitation the rights to
-use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of
-the Software, and to permit persons to whom the Software is furnished to do so,
-subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS
-FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR
-COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER
-IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
-CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
-```
+RZTransitions is licensed under the MIT license. See the `LICENSE` file for details.
