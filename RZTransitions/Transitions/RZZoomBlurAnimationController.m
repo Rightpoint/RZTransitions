@@ -101,7 +101,7 @@ static char kRZZoomBlurImageAssocKey;
         blurImageView.alpha = 0.f;
         
         UIColor *originalBGColor = [toViewController.view backgroundColor];
-        
+        toViewController.view.frame = fromViewController.view.frame;
         toViewController.view.backgroundColor = [UIColor clearColor];
         toViewController.view.opaque = NO;
         toViewController.view.alpha = 0.f;
