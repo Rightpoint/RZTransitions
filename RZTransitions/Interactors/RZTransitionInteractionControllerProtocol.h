@@ -33,7 +33,6 @@
 #define RZTransitions_RZTransitionInteractorProtocol_h
 
 @protocol RZTransitionInteractionController;
-@protocol RZTransitionInteractionControllerDelegate;
 
 @protocol RZTransitionInteractionControllerDelegate <NSObject>
 
