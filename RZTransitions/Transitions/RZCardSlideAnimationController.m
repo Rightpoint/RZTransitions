@@ -51,17 +51,18 @@
     UIViewController *fromViewController = [transitionContext viewControllerForKey:UITransitionContextFromViewControllerKey];
     UIViewController *toViewController = [transitionContext viewControllerForKey:UITransitionContextToViewControllerKey];
     UIView *container = [transitionContext containerView];
-    
+
     UIView *bgView = [[UIView alloc] initWithFrame:container.bounds];
     bgView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
     bgView.backgroundColor = self.containerBackgroundColor;
     [container insertSubview:bgView atIndex:0];
-    
+
     if ( self.isPositiveAnimation ) {
         [container insertSubview:toViewController.view belowSubview:fromViewController.view];
+        toViewController.view.frame = container.frame;
         toViewController.view.transform = CGAffineTransformMakeScale(1.0 - kRZSlideScaleChangePct, 1.0 - kRZSlideScaleChangePct);
         toViewController.view.alpha = 0.1f;
-        
+
         [UIView animateWithDuration:[self transitionDuration:transitionContext]
                               delay:0
                             options:UIViewAnimationOptionCurveEaseOut
@@ -84,7 +85,7 @@
     }
     else {
         [container addSubview:toViewController.view];
-        
+
         if ( self.horizontalOrientation ) {
             toViewController.view.transform = CGAffineTransformMakeTranslation(-container.bounds.size.width, 0);
         }
