@@ -49,6 +49,29 @@
 
 @implementation RZSimpleViewController
 
+- (instancetype)init
+{
+    self = [super init];
+    if (self) {
+        NSLog(@"> %@ ", self);
+    }
+    return self;
+}
+
+- (instancetype)initWithCoder:(NSCoder *)coder
+{
+    self = [super initWithCoder:coder];
+    if (self) {
+        NSLog(@"> %@ ", self);
+    }
+    return self;
+}
+
+- (void)dealloc
+{
+    NSLog(@"< %@ ", self);
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];

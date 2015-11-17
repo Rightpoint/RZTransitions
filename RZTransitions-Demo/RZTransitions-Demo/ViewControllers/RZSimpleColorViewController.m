@@ -40,11 +40,36 @@
 
 @implementation RZSimpleColorViewController
 
+- (instancetype)init
+{
+    self = [super init];
+    if (self) {
+        NSLog(@"> %08x RZSimpleColorViewController ", (int)self);
+    }
+    return self;
+}
+
+- (instancetype)initWithCoder:(NSCoder *)coder
+{
+    self = [super initWithCoder:coder];
+    if (self) {
+        NSLog(@"> %08x RZSimpleColorViewController ", (int)self);
+    }
+    return self;
+}
+
+- (void)dealloc
+{
+    NSLog(@"< %08x RZSimpleColorViewController ", (int)self);
+}
+
+
 - (id)initWithColor:(UIColor *)color
 {
     self = [super init];
     if (self) {
         if (color) {
+            NSLog(@"> %08x RZSimpleColorViewController ", (int)self);
             _backgroundColor = color;
         }
     }
