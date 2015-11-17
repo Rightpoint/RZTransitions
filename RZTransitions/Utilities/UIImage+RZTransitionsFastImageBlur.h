@@ -108,7 +108,7 @@
 
 // tint color ONLY APPLIES when blurring radius is non-negligible
 /**
- *  gets an image from a view and blurs it using a modification on Apple's bluring code to speed it up.
+ *  gets an image from a view and blurs it using a modification on Apple's blurring code to speed it up.
  *
  *  @param view                  The view to be blured
  *  @param blurRadius            The radius of the blur
