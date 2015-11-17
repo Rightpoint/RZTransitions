@@ -163,7 +163,7 @@ class RZSimpleViewController: UIViewController, RZTransitionInteractionControlle
 
     func nextViewControllerForInteractor(interactor: RZTransitionInteractionController) -> UIViewController
     {
-        if (interactor.dynamicType == RZVerticalSwipeInteractionController.self) {
+        if (interactor is RZVerticalSwipeInteractionController) {
             return self.nextSimpleColorViewController();
         }
         else {

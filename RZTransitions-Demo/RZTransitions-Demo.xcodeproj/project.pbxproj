@@ -45,6 +45,7 @@
 		9A0F7CA5195A0B9500271D1D /* RZZoomPushAnimationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A0F7C90195A0B9500271D1D /* RZZoomPushAnimationController.m */; };
 		9A0F7CA6195A0B9500271D1D /* UIImage+RZTransitionsFastImageBlur.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A0F7C93195A0B9500271D1D /* UIImage+RZTransitionsFastImageBlur.m */; };
 		9A0F7CA7195A0B9500271D1D /* UIImage+RZTransitionsSnapshotHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A0F7C95195A0B9500271D1D /* UIImage+RZTransitionsSnapshotHelpers.m */; };
+		E18786DA1BFB5FB000E51D79 /* UIColor+Random.swift in Sources */ = {isa = PBXBuildFile; fileRef = E18786D91BFB5FB000E51D79 /* UIColor+Random.swift */; };
 		E19CA4AA1BF539F4007F3FF5 /* RZTransitionsDemoAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E19CA4A91BF539F4007F3FF5 /* RZTransitionsDemoAppDelegate.swift */; };
 		E1A793301BF677BC008D27EE /* RZSimpleViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 833E36EC184E5AFF00A0326A /* RZSimpleViewController.xib */; };
 		E1A793311BF677BC008D27EE /* RZSimpleColorViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 833E3701184E5DB400A0326A /* RZSimpleColorViewController.xib */; };
@@ -69,10 +70,10 @@
 		E1A793621BF67FA8008D27EE /* RZZoomPushAnimationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A0F7C90195A0B9500271D1D /* RZZoomPushAnimationController.m */; };
 		E1A793631BF67FA8008D27EE /* UIImage+RZTransitionsFastImageBlur.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A0F7C93195A0B9500271D1D /* UIImage+RZTransitionsFastImageBlur.m */; };
 		E1A793641BF67FA8008D27EE /* UIImage+RZTransitionsSnapshotHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A0F7C95195A0B9500271D1D /* UIImage+RZTransitionsSnapshotHelpers.m */; };
-		E1A793651BF67FD2008D27EE /* RZSimpleColorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 833E3700184E5DB400A0326A /* RZSimpleColorViewController.m */; };
-		E1A793661BF67FD2008D27EE /* RZSimpleCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 837D08C01859000F00E20B37 /* RZSimpleCollectionViewController.m */; };
-		E1A793671BF68092008D27EE /* UIColor+Random.m in Sources */ = {isa = PBXBuildFile; fileRef = 83855D09185F98E3004DB036 /* UIColor+Random.m */; };
 		E1A793681BF6833E008D27EE /* RZSimpleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1E74E611BF649B400C00BD2 /* RZSimpleViewController.swift */; };
+		E1EA18F31BFA923600F471EC /* RZSimpleColorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1EA18F21BFA923600F471EC /* RZSimpleColorViewController.swift */; };
+		E1EA18F51BFABA4800F471EC /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E1EA18F41BFABA4800F471EC /* Default-568h@2x.png */; };
+		E1EA18F71BFABD7400F471EC /* RZSimpleCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1EA18F61BFABD7400F471EC /* RZSimpleCollectionViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -155,10 +156,14 @@
 		9A0F7C93195A0B9500271D1D /* UIImage+RZTransitionsFastImageBlur.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+RZTransitionsFastImageBlur.m"; sourceTree = "<group>"; };
 		9A0F7C94195A0B9500271D1D /* UIImage+RZTransitionsSnapshotHelpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+RZTransitionsSnapshotHelpers.h"; sourceTree = "<group>"; };
 		9A0F7C95195A0B9500271D1D /* UIImage+RZTransitionsSnapshotHelpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+RZTransitionsSnapshotHelpers.m"; sourceTree = "<group>"; };
+		E18786D91BFB5FB000E51D79 /* UIColor+Random.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Random.swift"; sourceTree = "<group>"; };
 		E19CA4971BF5391A007F3FF5 /* RZTransitions-Demo-Swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "RZTransitions-Demo-Swift.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E19CA4A91BF539F4007F3FF5 /* RZTransitionsDemoAppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RZTransitionsDemoAppDelegate.swift; sourceTree = "<group>"; };
 		E1A7932F1BF65348008D27EE /* RZTransitions-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RZTransitions-Bridging-Header.h"; sourceTree = "<group>"; };
 		E1E74E611BF649B400C00BD2 /* RZSimpleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RZSimpleViewController.swift; sourceTree = "<group>"; };
+		E1EA18F21BFA923600F471EC /* RZSimpleColorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RZSimpleColorViewController.swift; sourceTree = "<group>"; };
+		E1EA18F41BFABA4800F471EC /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		E1EA18F61BFABD7400F471EC /* RZSimpleCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RZSimpleCollectionViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -195,6 +200,7 @@
 		833E369B184E29C300A0326A = {
 			isa = PBXGroup;
 			children = (
+				E1EA18F41BFABA4800F471EC /* Default-568h@2x.png */,
 				9A0F7C66195A0B9500271D1D /* RZTransitions */,
 				833E36AD184E29C300A0326A /* RZTransitions-Demo */,
 				833E36CC184E29C300A0326A /* RZTransitions-DemoTests */,
@@ -291,6 +297,7 @@
 			children = (
 				83855D08185F98E3004DB036 /* UIColor+Random.h */,
 				83855D09185F98E3004DB036 /* UIColor+Random.m */,
+				E18786D91BFB5FB000E51D79 /* UIColor+Random.swift */,
 			);
 			name = Utilities;
 			path = "RZTransitions-Demo/Utilities";
@@ -410,6 +417,7 @@
 			children = (
 				833E36FF184E5DB400A0326A /* RZSimpleColorViewController.h */,
 				833E3700184E5DB400A0326A /* RZSimpleColorViewController.m */,
+				E1EA18F21BFA923600F471EC /* RZSimpleColorViewController.swift */,
 				833E3701184E5DB400A0326A /* RZSimpleColorViewController.xib */,
 			);
 			name = "Simple Color View Controller";
@@ -421,6 +429,7 @@
 				837D08BF1859000F00E20B37 /* RZSimpleCollectionViewController.h */,
 				837D08C01859000F00E20B37 /* RZSimpleCollectionViewController.m */,
 				837D08C11859000F00E20B37 /* RZSimpleCollectionViewController.xib */,
+				E1EA18F61BFABD7400F471EC /* RZSimpleCollectionViewController.swift */,
 			);
 			name = "Simple Collection View Controller";
 			sourceTree = "<group>";
@@ -549,6 +558,7 @@
 				E1A793301BF677BC008D27EE /* RZSimpleViewController.xib in Resources */,
 				E1A793321BF677BC008D27EE /* RZSimpleCollectionViewController.xib in Resources */,
 				E1A793311BF677BC008D27EE /* RZSimpleColorViewController.xib in Resources */,
+				E1EA18F51BFABA4800F471EC /* Default-568h@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -607,18 +617,18 @@
 				E1A7935D1BF67FA8008D27EE /* RZRectZoomAnimationController.m in Sources */,
 				E1A7935C1BF67FA8008D27EE /* RZCirclePushAnimationController.m in Sources */,
 				E1A793581BF67FA8008D27EE /* RZOverscrollInteractionController.m in Sources */,
+				E1EA18F31BFA923600F471EC /* RZSimpleColorViewController.swift in Sources */,
 				E1A7935A1BF67FA8008D27EE /* RZVerticalSwipeInteractionController.m in Sources */,
 				E1A7935F1BF67FA8008D27EE /* RZShrinkZoomAnimationController.m in Sources */,
 				E1A793621BF67FA8008D27EE /* RZZoomPushAnimationController.m in Sources */,
 				E1A793351BF67B0B008D27EE /* RZTransitionsManager.m in Sources */,
-				E1A793661BF67FD2008D27EE /* RZSimpleCollectionViewController.m in Sources */,
 				E1A7935B1BF67FA8008D27EE /* RZCardSlideAnimationController.m in Sources */,
-				E1A793651BF67FD2008D27EE /* RZSimpleColorViewController.m in Sources */,
 				E1A793341BF67ABD008D27EE /* RZTransitionsNavigationController.m in Sources */,
 				E1A793601BF67FA8008D27EE /* RZZoomAlphaAnimationController.m in Sources */,
+				E18786DA1BFB5FB000E51D79 /* UIColor+Random.swift in Sources */,
 				E1A793571BF67FA8008D27EE /* RZHorizontalInteractionController.m in Sources */,
+				E1EA18F71BFABD7400F471EC /* RZSimpleCollectionViewController.swift in Sources */,
 				E1A793631BF67FA8008D27EE /* UIImage+RZTransitionsFastImageBlur.m in Sources */,
-				E1A793671BF68092008D27EE /* UIColor+Random.m in Sources */,
 				E1A793561BF67FA8008D27EE /* RZBaseSwipeInteractionController.m in Sources */,
 				E1A793641BF67FA8008D27EE /* UIImage+RZTransitionsSnapshotHelpers.m in Sources */,
 				E1A793361BF67B56008D27EE /* RZUniqueTransition.m in Sources */,

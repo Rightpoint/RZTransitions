@@ -39,14 +39,4 @@
 #import "UIImage+RZTransitionsFastImageBlur.h"
 #import "UIImage+RZTransitionsSnapshotHelpers.h"
 
-
-
-// DEMO sources
-#import "RZSimpleCollectionViewController.h"
-#import "RZTransitionsDemoAppDelegate.h"
-#import "UIColor+Random.h"
-#import "RZSimpleCollectionViewController.h"
-#import "RZSimpleColorViewController.h"
-#import "RZSimpleViewController.h"
-
 #endif /* RZTransitions_Bridging_Header_h */
