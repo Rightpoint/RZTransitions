@@ -84,6 +84,7 @@
 
 - (void)viewDidAppear:(BOOL)animated
 {
+    [super viewDidAppear:animated];
     // TODO: ** Cannot set the scroll view delegate and the collection view delegate at the same time **
 //    [self.presentOverscrollInteractor watchScrollView:self.collectionView];
 }

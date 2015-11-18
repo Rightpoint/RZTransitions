@@ -46,6 +46,15 @@
  */
 @property (assign, nonatomic) Class toViewControllerClass;
 
+/**
+ *  Creates a new @c RZUniqueTransition for use with the RZTransition Manager
+ *
+ *  @param action             The action that is to be used in the presentation/dismissal of the View controller
+ *  @param fromViewController The ViewController class that will be going away.
+ *  @param toViewController   The ViewController class that will be presented.
+ *
+ *  @return Instance of @c RZUniqueTransition
+ */
 - (instancetype)initWithAction:(RZTransitionAction)action
    withFromViewControllerClass:(Class)fromViewController
      withToViewControllerClass:(Class)toViewController;

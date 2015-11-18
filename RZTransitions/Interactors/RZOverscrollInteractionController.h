@@ -27,14 +27,30 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <CoreGraphics/CGGeometry.h>
+
 #import "RZTransitionInteractionControllerProtocol.h"
 
 @interface RZOverscrollInteractionController : UIPercentDrivenInteractiveTransition
 <RZTransitionInteractionController, UIScrollViewDelegate>
 
-@property(nonatomic, strong) UIViewController *fromViewController;
+/**
+ *  The View Controller that is being transitioned from.
+ */
+@property (strong, nonatomic) UIViewController *fromViewController;
 
-- (void)watchScrollView:(UIScrollView*)scrollView;
+/**
+ *  The scrollview that is being watched to see if the overscroll is happening.
+ *
+ *  @param scrollView the scrollview
+ */
+- (void)watchScrollView:(UIScrollView *)scrollView;
+
+/**
+ *  The percentage of the transition that is needed to complete
+ *
+ *  @return 0 to 1 percentage.
+ */
 - (CGFloat)completionPercent;
 
 @end

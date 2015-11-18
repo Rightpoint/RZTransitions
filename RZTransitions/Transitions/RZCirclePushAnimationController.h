@@ -27,7 +27,32 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <CoreGraphics/CGGeometry.h>
+
 #import "RZZoomPushAnimationController.h"
+
+@protocol RZCirclePushAnimationDelegate;
+
+@interface RZCirclePushAnimationController : RZZoomPushAnimationController <RZAnimationControllerProtocol>
+
+/**
+ *  Animation delegate for controlling information about the circle transition.
+ */
+@property (weak, nonatomic) id<RZCirclePushAnimationDelegate> circleDelegate;
+
+/**
+ *  The maximum scale that a circle will get to during the transition. Used in as a transform.scale.
+ *  Default is 2.5.
+ */
+@property (assign, nonatomic) CGFloat maximumCircleScale;
+
+/**
+ *  The minimum scale that a circle will get to during the transition. Used in as a transform.scale.
+ *  Default is 0.25.
+ */
+@property (assign, nonatomic) CGFloat minimumCircleScale;
+
+@end
 
 @protocol RZCirclePushAnimationDelegate <NSObject>
 
@@ -46,14 +71,5 @@
  *  @return the circle transition's starting radius.
  */
 - (CGFloat)circleStartingRadius;
-
-@end
-
-@interface RZCirclePushAnimationController : RZZoomPushAnimationController
-<RZAnimationControllerProtocol>
-
-@property (nonatomic, weak)     id<RZCirclePushAnimationDelegate> circleDelegate;
-@property (nonatomic, assign)   CGFloat maximumCircleScale;
-@property (nonatomic, assign)   CGFloat minimumCircleScale;
 
 @end

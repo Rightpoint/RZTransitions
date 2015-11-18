@@ -92,7 +92,7 @@
 
 #import "UIImage+RZTransitionsFastImageBlur.h"
 
-@import Accelerate;
+#import <Accelerate/Accelerate.h>
 #import <float.h>
 
 
@@ -114,7 +114,7 @@
     
     BOOL hasBlur = blurRadius > __FLT_EPSILON__;
     BOOL hasSaturationChange = fabs(saturationDeltaFactor - 1.) > __FLT_EPSILON__;
-    if (hasBlur || hasSaturationChange) {
+    if ( hasBlur || hasSaturationChange ) {
         
         CGContextRef effectInContext = UIGraphicsGetCurrentContext();
         
@@ -132,7 +132,7 @@
         effectOutBuffer.height   = CGBitmapContextGetHeight(effectOutContext);
         effectOutBuffer.rowBytes = CGBitmapContextGetBytesPerRow(effectOutContext);
         
-        if (hasBlur) {
+        if ( hasBlur ) {
             // A description of how to compute the box kernel width from the Gaussian
             // radius (aka standard deviation) appears in the SVG spec:
             // http://www.w3.org/TR/SVG/filters.html#feGaussianBlurElement
@@ -155,7 +155,7 @@
             vImageBoxConvolve_ARGB8888(&effectInBuffer, &effectOutBuffer, NULL, 0, 0, (uint32_t)radius, (uint32_t)radius, 0, kvImageEdgeExtend);
         }
         BOOL effectImageBuffersAreSwapped = NO;
-        if (hasSaturationChange) {
+        if ( hasSaturationChange ) {
             CGFloat s = saturationDeltaFactor;
             CGFloat floatingPointSaturationMatrix[] = {
                 0.0722 + 0.9278 * s,  0.0722 - 0.0722 * s,  0.0722 - 0.0722 * s,  0,
@@ -166,10 +166,10 @@
             const int32_t divisor = 256;
             NSUInteger matrixSize = sizeof(floatingPointSaturationMatrix)/sizeof(floatingPointSaturationMatrix[0]);
             int16_t saturationMatrix[matrixSize];
-            for (NSUInteger i = 0; i < matrixSize; ++i) {
+            for ( NSUInteger i = 0; i < matrixSize; ++i ) {
                 saturationMatrix[i] = (int16_t)roundf(floatingPointSaturationMatrix[i] * divisor);
             }
-            if (hasBlur) {
+            if ( hasBlur ) {
                 vImageMatrixMultiply_ARGB8888(&effectOutBuffer, &effectInBuffer, saturationMatrix, divisor, NULL, NULL, kvImageNoFlags);
                 effectImageBuffersAreSwapped = YES;
             }
@@ -178,10 +178,9 @@
             }
         }
         
-        if (!effectImageBuffersAreSwapped)
-        {
+        if ( !effectImageBuffersAreSwapped ) {
             // Add in color tint.
-            if (tintColor) {
+            if ( tintColor ) {
                 CGContextSaveGState(effectOutContext);
                 CGContextSetFillColorWithColor(effectOutContext, tintColor.CGColor);
                 CGContextFillRect(effectOutContext, imageRect);
@@ -193,10 +192,9 @@
         
         UIGraphicsEndImageContext();
         
-        if (effectImageBuffersAreSwapped)
-        {
+        if ( effectImageBuffersAreSwapped ) {
             // Add in color tint.
-            if (tintColor) {
+            if ( tintColor ) {
                 CGContextSaveGState(effectInContext);
                 CGContextSetFillColorWithColor(effectInContext, tintColor.CGColor);
                 CGContextFillRect(effectInContext, imageRect);
@@ -206,8 +204,7 @@
             outputImage = UIGraphicsGetImageFromCurrentImageContext();
         }
     }
-    else
-    {
+    else {
         outputImage = UIGraphicsGetImageFromCurrentImageContext();
     }
     

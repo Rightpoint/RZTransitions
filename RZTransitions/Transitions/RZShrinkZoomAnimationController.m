@@ -27,6 +27,7 @@
 //
 
 #import "RZShrinkZoomAnimationController.h"
+#import <UIKit/UIKit.h>
 
 @implementation RZShrinkZoomAnimationController
 

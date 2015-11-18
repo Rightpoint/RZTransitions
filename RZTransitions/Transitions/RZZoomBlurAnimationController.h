@@ -27,14 +27,35 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <CoreGraphics/CGGeometry.h>
+#import <UIKit/UIColor.h>
+
 #import "RZAnimationControllerProtocol.h"
 
 @interface RZZoomBlurAnimationController : NSObject <RZAnimationControllerProtocol>
 
-@property (nonatomic, assign) CGFloat blurRadius;
+/**
+ *  The blur radius used when snapshotting to the fromView and applying a blur to it.
+ *  see UIImage+RZTransitionsFastImageBlur for more info.
+ *
+ *  Default is 12.0f
+ */
+@property (assign, nonatomic) CGFloat blurRadius;
 
-@property (nonatomic, assign) CGFloat saturationDelta;
+/**
+ *  The saturation amount used when applying the blur to the snapshot.
+ *  see UIImage+RZTransitionsFastImageBlur for more info.
+ *
+ *  Default is 1.0f
+ */
+@property (assign, nonatomic) CGFloat saturationDelta;
 
-@property (nonatomic, strong) UIColor* blurTintColor;
+/**
+ *  The tint color that is used when applying the blur to the snapshot.
+ *  see UIImage+RZTransitionsFastImageBlur for more info.
+ *
+ *  Default is [UIColor colorWithWhite:1.0f alpha:0.15f]
+ */
+@property (strong, nonatomic) UIColor *blurTintColor;
 
 @end

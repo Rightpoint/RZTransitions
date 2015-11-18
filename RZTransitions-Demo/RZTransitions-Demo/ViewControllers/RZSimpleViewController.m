@@ -51,6 +51,8 @@
 
 - (void)viewDidLoad
 {
+    [super viewDidLoad];
+    
 	// Create the push and pop interaction controller that allows a custom gesture
 	// to control pushing and popping from the navigation controller
     self.pushPopInteractionController = [[RZHorizontalInteractionController alloc] init];
@@ -86,6 +88,7 @@
 
 - (void)viewWillAppear:(BOOL)animated
 {
+    [super viewWillAppear:animated];
     [[RZTransitionsManager shared] setInteractionController:self.presentInteractionController
                                          fromViewController:[self class]
                                            toViewController:nil

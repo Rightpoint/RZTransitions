@@ -37,10 +37,10 @@
 @synthesize nextViewControllerDelegate = _delegate;
 @synthesize shouldCompleteTransition = _shouldCompleteTransition;
 
-- (id)init
+- (instancetype)init
 {
     self = [super init];
-    if (self) {
+    if ( self ) {
         _reverseGestureDirection = NO;
     }
     return self;
@@ -53,7 +53,8 @@
     [self attachGestureRecognizerToView:self.fromViewController.view];
 }
 
-- (void)attachGestureRecognizerToView:(UIView*)view {
+- (void)attachGestureRecognizerToView:(UIView *)view 
+{
     [view addGestureRecognizer:self.gestureRecognizer];
 }
 
@@ -74,35 +75,33 @@
     CGFloat percentage = [self translationPercentageWithPanGestureRecongizer:panGestureRecognizer];
     BOOL positiveDirection = self.reverseGestureDirection ? ![self isGesturePositive:panGestureRecognizer] : [self isGesturePositive:panGestureRecognizer];
     
-    switch (panGestureRecognizer.state) {
+    switch ( panGestureRecognizer.state ) {
         case UIGestureRecognizerStateBegan:
             self.isInteractive = YES;
             
-            if (positiveDirection && self.nextViewControllerDelegate && [self.nextViewControllerDelegate conformsToProtocol:@protocol(RZTransitionInteractionControllerDelegate)])
-            {
-                if (self.action & RZTransitionAction_Push) {
+            if ( positiveDirection && self.nextViewControllerDelegate &&
+                [self.nextViewControllerDelegate conformsToProtocol:@protocol(RZTransitionInteractionControllerDelegate)] ) {
+                if ( self.action & RZTransitionAction_Push ) {
                     [self.fromViewController.navigationController pushViewController:[self.nextViewControllerDelegate nextViewControllerForInteractor:self] animated:YES];
                 }
-                else if (self.action & RZTransitionAction_Present) {
+                else if ( self.action & RZTransitionAction_Present ) {
                     // TODO: set and store a completion
                     [self.fromViewController presentViewController:[self.nextViewControllerDelegate nextViewControllerForInteractor:self] animated:YES completion:nil];
                 }
             }
-            else
-            {
-                if (self.action & RZTransitionAction_Pop) {
+            else {
+                if ( self.action & RZTransitionAction_Pop ) {
                     [self.fromViewController.navigationController popViewControllerAnimated:YES];
                 }
-                else if (self.action & RZTransitionAction_Dismiss) {
+                else if ( self.action & RZTransitionAction_Dismiss ) {
                     [self.fromViewController dismissViewControllerAnimated:YES completion:nil];
                 }
             }
             break;
             
         case UIGestureRecognizerStateChanged:
-            if (self.isInteractive)
-            {
-                self.shouldCompleteTransition = (percentage > [self swipeCompletionPercent]);
+            if ( self.isInteractive ) {
+                self.shouldCompleteTransition = ( percentage > [self swipeCompletionPercent] );
                 [self updateInteractiveTransition:percentage];
             }
             break;
@@ -113,10 +112,9 @@
             break;
             
         case UIGestureRecognizerStateEnded:
-            if (self.isInteractive)
-            {
+            if ( self.isInteractive ) {
                 self.isInteractive = NO;
-                if (!self.shouldCompleteTransition || panGestureRecognizer.state == UIGestureRecognizerStateCancelled) {
+                if ( !self.shouldCompleteTransition || panGestureRecognizer.state == UIGestureRecognizerStateCancelled ) {
                     [self cancelInteractiveTransition];
                 }
                 else {
@@ -157,10 +155,9 @@
 
 #pragma mark - Overridden Properties
 
-- (UIGestureRecognizer*)gestureRecognizer
+- (UIGestureRecognizer *)gestureRecognizer
 {
-    if (!_gestureRecognizer)
-    {
+    if ( !_gestureRecognizer ) {
         _gestureRecognizer = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(handlePanGesture:)];
         [_gestureRecognizer setDelegate:self];
     }

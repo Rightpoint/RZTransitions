@@ -41,7 +41,7 @@
      withToViewControllerClass:(Class)toViewController
 {
     self = [super init];
-    if (self) {
+    if ( self ) {
         _transitionAction = action;
         _fromViewControllerClass = fromViewController;
         _toViewControllerClass = toViewController;
@@ -49,7 +49,7 @@
     return self;
 }
 
-- (id)copyWithZone:(NSZone *)zone
+- (instancetype)copyWithZone:(NSZone *)zone
 {
     RZUniqueTransition *copiedObject = [[[self class] allocWithZone:zone] init];
     

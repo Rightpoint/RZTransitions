@@ -27,6 +27,7 @@
 //
 
 #import "RZCirclePushAnimationController.h"
+#import <UIKit/UIKit.h>
 
 #define kRZCircleDefaultMaxScale    2.5f
 #define kRZCircleDefaultMinScale    0.25f
@@ -47,10 +48,10 @@
 
 #pragma mark - Animation Transition
 
-- (id)init
+- (instancetype)init
 {
     self = [super init];
-    if (self) {
+    if ( self ) {
         _minimumCircleScale = kRZCircleDefaultMinScale;
         _maximumCircleScale = kRZCircleDefaultMaxScale;
     }
@@ -84,29 +85,27 @@
     // Set manual easing on the animation.  Tweak for fun!
     [circleMaskAnimation setTimingFunction:[CAMediaTimingFunction functionWithControlPoints:.34 :.01 :.69 :1.37]];
 
-    if (self.isPositiveAnimation)
-    {
+    if ( self.isPositiveAnimation ) {
         [circleMaskAnimation setFillMode:kCAFillModeForwards];
         
         // Animate from small to large
-        circleMaskAnimation.fromValue = [NSNumber numberWithFloat:self.minimumCircleScale];
-        circleMaskAnimation.toValue   = [NSNumber numberWithFloat:self.maximumCircleScale];
+        circleMaskAnimation.fromValue = @(self.minimumCircleScale);
+        circleMaskAnimation.toValue   = @(self.maximumCircleScale);
         
         // Add to the view and start the animation
-        [toViewController.view.layer setMask:circleMaskLayer];
+        toViewController.view.layer.mask = circleMaskLayer;
         toViewController.view.layer.masksToBounds = YES;
         [circleMaskLayer addAnimation:circleMaskAnimation forKey:kRZCircleMaskAnimation];
     }
-    else
-    {
+    else {
         [circleMaskAnimation setFillMode:kCAFillModeForwards];
         
         // Animate from large to small
-        circleMaskAnimation.fromValue = [NSNumber numberWithFloat:1.0f];
-        circleMaskAnimation.toValue   = [NSNumber numberWithFloat:self.minimumCircleScale];
+        circleMaskAnimation.fromValue = @(1.0f);
+        circleMaskAnimation.toValue   = @(self.minimumCircleScale);
 
         // Add to the view and start the animation
-        [fromViewController.view.layer setMask:circleMaskLayer];
+        fromViewController.view.layer.mask = circleMaskLayer;
         fromViewController.view.layer.masksToBounds = YES;
         [circleMaskLayer addAnimation:circleMaskAnimation forKey:kRZCircleMaskAnimation];
     }
@@ -120,12 +119,10 @@
 - (CGPoint)circleCenterPointWithFromViewController:(UIViewController *)fromViewController
 {
     CGPoint center = CGPointZero;
-    if (self.circleDelegate && [self.circleDelegate respondsToSelector:@selector(circleCenter)])
-    {
+    if ( self.circleDelegate && [self.circleDelegate respondsToSelector:@selector(circleCenter)] ) {
         center = [self.circleDelegate circleCenter];
     }
-    else
-    {
+    else {
         center = CGPointMake(fromViewController.view.bounds.origin.x + fromViewController.view.bounds.size.width / 2,
                              fromViewController.view.bounds.origin.y + fromViewController.view.bounds.size.height / 2);
     }
@@ -137,14 +134,12 @@
                                  withToViewController:(UIViewController *)toViewController
 {
     CGFloat radius = 0.0f;
-    if (self.circleDelegate && [self.circleDelegate respondsToSelector:@selector(circleStartingRadius)])
-    {
+    if ( self.circleDelegate && [self.circleDelegate respondsToSelector:@selector(circleStartingRadius)] ) {
         radius = [self.circleDelegate circleStartingRadius];
         CGRect bounds = toViewController.view.bounds;
         self.maximumCircleScale = ((MAX(bounds.size.height, bounds.size.width) / (radius)) * 1.25);
     }
-    else
-    {
+    else {
         CGRect bounds = fromViewController.view.bounds;
         CGFloat diameter = MIN(bounds.size.height, bounds.size.width);
         radius = diameter / 2;
