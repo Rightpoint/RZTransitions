@@ -109,7 +109,11 @@
 
 - (IBAction)showModal:(id)sender
 {
-    [self presentViewController:[self nextSimpleColorViewController] animated:YES completion:nil];
+    id vc = [[RZSimpleColorViewController alloc] init];
+
+    [vc setTransitioningDelegate:[RZTransitionsManager shared]];
+    [vc setModalPresentationStyle:UIModalPresentationOverCurrentContext];
+    [self presentViewController:vc animated:YES completion:NULL];
 }
 
 - (IBAction)showCollectionView:(id)sender
