@@ -109,7 +109,7 @@
 
 - (IBAction)showModal:(id)sender
 {
-    [self presentViewController:[self nextSimpleColorViewController] animated:YES completion:NULL];
+    [self presentViewController:[self nextSimpleColorViewController] animated:YES completion:nil];
 }
 
 - (IBAction)showCollectionView:(id)sender
