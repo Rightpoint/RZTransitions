@@ -39,7 +39,7 @@
     RZTransitionsNavigationController* rootNavController = [[RZTransitionsNavigationController alloc] initWithRootViewController:rootViewController];
     
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    self.window.rootViewController = rootNavController  ;
+    self.window.rootViewController = rootNavController;
     [self.window makeKeyAndVisible];
     
     return YES;
