@@ -112,7 +112,11 @@
     id vc = [[RZSimpleColorViewController alloc] init];
 
     [vc setTransitioningDelegate:[RZTransitionsManager shared]];
-    [vc setModalPresentationStyle:UIModalPresentationOverCurrentContext];
+    static UIModalPresentationStyle s = UIModalPresentationFullScreen;
+    if (s > UIModalPresentationPopover)
+        s = UIModalPresentationFullScreen;
+    NSLog(@"presenting %d", (int) s);
+    [vc setModalPresentationStyle:s++];
     [self presentViewController:vc animated:YES completion:NULL];
 }
 
