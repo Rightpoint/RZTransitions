@@ -109,15 +109,7 @@
 
 - (IBAction)showModal:(id)sender
 {
-    id vc = [[RZSimpleColorViewController alloc] init];
-
-    [vc setTransitioningDelegate:[RZTransitionsManager shared]];
-    static UIModalPresentationStyle s = UIModalPresentationFullScreen;
-    if (s > UIModalPresentationPopover)
-        s = UIModalPresentationFullScreen;
-    NSLog(@"presenting %d", (int) s);
-    [vc setModalPresentationStyle:s++];
-    [self presentViewController:vc animated:YES completion:NULL];
+    [self presentViewController:[self nextSimpleColorViewController] animated:YES completion:NULL];
 }
 
 - (IBAction)showCollectionView:(id)sender
