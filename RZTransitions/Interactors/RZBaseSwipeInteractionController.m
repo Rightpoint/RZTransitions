@@ -91,9 +91,13 @@
             }
             else {
                 if ( self.action & RZTransitionAction_Pop ) {
+                    [self cancelInteractiveTransition];
+                    self.isInteractive = NO;
                     [self.fromViewController.navigationController popViewControllerAnimated:YES];
                 }
                 else if ( self.action & RZTransitionAction_Dismiss ) {
+                    [self cancelInteractiveTransition];
+                    self.isInteractive = NO;
                     [self.fromViewController dismissViewControllerAnimated:YES completion:nil];
                 }
             }
@@ -101,7 +105,7 @@
             
         case UIGestureRecognizerStateChanged:
             if ( self.isInteractive ) {
-                self.shouldCompleteTransition = ( percentage > [self swipeCompletionPercent] );
+                self.shouldCompleteTransition = ( percentage >= [self swipeCompletionPercent] );
                 [self updateInteractiveTransition:percentage];
             }
             break;

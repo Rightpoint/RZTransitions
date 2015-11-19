@@ -37,7 +37,7 @@
 /**
  *  The ViewController that is doing the presenting.
  */
-@property (strong, nonatomic) UIViewController *fromViewController;
+@property (weak, nonatomic) UIViewController *fromViewController;
 
 /**
  *  The GestureRecognizer to get information about the swipe.

@@ -38,7 +38,7 @@
 /**
  *  The View Controller that is being transitioned from.
  */
-@property (strong, nonatomic) UIViewController *fromViewController;
+@property (weak, nonatomic) UIViewController *fromViewController;
 
 /**
  *  The Pinch Gesture recognizer that is used to control the interaction
