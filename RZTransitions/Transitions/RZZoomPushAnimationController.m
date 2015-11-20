@@ -64,7 +64,9 @@
                          }];
     }
     else {
-        [container addSubview:toViewController.view];
+        if (transitionContext.presentationStyle == UIModalPresentationNone) {
+            [container insertSubview:toViewController.view belowSubview:fromViewController.view];
+        }
         toViewController.view.transform = CGAffineTransformMakeScale(1.0 + kRZPushScaleChangePct, 1.0 + kRZPushScaleChangePct);
         toViewController.view.alpha = 0.0f;
         
