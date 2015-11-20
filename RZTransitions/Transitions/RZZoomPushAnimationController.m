@@ -27,6 +27,7 @@
 //
 
 #import "RZZoomPushAnimationController.h"
+#import "NSObject+RZTransitionsViewHelpers.h"
 #import <UIKit/UIKit.h>
 
 #define kRZPushTransitionTime 0.35
@@ -38,8 +39,8 @@
 
 - (void)animateTransition:(id<UIViewControllerContextTransitioning>)transitionContext
 {    
-    UIView *toView = [transitionContext viewForKey:UITransitionContextToViewKey];
-    UIView *fromView = [transitionContext viewForKey:UITransitionContextFromViewKey];
+    UIView *toView = [(NSObject *)transitionContext rzt_toView];
+    UIView *fromView = [(NSObject *)transitionContext rzt_fromView];
     UIView *container = [transitionContext containerView];
     
     if ( self.isPositiveAnimation ) {
