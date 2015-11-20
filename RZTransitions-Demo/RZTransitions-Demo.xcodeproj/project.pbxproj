@@ -46,6 +46,7 @@
 		9A0F7CA6195A0B9500271D1D /* UIImage+RZTransitionsFastImageBlur.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A0F7C93195A0B9500271D1D /* UIImage+RZTransitionsFastImageBlur.m */; };
 		9A0F7CA7195A0B9500271D1D /* UIImage+RZTransitionsSnapshotHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A0F7C95195A0B9500271D1D /* UIImage+RZTransitionsSnapshotHelpers.m */; };
 		E11760241BFFC16A0071800D /* Launch Screen.xib in Resources */ = {isa = PBXBuildFile; fileRef = E11760221BFFC16A0071800D /* Launch Screen.xib */; };
+		E14D80001BFFC419009BDB4F /* NSObject+RZTransitionsViewHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = E14D7FFF1BFFC419009BDB4F /* NSObject+RZTransitionsViewHelpers.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -129,6 +130,8 @@
 		9A0F7C94195A0B9500271D1D /* UIImage+RZTransitionsSnapshotHelpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+RZTransitionsSnapshotHelpers.h"; sourceTree = "<group>"; };
 		9A0F7C95195A0B9500271D1D /* UIImage+RZTransitionsSnapshotHelpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+RZTransitionsSnapshotHelpers.m"; sourceTree = "<group>"; };
 		E11760231BFFC16A0071800D /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = "en.lproj/Launch Screen.xib"; sourceTree = "<group>"; };
+		E14D7FFF1BFFC419009BDB4F /* NSObject+RZTransitionsViewHelpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+RZTransitionsViewHelpers.m"; sourceTree = "<group>"; };
+		E14D80011BFFC460009BDB4F /* NSObject+RZTransitionsViewHelpers.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSObject+RZTransitionsViewHelpers.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -351,6 +354,8 @@
 				9A0F7C93195A0B9500271D1D /* UIImage+RZTransitionsFastImageBlur.m */,
 				9A0F7C94195A0B9500271D1D /* UIImage+RZTransitionsSnapshotHelpers.h */,
 				9A0F7C95195A0B9500271D1D /* UIImage+RZTransitionsSnapshotHelpers.m */,
+				E14D80011BFFC460009BDB4F /* NSObject+RZTransitionsViewHelpers.h */,
+				E14D7FFF1BFFC419009BDB4F /* NSObject+RZTransitionsViewHelpers.m */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -493,6 +498,7 @@
 				9A0F7C9C195A0B9500271D1D /* RZVerticalSwipeInteractionController.m in Sources */,
 				833E36E9184E5A9A00A0326A /* RZTransitionsDemoAppDelegate.m in Sources */,
 				9A0F7C9E195A0B9500271D1D /* RZCardSlideAnimationController.m in Sources */,
+				E14D80001BFFC419009BDB4F /* NSObject+RZTransitionsViewHelpers.m in Sources */,
 				9A0F7C9A195A0B9500271D1D /* RZOverscrollInteractionController.m in Sources */,
 				9A0F7C9B195A0B9500271D1D /* RZPinchInteractionController.m in Sources */,
 				9A0F7C98195A0B9500271D1D /* RZBaseSwipeInteractionController.m in Sources */,
