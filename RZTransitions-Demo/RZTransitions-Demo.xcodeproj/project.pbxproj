@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 46;
+	objectVersion = 47;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -45,7 +45,7 @@
 		9A0F7CA5195A0B9500271D1D /* RZZoomPushAnimationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A0F7C90195A0B9500271D1D /* RZZoomPushAnimationController.m */; };
 		9A0F7CA6195A0B9500271D1D /* UIImage+RZTransitionsFastImageBlur.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A0F7C93195A0B9500271D1D /* UIImage+RZTransitionsFastImageBlur.m */; };
 		9A0F7CA7195A0B9500271D1D /* UIImage+RZTransitionsSnapshotHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A0F7C95195A0B9500271D1D /* UIImage+RZTransitionsSnapshotHelpers.m */; };
-		E1A3E92C1BFD0C57003F3681 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E1A3E92B1BFD0C57003F3681 /* Launch Screen.storyboard */; };
+		E11760241BFFC16A0071800D /* Launch Screen.xib in Resources */ = {isa = PBXBuildFile; fileRef = E11760221BFFC16A0071800D /* Launch Screen.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -128,7 +128,7 @@
 		9A0F7C93195A0B9500271D1D /* UIImage+RZTransitionsFastImageBlur.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+RZTransitionsFastImageBlur.m"; sourceTree = "<group>"; };
 		9A0F7C94195A0B9500271D1D /* UIImage+RZTransitionsSnapshotHelpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+RZTransitionsSnapshotHelpers.h"; sourceTree = "<group>"; };
 		9A0F7C95195A0B9500271D1D /* UIImage+RZTransitionsSnapshotHelpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+RZTransitionsSnapshotHelpers.m"; sourceTree = "<group>"; };
-		E1A3E92B1BFD0C57003F3681 /* Launch Screen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
+		E11760231BFFC16A0071800D /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = "en.lproj/Launch Screen.xib"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -206,7 +206,7 @@
 				833E36B0184E29C300A0326A /* InfoPlist.strings */,
 				833E36B3184E29C300A0326A /* main.m */,
 				833E36B5184E29C300A0326A /* RZTransitions-Demo-Prefix.pch */,
-				E1A3E92B1BFD0C57003F3681 /* Launch Screen.storyboard */,
+				E11760221BFFC16A0071800D /* Launch Screen.xib */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -439,7 +439,7 @@
 				};
 			};
 			buildConfigurationList = 833E369F184E29C300A0326A /* Build configuration list for PBXProject "RZTransitions-Demo" */;
-			compatibilityVersion = "Xcode 3.2";
+			compatibilityVersion = "Xcode 6.3";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -462,12 +462,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E1A3E92C1BFD0C57003F3681 /* Launch Screen.storyboard in Resources */,
 				833E3703184E5DB400A0326A /* RZSimpleColorViewController.xib in Resources */,
 				833E36EE184E5AFF00A0326A /* RZSimpleViewController.xib in Resources */,
 				833E36C0184E29C300A0326A /* Images.xcassets in Resources */,
 				837D08C31859000F00E20B37 /* RZSimpleCollectionViewController.xib in Resources */,
 				833E36B2184E29C300A0326A /* InfoPlist.strings in Resources */,
+				E11760241BFFC16A0071800D /* Launch Screen.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -549,6 +549,14 @@
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
+		E11760221BFFC16A0071800D /* Launch Screen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E11760231BFFC16A0071800D /* en */,
+			);
+			name = "Launch Screen.xib";
+			sourceTree = "<group>";
+		};
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
@@ -626,6 +634,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "RZTransitions-Demo/RZTransitions-Demo-Prefix.pch";
 				INFOPLIST_FILE = "RZTransitions-Demo/RZTransitions-Demo-Info.plist";
@@ -639,6 +648,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "RZTransitions-Demo/RZTransitions-Demo-Prefix.pch";
 				INFOPLIST_FILE = "RZTransitions-Demo/RZTransitions-Demo-Info.plist";
