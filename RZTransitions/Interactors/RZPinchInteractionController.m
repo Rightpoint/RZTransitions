@@ -91,9 +91,13 @@ static const CGFloat kRZPinchInteractionDefaultCompletionPercentage     = 0.5f;
             }
             else {
                 if ( self.action & RZTransitionAction_Pop ) {
+                    [self cancelInteractiveTransition];
+                    self.isInteractive = NO;
                     [self.fromViewController.navigationController popViewControllerAnimated:YES];
                 }
                 else if ( self.action & RZTransitionAction_Dismiss ) {
+                    [self cancelInteractiveTransition];
+                    self.isInteractive = NO;
                     [self.fromViewController dismissViewControllerAnimated:YES completion:nil];
                 }
             }

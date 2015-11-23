@@ -47,6 +47,7 @@
 		9A0F7CA7195A0B9500271D1D /* UIImage+RZTransitionsSnapshotHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A0F7C95195A0B9500271D1D /* UIImage+RZTransitionsSnapshotHelpers.m */; };
 		E18786DA1BFB5FB000E51D79 /* UIColor+Random.swift in Sources */ = {isa = PBXBuildFile; fileRef = E18786D91BFB5FB000E51D79 /* UIColor+Random.swift */; };
 		E19CA4AA1BF539F4007F3FF5 /* RZTransitionsDemoAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E19CA4A91BF539F4007F3FF5 /* RZTransitionsDemoAppDelegate.swift */; };
+		E1A3E92C1BFD0C57003F3681 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E1A3E92B1BFD0C57003F3681 /* Launch Screen.storyboard */; };
 		E1A793301BF677BC008D27EE /* RZSimpleViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 833E36EC184E5AFF00A0326A /* RZSimpleViewController.xib */; };
 		E1A793311BF677BC008D27EE /* RZSimpleColorViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 833E3701184E5DB400A0326A /* RZSimpleColorViewController.xib */; };
 		E1A793321BF677BC008D27EE /* RZSimpleCollectionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 837D08C11859000F00E20B37 /* RZSimpleCollectionViewController.xib */; };
@@ -158,6 +159,7 @@
 		9A0F7C95195A0B9500271D1D /* UIImage+RZTransitionsSnapshotHelpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+RZTransitionsSnapshotHelpers.m"; sourceTree = "<group>"; };
 		E18786D91BFB5FB000E51D79 /* UIColor+Random.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Random.swift"; sourceTree = "<group>"; };
 		E19CA4971BF5391A007F3FF5 /* RZTransitions-Demo-Swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "RZTransitions-Demo-Swift.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E1A3E92B1BFD0C57003F3681 /* Launch Screen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		E19CA4A91BF539F4007F3FF5 /* RZTransitionsDemoAppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RZTransitionsDemoAppDelegate.swift; sourceTree = "<group>"; };
 		E1A7932F1BF65348008D27EE /* RZTransitions-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RZTransitions-Bridging-Header.h"; sourceTree = "<group>"; };
 		E1E74E611BF649B400C00BD2 /* RZSimpleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RZSimpleViewController.swift; sourceTree = "<group>"; };
@@ -250,6 +252,7 @@
 				833E36B0184E29C300A0326A /* InfoPlist.strings */,
 				833E36B3184E29C300A0326A /* main.m */,
 				833E36B5184E29C300A0326A /* RZTransitions-Demo-Prefix.pch */,
+				E1A3E92B1BFD0C57003F3681 /* Launch Screen.storyboard */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -533,6 +536,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E1A3E92C1BFD0C57003F3681 /* Launch Screen.storyboard in Resources */,
 				833E3703184E5DB400A0326A /* RZSimpleColorViewController.xib in Resources */,
 				833E36EE184E5AFF00A0326A /* RZSimpleViewController.xib in Resources */,
 				833E36C0184E29C300A0326A /* Images.xcassets in Resources */,
@@ -749,12 +753,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "RZTransitions-Demo/RZTransitions-Demo-Prefix.pch";
 				INFOPLIST_FILE = "RZTransitions-Demo/RZTransitions-Demo-Info.plist";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.raizlabs.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -763,12 +767,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "RZTransitions-Demo/RZTransitions-Demo-Prefix.pch";
 				INFOPLIST_FILE = "RZTransitions-Demo/RZTransitions-Demo-Info.plist";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.raizlabs.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

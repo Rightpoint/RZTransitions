@@ -44,6 +44,7 @@
 
 @property (nonatomic, strong) id<RZTransitionInteractionController> pushPopInteractionController;
 @property (nonatomic, strong) id<RZTransitionInteractionController> presentInteractionController;
+@property (nonatomic, strong) id<RZTransitionInteractionController> pinchInteractionController;
 
 @end
 
@@ -69,7 +70,11 @@
     self.presentInteractionController = [[RZVerticalSwipeInteractionController alloc] init];
     [self.presentInteractionController setNextViewControllerDelegate:self];
     [self.presentInteractionController attachViewController:self withAction:RZTransitionAction_Present];
-    
+
+    self.pinchInteractionController = [RZPinchInteractionController new];
+    [self.pinchInteractionController setNextViewControllerDelegate:self];
+    [self.pinchInteractionController attachViewController:self withAction:RZTransitionAction_Present];
+
 	// Setup the push & pop animations as well as a special animation for pushing a
 	// RZSimpleCollectionViewController
     [[RZTransitionsManager shared] setAnimationController:[[RZCardSlideAnimationController alloc] init]
@@ -90,6 +95,10 @@
 {
     [super viewWillAppear:animated];
     [[RZTransitionsManager shared] setInteractionController:self.presentInteractionController
+                                         fromViewController:[self class]
+                                           toViewController:nil
+                                                  forAction:RZTransitionAction_Present];
+    [[RZTransitionsManager shared] setInteractionController:self.pinchInteractionController
                                          fromViewController:[self class]
                                            toViewController:nil
                                                   forAction:RZTransitionAction_Present];
@@ -147,6 +156,9 @@
 - (UIViewController *)nextViewControllerForInteractor:(id<RZTransitionInteractionController>)interactor
 {
     if ([interactor isKindOfClass:[RZVerticalSwipeInteractionController class]]) {
+        return [self nextSimpleColorViewController];
+    }
+    else if ([interactor isKindOfClass:[RZPinchInteractionController class]]) {
         return [self nextSimpleColorViewController];
     }
 	else {
