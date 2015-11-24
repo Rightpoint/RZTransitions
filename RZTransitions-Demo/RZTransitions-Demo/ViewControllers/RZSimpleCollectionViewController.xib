@@ -16,7 +16,7 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <collectionView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="bwQ-eI-bsg">
+                <collectionView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="bwQ-eI-bsg">
                     <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <inset key="scrollIndicatorInsets" minX="0.0" minY="88" maxX="0.0" maxY="0.0"/>
@@ -34,6 +34,12 @@
                 </collectionView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="bwQ-eI-bsg" secondAttribute="bottom" id="Ahb-M3-Zqb"/>
+                <constraint firstAttribute="trailing" secondItem="bwQ-eI-bsg" secondAttribute="trailing" id="MPb-0W-qfy"/>
+                <constraint firstItem="bwQ-eI-bsg" firstAttribute="top" secondItem="1" secondAttribute="top" id="ayD-Gi-Kxh"/>
+                <constraint firstItem="bwQ-eI-bsg" firstAttribute="leading" secondItem="1" secondAttribute="leading" id="x6Q-Lw-h5k"/>
+            </constraints>
             <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
         </view>
     </objects>
