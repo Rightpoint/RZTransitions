@@ -37,6 +37,9 @@ class RZTransitionsDemoAppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) ->Bool {
 
+        RZTransitionsManager.shared().defaultPresentDismissAnimationController = RZZoomAlphaAnimationController()
+        RZTransitionsManager.shared().defaultPushPopAnimationController = RZCardSlideAnimationController()
+
         let rootViewController = RZSimpleViewController()
         let rootNavController = RZTransitionsNavigationController(rootViewController: rootViewController)
         self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
