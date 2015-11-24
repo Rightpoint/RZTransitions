@@ -28,6 +28,7 @@
 
 import UIKit
 
+@objc(RZSimpleViewController)
 class RZSimpleViewController: UIViewController, RZTransitionInteractionControllerDelegate
 {
     @IBOutlet weak var popButton: UIButton?

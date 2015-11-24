@@ -33,6 +33,7 @@ let kRZCollectionViewCellReuseId = "kRZCollectionViewCellReuseId"
 let kRZCollectionViewNumCells = 50
 let kRZCollectionViewCellSize: CGFloat = 88
 
+@objc(RZSimpleCollectionViewController)
 class RZSimpleCollectionViewController: UIViewController
     , UICollectionViewDataSource
     , UICollectionViewDelegate
