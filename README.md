@@ -50,7 +50,7 @@ When Presenting a View Controller
 self.transitioningDelegate = RZTransitionsManager.shared()
 let nextViewController = UIViewController()
 nextViewController.transitioningDelegate = RZTransitionsManager.shared()
-self.presentViewController(nextViewController, animated:true) {};
+self.presentViewController(nextViewController, animated:true) {}
 ```
 <p align="right">Objective C</p>
 ```objective-c
@@ -80,7 +80,7 @@ UINavigationController *navigationController = [[UINavigationController alloc] i
 RZTransitionsManager.shared().setAnimationController( RZZoomPushAnimationController(),
     fromViewController:self.dynamicType,
     toViewController:RZSimpleCollectionViewController.self,
-    forAction:.PushPop);
+    forAction:.PushPop)
 ```
 <p align="right">Objective C</p>
 ```objective-c
@@ -109,11 +109,11 @@ override func viewDidLoad() {
 
 override func viewWillAppear(animated: Bool)
 {
-    super.viewWillAppear(animated);
+    super.viewWillAppear(animated)
     RZTransitionsManager.shared().setInteractionController( self.presentInteractionController,
         fromViewController:self.dynamicType,
         toViewController:nil,
-        forAction:.Present);
+        forAction:.Present)
 }
 ```
 <p align="right">Objective C</p>

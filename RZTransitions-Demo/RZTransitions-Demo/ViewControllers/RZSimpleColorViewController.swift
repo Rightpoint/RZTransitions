@@ -30,7 +30,7 @@ import Foundation
 import UIKit
 
 @objc(RZSimpleColorViewController)
-class RZSimpleColorViewController: UIViewController
+final class RZSimpleColorViewController: UIViewController
 {
     lazy var backgroundColor:  UIColor = UIColor.redColor()
 
@@ -44,28 +44,25 @@ class RZSimpleColorViewController: UIViewController
         super.init(coder: aDecoder)
     }
 
-    init(color: UIColor?)
-    {
+    init(color: UIColor?) {
         super.init(nibName: nil, bundle: nil)
         if (color != nil) {
-            self.backgroundColor = color!
+            backgroundColor = color!
         }
     }
 
-    override func viewDidLoad()
-    {
-        super.viewDidLoad();
-        self.view.backgroundColor = self.backgroundColor
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        view.backgroundColor = backgroundColor
         let tapGestureRecognizer = UITapGestureRecognizer(target:self, action:"dismissSelfOnTap:")
-        self.view.addGestureRecognizer(tapGestureRecognizer)
+        view.addGestureRecognizer(tapGestureRecognizer)
     }
 
-    //MARK: - Handle Tap Genture Reconizer
+    //MARK: - Handle Tap Gesture Recognizer
 
     @objc(dismissSelfOnTap:)
-    func dismissSelfOnTap(tapGestureRecognizer: UITapGestureRecognizer)
-    {
-        self.dismissViewControllerAnimated(true) {}
+    func dismissSelfOnTap(tapGestureRecognizer: UITapGestureRecognizer) {
+        dismissViewControllerAnimated(true, completion: nil)
     }
 
 }

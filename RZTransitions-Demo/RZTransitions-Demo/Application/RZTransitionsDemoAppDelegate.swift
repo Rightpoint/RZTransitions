@@ -31,7 +31,7 @@ import UIKit
 
 @UIApplicationMain
 
-class RZTransitionsDemoAppDelegate: UIResponder, UIApplicationDelegate {
+final class RZTransitionsDemoAppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
@@ -42,11 +42,11 @@ class RZTransitionsDemoAppDelegate: UIResponder, UIApplicationDelegate {
 
         let rootViewController = RZSimpleViewController()
         let rootNavController = RZTransitionsNavigationController(rootViewController: rootViewController)
-        self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
-        if let window = self.window {
-            window.rootViewController = rootNavController
-            window.makeKeyAndVisible()
-        }
+
+        window = UIWindow(frame: UIScreen.mainScreen().bounds)
+        window?.rootViewController = rootNavController
+        window?.makeKeyAndVisible()
+
         return true
     }
 }

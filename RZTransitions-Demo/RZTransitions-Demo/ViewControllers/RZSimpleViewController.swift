@@ -29,7 +29,7 @@
 import UIKit
 
 @objc(RZSimpleViewController)
-class RZSimpleViewController: UIViewController, RZTransitionInteractionControllerDelegate
+final class RZSimpleViewController: UIViewController, RZTransitionInteractionControllerDelegate
 {
     @IBOutlet weak var popButton: UIButton?
     @IBOutlet weak var pushButton: UIButton?
@@ -47,24 +47,20 @@ class RZSimpleViewController: UIViewController, RZTransitionInteractionControlle
         super.init(coder: aDecoder)
     }
 
-    @IBAction func pushNewViewController(_: AnyObject)
-    {
-        self.navigationController?.pushViewController(self.nextSimpleViewController(), animated:true);
+    @IBAction func pushNewViewController(_: AnyObject) {
+        navigationController?.pushViewController(nextSimpleViewController(), animated:true);
     }
 
-    @IBAction func popViewController(_: AnyObject)
-    {
-        self.navigationController?.popViewControllerAnimated(true);
+    @IBAction func popViewController(_: AnyObject) {
+        navigationController?.popViewControllerAnimated(true);
     }
 
-    @IBAction func showModal(_: AnyObject)
-    {
-        self.presentViewController(self.nextSimpleColorViewController(), animated:true, completion:({}));
+    @IBAction func showModal(_: AnyObject) {
+        presentViewController(nextSimpleColorViewController(), animated:true, completion:({}));
     }
 
-    @IBAction func showCollectionView(_: AnyObject)
-    {
-        self.navigationController?.pushViewController(RZSimpleCollectionViewController(), animated:true);
+    @IBAction func showCollectionView(_: AnyObject) {
+        navigationController?.pushViewController(RZSimpleCollectionViewController(), animated:true);
     }
 
     override func viewDidLoad() {
@@ -72,8 +68,8 @@ class RZSimpleViewController: UIViewController, RZTransitionInteractionControlle
 
         // Create the push and pop interaction controller that allows a custom gesture
         // to control pushing and popping from the navigation controller
-        self.pushPopInteractionController = RZHorizontalInteractionController()
-        if let vc = self.pushPopInteractionController as? RZHorizontalInteractionController {
+        pushPopInteractionController = RZHorizontalInteractionController()
+        if let vc = pushPopInteractionController as? RZHorizontalInteractionController {
             vc.nextViewControllerDelegate = self
             vc.attachViewController(self, withAction: .PushPop)
             RZTransitionsManager.shared().setInteractionController( vc, fromViewController:self.dynamicType, toViewController:nil, forAction: .PushPop);
@@ -81,8 +77,8 @@ class RZSimpleViewController: UIViewController, RZTransitionInteractionControlle
 
         // Create the presentation interaction controller that allows a custom gesture
         // to control presenting a new VC via a presentViewController
-        self.presentInteractionController = RZVerticalSwipeInteractionController()
-        if let vc = self.presentInteractionController as? RZVerticalSwipeInteractionController {
+        presentInteractionController = RZVerticalSwipeInteractionController()
+        if let vc = presentInteractionController as? RZVerticalSwipeInteractionController {
             vc.nextViewControllerDelegate = self;
             vc.attachViewController(self, withAction:.Present);
         }
@@ -104,10 +100,9 @@ class RZSimpleViewController: UIViewController, RZTransitionInteractionControlle
             forAction:.PresentDismiss);
     }
 
-    override func viewWillAppear(animated: Bool)
-    {
+    override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated);
-        RZTransitionsManager.shared().setInteractionController( self.presentInteractionController,
+        RZTransitionsManager.shared().setInteractionController( presentInteractionController,
             fromViewController:self.dynamicType,
             toViewController:nil,
             forAction:.Present);
@@ -115,37 +110,31 @@ class RZSimpleViewController: UIViewController, RZTransitionInteractionControlle
 
     //MARK: - Button Actions
 
-    @IBAction func pushNewViewController()
-    {
-        self.navigationController?.pushViewController(self.nextSimpleViewController(), animated:true);
+    @IBAction func pushNewViewController() {
+        navigationController?.pushViewController(nextSimpleViewController(), animated:true);
     }
 
-    @IBAction func popViewController()
-    {
-        self.navigationController?.popViewControllerAnimated(true)
+    @IBAction func popViewController() {
+        navigationController?.popViewControllerAnimated(true)
     }
 
-    @IBAction func showModal()
-    {
-        self.presentViewController(self.nextSimpleColorViewController(), animated:true, completion: ({}) )
+    @IBAction func showModal() {
+        presentViewController(nextSimpleColorViewController(), animated:true, completion: ({}) )
     }
 
-    @IBAction func showCollectionView()
-    {
-        self.navigationController?.pushViewController(RZSimpleCollectionViewController(), animated: true);
+    @IBAction func showCollectionView() {
+        navigationController?.pushViewController(RZSimpleCollectionViewController(), animated: true);
     }
 
     //MARK: - Next View Controller Logic
 
-    func nextSimpleViewController() -> UIViewController
-    {
+    func nextSimpleViewController() -> UIViewController {
         let newVC = RZSimpleViewController()
         newVC.transitioningDelegate = RZTransitionsManager.shared()
         return newVC;
     }
 
-    func nextSimpleColorViewController() -> UIViewController
-    {
+    func nextSimpleColorViewController() -> UIViewController {
         let newColorVC = RZSimpleColorViewController()
         newColorVC.transitioningDelegate = RZTransitionsManager.shared()
 
@@ -162,13 +151,12 @@ class RZSimpleViewController: UIViewController, RZTransitionInteractionControlle
 
     //MARK: - RZTransitionInteractorDelegate
 
-    func nextViewControllerForInteractor(interactor: RZTransitionInteractionController) -> UIViewController
-    {
+    func nextViewControllerForInteractor(interactor: RZTransitionInteractionController) -> UIViewController {
         if (interactor is RZVerticalSwipeInteractionController) {
-            return self.nextSimpleColorViewController();
+            return nextSimpleColorViewController();
         }
         else {
-            return self.nextSimpleViewController();
+            return nextSimpleViewController();
         }
     }
     

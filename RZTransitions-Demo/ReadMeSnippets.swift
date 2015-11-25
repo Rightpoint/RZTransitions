@@ -27,12 +27,11 @@ class Foo : UIViewController, RZTransitionInteractionControllerDelegate
         RZTransitionsManager.shared().defaultPresentDismissAnimationController = RZZoomAlphaAnimationController()
         RZTransitionsManager.shared().defaultPushPopAnimationController = RZCardSlideAnimationController()
 
-
         // 2
         self.transitioningDelegate = RZTransitionsManager.shared()
         let nextViewController = UIViewController()
         nextViewController.transitioningDelegate = RZTransitionsManager.shared()
-        self.presentViewController(nextViewController, animated:true) {};
+        self.presentViewController(nextViewController, animated:true) {}
 
 
         // 3
@@ -43,7 +42,7 @@ class Foo : UIViewController, RZTransitionInteractionControllerDelegate
         RZTransitionsManager.shared().setAnimationController( RZZoomPushAnimationController(),
             fromViewController:self.dynamicType,
             toViewController:RZSimpleCollectionViewController.self,
-            forAction:.PushPop);
+            forAction:.PushPop)
     }
     // 5
     override func viewDidLoad() {
@@ -56,13 +55,12 @@ class Foo : UIViewController, RZTransitionInteractionControllerDelegate
         }
     }
 
-    override func viewWillAppear(animated: Bool)
-    {
-        super.viewWillAppear(animated);
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
         RZTransitionsManager.shared().setInteractionController( self.presentInteractionController,
             fromViewController:self.dynamicType,
             toViewController:nil,
-            forAction:.Present);
+            forAction:.Present)
     }
 
 

@@ -34,7 +34,7 @@ let kRZCollectionViewNumCells = 50
 let kRZCollectionViewCellSize: CGFloat = 88
 
 @objc(RZSimpleCollectionViewController)
-class RZSimpleCollectionViewController: UIViewController
+final class RZSimpleCollectionViewController: UIViewController
     , UICollectionViewDataSource
     , UICollectionViewDelegate
     , UIViewControllerTransitioningDelegate
@@ -57,11 +57,10 @@ class RZSimpleCollectionViewController: UIViewController
         super.init(coder: aDecoder)
     }
 
-    override func viewDidLoad()
-    {
+    override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.collectionView?.registerClass(UICollectionViewCell.self, forCellWithReuseIdentifier:kRZCollectionViewCellReuseId);
+        collectionView?.registerClass(UICollectionViewCell.self, forCellWithReuseIdentifier:kRZCollectionViewCellReuseId);
 
 //     TODO: Currently the RZOverscrollInteractor will take over the collection view's delegate, meaning that ```didSelectItemAtIndexPath:```
 //     will not be forwarded back.  RZOverscrollInteractor requires a bit of a rewrite to use KVO instead of delegation to address this.
@@ -73,14 +72,14 @@ class RZSimpleCollectionViewController: UIViewController
 //                                               toViewController:nil
 //                                                      forAction:RZTransitionAction_Present];
 
-    self.presentDismissAnimationController = RZRectZoomAnimationController()
-    self.presentDismissAnimationController?.rectZoomDelegate = self
+    presentDismissAnimationController = RZRectZoomAnimationController()
+    presentDismissAnimationController?.rectZoomDelegate = self
 
-    RZTransitionsManager.shared().setAnimationController( self.presentDismissAnimationController,
+    RZTransitionsManager.shared().setAnimationController( presentDismissAnimationController,
         fromViewController:self.dynamicType,
         forAction:.PresentDismiss )
 
-    self.transitioningDelegate = RZTransitionsManager.shared()
+    transitioningDelegate = RZTransitionsManager.shared()
     }
 
 //    - (void)viewDidAppear:(BOOL)animated
@@ -92,70 +91,60 @@ class RZSimpleCollectionViewController: UIViewController
 
 //MARK: - New VC Helper Methods
 
-    func newColorVCWithColor(color: UIColor?) -> UIViewController
-    {
+    func newColorVCWithColor(color: UIColor?) -> UIViewController {
         let newColorVC = RZSimpleColorViewController(color: color)
         newColorVC.transitioningDelegate = RZTransitionsManager.shared()
 
         // TODO: Hook up next VC's dismiss transition
-        return newColorVC;
+        return newColorVC
     }
 
 //MARK: - UICollectionViewDelegate
 
-    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath:NSIndexPath)
-    {
-        let cell = collectionView.cellForItemAtIndexPath(indexPath)!
-        let cellBackgroundColor = cell.backgroundColor;
-        let colorVC = self.newColorVCWithColor(cellBackgroundColor!)
+    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath:NSIndexPath) {
+        guard let cell = collectionView.cellForItemAtIndexPath(indexPath) else {
+            fatalError("no cell at \(indexPath)")
+        }
+        let colorVC = newColorVCWithColor(cell.backgroundColor ?? UIColor.clearColor())
 
-        self.circleTransitionStartPoint = collectionView.convertPoint(cell.center, toView:self.view)
-        self.transitionCellRect = collectionView.convertRect(cell.frame, toView:self.view)
+        circleTransitionStartPoint = collectionView.convertPoint(cell.center, toView:view)
+        transitionCellRect = collectionView.convertRect(cell.frame, toView:view)
 
         // Present VC
-        self.presentViewController(colorVC, animated:true) {}
+        presentViewController(colorVC, animated:true) {}
     }
 
 //MARK: - UICollectionViewDataSource
 
-    func collectionView(collectionView:UICollectionView, numberOfItemsInSection section:NSInteger) -> NSInteger
-    {
+    func collectionView(collectionView:UICollectionView, numberOfItemsInSection section:NSInteger) -> NSInteger {
         return kRZCollectionViewNumCells
     }
 
-    func collectionView(collectionView:UICollectionView, cellForItemAtIndexPath indexPath:NSIndexPath) -> UICollectionViewCell
-    {
+    func collectionView(collectionView:UICollectionView, cellForItemAtIndexPath indexPath:NSIndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier(kRZCollectionViewCellReuseId, forIndexPath:indexPath)
         cell.backgroundColor = UIColor.randomColor()
-        return cell;
+        return cell
     }
 
 //MARK: - RZTransitionInteractionControllerDelegate
 
-    func nextViewControllerForInteractor() -> UIViewController?
-    {
-        return self.newColorVCWithColor(nil);
+    func nextViewControllerForInteractor() -> UIViewController? {
+        return newColorVCWithColor(nil)
     }
 
 //MARK: - RZRectZoomAnimationDelegate
 
-    func rectZoomPosition() -> CGRect
-    {
-        return self.transitionCellRect;
+    func rectZoomPosition() -> CGRect {
+        return transitionCellRect
     }
 
 //MARK: - RZCirclePushAnimationDelegate
 
-    func circleCenter() -> CGPoint
-    {
-        return self.circleTransitionStartPoint;
+    func circleCenter() -> CGPoint {
+        return circleTransitionStartPoint;
     }
 
-    func circleStartingRadius() -> CGFloat
-    {
+    func circleStartingRadius() -> CGFloat {
         return (kRZCollectionViewCellSize / 2.0);
     }
-
-//@end
-
 }

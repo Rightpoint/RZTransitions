@@ -29,11 +29,10 @@ import UIKit
 
 extension UIColor {
 
-    public class func randomColor() -> UIColor
-    {
+    public class func randomColor() -> UIColor {
         let hue = CGFloat(arc4random_uniform(256)) / 256.0                  //  0.0 to 1.0
-        let saturation = CGFloat(arc4random_uniform(128)) / 256.0 + 0.5;    //  0.5 to 1.0, away from white
-        let brightness = CGFloat(arc4random_uniform(128)) / 256.0 + 0.5;    //  0.5 to 1.0, away from black
+        let saturation = CGFloat(arc4random_uniform(128)) / 256.0 + 0.5     //  0.5 to 1.0, away from white
+        let brightness = CGFloat(arc4random_uniform(128)) / 256.0 + 0.5     //  0.5 to 1.0, away from black
         return UIColor(hue:hue, saturation:saturation, brightness:brightness, alpha:1.0)
     }
 }
