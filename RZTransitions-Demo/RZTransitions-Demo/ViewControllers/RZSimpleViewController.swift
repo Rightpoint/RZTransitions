@@ -29,7 +29,7 @@
 import UIKit
 
 @objc(RZSimpleViewController)
-final class RZSimpleViewController: UIViewController, RZTransitionInteractionControllerDelegate
+final class RZSimpleViewController: UIViewController
 {
     @IBOutlet weak var popButton: UIButton?
     @IBOutlet weak var pushButton: UIButton?
@@ -45,22 +45,6 @@ final class RZSimpleViewController: UIViewController, RZTransitionInteractionCon
 
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-    }
-
-    @IBAction func pushNewViewController(_: AnyObject) {
-        navigationController?.pushViewController(nextSimpleViewController(), animated:true);
-    }
-
-    @IBAction func popViewController(_: AnyObject) {
-        navigationController?.popViewControllerAnimated(true);
-    }
-
-    @IBAction func showModal(_: AnyObject) {
-        presentViewController(nextSimpleColorViewController(), animated:true, completion:({}));
-    }
-
-    @IBAction func showCollectionView(_: AnyObject) {
-        navigationController?.pushViewController(RZSimpleCollectionViewController(), animated:true);
     }
 
     override func viewDidLoad() {
@@ -107,26 +91,32 @@ final class RZSimpleViewController: UIViewController, RZTransitionInteractionCon
             toViewController:nil,
             forAction:.Present);
     }
+}
 
-    //MARK: - Button Actions
+// MARK: - Actions
+extension RZSimpleViewController {
 
-    @IBAction func pushNewViewController() {
+    @IBAction func pushNewViewController(_: AnyObject) {
         navigationController?.pushViewController(nextSimpleViewController(), animated:true);
     }
 
-    @IBAction func popViewController() {
-        navigationController?.popViewControllerAnimated(true)
+    @IBAction func popViewController(_: AnyObject) {
+        navigationController?.popViewControllerAnimated(true);
     }
 
-    @IBAction func showModal() {
-        presentViewController(nextSimpleColorViewController(), animated:true, completion: ({}) )
+    @IBAction func showModal(_: AnyObject) {
+        presentViewController(nextSimpleColorViewController(), animated:true, completion:({}));
     }
 
-    @IBAction func showCollectionView() {
-        navigationController?.pushViewController(RZSimpleCollectionViewController(), animated: true);
+    @IBAction func showCollectionView(_: AnyObject) {
+        navigationController?.pushViewController(RZSimpleCollectionViewController(), animated:true);
     }
 
-    //MARK: - Next View Controller Logic
+}
+
+// MARK: - RZTransitionInteractionControllerDelegate
+
+extension RZSimpleViewController: RZTransitionInteractionControllerDelegate {
 
     func nextSimpleViewController() -> UIViewController {
         let newVC = RZSimpleViewController()
@@ -149,8 +139,6 @@ final class RZSimpleViewController: UIViewController, RZTransitionInteractionCon
         return newColorVC
     }
 
-    //MARK: - RZTransitionInteractorDelegate
-
     func nextViewControllerForInteractor(interactor: RZTransitionInteractionController) -> UIViewController {
         if (interactor is RZVerticalSwipeInteractionController) {
             return nextSimpleColorViewController();
@@ -159,5 +147,5 @@ final class RZSimpleViewController: UIViewController, RZTransitionInteractionCon
             return nextSimpleViewController();
         }
     }
-    
+
 }
