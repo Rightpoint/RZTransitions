@@ -86,7 +86,7 @@
                                                 forAction:RZTransitionAction_PushPop];
     
 	// Setup the animations for presenting and dismissing a new VC
-    [[RZTransitionsManager shared] setAnimationController:[[RZZoomAlphaAnimationController alloc] init]
+    [[RZTransitionsManager shared] setAnimationController:[[RZCirclePushAnimationController alloc] init]
                                        fromViewController:[self class]
                                                 forAction:RZTransitionAction_PresentDismiss];
 }
