@@ -27,6 +27,7 @@
 //
 
 #import "RZShrinkZoomAnimationController.h"
+#import "NSObject+RZTransitionsViewHelpers.h"
 #import <UIKit/UIKit.h>
 
 @implementation RZShrinkZoomAnimationController
@@ -35,20 +36,20 @@
 
 - (void)animateTransition:(id<UIViewControllerContextTransitioning>)transitionContext
 {
-    UIViewController *fromViewController = [transitionContext viewControllerForKey:UITransitionContextFromViewControllerKey];
-    UIViewController *toViewController = [transitionContext viewControllerForKey:UITransitionContextToViewControllerKey];
+    UIView *fromView = [(NSObject *)transitionContext rzt_fromView];
+    UIView *toView = [(NSObject *)transitionContext rzt_toView];
     UIView *container = [transitionContext containerView];
  
     [UIView animateWithDuration:0.5 delay:0 options:0 animations:^{
-        [fromViewController.view setTransform:CGAffineTransformMakeScale(0.1, 0.1)];
+        [fromView setTransform:CGAffineTransformMakeScale(0.1, 0.1)];
     } completion:^(BOOL finished) {
         
-        [fromViewController.view removeFromSuperview];
-        [toViewController.view setTransform:CGAffineTransformMakeScale(0.1, 0.1)];
-        [container addSubview:toViewController.view];
+        [fromView removeFromSuperview];
+        [toView setTransform:CGAffineTransformMakeScale(0.1, 0.1)];
+        [container addSubview:toView];
         
         [UIView animateWithDuration:0.5 delay:0 options:0 animations:^{
-            [toViewController.view setTransform:CGAffineTransformIdentity];
+            [fromView setTransform:CGAffineTransformIdentity];
         } completion:^(BOOL finished) {
             [transitionContext completeTransition:!transitionContext.transitionWasCancelled];
         }];
