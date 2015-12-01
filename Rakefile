@@ -1,5 +1,6 @@
 PROJ_PATH="RZTransitions-Demo/RZTransitions-Demo.xcodeproj"
-BUILD_SCHEME="RZTransitions-Demo"
+DEMO_OBJC="RZTransitions-Demo"
+DEMO_SWIFT="RZTransitions-Demo-Swift"
 
 #
 # Install
@@ -14,7 +15,8 @@ end
 # Build
 #
 task :build do
-  sh("xctool -project '#{PROJ_PATH}' -scheme '#{BUILD_SCHEME}' -sdk iphonesimulator build") rescue nil
+  sh("xctool -project '#{PROJ_PATH}' -scheme '#{DEMO_OBJC}' -sdk iphonesimulator build") rescue nil
+  sh("xctool -project '#{PROJ_PATH}' -scheme '#{DEMO_SWIFT}' -sdk iphonesimulator build") rescue nil
   exit $?.exitstatus
 end
 
@@ -23,7 +25,8 @@ end
 #
 
 task :analyze do
-  sh("xctool -project '#{PROJ_PATH}' -scheme '#{BUILD_SCHEME}' -sdk iphonesimulator analyze -failOnWarnings") rescue nil
+  sh("xctool -project '#{PROJ_PATH}' -scheme '#{DEMO_OBJC}' -sdk iphonesimulator analyze -failOnWarnings") rescue nil
+  sh("xctool -project '#{PROJ_PATH}' -scheme '#{DEMO_SWIFT}' -sdk iphonesimulator analyze -failOnWarnings") rescue nil
   exit $?.exitstatus
 end
 
@@ -32,7 +35,8 @@ end
 #
 
 task :clean do
-  sh("xctool -project '#{PROJ_PATH}' -scheme '#{BUILD_SCHEME}' -sdk iphonesimulator clean") rescue nil
+  sh("xctool -project '#{PROJ_PATH}' -scheme '#{DEMO_OBJC}' -sdk iphonesimulator clean") rescue nil
+  sh("xctool -project '#{PROJ_PATH}' -scheme '#{DEMO_SWIFT}' -sdk iphonesimulator clean") rescue nil
 end
 
 #
