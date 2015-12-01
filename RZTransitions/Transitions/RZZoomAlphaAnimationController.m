@@ -75,6 +75,7 @@
                          animations:^{
                              fromView.alpha = 1.0f;
                              fromView.transform = CGAffineTransformIdentity;
+                             toViewController.view.frame = fromViewController.view.frame;
                          }
                          completion:^(BOOL finished) {
                              fromView.opaque = YES;
