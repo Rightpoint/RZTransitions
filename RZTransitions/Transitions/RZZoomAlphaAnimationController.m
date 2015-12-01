@@ -42,13 +42,14 @@
 - (void)animateTransition:(id<UIViewControllerContextTransitioning>)transitionContext
 {
     UIView *fromView = [(NSObject *)transitionContext rzt_fromView];
+    UIView *toView = [(NSObject *)transitionContext rzt_toView];
     UIView *container = [transitionContext containerView];
     
-    fromView.userInteractionEnabled = YES;
+    toView.userInteractionEnabled = YES;
     
     if ( !self.isPositiveAnimation ) {
         fromView.opaque = NO;
-        [container insertSubview:fromView belowSubview:fromView];
+        [container insertSubview:toView belowSubview:fromView];
         
         [UIView animateWithDuration:kRZZoomAlphaTransitionTime
                               delay:0
@@ -64,21 +65,20 @@
                          }];
     }
     else {
-        fromView.opaque = NO;
-        fromView.alpha = 0.0f;
-        fromView.transform = CGAffineTransformMakeScale(kRZZoomAlphaMaxScale, kRZZoomAlphaMaxScale);
-        [container addSubview:fromView];
+        toView.opaque = NO;
+        toView.alpha = 0.0f;
+        toView.transform = CGAffineTransformMakeScale(kRZZoomAlphaMaxScale, kRZZoomAlphaMaxScale);
+        [container addSubview:toView];
         
         [UIView animateWithDuration:kRZZoomAlphaTransitionTime
                               delay:0
                             options:UIViewAnimationOptionCurveEaseIn
                          animations:^{
-                             fromView.alpha = 1.0f;
-                             fromView.transform = CGAffineTransformIdentity;
-                             toViewController.view.frame = fromViewController.view.frame;
+                             toView.alpha = 1.0f;
+                             toView.transform = CGAffineTransformIdentity;
                          }
                          completion:^(BOOL finished) {
-                             fromView.opaque = YES;
+                             toView.opaque = YES;
                              [transitionContext completeTransition:!transitionContext.transitionWasCancelled];
                          }];
     }

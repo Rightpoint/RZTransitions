@@ -44,6 +44,7 @@
 - (void)animateTransition:(id<UIViewControllerContextTransitioning>)transitionContext
 {
     UIView *fromView = [(NSObject *)transitionContext rzt_fromView];
+    UIView *toView = [(NSObject *)transitionContext rzt_toView];
     UIView *container = [transitionContext containerView];
     
     CGAffineTransform scaleTransform = CGAffineTransformMakeScale(kRZSegScaleAmount, kRZSegScaleAmount);
@@ -60,9 +61,9 @@
         newTranslateTransform = CGAffineTransformMakeTranslation(container.bounds.size.width*kRZSegXOffsetFactor, -container.bounds.size.height*kRZSegYOffsetFactor);
     }
     
-    [container insertSubview:fromView aboveSubview:fromView];
-    fromView.alpha = 0.1f;
-    fromView.transform = CGAffineTransformConcat(newTranslateTransform, scaleTransform);
+    [container insertSubview:toView aboveSubview:fromView];
+    toView.alpha = 0.1f;
+    toView.transform = CGAffineTransformConcat(newTranslateTransform, scaleTransform);
     [UIView animateWithDuration:[self transitionDuration:transitionContext]
                           delay:0
                         options:UIViewAnimationOptionCurveEaseInOut

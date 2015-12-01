@@ -38,7 +38,7 @@
 @interface RZCirclePushAnimationController ()
 
 - (CGPoint)circleCenterPointWithFromView:(UIView *)fromView;
-- (CGFloat)circleStartingRadiusWithFromView:(UIView *)fromView;
+- (CGFloat)circleStartingRadiusWithFromView:(UIView *)fromView toView:(UIView *)toView;
 
 @end
 
@@ -61,15 +61,16 @@
 - (void)animateTransition:(id<UIViewControllerContextTransitioning>)transitionContext
 {
     UIView *fromView = [(NSObject *)transitionContext rzt_fromView];
-    
+    UIView *toView = [(NSObject *)transitionContext rzt_toView];
+
     CGRect bounds = fromView.bounds;
     CAShapeLayer *circleMaskLayer = [CAShapeLayer layer];
     circleMaskLayer.frame = bounds;
     
-    // Caclulate the size the circle should start at
-    CGFloat radius = [self circleStartingRadiusWithFromView:fromView];
+    // Calculate the size the circle should start at
+    CGFloat radius = [self circleStartingRadiusWithFromView:fromView toView:toView];
     
-    // Caclulate the center point of the circle
+    // Calculate the center point of the circle
     CGPoint circleCenter = [self circleCenterPointWithFromView:fromView];
     circleMaskLayer.position = circleCenter;
     CGRect circleBoundingRect = CGRectMake(circleCenter.x - radius, circleCenter.y - radius, 2.0*radius, 2.0*radius);
@@ -92,8 +93,8 @@
         circleMaskAnimation.toValue   = @(self.maximumCircleScale);
         
         // Add to the view and start the animation
-        fromView.layer.mask = circleMaskLayer;
-        fromView.layer.masksToBounds = YES;
+        toView.layer.mask = circleMaskLayer;
+        toView.layer.masksToBounds = YES;
         [circleMaskLayer addAnimation:circleMaskAnimation forKey:kRZCircleMaskAnimation];
     }
     else {
@@ -114,7 +115,7 @@
 
 #pragma mark - Helper Methods
 
-// Caclulate the center point of the circle
+// Calculate the center point of the circle
 - (CGPoint)circleCenterPointWithFromView:(UIView *)fromView
 {
     CGPoint center = CGPointZero;
@@ -129,12 +130,12 @@
 }
 
 // Calculate the size the circle should start at
-- (CGFloat)circleStartingRadiusWithFromView:(UIView *)fromView
+- (CGFloat)circleStartingRadiusWithFromView:(UIView *)fromView toView:(UIView *)toView
 {
     CGFloat radius = 0.0f;
     if ( self.circleDelegate && [self.circleDelegate respondsToSelector:@selector(circleStartingRadius)] ) {
         radius = [self.circleDelegate circleStartingRadius];
-        CGRect bounds = fromView.bounds;
+        CGRect bounds = toView.bounds;
         self.maximumCircleScale = ((MAX(bounds.size.height, bounds.size.width) / (radius)) * 1.25);
     }
     else {

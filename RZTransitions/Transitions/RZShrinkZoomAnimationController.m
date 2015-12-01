@@ -37,6 +37,7 @@
 - (void)animateTransition:(id<UIViewControllerContextTransitioning>)transitionContext
 {
     UIView *fromView = [(NSObject *)transitionContext rzt_fromView];
+    UIView *toView = [(NSObject *)transitionContext rzt_toView];
     UIView *container = [transitionContext containerView];
  
     [UIView animateWithDuration:0.5 delay:0 options:0 animations:^{
@@ -44,8 +45,8 @@
     } completion:^(BOOL finished) {
         
         [fromView removeFromSuperview];
-        [fromView setTransform:CGAffineTransformMakeScale(0.1, 0.1)];
-        [container addSubview:fromView];
+        [toView setTransform:CGAffineTransformMakeScale(0.1, 0.1)];
+        [container addSubview:toView];
         
         [UIView animateWithDuration:0.5 delay:0 options:0 animations:^{
             [fromView setTransform:CGAffineTransformIdentity];
