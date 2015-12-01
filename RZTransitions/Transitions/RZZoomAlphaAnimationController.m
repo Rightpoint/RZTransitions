@@ -42,27 +42,24 @@
 - (void)animateTransition:(id<UIViewControllerContextTransitioning>)transitionContext
 {
     UIView *fromView = [(NSObject *)transitionContext rzt_fromView];
-    UIView *toView = [(NSObject *)transitionContext rzt_toView];
-    UIViewController *fromViewController = [transitionContext viewControllerForKey:fromView];
-    UIViewController *toViewController = [transitionContext viewControllerForKey:UITransitionContextToViewControllerKey];
     UIView *container = [transitionContext containerView];
     
     fromView.userInteractionEnabled = YES;
     
     if ( !self.isPositiveAnimation ) {
-        fromViewController.view.opaque = NO;
-        [container insertSubview:fromView belowSubview:fromViewController.view];
+        fromView.opaque = NO;
+        [container insertSubview:fromView belowSubview:fromView];
         
         [UIView animateWithDuration:kRZZoomAlphaTransitionTime
                               delay:0
                             options:UIViewAnimationOptionCurveEaseOut
                          animations:^{
-                             fromViewController.view.alpha = 0.0f;
-                             fromViewController.view.transform =  CGAffineTransformMakeScale(kRZZoomAlphaMaxScale, kRZZoomAlphaMaxScale);
+                             fromView.alpha = 0.0f;
+                             fromView.transform =  CGAffineTransformMakeScale(kRZZoomAlphaMaxScale, kRZZoomAlphaMaxScale);
                          }
                          completion:^(BOOL finished) {
-                             fromViewController.view.alpha = 1.0f;
-                             fromViewController.view.transform = CGAffineTransformIdentity;
+                             fromView.alpha = 1.0f;
+                             fromView.transform = CGAffineTransformIdentity;
                              [transitionContext completeTransition:!transitionContext.transitionWasCancelled];
                          }];
     }

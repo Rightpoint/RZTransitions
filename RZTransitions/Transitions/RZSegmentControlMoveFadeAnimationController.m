@@ -44,9 +44,6 @@
 - (void)animateTransition:(id<UIViewControllerContextTransitioning>)transitionContext
 {
     UIView *fromView = [(NSObject *)transitionContext rzt_fromView];
-    UIView *toView = [(NSObject *)transitionContext rzt_toView];
-    UIViewController *fromViewController = [transitionContext viewControllerForKey:fromView];
-    UIViewController *toViewController = [transitionContext viewControllerForKey:UITransitionContextToViewControllerKey];
     UIView *container = [transitionContext containerView];
     
     CGAffineTransform scaleTransform = CGAffineTransformMakeScale(kRZSegScaleAmount, kRZSegScaleAmount);
@@ -63,7 +60,7 @@
         newTranslateTransform = CGAffineTransformMakeTranslation(container.bounds.size.width*kRZSegXOffsetFactor, -container.bounds.size.height*kRZSegYOffsetFactor);
     }
     
-    [container insertSubview:fromView aboveSubview:fromViewController.view];
+    [container insertSubview:fromView aboveSubview:fromView];
     fromView.alpha = 0.1f;
     fromView.transform = CGAffineTransformConcat(newTranslateTransform, scaleTransform);
     [UIView animateWithDuration:[self transitionDuration:transitionContext]
@@ -72,8 +69,8 @@
                      animations:^{
                          fromView.transform = CGAffineTransformIdentity;
                          fromView.alpha = 1.0f;
-                         fromViewController.view.transform = CGAffineTransformConcat(oldTranslateTransform, scaleTransform);
-                         fromViewController.view.alpha = 0.1f;
+                         fromView.transform = CGAffineTransformConcat(oldTranslateTransform, scaleTransform);
+                         fromView.alpha = 0.1f;
                      }
                      completion:^(BOOL finished) {
                          [transitionContext completeTransition:!transitionContext.transitionWasCancelled];
