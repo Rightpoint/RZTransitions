@@ -27,6 +27,8 @@
 //
 
 #import "RZZoomBlurAnimationController.h"
+
+#import "NSObject+RZTransitionsViewHelpers.h"
 #import "UIImage+RZTransitionsFastImageBlur.h"
 #import <objc/runtime.h>
 
@@ -77,8 +79,8 @@ static char kRZZoomBlurImageAssocKey;
     UIViewController *toViewController = [transitionContext viewControllerForKey:UITransitionContextToViewControllerKey];
     UIView *container = [transitionContext containerView];
 
-    UIView *fromView = [transitionContext viewForKey:UITransitionContextFromViewKey];
-    UIView *toView = [transitionContext viewForKey:UITransitionContextToViewKey];
+    UIView *fromView = [(NSObject *)transitionContext rzt_fromView];
+    UIView *toView = [(NSObject *)transitionContext rzt_toView];
 
     toView.userInteractionEnabled = YES;
 
