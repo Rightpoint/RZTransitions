@@ -111,9 +111,10 @@
     UIGraphicsBeginImageContextWithOptions(imageRect.size, NO, [UIScreen mainScreen].scale);
     
     [view drawViewHierarchyInRect:view.bounds afterScreenUpdates:screenUpdates];
-    
-    BOOL hasBlur = blurRadius > __FLT_EPSILON__;
-    BOOL hasSaturationChange = fabs(saturationDeltaFactor - 1.) > __FLT_EPSILON__;
+
+
+    BOOL hasBlur = blurRadius > FLT_EPSILON;
+    BOOL hasSaturationChange = fabs(saturationDeltaFactor - 1.) > FLT_EPSILON;
     if ( hasBlur || hasSaturationChange ) {
         
         CGContextRef effectInContext = UIGraphicsGetCurrentContext();

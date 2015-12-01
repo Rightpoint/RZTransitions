@@ -41,21 +41,21 @@
 /**
  *  The default animation to use when pushing or popping a @c UIViewController on a @c UINavigationController.  Uses nothing if nil.
  */
-@property (strong, nonatomic) id<RZAnimationControllerProtocol> defaultPushPopAnimationController;
+@property (strong, nonatomic) id<RZAnimationControllerProtocol> _Nullable defaultPushPopAnimationController;
 
 /**
  *  The default animation to use when presenting or dismissing a @c UIViewController on a @c UIViewController.  Uses nothing if nil.
  */
-@property (strong, nonatomic) id<RZAnimationControllerProtocol> defaultPresentDismissAnimationController;
+@property (strong, nonatomic) id<RZAnimationControllerProtocol> _Nullable defaultPresentDismissAnimationController;
 
 /**
  *  The default animation to use when moving between tabs on a @c UITabBarController.  Uses nothing if nil.
  */
-@property (strong, nonatomic) id<RZAnimationControllerProtocol> defaultTabBarAnimationController;
+@property (strong, nonatomic) id<RZAnimationControllerProtocol> _Nullable defaultTabBarAnimationController;
 
 #pragma mark - Shared Instance
 
-+ (RZTransitionsManager *)shared;
++ (RZTransitionsManager *_Nonnull)shared;
 
 #pragma mark - Public API Set Animations and Interactions
 
@@ -68,8 +68,8 @@
  *
  *  @return A unique key object that can be used to reference this animation pairing.
  */
-- (RZUniqueTransition *)setAnimationController:(id<RZAnimationControllerProtocol>)animationController
-                            fromViewController:(Class)fromViewController
+- (RZUniqueTransition * _Nonnull)setAnimationController:(id<RZAnimationControllerProtocol> _Nullable)animationController
+                            fromViewController:(Class  _Nonnull )fromViewController
                                      forAction:(RZTransitionAction)action;
 
 /**
@@ -82,9 +82,9 @@
  *
  *  @return A unique key object that can be used to reference this animation pairing.
  */
-- (RZUniqueTransition *)setAnimationController:(id<RZAnimationControllerProtocol>)animationController
-                            fromViewController:(Class)fromViewController
-                              toViewController:(Class)toViewController
+- (RZUniqueTransition * _Nonnull )setAnimationController:(id<RZAnimationControllerProtocol> _Nullable)animationController
+                            fromViewController:(Class _Nullable )fromViewController
+                              toViewController:(Class _Nullable )toViewController
                                      forAction:(RZTransitionAction)action;
 
 /**
@@ -97,9 +97,9 @@
  *
  *  @return A unique key object that can be used to reference this interaction pairing.
  */
-- (RZUniqueTransition *)setInteractionController:(id<RZTransitionInteractionController>)interactionController
-                              fromViewController:(Class)fromViewController
-                                toViewController:(Class)toViewController
+- (RZUniqueTransition * _Nonnull )setInteractionController:(id<RZTransitionInteractionController> _Nullable)interactionController
+                              fromViewController:(Class _Nullable )fromViewController
+                                toViewController:(Class _Nullable )toViewController
                                        forAction:(RZTransitionAction)action;
 
 /**
@@ -108,6 +108,6 @@
  *  @param override      Override if @c YES, ignore if @c NO.
  *  @param transitionKey The unique key for the animation / view controller pairing to override.
  */
-- (void)overrideAnimationDirection:(BOOL)override withTransition:(RZUniqueTransition *)transitionKey;
+- (void)overrideAnimationDirection:(BOOL)override withTransition:(RZUniqueTransition * _Nonnull)transitionKey;
 
 @end

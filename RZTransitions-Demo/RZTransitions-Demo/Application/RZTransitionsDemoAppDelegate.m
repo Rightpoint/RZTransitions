@@ -28,8 +28,7 @@
 
 #import "RZTransitionsDemoAppDelegate.h"
 #import "RZSimpleViewController.h"
-#import "RZTransitionsManager.h"
-#import "RZTransitionsNavigationController.h"
+#import "RZTransitions.h"
 
 @implementation RZTransitionsDemoAppDelegate
 

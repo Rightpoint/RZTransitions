@@ -46,7 +46,40 @@
 		9A0F7CA6195A0B9500271D1D /* UIImage+RZTransitionsFastImageBlur.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A0F7C93195A0B9500271D1D /* UIImage+RZTransitionsFastImageBlur.m */; };
 		9A0F7CA7195A0B9500271D1D /* UIImage+RZTransitionsSnapshotHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A0F7C95195A0B9500271D1D /* UIImage+RZTransitionsSnapshotHelpers.m */; };
 		E11760241BFFC16A0071800D /* Launch Screen.xib in Resources */ = {isa = PBXBuildFile; fileRef = E11760221BFFC16A0071800D /* Launch Screen.xib */; };
-		E14D80001BFFC419009BDB4F /* NSObject+RZTransitionsViewHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = E14D7FFF1BFFC419009BDB4F /* NSObject+RZTransitionsViewHelpers.m */; };
+		E16E52791C0E1864009751AD /* NSObject+RZTransitionsViewHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = E16E52781C0E1864009751AD /* NSObject+RZTransitionsViewHelpers.m */; };
+		E16E527B1C0E18AE009751AD /* NSObject+RZTransitionsViewHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = E16E52781C0E1864009751AD /* NSObject+RZTransitionsViewHelpers.m */; };
+		E18786DA1BFB5FB000E51D79 /* UIColor+Random.swift in Sources */ = {isa = PBXBuildFile; fileRef = E18786D91BFB5FB000E51D79 /* UIColor+Random.swift */; };
+		E19CA4AA1BF539F4007F3FF5 /* RZTransitionsDemoAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E19CA4A91BF539F4007F3FF5 /* RZTransitionsDemoAppDelegate.swift */; };
+		E1A793301BF677BC008D27EE /* RZSimpleViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 833E36EC184E5AFF00A0326A /* RZSimpleViewController.xib */; };
+		E1A793311BF677BC008D27EE /* RZSimpleColorViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 833E3701184E5DB400A0326A /* RZSimpleColorViewController.xib */; };
+		E1A793321BF677BC008D27EE /* RZSimpleCollectionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 837D08C11859000F00E20B37 /* RZSimpleCollectionViewController.xib */; };
+		E1A793341BF67ABD008D27EE /* RZTransitionsNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A0F7C69195A0B9500271D1D /* RZTransitionsNavigationController.m */; };
+		E1A793351BF67B0B008D27EE /* RZTransitionsManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A0F7C7D195A0B9500271D1D /* RZTransitionsManager.m */; };
+		E1A793361BF67B56008D27EE /* RZUniqueTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A0F7C6D195A0B9500271D1D /* RZUniqueTransition.m */; };
+		E1A793371BF67C90008D27EE /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 833E36BF184E29C300A0326A /* Images.xcassets */; };
+		E1A793381BF67CA2008D27EE /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 833E36B0184E29C300A0326A /* InfoPlist.strings */; };
+		E1A793561BF67FA8008D27EE /* RZBaseSwipeInteractionController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A0F7C70195A0B9500271D1D /* RZBaseSwipeInteractionController.m */; };
+		E1A793571BF67FA8008D27EE /* RZHorizontalInteractionController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A0F7C72195A0B9500271D1D /* RZHorizontalInteractionController.m */; };
+		E1A793581BF67FA8008D27EE /* RZOverscrollInteractionController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A0F7C74195A0B9500271D1D /* RZOverscrollInteractionController.m */; };
+		E1A793591BF67FA8008D27EE /* RZPinchInteractionController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A0F7C76195A0B9500271D1D /* RZPinchInteractionController.m */; };
+		E1A7935A1BF67FA8008D27EE /* RZVerticalSwipeInteractionController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A0F7C7A195A0B9500271D1D /* RZVerticalSwipeInteractionController.m */; };
+		E1A7935B1BF67FA8008D27EE /* RZCardSlideAnimationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A0F7C81195A0B9500271D1D /* RZCardSlideAnimationController.m */; };
+		E1A7935C1BF67FA8008D27EE /* RZCirclePushAnimationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A0F7C83195A0B9500271D1D /* RZCirclePushAnimationController.m */; };
+		E1A7935D1BF67FA8008D27EE /* RZRectZoomAnimationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A0F7C85195A0B9500271D1D /* RZRectZoomAnimationController.m */; };
+		E1A7935E1BF67FA8008D27EE /* RZSegmentControlMoveFadeAnimationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A0F7C87195A0B9500271D1D /* RZSegmentControlMoveFadeAnimationController.m */; };
+		E1A7935F1BF67FA8008D27EE /* RZShrinkZoomAnimationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A0F7C89195A0B9500271D1D /* RZShrinkZoomAnimationController.m */; };
+		E1A793601BF67FA8008D27EE /* RZZoomAlphaAnimationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A0F7C8C195A0B9500271D1D /* RZZoomAlphaAnimationController.m */; };
+		E1A793611BF67FA8008D27EE /* RZZoomBlurAnimationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A0F7C8E195A0B9500271D1D /* RZZoomBlurAnimationController.m */; };
+		E1A793621BF67FA8008D27EE /* RZZoomPushAnimationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A0F7C90195A0B9500271D1D /* RZZoomPushAnimationController.m */; };
+		E1A793631BF67FA8008D27EE /* UIImage+RZTransitionsFastImageBlur.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A0F7C93195A0B9500271D1D /* UIImage+RZTransitionsFastImageBlur.m */; };
+		E1A793641BF67FA8008D27EE /* UIImage+RZTransitionsSnapshotHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A0F7C95195A0B9500271D1D /* UIImage+RZTransitionsSnapshotHelpers.m */; };
+		E1A793681BF6833E008D27EE /* RZSimpleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1E74E611BF649B400C00BD2 /* RZSimpleViewController.swift */; };
+		E1C37BB41C04FE9E00F2B87D /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = E1C37BB21C04FE9E00F2B87D /* LICENSE */; };
+		E1C37BB81C04FF3200F2B87D /* ReadMeSnippets.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C37BB61C04FEBD00F2B87D /* ReadMeSnippets.swift */; };
+		E1C37BBA1C04FFB000F2B87D /* ReadMeSnippets.m in Sources */ = {isa = PBXBuildFile; fileRef = E1C37BB91C04FFB000F2B87D /* ReadMeSnippets.m */; };
+		E1EA18F31BFA923600F471EC /* RZSimpleColorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1EA18F21BFA923600F471EC /* RZSimpleColorViewController.swift */; };
+		E1EA18F51BFABA4800F471EC /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E1EA18F41BFABA4800F471EC /* Default-568h@2x.png */; };
+		E1EA18F71BFABD7400F471EC /* RZSimpleCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1EA18F61BFABD7400F471EC /* RZSimpleCollectionViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -130,8 +163,21 @@
 		9A0F7C94195A0B9500271D1D /* UIImage+RZTransitionsSnapshotHelpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+RZTransitionsSnapshotHelpers.h"; sourceTree = "<group>"; };
 		9A0F7C95195A0B9500271D1D /* UIImage+RZTransitionsSnapshotHelpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+RZTransitionsSnapshotHelpers.m"; sourceTree = "<group>"; };
 		E11760231BFFC16A0071800D /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = "en.lproj/Launch Screen.xib"; sourceTree = "<group>"; };
-		E14D7FFF1BFFC419009BDB4F /* NSObject+RZTransitionsViewHelpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+RZTransitionsViewHelpers.m"; sourceTree = "<group>"; };
-		E14D80011BFFC460009BDB4F /* NSObject+RZTransitionsViewHelpers.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSObject+RZTransitionsViewHelpers.h"; sourceTree = "<group>"; };
+		E16E52771C0E1864009751AD /* NSObject+RZTransitionsViewHelpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+RZTransitionsViewHelpers.h"; sourceTree = "<group>"; };
+		E16E52781C0E1864009751AD /* NSObject+RZTransitionsViewHelpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+RZTransitionsViewHelpers.m"; sourceTree = "<group>"; };
+		E18786D91BFB5FB000E51D79 /* UIColor+Random.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Random.swift"; sourceTree = "<group>"; };
+		E19CA4971BF5391A007F3FF5 /* RZTransitions-Demo-Swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "RZTransitions-Demo-Swift.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E19CA4A91BF539F4007F3FF5 /* RZTransitionsDemoAppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RZTransitionsDemoAppDelegate.swift; sourceTree = "<group>"; };
+		E1A7932F1BF65348008D27EE /* RZTransitions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RZTransitions.h; sourceTree = "<group>"; };
+		E1C37BB21C04FE9E00F2B87D /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		E1C37BB31C04FE9E00F2B87D /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		E1C37BB61C04FEBD00F2B87D /* ReadMeSnippets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReadMeSnippets.swift; sourceTree = "<group>"; };
+		E1C37BB91C04FFB000F2B87D /* ReadMeSnippets.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReadMeSnippets.m; sourceTree = "<group>"; };
+		E1C37BBB1C0507E700F2B87D /* Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
+		E1E74E611BF649B400C00BD2 /* RZSimpleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RZSimpleViewController.swift; sourceTree = "<group>"; };
+		E1EA18F21BFA923600F471EC /* RZSimpleColorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RZSimpleColorViewController.swift; sourceTree = "<group>"; };
+		E1EA18F41BFABA4800F471EC /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		E1EA18F61BFABD7400F471EC /* RZSimpleCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RZSimpleCollectionViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -155,12 +201,21 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		E19CA4941BF5391A007F3FF5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
 		833E369B184E29C300A0326A = {
 			isa = PBXGroup;
 			children = (
+				E1C37BB11C04FE7F00F2B87D /* Documentation */,
+				E1EA18F41BFABA4800F471EC /* Default-568h@2x.png */,
 				9A0F7C66195A0B9500271D1D /* RZTransitions */,
 				833E36AD184E29C300A0326A /* RZTransitions-Demo */,
 				833E36CC184E29C300A0326A /* RZTransitions-DemoTests */,
@@ -174,6 +229,7 @@
 			children = (
 				833E36A4184E29C300A0326A /* RZTransitions-Demo.app */,
 				833E36C5184E29C300A0326A /* RZTransitions-DemoTests.xctest */,
+				E19CA4971BF5391A007F3FF5 /* RZTransitions-Demo-Swift.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -210,6 +266,7 @@
 				833E36B3184E29C300A0326A /* main.m */,
 				833E36B5184E29C300A0326A /* RZTransitions-Demo-Prefix.pch */,
 				E11760221BFFC16A0071800D /* Launch Screen.xib */,
+				E1C37BBB1C0507E700F2B87D /* Bridging-Header.h */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -237,6 +294,7 @@
 			children = (
 				833E36E7184E5A9A00A0326A /* RZTransitionsDemoAppDelegate.h */,
 				833E36E8184E5A9A00A0326A /* RZTransitionsDemoAppDelegate.m */,
+				E19CA4A91BF539F4007F3FF5 /* RZTransitionsDemoAppDelegate.swift */,
 			);
 			path = Application;
 			sourceTree = "<group>";
@@ -256,6 +314,7 @@
 			children = (
 				83855D08185F98E3004DB036 /* UIColor+Random.h */,
 				83855D09185F98E3004DB036 /* UIColor+Random.m */,
+				E18786D91BFB5FB000E51D79 /* UIColor+Random.swift */,
 			);
 			name = Utilities;
 			path = "RZTransitions-Demo/Utilities";
@@ -264,6 +323,7 @@
 		9A0F7C66195A0B9500271D1D /* RZTransitions */ = {
 			isa = PBXGroup;
 			children = (
+				E1A7932F1BF65348008D27EE /* RZTransitions.h */,
 				9A0F7C67195A0B9500271D1D /* Components */,
 				9A0F7C6A195A0B9500271D1D /* Data */,
 				9A0F7C6E195A0B9500271D1D /* Interactors */,
@@ -350,12 +410,12 @@
 		9A0F7C91195A0B9500271D1D /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				E16E52771C0E1864009751AD /* NSObject+RZTransitionsViewHelpers.h */,
+				E16E52781C0E1864009751AD /* NSObject+RZTransitionsViewHelpers.m */,
 				9A0F7C92195A0B9500271D1D /* UIImage+RZTransitionsFastImageBlur.h */,
 				9A0F7C93195A0B9500271D1D /* UIImage+RZTransitionsFastImageBlur.m */,
 				9A0F7C94195A0B9500271D1D /* UIImage+RZTransitionsSnapshotHelpers.h */,
 				9A0F7C95195A0B9500271D1D /* UIImage+RZTransitionsSnapshotHelpers.m */,
-				E14D80011BFFC460009BDB4F /* NSObject+RZTransitionsViewHelpers.h */,
-				E14D7FFF1BFFC419009BDB4F /* NSObject+RZTransitionsViewHelpers.m */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -365,6 +425,7 @@
 			children = (
 				833E36EA184E5AFF00A0326A /* RZSimpleViewController.h */,
 				833E36EB184E5AFF00A0326A /* RZSimpleViewController.m */,
+				E1E74E611BF649B400C00BD2 /* RZSimpleViewController.swift */,
 				833E36EC184E5AFF00A0326A /* RZSimpleViewController.xib */,
 			);
 			name = "Simple View Controller";
@@ -375,6 +436,7 @@
 			children = (
 				833E36FF184E5DB400A0326A /* RZSimpleColorViewController.h */,
 				833E3700184E5DB400A0326A /* RZSimpleColorViewController.m */,
+				E1EA18F21BFA923600F471EC /* RZSimpleColorViewController.swift */,
 				833E3701184E5DB400A0326A /* RZSimpleColorViewController.xib */,
 			);
 			name = "Simple Color View Controller";
@@ -386,8 +448,20 @@
 				837D08BF1859000F00E20B37 /* RZSimpleCollectionViewController.h */,
 				837D08C01859000F00E20B37 /* RZSimpleCollectionViewController.m */,
 				837D08C11859000F00E20B37 /* RZSimpleCollectionViewController.xib */,
+				E1EA18F61BFABD7400F471EC /* RZSimpleCollectionViewController.swift */,
 			);
 			name = "Simple Collection View Controller";
+			sourceTree = "<group>";
+		};
+		E1C37BB11C04FE7F00F2B87D /* Documentation */ = {
+			isa = PBXGroup;
+			children = (
+				E1C37BB21C04FE9E00F2B87D /* LICENSE */,
+				E1C37BB31C04FE9E00F2B87D /* README.md */,
+				E1C37BB61C04FEBD00F2B87D /* ReadMeSnippets.swift */,
+				E1C37BB91C04FFB000F2B87D /* ReadMeSnippets.m */,
+			);
+			name = Documentation;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -428,6 +502,23 @@
 			productReference = 833E36C5184E29C300A0326A /* RZTransitions-DemoTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		E19CA4961BF5391A007F3FF5 /* RZTransitions-Demo-Swift */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E19CA4A81BF5391A007F3FF5 /* Build configuration list for PBXNativeTarget "RZTransitions-Demo-Swift" */;
+			buildPhases = (
+				E19CA4931BF5391A007F3FF5 /* Sources */,
+				E19CA4941BF5391A007F3FF5 /* Frameworks */,
+				E19CA4951BF5391A007F3FF5 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "RZTransitions-Demo-Swift";
+			productName = "RZTransitions-Demo-Swift";
+			productReference = E19CA4971BF5391A007F3FF5 /* RZTransitions-Demo-Swift.app */;
+			productType = "com.apple.product-type.application";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -435,11 +526,15 @@
 			isa = PBXProject;
 			attributes = {
 				CLASSPREFIX = RZ;
-				LastUpgradeCheck = 0510;
+				LastSwiftUpdateCheck = 0710;
+				LastUpgradeCheck = 0710;
 				ORGANIZATIONNAME = Raizlabs;
 				TargetAttributes = {
 					833E36C4184E29C300A0326A = {
 						TestTargetID = 833E36A3184E29C300A0326A;
+					};
+					E19CA4961BF5391A007F3FF5 = {
+						CreatedOnToolsVersion = 7.1.1;
 					};
 				};
 			};
@@ -457,6 +552,7 @@
 			projectRoot = "";
 			targets = (
 				833E36A3184E29C300A0326A /* RZTransitions-Demo */,
+				E19CA4961BF5391A007F3FF5 /* RZTransitions-Demo-Swift */,
 				833E36C4184E29C300A0326A /* RZTransitions-DemoTests */,
 			);
 		};
@@ -469,6 +565,7 @@
 			files = (
 				833E3703184E5DB400A0326A /* RZSimpleColorViewController.xib in Resources */,
 				833E36EE184E5AFF00A0326A /* RZSimpleViewController.xib in Resources */,
+				E1C37BB41C04FE9E00F2B87D /* LICENSE in Resources */,
 				833E36C0184E29C300A0326A /* Images.xcassets in Resources */,
 				837D08C31859000F00E20B37 /* RZSimpleCollectionViewController.xib in Resources */,
 				833E36B2184E29C300A0326A /* InfoPlist.strings in Resources */,
@@ -481,6 +578,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				833E36D1184E29C300A0326A /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E19CA4951BF5391A007F3FF5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E1A793381BF67CA2008D27EE /* InfoPlist.strings in Resources */,
+				E1A793371BF67C90008D27EE /* Images.xcassets in Resources */,
+				E1A793301BF677BC008D27EE /* RZSimpleViewController.xib in Resources */,
+				E1A793321BF677BC008D27EE /* RZSimpleCollectionViewController.xib in Resources */,
+				E1A793311BF677BC008D27EE /* RZSimpleColorViewController.xib in Resources */,
+				E1EA18F51BFABA4800F471EC /* Default-568h@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -498,15 +608,16 @@
 				9A0F7C9C195A0B9500271D1D /* RZVerticalSwipeInteractionController.m in Sources */,
 				833E36E9184E5A9A00A0326A /* RZTransitionsDemoAppDelegate.m in Sources */,
 				9A0F7C9E195A0B9500271D1D /* RZCardSlideAnimationController.m in Sources */,
-				E14D80001BFFC419009BDB4F /* NSObject+RZTransitionsViewHelpers.m in Sources */,
 				9A0F7C9A195A0B9500271D1D /* RZOverscrollInteractionController.m in Sources */,
 				9A0F7C9B195A0B9500271D1D /* RZPinchInteractionController.m in Sources */,
 				9A0F7C98195A0B9500271D1D /* RZBaseSwipeInteractionController.m in Sources */,
 				837D08C21859000F00E20B37 /* RZSimpleCollectionViewController.m in Sources */,
 				833E3702184E5DB400A0326A /* RZSimpleColorViewController.m in Sources */,
 				9A0F7C9D195A0B9500271D1D /* RZTransitionsManager.m in Sources */,
+				E16E52791C0E1864009751AD /* NSObject+RZTransitionsViewHelpers.m in Sources */,
 				9A0F7CA4195A0B9500271D1D /* RZZoomBlurAnimationController.m in Sources */,
 				9A0F7C9F195A0B9500271D1D /* RZCirclePushAnimationController.m in Sources */,
+				E1C37BBA1C04FFB000F2B87D /* ReadMeSnippets.m in Sources */,
 				833E36ED184E5AFF00A0326A /* RZSimpleViewController.m in Sources */,
 				9A0F7CA2195A0B9500271D1D /* RZShrinkZoomAnimationController.m in Sources */,
 				833E36B4184E29C300A0326A /* main.m in Sources */,
@@ -525,6 +636,38 @@
 			files = (
 				83855D0B185F98E3004DB036 /* UIColor+Random.m in Sources */,
 				833E36D3184E29C300A0326A /* RZTransitions_DemoTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E19CA4931BF5391A007F3FF5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E1A793611BF67FA8008D27EE /* RZZoomBlurAnimationController.m in Sources */,
+				E1A793591BF67FA8008D27EE /* RZPinchInteractionController.m in Sources */,
+				E1A793681BF6833E008D27EE /* RZSimpleViewController.swift in Sources */,
+				E1A7935E1BF67FA8008D27EE /* RZSegmentControlMoveFadeAnimationController.m in Sources */,
+				E19CA4AA1BF539F4007F3FF5 /* RZTransitionsDemoAppDelegate.swift in Sources */,
+				E1A7935D1BF67FA8008D27EE /* RZRectZoomAnimationController.m in Sources */,
+				E1A7935C1BF67FA8008D27EE /* RZCirclePushAnimationController.m in Sources */,
+				E1A793581BF67FA8008D27EE /* RZOverscrollInteractionController.m in Sources */,
+				E1EA18F31BFA923600F471EC /* RZSimpleColorViewController.swift in Sources */,
+				E1A7935A1BF67FA8008D27EE /* RZVerticalSwipeInteractionController.m in Sources */,
+				E1A7935F1BF67FA8008D27EE /* RZShrinkZoomAnimationController.m in Sources */,
+				E1A793621BF67FA8008D27EE /* RZZoomPushAnimationController.m in Sources */,
+				E1A793351BF67B0B008D27EE /* RZTransitionsManager.m in Sources */,
+				E1A7935B1BF67FA8008D27EE /* RZCardSlideAnimationController.m in Sources */,
+				E1A793341BF67ABD008D27EE /* RZTransitionsNavigationController.m in Sources */,
+				E1A793601BF67FA8008D27EE /* RZZoomAlphaAnimationController.m in Sources */,
+				E18786DA1BFB5FB000E51D79 /* UIColor+Random.swift in Sources */,
+				E1A793571BF67FA8008D27EE /* RZHorizontalInteractionController.m in Sources */,
+				E1C37BB81C04FF3200F2B87D /* ReadMeSnippets.swift in Sources */,
+				E1EA18F71BFABD7400F471EC /* RZSimpleCollectionViewController.swift in Sources */,
+				E1A793631BF67FA8008D27EE /* UIImage+RZTransitionsFastImageBlur.m in Sources */,
+				E1A793561BF67FA8008D27EE /* RZBaseSwipeInteractionController.m in Sources */,
+				E1A793641BF67FA8008D27EE /* UIImage+RZTransitionsSnapshotHelpers.m in Sources */,
+				E1A793361BF67B56008D27EE /* RZUniqueTransition.m in Sources */,
+				E16E527B1C0E18AE009751AD /* NSObject+RZTransitionsViewHelpers.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -580,10 +723,13 @@
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_ATOMIC_PROPERTIES = YES;
+				CLANG_WARN_OBJC_MISSING_PROPERTY_SYNTHESIS = NO;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -601,6 +747,8 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
+				SWIFT_OBJC_BRIDGING_HEADER = "";
+				WARNING_CFLAGS = "-Wincomplete-umbrella";
 			};
 			name = Debug;
 		};
@@ -618,6 +766,8 @@
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_ATOMIC_PROPERTIES = YES;
+				CLANG_WARN_OBJC_MISSING_PROPERTY_SYNTHESIS = NO;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -631,8 +781,11 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				VALIDATE_PRODUCT = YES;
+				WARNING_CFLAGS = "-Wincomplete-umbrella";
 			};
 			name = Release;
 		};
@@ -644,7 +797,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "RZTransitions-Demo/RZTransitions-Demo-Prefix.pch";
 				INFOPLIST_FILE = "RZTransitions-Demo/RZTransitions-Demo-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.raizlabs.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
@@ -658,6 +814,8 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "RZTransitions-Demo/RZTransitions-Demo-Prefix.pch";
 				INFOPLIST_FILE = "RZTransitions-Demo/RZTransitions-Demo-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.raizlabs.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
@@ -680,6 +838,7 @@
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = "RZTransitions-DemoTests/RZTransitions-DemoTests-Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.raizlabs.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
@@ -698,9 +857,59 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "RZTransitions-Demo/RZTransitions-Demo-Prefix.pch";
 				INFOPLIST_FILE = "RZTransitions-DemoTests/RZTransitions-DemoTests-Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.raizlabs.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+		E19CA4A61BF5391A007F3FF5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_WARN_OBJC_EXPLICIT_OWNERSHIP_TYPE = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_REPEATED_USE_OF_WEAK = NO;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				INFOPLIST_FILE = "RZTransitions-Demo/RZTransitions-Demo-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.raizlabs.RZTransitions-Demo-Swift";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "RZTransitions-Demo/Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		E19CA4A71BF5391A007F3FF5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_WARN_OBJC_EXPLICIT_OWNERSHIP_TYPE = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_REPEATED_USE_OF_WEAK = NO;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				INFOPLIST_FILE = "RZTransitions-Demo/RZTransitions-Demo-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.raizlabs.RZTransitions-Demo-Swift";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "RZTransitions-Demo/Bridging-Header.h";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
@@ -730,6 +939,15 @@
 			buildConfigurations = (
 				833E36DA184E29C300A0326A /* Debug */,
 				833E36DB184E29C300A0326A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E19CA4A81BF5391A007F3FF5 /* Build configuration list for PBXNativeTarget "RZTransitions-Demo-Swift" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E19CA4A61BF5391A007F3FF5 /* Debug */,
+				E19CA4A71BF5391A007F3FF5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
