@@ -59,6 +59,7 @@
 #import "RZZoomPushAnimationController.h"
 
 // Utilities
+#import "NSObject+RZTransitionsViewHelpers.h"
 #import "UIImage+RZTransitionsFastImageBlur.h"
 #import "UIImage+RZTransitionsSnapshotHelpers.h"
 
