@@ -1,9 +1,9 @@
 //
-//  RZPinchInteration.h
-//  RZTransitions
+//  UIColor+Random.swift
+//  RZTransitions-Demo
 //
-//  Created by Stephen Barnes on 12/11/13.
-//  Copyright 2014 Raizlabs and other contributors
+//  Created by Eric Slosser on 11/17/15.
+//  Copyright 2015 Raizlabs and other contributors
 //  http://raizlabs.com/
 //
 //  Permission is hereby granted, free of charge, to any person obtaining
@@ -24,34 +24,15 @@
 //  LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION
 //  OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
 //  WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
-//
 
-#import <Foundation/Foundation.h>
-#import <UIKit/UIKit.h>
-#import <CoreGraphics/CGGeometry.h>
+import UIKit
 
-#import "RZTransitionInteractionControllerProtocol.h"
+extension UIColor {
 
-@interface RZPinchInteractionController : UIPercentDrivenInteractiveTransition
-<RZTransitionInteractionController, UIGestureRecognizerDelegate>
-
-/**
- *  The View Controller that is being transitioned from.
- */
-@property (weak, nonatomic) UIViewController *fromViewController;
-
-/**
- *  The Pinch Gesture recognizer that is used to control the interaction
- */
-@property (strong, nonatomic) UIPinchGestureRecognizer *gestureRecognizer;
-
-/**
- *  The percent of the translation percentage
- *
- *  @param pinchGestureRecognizer The pinch gesture that is being measured
- *
- *  @return percentage from 0 to 1
- */
-- (CGFloat)translationPercentageWithPinchGestureRecognizer:(UIPinchGestureRecognizer *)pinchGestureRecognizer;
-
-@end
+    public class func randomColor() -> UIColor {
+        let hue = CGFloat(arc4random_uniform(256)) / 256.0                  //  0.0 to 1.0
+        let saturation = CGFloat(arc4random_uniform(128)) / 256.0 + 0.5     //  0.5 to 1.0, away from white
+        let brightness = CGFloat(arc4random_uniform(128)) / 256.0 + 0.5     //  0.5 to 1.0, away from black
+        return UIColor(hue:hue, saturation:saturation, brightness:brightness, alpha:1.0)
+    }
+}

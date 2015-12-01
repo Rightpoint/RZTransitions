@@ -1,9 +1,9 @@
 //
-//  RZPinchInteration.h
-//  RZTransitions
+//  RZTransitionsDemoAppDelegate.swift
+//  RZTransitions-Demo
 //
-//  Created by Stephen Barnes on 12/11/13.
-//  Copyright 2014 Raizlabs and other contributors
+//  Created by Eric Slosser on 11/12/15.
+//  Copyright © 2015 Raizlabs and other contributors
 //  http://raizlabs.com/
 //
 //  Permission is hereby granted, free of charge, to any person obtaining
@@ -26,32 +26,27 @@
 //  WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 //
 
-#import <Foundation/Foundation.h>
-#import <UIKit/UIKit.h>
-#import <CoreGraphics/CGGeometry.h>
 
-#import "RZTransitionInteractionControllerProtocol.h"
+import UIKit
 
-@interface RZPinchInteractionController : UIPercentDrivenInteractiveTransition
-<RZTransitionInteractionController, UIGestureRecognizerDelegate>
+@UIApplicationMain
 
-/**
- *  The View Controller that is being transitioned from.
- */
-@property (weak, nonatomic) UIViewController *fromViewController;
+final class RZTransitionsDemoAppDelegate: UIResponder, UIApplicationDelegate {
 
-/**
- *  The Pinch Gesture recognizer that is used to control the interaction
- */
-@property (strong, nonatomic) UIPinchGestureRecognizer *gestureRecognizer;
+    var window: UIWindow?
 
-/**
- *  The percent of the translation percentage
- *
- *  @param pinchGestureRecognizer The pinch gesture that is being measured
- *
- *  @return percentage from 0 to 1
- */
-- (CGFloat)translationPercentageWithPinchGestureRecognizer:(UIPinchGestureRecognizer *)pinchGestureRecognizer;
+    func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) ->Bool {
 
-@end
+        RZTransitionsManager.shared().defaultPresentDismissAnimationController = RZZoomAlphaAnimationController()
+        RZTransitionsManager.shared().defaultPushPopAnimationController = RZCardSlideAnimationController()
+
+        let rootViewController = RZSimpleViewController()
+        let rootNavController = RZTransitionsNavigationController(rootViewController: rootViewController)
+
+        window = UIWindow(frame: UIScreen.mainScreen().bounds)
+        window?.rootViewController = rootNavController
+        window?.makeKeyAndVisible()
+
+        return true
+    }
+}

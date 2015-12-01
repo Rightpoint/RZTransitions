@@ -85,7 +85,7 @@ static NSString* const kRZTTransitionsKeySpacer = @"_";
     for ( NSUInteger x = 1; (x < (1 << (kRZTransitionActionCount - 1))); ) {
         if ( action & x ) {
             if ( ((x & RZTransitionAction_Pop) && !(x & RZTransitionAction_Push)) ||
-                 ((x & RZTransitionAction_Dismiss) && !(x &RZTransitionAction_Present)) ) {
+                 ((x & RZTransitionAction_Dismiss) && !(x & RZTransitionAction_Present)) ) {
                 keyValue = [[RZUniqueTransition alloc] initWithAction:x withFromViewControllerClass:toViewController withToViewControllerClass:fromViewController];
             }
             else {

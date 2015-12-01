@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "833E36A3184E29C300A0326A"
-               BuildableName = "RZTransitions-Demo.app"
-               BlueprintName = "RZTransitions-Demo"
+               BlueprintIdentifier = "E19CA4961BF5391A007F3FF5"
+               BuildableName = "RZTransitions-Demo-Swift.app"
+               BlueprintName = "RZTransitions-Demo-Swift"
                ReferencedContainer = "container:RZTransitions-Demo.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -28,23 +28,13 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "833E36C4184E29C300A0326A"
-               BuildableName = "RZTransitions-DemoTests.xctest"
-               BlueprintName = "RZTransitions-DemoTests"
-               ReferencedContainer = "container:RZTransitions-Demo.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "833E36A3184E29C300A0326A"
-            BuildableName = "RZTransitions-Demo.app"
-            BlueprintName = "RZTransitions-Demo"
+            BlueprintIdentifier = "E19CA4961BF5391A007F3FF5"
+            BuildableName = "RZTransitions-Demo-Swift.app"
+            BlueprintName = "RZTransitions-Demo-Swift"
             ReferencedContainer = "container:RZTransitions-Demo.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -65,9 +55,9 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "833E36A3184E29C300A0326A"
-            BuildableName = "RZTransitions-Demo.app"
-            BlueprintName = "RZTransitions-Demo"
+            BlueprintIdentifier = "E19CA4961BF5391A007F3FF5"
+            BuildableName = "RZTransitions-Demo-Swift.app"
+            BlueprintName = "RZTransitions-Demo-Swift"
             ReferencedContainer = "container:RZTransitions-Demo.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
@@ -84,9 +74,9 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "833E36A3184E29C300A0326A"
-            BuildableName = "RZTransitions-Demo.app"
-            BlueprintName = "RZTransitions-Demo"
+            BlueprintIdentifier = "E19CA4961BF5391A007F3FF5"
+            BuildableName = "RZTransitions-Demo-Swift.app"
+            BlueprintName = "RZTransitions-Demo-Swift"
             ReferencedContainer = "container:RZTransitions-Demo.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
