@@ -27,6 +27,7 @@
 //
 
 #import "RZZoomAlphaAnimationController.h"
+#import "NSObject+RZTransitionsViewHelpers.h"
 #import <UIKit/UIKit.h>
 
 #define kRZZoomAlphaTransitionTime 0.3
@@ -40,15 +41,17 @@
 
 - (void)animateTransition:(id<UIViewControllerContextTransitioning>)transitionContext
 {
-    UIViewController *fromViewController = [transitionContext viewControllerForKey:UITransitionContextFromViewControllerKey];
+    UIView *fromView = [(NSObject *)transitionContext rzt_fromView];
+    UIView *toView = [(NSObject *)transitionContext rzt_toView];
+    UIViewController *fromViewController = [transitionContext viewControllerForKey:fromView];
     UIViewController *toViewController = [transitionContext viewControllerForKey:UITransitionContextToViewControllerKey];
     UIView *container = [transitionContext containerView];
     
-    toViewController.view.userInteractionEnabled = YES;
+    fromView.userInteractionEnabled = YES;
     
     if ( !self.isPositiveAnimation ) {
         fromViewController.view.opaque = NO;
-        [container insertSubview:toViewController.view belowSubview:fromViewController.view];
+        [container insertSubview:fromView belowSubview:fromViewController.view];
         
         [UIView animateWithDuration:kRZZoomAlphaTransitionTime
                               delay:0
@@ -64,20 +67,20 @@
                          }];
     }
     else {
-        toViewController.view.opaque = NO;
-        toViewController.view.alpha = 0.0f;
-        toViewController.view.transform = CGAffineTransformMakeScale(kRZZoomAlphaMaxScale, kRZZoomAlphaMaxScale);
-        [container addSubview:toViewController.view];
+        fromView.opaque = NO;
+        fromView.alpha = 0.0f;
+        fromView.transform = CGAffineTransformMakeScale(kRZZoomAlphaMaxScale, kRZZoomAlphaMaxScale);
+        [container addSubview:fromView];
         
         [UIView animateWithDuration:kRZZoomAlphaTransitionTime
                               delay:0
                             options:UIViewAnimationOptionCurveEaseIn
                          animations:^{
-                             toViewController.view.alpha = 1.0f;
-                             toViewController.view.transform = CGAffineTransformIdentity;
+                             fromView.alpha = 1.0f;
+                             fromView.transform = CGAffineTransformIdentity;
                          }
                          completion:^(BOOL finished) {
-                             toViewController.view.opaque = YES;
+                             fromView.opaque = YES;
                              [transitionContext completeTransition:!transitionContext.transitionWasCancelled];
                          }];
     }
