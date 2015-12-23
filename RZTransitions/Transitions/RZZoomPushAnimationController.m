@@ -64,7 +64,7 @@
                          }];
     }
     else {
-        if (transitionContext.presentationStyle == UIModalPresentationNone) {
+        if (transitionContext.presentationStyle == UIModalPresentationNone || transitionContext.presentationStyle == UIModalPresentationFullScreen) {
             [container insertSubview:toView belowSubview:fromView];
         }
         toView.transform = CGAffineTransformMakeScale(1.0 + kRZPushScaleChangePct, 1.0 + kRZPushScaleChangePct);
