@@ -37,6 +37,8 @@
 
 @interface RZCirclePushAnimationController ()
 
+@property (weak, nonatomic) UIView *maskedView;
+
 - (CGPoint)circleCenterPointWithFromView:(UIView *)fromView;
 - (CGFloat)circleStartingRadiusWithFromView:(UIView *)fromView toView:(UIView *)toView;
 
@@ -60,6 +62,8 @@
 
 - (void)animateTransition:(id<UIViewControllerContextTransitioning>)transitionContext
 {
+    [super animateTransition:transitionContext];
+
     UIView *fromView = [(NSObject *)transitionContext rzt_fromView];
     UIView *toView = [(NSObject *)transitionContext rzt_toView];
 
@@ -96,6 +100,7 @@
         toView.layer.mask = circleMaskLayer;
         toView.layer.masksToBounds = YES;
         [circleMaskLayer addAnimation:circleMaskAnimation forKey:kRZCircleMaskAnimation];
+        self.maskedView = toView;
     }
     else {
         [circleMaskAnimation setFillMode:kCAFillModeForwards];
@@ -108,9 +113,21 @@
         fromView.layer.mask = circleMaskLayer;
         fromView.layer.masksToBounds = YES;
         [circleMaskLayer addAnimation:circleMaskAnimation forKey:kRZCircleMaskAnimation];
+        self.maskedView = fromView;
     }
-    
-    [super animateTransition:transitionContext];
+}
+
+- (void)animationEnded:(BOOL)transitionCompleted
+{
+    // animationEnded: is a optional method of the UIViewControllerAnimatedTransitioning protocol.
+    // RZZoomPushAnimationController does not currently implement this method, but might at some point,
+    //  so make sure we are doing something sane here.
+    if ([[[self class] superclass] respondsToSelector:@selector(animationEnded:)]) {
+        [super animationEnded:transitionCompleted];
+    }
+
+    self.maskedView.layer.mask = nil;
+    self.maskedView = nil;
 }
 
 #pragma mark - Helper Methods
