@@ -33,7 +33,7 @@
 
 @protocol RZCirclePushAnimationDelegate;
 
-@interface RZCirclePushAnimationController : RZZoomPushAnimationController <RZAnimationControllerProtocol>
+@interface RZCirclePushAnimationController : RZZoomPushAnimationController
 
 /**
  *  Animation delegate for controlling information about the circle transition.

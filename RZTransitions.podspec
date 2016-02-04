@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "RZTransitions"
-  s.version      = "1.2"
+  s.version      = "1.2.1"
   s.summary      = "RZTransitions is a library to help make iOS7 custom View Controller transitions slick and simple."
 
   s.description  = <<-DESC
@@ -19,7 +19,7 @@ Pod::Spec.new do |s|
   s.social_media_url   = "http://twitter.com/raizlabs"
 
   s.platform     = :ios, "7.0"
-  s.source       = { :git => "https://github.com/Raizlabs/RZTransitions.git", :tag => "1.2" }
+  s.source       = { :git => "https://github.com/Raizlabs/RZTransitions.git", :tag => "1.2.1" }
   s.source_files  = "RZTransitions/**/*.{h,m,swift}"
   s.frameworks    = "CoreGraphics", "UIKit", "Foundation"
   s.requires_arc  = true

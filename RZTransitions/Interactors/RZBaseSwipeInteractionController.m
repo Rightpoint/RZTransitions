@@ -90,42 +90,35 @@
                 }
             }
             else {
-                if ( self.action & RZTransitionAction_Pop ) {
-                    [self cancelInteractiveTransition];
-                    self.isInteractive = NO;
+                if (self.action & RZTransitionAction_Pop) {
                     [self.fromViewController.navigationController popViewControllerAnimated:YES];
                 }
-                else if ( self.action & RZTransitionAction_Dismiss ) {
-                    [self cancelInteractiveTransition];
-                    self.isInteractive = NO;
+                else if (self.action & RZTransitionAction_Dismiss) {
                     [self.fromViewController dismissViewControllerAnimated:YES completion:nil];
                 }
             }
             break;
-            
+
         case UIGestureRecognizerStateChanged:
-            if ( self.isInteractive ) {
-                self.shouldCompleteTransition = ( percentage >= [self swipeCompletionPercent] );
+            if (self.isInteractive) {
+                self.shouldCompleteTransition = (percentage >= [self swipeCompletionPercent]);
                 [self updateInteractiveTransition:percentage];
             }
             break;
-            
+
         case UIGestureRecognizerStateCancelled:
-            self.isInteractive = NO;
-            [self cancelInteractiveTransition];
-            break;
-            
         case UIGestureRecognizerStateEnded:
-            if ( self.isInteractive ) {
-                self.isInteractive = NO;
-                if ( !self.shouldCompleteTransition || panGestureRecognizer.state == UIGestureRecognizerStateCancelled ) {
+            if (self.isInteractive) {
+                if (!self.shouldCompleteTransition) {
                     [self cancelInteractiveTransition];
                 }
                 else {
                     [self finishInteractiveTransition];
                 }
+
+                self.isInteractive = NO;
             }
-            
+
         default:
             break;
     }
