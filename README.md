@@ -1,17 +1,11 @@
-<p align="center">
+
 <img src="https://raw.github.com/Raizlabs/RZTransitions/master/Web/RZTransitions.png" alt="RZTransitions" width="763" height="200" />
-</p>
 
 [![Build Status](https://travis-ci.org/Raizlabs/RZTransitions.svg)](https://travis-ci.org/Raizlabs/RZTransitions)
 
-============
+### RZTransitions is a library to help make iOS7 custom View Controller transitions slick and simple.
 
-<h3 align="center">RZTransitions is a library to help make iOS7 custom View Controller transitions slick and simple.</h3>
-<p align="center" >
-<br/>
 <img src="http://raw.github.com/Raizlabs/RZTransitions/master/Web/RZTransitionsDemo.gif" alt="Overview" />
-<br/>
-</p>
 
 ## Installation
 
@@ -19,7 +13,9 @@
 
 Add the following to your Podfile:
 
-`pod 'RZTransitions'`
+```ruby
+pod 'RZTransitions'
+```
 
 RZTransitions follows semantic versioning conventions. Check the [releases page](https://github.com/Raizlabs/RZTransitions/releases) for the latest updates and version history.
 
@@ -29,13 +25,13 @@ Copy and add all of the files in the `RZTransitions` directory (and its subdirec
 
 ## Setting a New Default Transition
 
-<p align="right">Swift</p>
+Swift
 ```Swift
 RZTransitionsManager.shared().defaultPresentDismissAnimationController = RZZoomAlphaAnimationController()
 RZTransitionsManager.shared().defaultPushPopAnimationController = RZCardSlideAnimationController()
 ```
 
-<p align="right">Objective C</p>
+Objective-C
 ```objective-c
 id<RZAnimationControllerProtocol> presentDismissAnimationController = [[RZZoomAlphaAnimationController alloc] init];
 id<RZAnimationControllerProtocol> pushPopAnimationController = [[RZCardSlideAnimationController alloc] init];
@@ -45,14 +41,14 @@ id<RZAnimationControllerProtocol> pushPopAnimationController = [[RZCardSlideAnim
 
 When Presenting a View Controller
 
-<p align="right">Swift</p>
+Swift
 ```Swift
 self.transitioningDelegate = RZTransitionsManager.shared()
 let nextViewController = UIViewController()
 nextViewController.transitioningDelegate = RZTransitionsManager.shared()
 self.presentViewController(nextViewController, animated:true) {}
 ```
-<p align="right">Objective C</p>
+Objective-C
 ```objective-c
 [self setTransitioningDelegate:[RZTransitionsManager shared]];
 UIViewController *nextViewController = [[UIViewController alloc] init];
@@ -62,12 +58,12 @@ UIViewController *nextViewController = [[UIViewController alloc] init];
 
 When creating a Navigation Controller ( **or** use RZTransitionsNavigationController )
 
-<p align="right">Swift</p>
+Swift
 ```Swift
 let navigationController = UINavigationController()
 navigationController.delegate = RZTransitionsManager.shared()
 ```
-<p align="right">Objective C</p>
+Objective-C
 ```objective-c
 UINavigationController *navigationController = [[UINavigationController alloc] init];
 [navigationController setDelegate:[RZTransitionsManager shared]];
@@ -75,14 +71,14 @@ UINavigationController *navigationController = [[UINavigationController alloc] i
 
 ## Specifying Transitions for Specific View Controllers
 
-<p align="right">Swift</p>
+Swift
 ```Swift
 RZTransitionsManager.shared().setAnimationController( RZZoomPushAnimationController(),
     fromViewController:self.dynamicType,
     toViewController:RZSimpleCollectionViewController.self,
     forAction:.PushPop)
 ```
-<p align="right">Objective C</p>
+Objective-C
 ```objective-c
 // Use the RZZoomPushAnimationController when pushing from this view controller to a
 // RZSimpleCollectionViewController or popping from a RZSimpleCollectionViewController to
@@ -95,7 +91,7 @@ RZTransitionsManager.shared().setAnimationController( RZZoomPushAnimationControl
 
 ## Hooking up Interactors
 
-<p align="right">Swift</p>
+Swift
 ```Swift
 override func viewDidLoad() {
     super.viewDidLoad()
@@ -116,7 +112,7 @@ override func viewWillAppear(animated: Bool)
         forAction:.Present)
 }
 ```
-<p align="right">Objective C</p>
+Objective-C
 ```objective-c
 @property (nonatomic, strong) id<RZTransitionInteractionController> presentInteractionController;
 
