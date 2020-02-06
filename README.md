@@ -1,5 +1,5 @@
 
-<img src="https://raw.github.com/Raizlabs/RZTransitions/master/Web/RZTransitions.png" alt="RZTransitions" width="763" height="200" />
+<img src="https://raw.github.com/Raizlabs/RZTransitions/master/Web/RZTransitions.png" alt="RZTransitions" width="763" />
 
 [![Build Status](https://travis-ci.org/Raizlabs/RZTransitions.svg)](https://travis-ci.org/Raizlabs/RZTransitions)
 
